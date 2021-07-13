@@ -1,7 +1,8 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name BanubaUtilities
 import AVFoundation
+import AVKit
 @_exported import BanubaUtilities
 import Foundation
 import Photos
@@ -10,6 +11,40 @@ import SystemConfiguration
 import UIKit
 import os.log
 import os
+extension UIView {
+  public func roundCorners(corners: UIKit.UIRectCorner, radius: CoreGraphics.CGFloat)
+}
+public enum HintArrowPosition {
+  case topLeft
+  case topRight
+  case bottomLeft
+  case bottomRight
+  public static func == (a: BanubaUtilities.HintArrowPosition, b: BanubaUtilities.HintArrowPosition) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct HintViewConfiguration {
+  public struct ArrowConfiguration {
+  }
+  public let cornerRadius: CoreGraphics.CGFloat
+  public let backgroundColor: UIKit.UIColor
+  public let textInset: UIKit.UIEdgeInsets
+  public let textConfiguration: BanubaUtilities.TextConfiguration
+  public let arrowConfiguration: BanubaUtilities.HintViewConfiguration.ArrowConfiguration
+}
+@objc @_inheritsConvenienceInitializers open class HintView : UIKit.UIView {
+  open var configuration: BanubaUtilities.HintViewConfiguration
+  open var text: Swift.String? {
+    get
+    set(value)
+  }
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc override dynamic open func draw(_ rect: CoreGraphics.CGRect)
+  @objc deinit
+}
 public protocol ImageButtonConfigurationProtocol {
   var imageConfiguration: BanubaUtilities.ImageConfigurationProtocol { get set }
   var selectedImageConfiguration: BanubaUtilities.ImageConfigurationProtocol? { get set }
@@ -20,6 +55,8 @@ public protocol ImageButtonConfigurationProtocol {
     case info
     case selection
     case missedPermission
+    case discard
+    case later
     public static func == (a: BanubaUtilities.AlertViewController.AlertType, b: BanubaUtilities.AlertViewController.AlertType) -> Swift.Bool
     public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
@@ -48,6 +85,17 @@ public protocol ImageButtonConfigurationProtocol {
   @objc override dynamic public init()
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers public class SlideInPresentationManager : ObjectiveC.NSObject, UIKit.UIViewControllerTransitioningDelegate {
+  public init(coverPercentage: CoreGraphics.CGFloat, panToDismiss: Swift.Bool, isDimViewEnabled: Swift.Bool)
+  public init(coverHeight: CoreGraphics.CGFloat, panToDismiss: Swift.Bool, isDimViewEnabled: Swift.Bool)
+  @objc override dynamic public convenience init()
+  @objc public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
+  @objc public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @objc public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @objc public func interactionControllerForPresentation(using animator: UIKit.UIViewControllerAnimatedTransitioning) -> UIKit.UIViewControllerInteractiveTransitioning?
+  @objc public func interactionControllerForDismissal(using animator: UIKit.UIViewControllerAnimatedTransitioning) -> UIKit.UIViewControllerInteractiveTransitioning?
+  @objc deinit
+}
 public enum Connection : Swift.CustomStringConvertible {
   case none
   case wifi
@@ -61,6 +109,14 @@ public enum Connection : Swift.CustomStringConvertible {
     get
   }
 }
+public protocol AlertPresentable : AnyObject {
+  func presentAlert(alertType: BanubaUtilities.AlertViewController.AlertType, configuration: BanubaUtilities.AlertViewConfiguration, message: Swift.String, animated: Swift.Bool, completion: ((Swift.Bool) -> Swift.Void)?)
+  func presentSelectionAlert(configuration: BanubaUtilities.AlertViewConfiguration, message: Swift.String, animated: Swift.Bool, completion: ((Swift.Bool) -> Swift.Void)?)
+}
+extension AlertPresentable where Self : UIKit.UIViewController {
+  public func presentAlert(alertType: BanubaUtilities.AlertViewController.AlertType, configuration: BanubaUtilities.AlertViewConfiguration, message: Swift.String, animated: Swift.Bool, completion: ((Swift.Bool) -> Swift.Void)?)
+  public func presentSelectionAlert(configuration: BanubaUtilities.AlertViewConfiguration, message: Swift.String, animated: Swift.Bool, completion: ((Swift.Bool) -> Swift.Void)?)
+}
 public enum SharedLocalizedStrings {
   public enum Common {
     public static var ok: Swift.String
@@ -70,6 +126,8 @@ public enum SharedLocalizedStrings {
   public enum Alert {
     public static var settings: Swift.String
     public static var refuseSettings: Swift.String
+    public static var later: Swift.String
+    public static var discard: Swift.String
   }
 }
 @_hasMissingDesignatedInitializers public class VideoDurationFormatter {
@@ -85,12 +143,20 @@ extension UIButton {
   public func applyConfiguration(_ configuration: BanubaUtilities.TextButtonConfiguration, with title: Swift.String)
   public func applyConfiguration(_ configuration: BanubaUtilities.TextConfiguration, with title: Swift.String)
 }
+@objc public class BackgroundConfiguration : ObjectiveC.NSObject {
+  public var cornerRadius: CoreGraphics.CGFloat
+  public var color: UIKit.UIColor
+  public init(cornerRadius: CoreGraphics.CGFloat, color: UIKit.UIColor)
+  @objc override dynamic public init()
+  @objc deinit
+}
 @objc public class GalleryConfiguration : ObjectiveC.NSObject {
   public var videoResolution: BanubaUtilities.VideoResolution
   public var galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration
   public var closeButtonConfiguration: BanubaUtilities.ImageButtonConfigurationProtocol
   public var albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration
   public var nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration
+  public var draftsButtonConfiguration: BanubaUtilities.SaveButtonConfiguration
   public var noItemsLabelConfiguration: BanubaUtilities.TextConfiguration
   public var layoutConfiguration: BanubaUtilities.GalleryLayoutConfiguration
   public var topBarBlurColor: UIKit.UIColor
@@ -98,7 +164,11 @@ extension UIButton {
   public var galleryTypeButton: BanubaUtilities.TextButtonConfiguration
   public var galleryTypeUnderlineColor: UIKit.UIColor
   public var isPhotoSequenceAnimationEnabled: Swift.Bool
-  public init(videoResolution: BanubaUtilities.VideoResolution, galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration, closeButtonConfiguration: BanubaUtilities.ImageButtonConfigurationProtocol, albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration, nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, noItemsLabelConfiguration: BanubaUtilities.TextConfiguration, layoutConfiguration: BanubaUtilities.GalleryLayoutConfiguration, topBarBlurColor: UIKit.UIColor, clearSelectionButtonConfiguration: BanubaUtilities.ImageButtonConfigurationProtocol, galleryTypeButton: BanubaUtilities.TextButtonConfiguration, galleryTypeUnderlineColor: UIKit.UIColor, isPhotoSequenceAnimationEnabled: Swift.Bool)
+  public var importItemsLabelConfiguration: BanubaUtilities.TextConfiguration
+  public var bottomViewConfiguration: BanubaUtilities.BackgroundConfiguration
+  public var isDraftsHidden: Swift.Bool
+  public var visibleTabsInGallery: [BanubaUtilities.GalleryMediaType]
+  public init(videoResolution: BanubaUtilities.VideoResolution, galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration, closeButtonConfiguration: BanubaUtilities.ImageButtonConfigurationProtocol, albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration, nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, draftsButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, noItemsLabelConfiguration: BanubaUtilities.TextConfiguration, layoutConfiguration: BanubaUtilities.GalleryLayoutConfiguration, topBarBlurColor: UIKit.UIColor, clearSelectionButtonConfiguration: BanubaUtilities.ImageButtonConfigurationProtocol, galleryTypeButton: BanubaUtilities.TextButtonConfiguration, galleryTypeUnderlineColor: UIKit.UIColor, isPhotoSequenceAnimationEnabled: Swift.Bool, importItemsLabelConfiguration: BanubaUtilities.TextConfiguration, bottomViewConfiguration: BanubaUtilities.BackgroundConfiguration, isDraftsHidden: Swift.Bool, visibleTabsInGallery: [BanubaUtilities.GalleryMediaType] = [.video, .photo])
   @objc override dynamic public init()
   @objc deinit
 }
@@ -203,7 +273,12 @@ public struct ItemCollectionModel {
   public var assetCollection: Photos.PHAssetCollection
   public var previewAsset: Photos.PHAsset?
 }
-@objc final public class GalleryManager : ObjectiveC.NSObject {
+public protocol GalleryAdapter : AnyObject {
+  var changesHandler: BanubaUtilities.GalleryManager.ChangesHandler? { get set }
+  func getPreviewImageForGallery(completion: @escaping (UIKit.UIImage?) -> ())
+  func register()
+}
+@objc final public class GalleryManager : ObjectiveC.NSObject, BanubaUtilities.GalleryAdapter {
   final public let videoResolution: BanubaUtilities.VideoResolution
   final public let minimumDurationFromGallery: Foundation.TimeInterval
   final public var changesHandler: BanubaUtilities.GalleryManager.ChangesHandler?
@@ -236,6 +311,7 @@ extension GalleryManager {
   @objc func galleryViewControllerDone(_ controller: BanubaUtilities.GalleryViewController, withGalleryItems items: [BanubaUtilities.GalleryItem])
   @objc func galleryViewControllerDidChangeAlbum(_ controller: BanubaUtilities.GalleryViewController, currentAlbum: BanubaUtilities.AlbumModel?)
   @objc func galleryViewController(_ controller: BanubaUtilities.GalleryViewController, presentMessage message: Swift.String)
+  @objc func galleryViewControllerDidTapDrafts(_ controller: BanubaUtilities.GalleryViewController)
 }
 @objc public enum GalleryMediaType : Swift.Int, Swift.CaseIterable {
   case video
@@ -283,6 +359,24 @@ extension GalleryManager {
 @objc public protocol AlbumsViewControllerDelegate {
   @objc func albumsViewController(_ controller: BanubaUtilities.AlbumsViewController, didSelect album: BanubaUtilities.AlbumModel)
   @objc func albumsViewControllerDidClose(_ controller: BanubaUtilities.AlbumsViewController)
+}
+public enum FileExtension {
+  public enum Video : Swift.String {
+    case mp4
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum Music : Swift.String {
+    case mp3
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
 }
 @objc @_inheritsConvenienceInitializers public class CircularProgressView : UIKit.UIView, BanubaUtilities.ProgressAnimatableView {
   public var progress: Swift.Float {
@@ -444,7 +538,7 @@ extension SmallActivityIndicatorConfiguration.GradientType {
   @objc public static func color(_ color: BanubaUtilities.SmallActivityIndicatorConfiguration.GradientColorConfiguration) -> BanubaUtilities.SmallActivityIndicatorConfiguration.GradientType
   @objc public static func image(_ image: BanubaUtilities.ImageConfigurationProtocol) -> BanubaUtilities.SmallActivityIndicatorConfiguration.GradientType
 }
-public enum VideoResolution {
+public enum VideoResolution : Swift.String {
   case hd1280x720
   case hd1920x1080
   case md960x540
@@ -461,9 +555,9 @@ public enum VideoResolution {
   public var size: CoreGraphics.CGSize {
     get
   }
-  public static func == (a: BanubaUtilities.VideoResolution, b: BanubaUtilities.VideoResolution) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
     get
   }
 }
@@ -522,6 +616,11 @@ public enum DeviceModel : Swift.String {
   case iPhone11
   case iPhone11Pro
   case iPhone11ProMax
+  case iPhoneSE2
+  case iPhone12Mini
+  case iPhone12
+  case iPhone12Pro
+  case iPhone12ProMax
   case unrecognized
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
@@ -543,6 +642,14 @@ public struct RoundedButtonConfiguration {
   public var width: CoreGraphics.CGFloat
   public var height: CoreGraphics.CGFloat
   public init(textConfiguration: BanubaUtilities.TextConfiguration?, cornerRadius: CoreGraphics.CGFloat, backgroundColor: UIKit.UIColor, borderWidth: CoreGraphics.CGFloat? = nil, borderColor: CoreGraphics.CGColor? = nil, width: CoreGraphics.CGFloat = 70.0, height: CoreGraphics.CGFloat = 30.0)
+}
+public class PreviewExtractor {
+  final public let asset: AVFoundation.AVAsset
+  final public let thumbnailHeight: CoreGraphics.CGFloat
+  final public let imageGenerator: AVFoundation.AVAssetImageGenerator
+  public init(asset: AVFoundation.AVAsset, thumbnailHeight: CoreGraphics.CGFloat)
+  @objc deinit
+  public func extractPreview(at time: CoreMedia.CMTime) -> UIKit.UIImage?
 }
 @objc @_inheritsConvenienceInitializers public class VideoEditorActivityIndicator : UIKit.UIView {
   public var configuration: BanubaUtilities.SmallActivityIndicatorConfiguration? {
