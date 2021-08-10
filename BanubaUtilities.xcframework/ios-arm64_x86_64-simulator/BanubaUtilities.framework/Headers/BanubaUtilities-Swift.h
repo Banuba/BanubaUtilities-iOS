@@ -191,6 +191,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import CoreGraphics;
+@import CoreMedia;
 @import Foundation;
 @import ObjectiveC;
 @import Photos;
@@ -393,8 +394,6 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities29GalleryViewControllerDelegate_")
 - (void)galleryViewControllerDidClose:(GalleryViewController * _Nonnull)controller;
 /// Tells delegate object about completion picking gallery items.
 - (void)galleryViewControllerDone:(GalleryViewController * _Nonnull)controller withGalleryItems:(NSArray<id <GalleryItem>> * _Nonnull)items;
-/// Tells delegate object that a user request changing current album.
-- (void)galleryViewControllerDidChangeAlbum:(GalleryViewController * _Nonnull)controller currentAlbum:(id <AlbumModel> _Nullable)currentAlbum;
 /// Tells delegate object that he should present message.
 /// In BanubaVideoEditorSDK it presents popup message.
 - (void)galleryViewController:(GalleryViewController * _Nonnull)controller presentMessage:(NSString * _Nonnull)message;
@@ -406,9 +405,7 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities29GalleryViewControllerDelegate_")
 SWIFT_PROTOCOL("_TtP15BanubaUtilities28GalleryViewControllerFactory_")
 @protocol GalleryViewControllerFactory <NSObject>
 /// Creates GalleryViewController
-- (GalleryViewController * _Nonnull)makeGalleryViewControllerWithConfiguration:(GalleryConfiguration * _Nonnull)configuration selectionBehaviour:(GallerySelectionBehaviour * _Nonnull)selectionBehaviour SWIFT_WARN_UNUSED_RESULT;
-/// Creates AlbumsViewController
-- (AlbumsViewController * _Nonnull)makeAlbumsViewControllerWithConfiguration:(AlbumsConfiguration * _Nonnull)configuration SWIFT_WARN_UNUSED_RESULT;
+- (GalleryViewController * _Nonnull)makeGalleryViewControllerWithConfiguration:(GalleryConfiguration * _Nonnull)configuration albumsConfiguration:(AlbumsConfiguration * _Nonnull)albumsConfiguration selectionBehaviour:(GallerySelectionBehaviour * _Nonnull)selectionBehaviour SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -494,6 +491,26 @@ SWIFT_CLASS("_TtC15BanubaUtilities17TextConfiguration")
 @interface TextConfiguration : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@protocol TimeLineDataSourceDelegate;
+
+SWIFT_PROTOCOL("_TtP15BanubaUtilities18TimeLineDataSource_")
+@protocol TimeLineDataSource
+@property (nonatomic, strong) id <TimeLineDataSourceDelegate> _Nullable delegate;
+@property (nonatomic, readonly) CMTime duration;
+@property (nonatomic, readonly, copy) NSArray<UIImage *> * _Nonnull thumbnails;
+@property (nonatomic, readonly) BOOL isAllThumbnailsFetched;
+@property (nonatomic, readonly) NSInteger thumbnailsCount;
+@property (nonatomic, readonly) CGFloat thumbnailHeight;
+- (void)loadPreviewWithCompletion:(void (^ _Nonnull)(UIImage * _Nullable))completion at:(double)second;
+- (UIImage * _Nullable)getImageAt:(NSInteger)index SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_PROTOCOL("_TtP15BanubaUtilities26TimeLineDataSourceDelegate_")
+@protocol TimeLineDataSourceDelegate
+- (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
 @end
 
 
@@ -707,6 +724,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import CoreGraphics;
+@import CoreMedia;
 @import Foundation;
 @import ObjectiveC;
 @import Photos;
@@ -909,8 +927,6 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities29GalleryViewControllerDelegate_")
 - (void)galleryViewControllerDidClose:(GalleryViewController * _Nonnull)controller;
 /// Tells delegate object about completion picking gallery items.
 - (void)galleryViewControllerDone:(GalleryViewController * _Nonnull)controller withGalleryItems:(NSArray<id <GalleryItem>> * _Nonnull)items;
-/// Tells delegate object that a user request changing current album.
-- (void)galleryViewControllerDidChangeAlbum:(GalleryViewController * _Nonnull)controller currentAlbum:(id <AlbumModel> _Nullable)currentAlbum;
 /// Tells delegate object that he should present message.
 /// In BanubaVideoEditorSDK it presents popup message.
 - (void)galleryViewController:(GalleryViewController * _Nonnull)controller presentMessage:(NSString * _Nonnull)message;
@@ -922,9 +938,7 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities29GalleryViewControllerDelegate_")
 SWIFT_PROTOCOL("_TtP15BanubaUtilities28GalleryViewControllerFactory_")
 @protocol GalleryViewControllerFactory <NSObject>
 /// Creates GalleryViewController
-- (GalleryViewController * _Nonnull)makeGalleryViewControllerWithConfiguration:(GalleryConfiguration * _Nonnull)configuration selectionBehaviour:(GallerySelectionBehaviour * _Nonnull)selectionBehaviour SWIFT_WARN_UNUSED_RESULT;
-/// Creates AlbumsViewController
-- (AlbumsViewController * _Nonnull)makeAlbumsViewControllerWithConfiguration:(AlbumsConfiguration * _Nonnull)configuration SWIFT_WARN_UNUSED_RESULT;
+- (GalleryViewController * _Nonnull)makeGalleryViewControllerWithConfiguration:(GalleryConfiguration * _Nonnull)configuration albumsConfiguration:(AlbumsConfiguration * _Nonnull)albumsConfiguration selectionBehaviour:(GallerySelectionBehaviour * _Nonnull)selectionBehaviour SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -1010,6 +1024,26 @@ SWIFT_CLASS("_TtC15BanubaUtilities17TextConfiguration")
 @interface TextConfiguration : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@protocol TimeLineDataSourceDelegate;
+
+SWIFT_PROTOCOL("_TtP15BanubaUtilities18TimeLineDataSource_")
+@protocol TimeLineDataSource
+@property (nonatomic, strong) id <TimeLineDataSourceDelegate> _Nullable delegate;
+@property (nonatomic, readonly) CMTime duration;
+@property (nonatomic, readonly, copy) NSArray<UIImage *> * _Nonnull thumbnails;
+@property (nonatomic, readonly) BOOL isAllThumbnailsFetched;
+@property (nonatomic, readonly) NSInteger thumbnailsCount;
+@property (nonatomic, readonly) CGFloat thumbnailHeight;
+- (void)loadPreviewWithCompletion:(void (^ _Nonnull)(UIImage * _Nullable))completion at:(double)second;
+- (UIImage * _Nullable)getImageAt:(NSInteger)index SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_PROTOCOL("_TtP15BanubaUtilities26TimeLineDataSourceDelegate_")
+@protocol TimeLineDataSourceDelegate
+- (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
 @end
 
 
