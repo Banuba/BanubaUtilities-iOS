@@ -276,6 +276,25 @@ SWIFT_CLASS("_TtC15BanubaUtilities19AlertViewController")
 
 
 
+@class NSNotification;
+
+SWIFT_CLASS("_TtC15BanubaUtilities16AppStateObserver")
+@interface AppStateObserver : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (void)handleApplicationWillResignActiveNotification:(NSNotification * _Nonnull)notification;
+- (void)handleApplicationDidBecomeActiveNotification:(NSNotification * _Nonnull)notification;
+- (void)handleWillEnterForegroundNotification:(NSNotification * _Nonnull)notification;
+@end
+
+
+SWIFT_PROTOCOL("_TtP15BanubaUtilities24AppStateObserverDelegate_")
+@protocol AppStateObserverDelegate
+- (void)applicationWillResignActive:(AppStateObserver * _Nonnull)appStateObserver;
+- (void)applicationDidBecomeActive:(AppStateObserver * _Nonnull)appStateObserver;
+@optional
+- (void)applicationWillEnterForeground:(AppStateObserver * _Nonnull)appStateObserver;
+@end
+
 
 /// The background configuration.
 SWIFT_CLASS("_TtC15BanubaUtilities23BackgroundConfiguration")
@@ -808,6 +827,25 @@ SWIFT_CLASS("_TtC15BanubaUtilities19AlertViewController")
 
 
 
+
+@class NSNotification;
+
+SWIFT_CLASS("_TtC15BanubaUtilities16AppStateObserver")
+@interface AppStateObserver : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (void)handleApplicationWillResignActiveNotification:(NSNotification * _Nonnull)notification;
+- (void)handleApplicationDidBecomeActiveNotification:(NSNotification * _Nonnull)notification;
+- (void)handleWillEnterForegroundNotification:(NSNotification * _Nonnull)notification;
+@end
+
+
+SWIFT_PROTOCOL("_TtP15BanubaUtilities24AppStateObserverDelegate_")
+@protocol AppStateObserverDelegate
+- (void)applicationWillResignActive:(AppStateObserver * _Nonnull)appStateObserver;
+- (void)applicationDidBecomeActive:(AppStateObserver * _Nonnull)appStateObserver;
+@optional
+- (void)applicationWillEnterForeground:(AppStateObserver * _Nonnull)appStateObserver;
+@end
 
 
 /// The background configuration.

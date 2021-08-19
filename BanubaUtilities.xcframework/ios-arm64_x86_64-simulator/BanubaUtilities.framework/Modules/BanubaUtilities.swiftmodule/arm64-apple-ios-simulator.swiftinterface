@@ -90,8 +90,8 @@ public protocol ImageButtonConfigurationProtocol {
     get
     set(newValue)
   }
-  public init(coverPercentage: CoreGraphics.CGFloat, panToDismiss: Swift.Bool, isDimViewEnabled: Swift.Bool)
-  public init(coverHeight: CoreGraphics.CGFloat, panToDismiss: Swift.Bool, isDimViewEnabled: Swift.Bool)
+  public init(coverPercentage: CoreGraphics.CGFloat, panToDismiss: Swift.Bool, isDimViewEnabled: Swift.Bool, dismissOnTapByDimView: Swift.Bool = false)
+  public init(coverHeight: CoreGraphics.CGFloat, panToDismiss: Swift.Bool, isDimViewEnabled: Swift.Bool, dismissOnTapByDimView: Swift.Bool)
   @objc override dynamic public convenience init()
   @objc public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
   @objc public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
@@ -437,19 +437,21 @@ public protocol CountdownTimerAnimatableView : BanubaUtilities.AnimatableView {
 public protocol ProgressAnimatableView : UIKit.UIView {
   var progress: Swift.Float { get set }
 }
-public protocol AppStateObserverDelegate : AnyObject {
-  func applicationWillResignActive(_ appStateObserver: BanubaUtilities.AppStateObserver)
-  func applicationDidBecomeActive(_ appStateObserver: BanubaUtilities.AppStateObserver)
+@objc public protocol AppStateObserverDelegate {
+  @objc func applicationWillResignActive(_ appStateObserver: BanubaUtilities.AppStateObserver)
+  @objc func applicationDidBecomeActive(_ appStateObserver: BanubaUtilities.AppStateObserver)
+  @objc optional func applicationWillEnterForeground(_ appStateObserver: BanubaUtilities.AppStateObserver)
 }
-public class AppStateObserver {
+@_inheritsConvenienceInitializers @objc public class AppStateObserver : ObjectiveC.NSObject {
   weak public var delegate: BanubaUtilities.AppStateObserverDelegate?
-  public init()
+  @objc override dynamic public init()
   public convenience init(delegate: BanubaUtilities.AppStateObserverDelegate?)
   @objc deinit
   public func subscribeToNotifications()
   public func unsubscribeFromNotifications()
   @objc public func handleApplicationWillResignActiveNotification(_ notification: Foundation.Notification)
   @objc public func handleApplicationDidBecomeActiveNotification(_ notification: Foundation.Notification)
+  @objc public func handleWillEnterForegroundNotification(_ notification: Foundation.Notification)
 }
 public protocol PlayerStateStorable {
   var playerState: Swift.Bool { get set }
@@ -688,7 +690,13 @@ public struct RoundedButtonConfiguration {
   public var backgroundColor: UIKit.UIColor
   public var width: CoreGraphics.CGFloat
   public var height: CoreGraphics.CGFloat
+  public var titleSpacing: CoreGraphics.CGFloat?
   public init(textConfiguration: BanubaUtilities.TextConfiguration?, cornerRadius: CoreGraphics.CGFloat, backgroundColor: UIKit.UIColor, borderWidth: CoreGraphics.CGFloat? = nil, borderColor: CoreGraphics.CGColor? = nil, width: CoreGraphics.CGFloat = 70.0, height: CoreGraphics.CGFloat = 30.0)
+}
+extension Error {
+  public var isCancelled: Swift.Bool {
+    get
+  }
 }
 public class PreviewExtractor {
   final public let asset: AVFoundation.AVAsset
@@ -735,6 +743,8 @@ public protocol Playable : AnyObject {
   var playerDelegate: BanubaUtilities.PlayerDelegate? { get set }
   var avPlayer: AVFoundation.AVPlayer { get }
   var isMuted: Swift.Bool { get set }
+  var startTimePlay: CoreMedia.CMTime { get }
+  var endTimePlay: CoreMedia.CMTime { get }
 }
 public protocol PlayerDelegate : AnyObject {
   func playerPlaysFrame(_ player: BanubaUtilities.Playable, atTime time: CoreMedia.CMTime)
