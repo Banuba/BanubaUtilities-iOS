@@ -6,7 +6,7 @@
 	<dict>
 		<key>AlertViewController.nib</key>
 		<data>
-		s5wg/33teMiWKuBtK4pyZE/xt4M=
+		V0NNmsU4cEiwRD7QenmfIhYkiTs=
 		</data>
 		<key>Headers/BNBAsyncOperation.h</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/BanubaUtilities-Swift.h</key>
 		<data>
-		ce8DeHjvXWJcltFoRzyRsaVW3AU=
+		OG5BGbMXSDjd21RTnSmjPutEcBQ=
 		</data>
 		<key>Headers/BanubaUtilities.h</key>
 		<data>
@@ -22,39 +22,39 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Qzr0rsAlNoOuJvfrCrs13ckmW2M=
+		x9g2kvwXEVQnWQs9UABNBlLLMTs=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		9VLpTDaRhEvg5yAaf+9gNlbXKGU=
+		qulHHVBGA3Satu2+HV8DlhuWmyw=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		9VLpTDaRhEvg5yAaf+9gNlbXKGU=
+		qulHHVBGA3Satu2+HV8DlhuWmyw=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		s+rK0l1YN0vRYUkw5td/WWPKvGw=
+		AjkbHDKV9FJ1OfolckVky7XGiLY=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		lNbQVgE4YwZONODyuWDAQtHAZ7o=
+		q4E4bTowb+Avx73SH5juOModTzg=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		Z3bBeQ3fj4iOdAx237jAz1PP4i0=
+		fjt5dUSaL8PfuuSg2pIuxRe9rFs=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		s+rK0l1YN0vRYUkw5td/WWPKvGw=
+		AjkbHDKV9FJ1OfolckVky7XGiLY=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		lNbQVgE4YwZONODyuWDAQtHAZ7o=
+		q4E4bTowb+Avx73SH5juOModTzg=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		Z3bBeQ3fj4iOdAx237jAz1PP4i0=
+		fjt5dUSaL8PfuuSg2pIuxRe9rFs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -67,7 +67,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3eNNfjGE5m7Q0lrzmlFIzUo+CImGxrY94c2UjCEKm8I=
+			5HrAEKiwobrbHvxT0E0eUeKic0FEbjsWGKs2pV9Q1SM=
 			</data>
 		</dict>
 		<key>Headers/BNBAsyncOperation.h</key>
@@ -81,7 +81,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			EpBWfl9mPhHwfcUqYRtPb+WJPqcNEuro/lkcD7zJ/Q4=
+			GPHWj6o35mtqgU2prZsfTydhzzGtC0H1FGZF0TgZmic=
 			</data>
 		</dict>
 		<key>Headers/BanubaUtilities.h</key>
@@ -95,56 +95,56 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tRw3vXhLyXNHN2OrYIdazs3OZzPWVz62PwggePd0OEA=
+			wSnkfB4LPJqhZDFw0g1tby8Vf0uY6mm4Wv143EOZN38=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tRw3vXhLyXNHN2OrYIdazs3OZzPWVz62PwggePd0OEA=
+			wSnkfB4LPJqhZDFw0g1tby8Vf0uY6mm4Wv143EOZN38=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yrXahK5zPVoDKP5Zt8VpEPjdM1uFsD2O3xhI0Fj9WkY=
+			cvNhOd3hzCcePInfr3/YgMj4MOTV3xQkxjDNUsY0v30=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cFdr/b+LyUiyIGOncbTYLAYMzC0x1mBCOSfXLjLM8LU=
+			dikKeIjEkxtYHzr0ScRYw+bj0pOvMCUGMNoN8tRupDw=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			D4PZeQJb6h0KPrIsKu9zGjx4cZSpBgEHG8pNbfGAtPo=
+			em+XLmDmectHSu/zFiSqCOhbKPmDBGUqjHre7Y/E31o=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yrXahK5zPVoDKP5Zt8VpEPjdM1uFsD2O3xhI0Fj9WkY=
+			cvNhOd3hzCcePInfr3/YgMj4MOTV3xQkxjDNUsY0v30=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cFdr/b+LyUiyIGOncbTYLAYMzC0x1mBCOSfXLjLM8LU=
+			dikKeIjEkxtYHzr0ScRYw+bj0pOvMCUGMNoN8tRupDw=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			D4PZeQJb6h0KPrIsKu9zGjx4cZSpBgEHG8pNbfGAtPo=
+			em+XLmDmectHSu/zFiSqCOhbKPmDBGUqjHre7Y/E31o=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

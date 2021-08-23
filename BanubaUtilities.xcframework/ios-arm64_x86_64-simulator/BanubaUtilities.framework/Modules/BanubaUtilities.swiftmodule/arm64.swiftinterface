@@ -86,8 +86,12 @@ public struct HintViewConfiguration {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class SlideInPresentationManager : ObjectiveC.NSObject, UIKit.UIViewControllerTransitioningDelegate {
-  public init(coverPercentage: CoreGraphics.CGFloat, panToDismiss: Swift.Bool, isDimViewEnabled: Swift.Bool)
-  public init(coverHeight: CoreGraphics.CGFloat, panToDismiss: Swift.Bool, isDimViewEnabled: Swift.Bool)
+  public var dimInteractionHandler: (() -> Swift.Void)? {
+    get
+    set(newValue)
+  }
+  public init(coverPercentage: CoreGraphics.CGFloat, panToDismiss: Swift.Bool, isDimViewEnabled: Swift.Bool, dismissOnTapByDimView: Swift.Bool = false)
+  public init(coverHeight: CoreGraphics.CGFloat, panToDismiss: Swift.Bool, isDimViewEnabled: Swift.Bool, dismissOnTapByDimView: Swift.Bool)
   @objc override dynamic public convenience init()
   @objc public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
   @objc public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
@@ -172,6 +176,19 @@ extension UIButton {
   @objc override dynamic public init()
   @objc deinit
 }
+@objc public protocol TimeLineDataSourceDelegate {
+  @objc func timelineDataSourceDidFinishThumbnailFetch(_ timelineDataSource: BanubaUtilities.TimeLineDataSource)
+}
+@objc public protocol TimeLineDataSource {
+  @objc var delegate: BanubaUtilities.TimeLineDataSourceDelegate? { get set }
+  @objc var duration: CoreMedia.CMTime { get }
+  @objc var thumbnails: [UIKit.UIImage] { get }
+  @objc var isAllThumbnailsFetched: Swift.Bool { get }
+  @objc var thumbnailsCount: Swift.Int { get }
+  @objc var thumbnailHeight: CoreGraphics.CGFloat { get }
+  @objc func loadPreview(completion: @escaping (UIKit.UIImage?) -> Swift.Void, at second: Swift.Double)
+  @objc func getImage(at index: Swift.Int) -> UIKit.UIImage?
+}
 @objc public protocol AlbumModel {
   @objc var name: Swift.String? { get set }
   @objc var preview: UIKit.UIImage? { get set }
@@ -219,6 +236,24 @@ public protocol ReachabilityServicing {
 }
 public struct ReachabilityServiceBuilder {
   public static func build() -> BanubaUtilities.ReachabilityServicing?
+}
+public protocol PlayablePreview : AnyObject {
+  func startStopPlay(loop: Swift.Bool, fixedSpeed: Swift.Bool)
+  func startPlay(loop: Swift.Bool, fixedSpeed: Swift.Bool)
+  func stopPlay()
+  func pausePlay()
+  func resumePlay()
+  func smoothlySeek(to time: CoreMedia.CMTime)
+  func seek(to time: CoreMedia.CMTime)
+  func reloadPreview(shouldAutoStart: Swift.Bool)
+  var currentTime: Foundation.TimeInterval { get }
+  var videoDuration: Swift.Double { get }
+  var currentTimeInCMTime: CoreMedia.CMTime { get }
+  var videoDurationInCMTime: CoreMedia.CMTime { get }
+  var playerDelegate: BanubaUtilities.PlayerDelegate? { get set }
+  var player: BanubaUtilities.Playable? { get set }
+  var isPlaying: Swift.Bool { get }
+  var previewView: UIKit.UIView { get }
 }
 extension Double {
   public func rounded(toPlaces places: Swift.Int, rule: Swift.FloatingPointRoundingRule? = nil) -> Swift.Double
@@ -317,7 +352,6 @@ extension GalleryManager {
   @objc func galleryViewControllerDidEndExport(_ controller: BanubaUtilities.GalleryViewController)
   @objc func galleryViewControllerDidClose(_ controller: BanubaUtilities.GalleryViewController)
   @objc func galleryViewControllerDone(_ controller: BanubaUtilities.GalleryViewController, withGalleryItems items: [BanubaUtilities.GalleryItem])
-  @objc func galleryViewControllerDidChangeAlbum(_ controller: BanubaUtilities.GalleryViewController, currentAlbum: BanubaUtilities.AlbumModel?)
   @objc func galleryViewController(_ controller: BanubaUtilities.GalleryViewController, presentMessage message: Swift.String)
   @objc func galleryViewControllerDidTapDrafts(_ controller: BanubaUtilities.GalleryViewController)
 }
@@ -411,19 +445,21 @@ public enum FileExtension {
 @objc public protocol ProgressAnimatableView {
   @objc var progress: Swift.Float { get set }
 }
-public protocol AppStateObserverDelegate : AnyObject {
-  func applicationWillResignActive(_ appStateObserver: BanubaUtilities.AppStateObserver)
-  func applicationDidBecomeActive(_ appStateObserver: BanubaUtilities.AppStateObserver)
+@objc public protocol AppStateObserverDelegate {
+  @objc func applicationWillResignActive(_ appStateObserver: BanubaUtilities.AppStateObserver)
+  @objc func applicationDidBecomeActive(_ appStateObserver: BanubaUtilities.AppStateObserver)
+  @objc optional func applicationWillEnterForeground(_ appStateObserver: BanubaUtilities.AppStateObserver)
 }
-public class AppStateObserver {
+@_inheritsConvenienceInitializers @objc public class AppStateObserver : ObjectiveC.NSObject {
   weak public var delegate: BanubaUtilities.AppStateObserverDelegate?
-  public init()
+  @objc override dynamic public init()
   public convenience init(delegate: BanubaUtilities.AppStateObserverDelegate?)
   @objc deinit
   public func subscribeToNotifications()
   public func unsubscribeFromNotifications()
   @objc public func handleApplicationWillResignActiveNotification(_ notification: Foundation.Notification)
   @objc public func handleApplicationDidBecomeActiveNotification(_ notification: Foundation.Notification)
+  @objc public func handleWillEnterForegroundNotification(_ notification: Foundation.Notification)
 }
 public protocol PlayerStateStorable {
   var playerState: Swift.Bool { get set }
@@ -504,8 +540,7 @@ extension BanubaGalleryItem {
   @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
 }
 @objc public protocol GalleryViewControllerFactory : ObjectiveC.NSObjectProtocol {
-  @objc func makeGalleryViewController(withConfiguration configuration: BanubaUtilities.GalleryConfiguration, selectionBehaviour: BanubaUtilities.GallerySelectionBehaviour) -> BanubaUtilities.GalleryViewController
-  @objc func makeAlbumsViewController(withConfiguration configuration: BanubaUtilities.AlbumsConfiguration) -> BanubaUtilities.AlbumsViewController
+  @objc func makeGalleryViewController(withConfiguration configuration: BanubaUtilities.GalleryConfiguration, albumsConfiguration: BanubaUtilities.AlbumsConfiguration, selectionBehaviour: BanubaUtilities.GallerySelectionBehaviour) -> BanubaUtilities.GalleryViewController
 }
 extension Array {
   public func unique<T>(by keyPath: Swift.KeyPath<Element, T>) -> [Element] where T : Swift.Hashable
@@ -672,9 +707,15 @@ extension UIDevice {
   @objc public var backgroundColor: UIKit.UIColor
   @objc public var width: CoreGraphics.CGFloat
   @objc public var height: CoreGraphics.CGFloat
+  public var titleSpacing: CoreGraphics.CGFloat?
   @objc public init(textConfiguration: BanubaUtilities.TextConfiguration?, cornerRadius: CoreGraphics.CGFloat, backgroundColor: UIKit.UIColor, borderWidth: CoreGraphics.CGFloat = .zero, borderColor: CoreGraphics.CGColor = UIColor.clear.cgColor, width: CoreGraphics.CGFloat = 70.0, height: CoreGraphics.CGFloat = 30.0)
   @objc override dynamic public init()
   @objc deinit
+}
+extension Error {
+  public var isCancelled: Swift.Bool {
+    get
+  }
 }
 public class PreviewExtractor {
   final public let asset: AVFoundation.AVAsset
@@ -698,6 +739,35 @@ public class PreviewExtractor {
   public func startAnimating()
   public func stopAnimating()
   @objc deinit
+}
+public protocol Playable : AnyObject {
+  func startPlay(loop: Swift.Bool, fixedSpeed: Swift.Bool)
+  func startPlay(loop: Swift.Bool, fixedSpeed: Swift.Bool, start: CoreMedia.CMTime, end: CoreMedia.CMTime)
+  func pausePlay()
+  func stopPlay()
+  func resumePlay()
+  func previewLayer() -> AVFoundation.AVPlayerLayer
+  func smoothlySeek(to time: CoreMedia.CMTime)
+  func seek(to time: CoreMedia.CMTime)
+  func startStopPlay(loop: Swift.Bool, fixedSpeed: Swift.Bool)
+  func reloadPreview()
+  func reloadPreview(shouldAutoStart: Swift.Bool)
+  var currentTime: Foundation.TimeInterval { get }
+  var videoDuration: Swift.Double { get }
+  var currentTimeInCMTime: CoreMedia.CMTime { get }
+  var videoDurationCMTime: CoreMedia.CMTime { get }
+  var isPlaying: Swift.Bool { get }
+  var playerItem: AVFoundation.AVPlayerItem? { get }
+  var audioMix: AVFoundation.AVAudioMix? { get set }
+  var playerDelegate: BanubaUtilities.PlayerDelegate? { get set }
+  var avPlayer: AVFoundation.AVPlayer { get }
+  var isMuted: Swift.Bool { get set }
+  var startTimePlay: CoreMedia.CMTime { get }
+  var endTimePlay: CoreMedia.CMTime { get }
+}
+public protocol PlayerDelegate : AnyObject {
+  func playerPlaysFrame(_ player: BanubaUtilities.Playable, atTime time: CoreMedia.CMTime)
+  func playerDidEndPlaying(_ player: BanubaUtilities.Playable)
 }
 public protocol NibLoadable : AnyObject {
   static var nib: UIKit.UINib { get }
