@@ -50,18 +50,16 @@ public protocol ImageButtonConfigurationProtocol {
   var selectedImageConfiguration: BanubaUtilities.ImageConfigurationProtocol? { get set }
 }
 @objc @_inheritsConvenienceInitializers public class AlertViewController : UIKit.UIViewController, BanubaUtilities.NibLoadable {
-  public static func makeViewController() -> BanubaUtilities.AlertViewController
   public enum AlertType {
     case info
-    case selection
+    case selection(_: Swift.String?, _: Swift.String?)
     case missedPermission
     case discard
     case later
-    public static func == (a: BanubaUtilities.AlertViewController.AlertType, b: BanubaUtilities.AlertViewController.AlertType) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
+  }
+  public var titleText: Swift.String? {
+    get
+    set(value)
   }
   public var messageText: Swift.String? {
     get
@@ -113,13 +111,16 @@ public enum Connection : Swift.CustomStringConvertible {
     get
   }
 }
-public protocol AlertPresentable : AnyObject {
-  func presentAlert(alertType: BanubaUtilities.AlertViewController.AlertType, configuration: BanubaUtilities.AlertViewConfiguration, message: Swift.String, animated: Swift.Bool, completion: ((Swift.Bool) -> Swift.Void)?)
-  func presentSelectionAlert(configuration: BanubaUtilities.AlertViewConfiguration, message: Swift.String, animated: Swift.Bool, completion: ((Swift.Bool) -> Swift.Void)?)
+public protocol AlertViewControllerFactory : AnyObject {
+  func getAlertViewController() -> BanubaUtilities.AlertViewController?
+}
+public protocol AlertPresentable : BanubaUtilities.AlertViewControllerFactory {
+  func presentAlertViewController(alertType: BanubaUtilities.AlertViewController.AlertType, title: Swift.String, message: Swift.String?, animated: Swift.Bool, completion: ((Swift.Bool) -> Swift.Void)?)
+  func presentSelectionAlert(title: Swift.String, message: Swift.String?, animated: Swift.Bool, completion: ((Swift.Bool) -> Swift.Void)?)
 }
 extension AlertPresentable where Self : UIKit.UIViewController {
-  public func presentAlert(alertType: BanubaUtilities.AlertViewController.AlertType, configuration: BanubaUtilities.AlertViewConfiguration, message: Swift.String, animated: Swift.Bool, completion: ((Swift.Bool) -> Swift.Void)?)
-  public func presentSelectionAlert(configuration: BanubaUtilities.AlertViewConfiguration, message: Swift.String, animated: Swift.Bool, completion: ((Swift.Bool) -> Swift.Void)?)
+  public func presentAlertViewController(alertType: BanubaUtilities.AlertViewController.AlertType, title: Swift.String, message: Swift.String?, animated: Swift.Bool, completion: ((Swift.Bool) -> Swift.Void)?)
+  public func presentSelectionAlert(title: Swift.String, message: Swift.String?, animated: Swift.Bool, completion: ((Swift.Bool) -> Swift.Void)?)
 }
 public enum SharedLocalizedStrings {
   public enum Common {
@@ -172,7 +173,9 @@ extension UIButton {
   public var bottomViewConfiguration: BanubaUtilities.BackgroundConfiguration
   public var isDraftsHidden: Swift.Bool
   public var visibleTabsInGallery: [BanubaUtilities.GalleryMediaType]
-  public init(videoResolution: BanubaUtilities.VideoResolution, galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration, closeButtonConfiguration: BanubaUtilities.ImageButtonConfigurationProtocol, albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration, nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, draftsButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, noItemsLabelConfiguration: BanubaUtilities.TextConfiguration, layoutConfiguration: BanubaUtilities.GalleryLayoutConfiguration, topBarBlurColor: UIKit.UIColor, clearSelectionButtonConfiguration: BanubaUtilities.ImageButtonConfigurationProtocol, galleryTypeButton: BanubaUtilities.TextButtonConfiguration, galleryTypeUnderlineColor: UIKit.UIColor, isPhotoSequenceAnimationEnabled: Swift.Bool, importItemsLabelConfiguration: BanubaUtilities.TextConfiguration, bottomViewConfiguration: BanubaUtilities.BackgroundConfiguration, isDraftsHidden: Swift.Bool, visibleTabsInGallery: [BanubaUtilities.GalleryMediaType] = [.video, .photo])
+  public var isCloseButtonHidden: Swift.Bool
+  public var backgroundColor: UIKit.UIColor
+  public init(videoResolution: BanubaUtilities.VideoResolution, galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration, closeButtonConfiguration: BanubaUtilities.ImageButtonConfigurationProtocol, albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration, nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, draftsButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, noItemsLabelConfiguration: BanubaUtilities.TextConfiguration, layoutConfiguration: BanubaUtilities.GalleryLayoutConfiguration, topBarBlurColor: UIKit.UIColor, clearSelectionButtonConfiguration: BanubaUtilities.ImageButtonConfigurationProtocol, galleryTypeButton: BanubaUtilities.TextButtonConfiguration, galleryTypeUnderlineColor: UIKit.UIColor, isPhotoSequenceAnimationEnabled: Swift.Bool, importItemsLabelConfiguration: BanubaUtilities.TextConfiguration, bottomViewConfiguration: BanubaUtilities.BackgroundConfiguration, isDraftsHidden: Swift.Bool, isCloseButtonHidden: Swift.Bool, visibleTabsInGallery: [BanubaUtilities.GalleryMediaType] = [.video, .photo], backgroundColor: UIKit.UIColor)
   @objc override dynamic public init()
   @objc deinit
 }
@@ -218,6 +221,11 @@ public struct SaveButtonConfiguration {
 }
 extension UILabel {
   public func applyConfiguration(_ configuration: BanubaUtilities.TextConfiguration, with text: Swift.String)
+}
+extension CGPoint {
+  public mutating func transformToGradientSpace()
+  public func oppositePoint() -> CoreGraphics.CGPoint
+  public static func gradientPointForAngle(_ angle: CoreGraphics.CGFloat) -> CoreGraphics.CGPoint
 }
 extension String {
   public func lookUpForImage(in bundle: Foundation.Bundle) -> UIKit.UIImage?
@@ -278,15 +286,15 @@ public struct PlayerControlConfiguration {
 }
 public struct AlertViewConfiguration {
   public var cornerRadius: CoreGraphics.CGFloat
-  public var buttonRadius: CoreGraphics.CGFloat
+  public var refuseButtonRadius: CoreGraphics.CGFloat
+  public var agreeButtonRadius: CoreGraphics.CGFloat
   public var refuseButtonBackgroundColor: UIKit.UIColor
-  public var refuseButtonTextColor: UIKit.UIColor
   public var agreeButtonBackgroundColor: UIKit.UIColor
-  public var agreeButtonTextColor: UIKit.UIColor
-  public var titleAligment: UIKit.NSTextAlignment
-  public var titleFont: UIKit.UIFont
-  public var buttonsFont: UIKit.UIFont
-  public init(cornerRadius: CoreGraphics.CGFloat, buttonRadius: CoreGraphics.CGFloat, refuseButtonBackgroundColor: UIKit.UIColor, refuseButtonTextColor: UIKit.UIColor, agreeButtonBackgroundColor: UIKit.UIColor, agreeButtonTextColor: UIKit.UIColor, titleAligment: UIKit.NSTextAlignment, titleFont: UIKit.UIFont, buttonsFont: UIKit.UIFont)
+  public var refuseButtonTextConfig: BanubaUtilities.TextButtonConfiguration
+  public var agreeButtonTextConfig: BanubaUtilities.TextButtonConfiguration
+  public var titleTextConfig: BanubaUtilities.TextConfiguration
+  public var messageTextCongig: BanubaUtilities.TextConfiguration?
+  public init(cornerRadius: CoreGraphics.CGFloat, refuseButtonRadius: CoreGraphics.CGFloat, agreeButtonRadius: CoreGraphics.CGFloat, refuseButtonBackgroundColor: UIKit.UIColor, agreeButtonBackgroundColor: UIKit.UIColor, refuseButtonTextConfig: BanubaUtilities.TextButtonConfiguration, agreeButtonTextConfig: BanubaUtilities.TextButtonConfiguration, titleTextConfig: BanubaUtilities.TextConfiguration, messageTextCongig: BanubaUtilities.TextConfiguration? = nil)
 }
 public struct GalleryItemConfiguration {
   public var orderNumberBackgroudColor: UIKit.UIColor
@@ -304,6 +312,11 @@ extension UIStackView {
   public func addArrangedSubviews(_ subviews: [UIKit.UIView])
   public func removeAllArrangedSubviews()
 }
+extension CGFloat {
+  public var gradientPoints: (CoreGraphics.CGPoint, CoreGraphics.CGPoint) {
+    get
+  }
+}
 public struct ItemCollectionModel {
   public var assetCollection: Photos.PHAssetCollection
   public var previewAsset: Photos.PHAsset?
@@ -311,6 +324,9 @@ public struct ItemCollectionModel {
 public protocol GalleryAdapter : AnyObject {
   var changesHandler: BanubaUtilities.GalleryManager.ChangesHandler? { get set }
   func getPreviewImageForGallery(completion: @escaping (UIKit.UIImage?) -> ())
+  func fetchMediaAsset(from album: Photos.PHAssetCollection?, type: Photos.PHAssetMediaType) -> [BanubaUtilities.BanubaGalleryItem]
+  func requestAccessIfNeeded(completion: @escaping (Swift.Bool) -> ())
+  func fetchSmartAlbums() -> [BanubaUtilities.ItemCollectionModel]
   func register()
 }
 @objc final public class GalleryManager : ObjectiveC.NSObject, BanubaUtilities.GalleryAdapter {
