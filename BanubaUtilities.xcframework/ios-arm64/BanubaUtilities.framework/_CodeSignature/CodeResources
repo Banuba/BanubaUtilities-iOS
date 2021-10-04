@@ -6,7 +6,7 @@
 	<dict>
 		<key>AlertViewController.nib</key>
 		<data>
-		xAp1DBJ8K2WOGDRMNrf+kyOSdaE=
+		9MMP1e/hpwTF8kQuXKJmJ4HLWKQ=
 		</data>
 		<key>Headers/BNBAsyncOperation.h</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/BanubaUtilities-Swift.h</key>
 		<data>
-		vcA4yxaQDg5cYKqxoYnTkGomDGk=
+		X65DRqlja+uen2Uknx6BfTPDHmg=
 		</data>
 		<key>Headers/BanubaUtilities.h</key>
 		<data>
@@ -22,39 +22,39 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		I5ch2+GmgWaWImxPRbzcdw/k2qk=
+		ASB8GPcu32PMdrS6RtVaZVWW0RY=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		oD0NxrJD7Jy9E2cwl83KNiCXMFo=
+		XDz3NS6M0mU9224t/gtcq8IHICw=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		oD0NxrJD7Jy9E2cwl83KNiCXMFo=
+		XDz3NS6M0mU9224t/gtcq8IHICw=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		9jD7VmTj0qYNr423BQaxV8fZGew=
+		DX87uy276mBlrY/Q/YURs5/J2Ow=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		+2xyHsW2RQnvQt4iDIoNO+sRSmk=
+		MCWdWgz+gYMgYksec8LMwzjyzV8=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		mxDzz7kwOMwevxjD/6yhUK6gbps=
+		G135ykDubI7QmlN23F1JwQ0i8z4=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		9jD7VmTj0qYNr423BQaxV8fZGew=
+		DX87uy276mBlrY/Q/YURs5/J2Ow=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		+2xyHsW2RQnvQt4iDIoNO+sRSmk=
+		MCWdWgz+gYMgYksec8LMwzjyzV8=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		mxDzz7kwOMwevxjD/6yhUK6gbps=
+		G135ykDubI7QmlN23F1JwQ0i8z4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -67,7 +67,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7Xb+h64xxVeF3gwCHwCgv5CFPJw1XiAaSVby9lD9eWw=
+			IA3uSUqgzvBM6GyJkPphnZtJt8vAa8hXnCOZ5MsEoE4=
 			</data>
 		</dict>
 		<key>Headers/BNBAsyncOperation.h</key>
@@ -81,7 +81,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HBrWmuHKLZFpK32iR/p/IjpEVLWl7o/I1JZo5Hc+/wc=
+			JUxkDo/5av5e9lPskDfjfjnooFQLalDkCK1AxWU8YkE=
 			</data>
 		</dict>
 		<key>Headers/BanubaUtilities.h</key>
@@ -95,56 +95,56 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SXSe6rgrtWQD1uxL4o6s2+7+Oj3S+7q8YIU8uSEQj94=
+			Ncmn9SdKvIDva7STW7JFmKp1uAgyNzdQOKr6dwjheuQ=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SXSe6rgrtWQD1uxL4o6s2+7+Oj3S+7q8YIU8uSEQj94=
+			Ncmn9SdKvIDva7STW7JFmKp1uAgyNzdQOKr6dwjheuQ=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dmNHZMM15ACYIMfmVcuFw1ceOLLX2p6Rxl8UPQr5CAA=
+			I2GmOTH5xZdWIt6HM8nSnvP+gy0CWBlquOoAHHQPSao=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZWiNMMeLMYPe2GNRGunAr1uPdbN7XzWZuo3doCstQ7k=
+			VHGupSslF2ICEDjqysb2/TBvjviB58Oc6ywttA4dQzI=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HSa1vE9ukCzWy/0VD6oTiQ6uhznAN94APsjPd06JsiI=
+			xvobkFrZnjZmSRbXgbHqpsQ3olrdGjXtb2xPRmgG8Cc=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dmNHZMM15ACYIMfmVcuFw1ceOLLX2p6Rxl8UPQr5CAA=
+			I2GmOTH5xZdWIt6HM8nSnvP+gy0CWBlquOoAHHQPSao=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZWiNMMeLMYPe2GNRGunAr1uPdbN7XzWZuo3doCstQ7k=
+			VHGupSslF2ICEDjqysb2/TBvjviB58Oc6ywttA4dQzI=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HSa1vE9ukCzWy/0VD6oTiQ6uhznAN94APsjPd06JsiI=
+			xvobkFrZnjZmSRbXgbHqpsQ3olrdGjXtb2xPRmgG8Cc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

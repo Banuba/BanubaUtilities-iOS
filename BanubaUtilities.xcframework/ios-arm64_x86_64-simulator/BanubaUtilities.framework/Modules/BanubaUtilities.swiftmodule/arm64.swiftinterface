@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name BanubaUtilities
 import AVFoundation
 import AVKit
@@ -9,10 +9,11 @@ import Photos
 import Swift
 import SystemConfiguration
 import UIKit
+import _Concurrency
 import os.log
 import os
-extension UIView {
-  public func roundCorners(corners: UIKit.UIRectCorner, radius: CoreGraphics.CGFloat)
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public func roundCorners(corners: UIKit.UIRectCorner, radius: CoreGraphics.CGFloat)
 }
 public enum HintArrowPosition {
   case topLeft
@@ -34,22 +35,22 @@ public struct HintViewConfiguration {
   public let textConfiguration: BanubaUtilities.TextConfiguration
   public let arrowConfiguration: BanubaUtilities.HintViewConfiguration.ArrowConfiguration
 }
-@objc @_inheritsConvenienceInitializers open class HintView : UIKit.UIView {
-  open var configuration: BanubaUtilities.HintViewConfiguration
-  open var text: Swift.String? {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class HintView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) open var configuration: BanubaUtilities.HintViewConfiguration
+  @_Concurrency.MainActor(unsafe) open var text: Swift.String? {
     get
     set(value)
   }
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc override dynamic open func draw(_ rect: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func draw(_ rect: CoreGraphics.CGRect)
   @objc deinit
 }
 public protocol ImageButtonConfigurationProtocol {
   var imageConfiguration: BanubaUtilities.ImageConfigurationProtocol { get set }
   var selectedImageConfiguration: BanubaUtilities.ImageConfigurationProtocol? { get set }
 }
-@objc @_inheritsConvenienceInitializers public class AlertViewController : UIKit.UIViewController, BanubaUtilities.NibLoadable {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class AlertViewController : UIKit.UIViewController, BanubaUtilities.NibLoadable {
   public enum AlertType {
     case info
     case selection(_: Swift.String?, _: Swift.String?)
@@ -57,45 +58,44 @@ public protocol ImageButtonConfigurationProtocol {
     case discard
     case later
   }
-  public var titleText: Swift.String? {
+  @_Concurrency.MainActor(unsafe) public var titleText: Swift.String? {
     get
     set(value)
   }
-  public var messageText: Swift.String? {
+  @_Concurrency.MainActor(unsafe) public var messageText: Swift.String? {
     get
     set(value)
   }
-  public var alertType: BanubaUtilities.AlertViewController.AlertType? {
+  @_Concurrency.MainActor(unsafe) public var alertType: BanubaUtilities.AlertViewController.AlertType? {
     get
     set(value)
   }
-  public var configuration: BanubaUtilities.AlertViewConfiguration?
-  public var actionHandler: ((Swift.Bool) -> Swift.Void)?
-  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public var configuration: BanubaUtilities.AlertViewConfiguration?
+  @_Concurrency.MainActor(unsafe) public var actionHandler: ((Swift.Bool) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 @objc public class TextButtonConfiguration : ObjectiveC.NSObject {
   public var style: BanubaUtilities.TextConfiguration
   public var text: Swift.String?
   public init(style: BanubaUtilities.TextConfiguration, text: Swift.String? = nil)
-  @objc override dynamic public init()
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers public class SlideInPresentationManager : ObjectiveC.NSObject, UIKit.UIViewControllerTransitioningDelegate {
-  public var dimInteractionHandler: (() -> Swift.Void)? {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class SlideInPresentationManager : ObjectiveC.NSObject, UIKit.UIViewControllerTransitioningDelegate {
+  @_Concurrency.MainActor(unsafe) public var dimInteractionHandler: (() -> Swift.Void)? {
     get
     set(newValue)
   }
-  public init(coverPercentage: CoreGraphics.CGFloat, panToDismiss: Swift.Bool, isDimViewEnabled: Swift.Bool, dismissOnTapByDimView: Swift.Bool = false)
-  public init(coverHeight: CoreGraphics.CGFloat, panToDismiss: Swift.Bool, isDimViewEnabled: Swift.Bool, dismissOnTapByDimView: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public init(coverPercentage: CoreGraphics.CGFloat, panToDismiss: Swift.Bool, isDimViewEnabled: Swift.Bool, dismissOnTapByDimView: Swift.Bool = false)
+  @_Concurrency.MainActor(unsafe) public init(coverHeight: CoreGraphics.CGFloat, panToDismiss: Swift.Bool, isDimViewEnabled: Swift.Bool, dismissOnTapByDimView: Swift.Bool)
   @objc override dynamic public convenience init()
-  @objc public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
-  @objc public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
-  @objc public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
-  @objc public func interactionControllerForPresentation(using animator: UIKit.UIViewControllerAnimatedTransitioning) -> UIKit.UIViewControllerInteractiveTransitioning?
-  @objc public func interactionControllerForDismissal(using animator: UIKit.UIViewControllerAnimatedTransitioning) -> UIKit.UIViewControllerInteractiveTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
+  @_Concurrency.MainActor(unsafe) @objc public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc public func interactionControllerForPresentation(using animator: UIKit.UIViewControllerAnimatedTransitioning) -> UIKit.UIViewControllerInteractiveTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc public func interactionControllerForDismissal(using animator: UIKit.UIViewControllerAnimatedTransitioning) -> UIKit.UIViewControllerInteractiveTransitioning?
   @objc deinit
 }
 public enum Connection : Swift.CustomStringConvertible {
@@ -117,10 +117,13 @@ public protocol AlertViewControllerFactory : AnyObject {
 public protocol AlertPresentable : BanubaUtilities.AlertViewControllerFactory {
   func presentAlertViewController(alertType: BanubaUtilities.AlertViewController.AlertType, title: Swift.String, message: Swift.String?, animated: Swift.Bool, completion: ((Swift.Bool) -> Swift.Void)?)
   func presentSelectionAlert(title: Swift.String, message: Swift.String?, animated: Swift.Bool, completion: ((Swift.Bool) -> Swift.Void)?)
+  func presentSelectionAlert(withTitle title: Swift.String, message: Swift.String?, agreeButtonTitle: Swift.String?, disagreeButtonTitle: Swift.String?, animated: Swift.Bool, completion: @escaping ((_ success: Swift.Bool) -> Swift.Void))
 }
-extension AlertPresentable where Self : UIKit.UIViewController {
+extension BanubaUtilities.AlertPresentable where Self : UIKit.UIViewController {
   public func presentAlertViewController(alertType: BanubaUtilities.AlertViewController.AlertType, title: Swift.String, message: Swift.String?, animated: Swift.Bool, completion: ((Swift.Bool) -> Swift.Void)?)
   public func presentSelectionAlert(title: Swift.String, message: Swift.String?, animated: Swift.Bool, completion: ((Swift.Bool) -> Swift.Void)?)
+  public func presentAlert(alertType: BanubaUtilities.AlertViewController.AlertType, title: Swift.String, message: Swift.String?, animated: Swift.Bool = false, completion: ((Swift.Bool) -> Swift.Void)?)
+  public func presentSelectionAlert(withTitle title: Swift.String, message: Swift.String?, agreeButtonTitle: Swift.String? = nil, disagreeButtonTitle: Swift.String? = nil, animated: Swift.Bool = false, completion: @escaping ((_ success: Swift.Bool) -> Swift.Void))
 }
 public enum SharedLocalizedStrings {
   public enum Common {
@@ -139,20 +142,19 @@ public enum SharedLocalizedStrings {
   public static func format(_ timeInterval: Foundation.TimeInterval) -> Swift.String
   @objc deinit
 }
-extension UIButton {
-  public func applyConfiguration(_ configuration: BanubaUtilities.ImageButtonConfigurationProtocol)
-  public func applyConfiguration(_ configuration: BanubaUtilities.BackButtonConfiguration)
-  public func applyConfiguration(_ configuration: BanubaUtilities.RoundedButtonConfiguration)
-  public func applyConfiguration(_ configuration: BanubaUtilities.RoundedButtonConfiguration, with title: Swift.String)
-  public func applyConfiguration(_ configuration: BanubaUtilities.SaveButtonConfiguration)
-  public func applyConfiguration(_ configuration: BanubaUtilities.TextButtonConfiguration, with title: Swift.String)
-  public func applyConfiguration(_ configuration: BanubaUtilities.TextConfiguration, with title: Swift.String)
+extension UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.ImageButtonConfigurationProtocol)
+  @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.BackButtonConfiguration)
+  @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.RoundedButtonConfiguration)
+  @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.RoundedButtonConfiguration, with title: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.SaveButtonConfiguration)
+  @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.TextButtonConfiguration, with title: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.TextConfiguration, with title: Swift.String)
 }
 @objc public class BackgroundConfiguration : ObjectiveC.NSObject {
   public var cornerRadius: CoreGraphics.CGFloat
   public var color: UIKit.UIColor
   public init(cornerRadius: CoreGraphics.CGFloat, color: UIKit.UIColor)
-  @objc override dynamic public init()
   @objc deinit
 }
 @objc public class GalleryConfiguration : ObjectiveC.NSObject {
@@ -176,7 +178,6 @@ extension UIButton {
   public var isCloseButtonHidden: Swift.Bool
   public var backgroundColor: UIKit.UIColor
   public init(videoResolution: BanubaUtilities.VideoResolution, galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration, closeButtonConfiguration: BanubaUtilities.ImageButtonConfigurationProtocol, albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration, nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, draftsButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, noItemsLabelConfiguration: BanubaUtilities.TextConfiguration, layoutConfiguration: BanubaUtilities.GalleryLayoutConfiguration, topBarBlurColor: UIKit.UIColor, clearSelectionButtonConfiguration: BanubaUtilities.ImageButtonConfigurationProtocol, galleryTypeButton: BanubaUtilities.TextButtonConfiguration, galleryTypeUnderlineColor: UIKit.UIColor, isPhotoSequenceAnimationEnabled: Swift.Bool, importItemsLabelConfiguration: BanubaUtilities.TextConfiguration, bottomViewConfiguration: BanubaUtilities.BackgroundConfiguration, isDraftsHidden: Swift.Bool, isCloseButtonHidden: Swift.Bool, visibleTabsInGallery: [BanubaUtilities.GalleryMediaType] = [.video, .photo], backgroundColor: UIKit.UIColor)
-  @objc override dynamic public init()
   @objc deinit
 }
 @objc public protocol TimeLineDataSourceDelegate {
@@ -205,7 +206,6 @@ extension UIButton {
   public var itemsCount: Swift.Int
   public init(collection: BanubaUtilities.ItemCollectionModel)
   public func requestPreview(handler: @escaping (UIKit.UIImage?) -> Swift.Void)
-  @objc override dynamic public init()
   @objc deinit
 }
 public struct SaveButtonConfiguration {
@@ -219,15 +219,15 @@ public struct SaveButtonConfiguration {
   public var inactiveBackgroundColor: UIKit.UIColor
   public init(textConfiguration: BanubaUtilities.TextConfiguration, inactiveTextConfiguration: BanubaUtilities.TextConfiguration, text: Swift.String, width: CoreGraphics.CGFloat, height: CoreGraphics.CGFloat, cornerRadius: CoreGraphics.CGFloat, backgroundColor: UIKit.UIColor, inactiveBackgroundColor: UIKit.UIColor)
 }
-extension UILabel {
-  public func applyConfiguration(_ configuration: BanubaUtilities.TextConfiguration, with text: Swift.String)
+extension UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.TextConfiguration, with text: Swift.String)
 }
-extension CGPoint {
+extension CoreGraphics.CGPoint {
   public mutating func transformToGradientSpace()
   public func oppositePoint() -> CoreGraphics.CGPoint
   public static func gradientPointForAngle(_ angle: CoreGraphics.CGFloat) -> CoreGraphics.CGPoint
 }
-extension String {
+extension Swift.String {
   public func lookUpForImage(in bundle: Foundation.Bundle) -> UIKit.UIImage?
 }
 @_hasMissingDesignatedInitializers public class ConnectionListener {
@@ -261,14 +261,13 @@ public protocol PlayablePreview : AnyObject {
   var isPlaying: Swift.Bool { get }
   var previewView: UIKit.UIView { get }
 }
-extension Double {
+extension Swift.Double {
   public func rounded(toPlaces places: Swift.Int, rule: Swift.FloatingPointRoundingRule? = nil) -> Swift.Double
 }
 @objc public class AlbumsConfiguration : ObjectiveC.NSObject {
   public var textButton: BanubaUtilities.TextButtonConfiguration
   public var backButton: BanubaUtilities.BackButtonConfiguration
   public init(textButton: BanubaUtilities.TextButtonConfiguration, backButton: BanubaUtilities.BackButtonConfiguration)
-  @objc override dynamic public init()
   @objc deinit
 }
 public struct PlayerControlConfiguration {
@@ -308,11 +307,11 @@ public struct GalleryItemConfiguration {
   public var cornerRadius: CoreGraphics.CGFloat
   public init(orderNumberBackgroudColor: UIKit.UIColor, orderNumberTitleColor: UIKit.UIColor, orderNumberTitleFont: UIKit.UIFont, backgroundSelectionIndicatorImageName: Swift.String, hideSelectionIndicatorBySelection: Swift.Bool, durationLabelConfiguration: BanubaUtilities.TextConfiguration, durationLabelBackgroundColor: UIKit.UIColor, activityIndicatorConfiguration: BanubaUtilities.SmallActivityIndicatorConfiguration, cornerRadius: CoreGraphics.CGFloat)
 }
-extension UIStackView {
-  public func addArrangedSubviews(_ subviews: [UIKit.UIView])
-  public func removeAllArrangedSubviews()
+extension UIKit.UIStackView {
+  @_Concurrency.MainActor(unsafe) public func addArrangedSubviews(_ subviews: [UIKit.UIView])
+  @_Concurrency.MainActor(unsafe) public func removeAllArrangedSubviews()
 }
-extension CGFloat {
+extension CoreGraphics.CGFloat {
   public var gradientPoints: (CoreGraphics.CGPoint, CoreGraphics.CGPoint) {
     get
   }
@@ -344,12 +343,11 @@ public protocol GalleryAdapter : AnyObject {
   final public func getPreviewImageForGallery(completion: @escaping (UIKit.UIImage?) -> ())
   final public func fetchAssets(in collection: Photos.PHAssetCollection, options: Photos.PHFetchOptions) -> Photos.PHFetchResult<Photos.PHAsset>
   @objc deinit
-  @objc override dynamic public init()
 }
-extension GalleryManager : Photos.PHPhotoLibraryChangeObserver {
+extension BanubaUtilities.GalleryManager : Photos.PHPhotoLibraryChangeObserver {
   @objc final public func photoLibraryDidChange(_ changeInstance: Photos.PHChange)
 }
-extension GalleryManager {
+extension BanubaUtilities.GalleryManager {
   final public func fetchCollections(isNeedToStoreAssets: Swift.Bool) -> [BanubaUtilities.ItemCollectionModel]
   final public func fetchSmartAlbums() -> [BanubaUtilities.ItemCollectionModel]
   final public func fetchPhotoAndVideoAssets() -> [BanubaUtilities.BanubaGalleryItem]
@@ -386,24 +384,23 @@ extension GalleryManager {
   public var isAdditionalItemsRequired: Swift.Bool {
     get
   }
-  @objc override dynamic public init()
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc open class GalleryViewController : UIKit.UIViewController {
-  weak open var delegate: BanubaUtilities.GalleryViewControllerDelegate?
-  open var configuration: BanubaUtilities.GalleryConfiguration?
-  open var selectionBehaviour: BanubaUtilities.GallerySelectionBehaviour?
-  open func useAlbum(_ albumView: BanubaUtilities.AlbumModel)
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) open class GalleryViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) weak open var delegate: BanubaUtilities.GalleryViewControllerDelegate?
+  @_Concurrency.MainActor(unsafe) open var configuration: BanubaUtilities.GalleryConfiguration?
+  @_Concurrency.MainActor(unsafe) open var selectionBehaviour: BanubaUtilities.GallerySelectionBehaviour?
+  @_Concurrency.MainActor(unsafe) open func useAlbum(_ albumView: BanubaUtilities.AlbumModel)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc open class AlbumsViewController : UIKit.UIViewController {
-  weak open var delegate: BanubaUtilities.AlbumsViewControllerDelegate?
-  open var configuration: BanubaUtilities.AlbumsConfiguration?
-  open var selectedAlbum: BanubaUtilities.AlbumModel?
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) open class AlbumsViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) weak open var delegate: BanubaUtilities.AlbumsViewControllerDelegate?
+  @_Concurrency.MainActor(unsafe) open var configuration: BanubaUtilities.AlbumsConfiguration?
+  @_Concurrency.MainActor(unsafe) open var selectedAlbum: BanubaUtilities.AlbumModel?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 @objc public protocol AlbumsViewControllerDelegate {
@@ -428,16 +425,16 @@ public enum FileExtension {
     }
   }
 }
-@objc @_inheritsConvenienceInitializers public class CircularProgressView : UIKit.UIView, BanubaUtilities.ProgressAnimatableView {
-  public var progress: Swift.Float {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class CircularProgressView : UIKit.UIView, BanubaUtilities.ProgressAnimatableView {
+  @_Concurrency.MainActor(unsafe) public var progress: Swift.Float {
     get
     set(newValue)
   }
-  public var progressColor: UIKit.UIColor
-  public var shadowColor: UIKit.UIColor
-  @objc override dynamic public func layoutSubviews()
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public var progressColor: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) public var shadowColor: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 @objc public protocol ImageConfigurationProtocol {
@@ -480,7 +477,7 @@ public struct GalleryLayoutConfiguration {
 }
 public protocol ReusableView : AnyObject {
 }
-extension ReusableView {
+extension BanubaUtilities.ReusableView {
   public static var reuseIdentifier: Swift.String {
     get
   }
@@ -537,19 +534,18 @@ public struct BackButtonConfiguration {
   @objc open func requestAVURLAsset(progressHandler: ((Swift.Double) -> (Swift.Bool))?, handler: @escaping (AVFoundation.AVURLAsset?, Swift.Error?) -> Swift.Void)
   @objc open func requestPreview(size: CoreGraphics.CGSize = BanubaGalleryItem.defaultPreviewSize, handler: @escaping (UIKit.UIImage?) -> Swift.Void)
   @objc open func requestPhoto(size: CoreGraphics.CGSize, progressHandler: ((Swift.Double) -> (Swift.Bool))?, handler: @escaping (UIKit.UIImage?, Swift.Error?) -> Swift.Void)
-  @objc override dynamic public init()
   @objc deinit
 }
-extension BanubaGalleryItem {
+extension BanubaUtilities.BanubaGalleryItem {
   @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
 }
 @objc public protocol GalleryViewControllerFactory : ObjectiveC.NSObjectProtocol {
   @objc func makeGalleryViewController(withConfiguration configuration: BanubaUtilities.GalleryConfiguration, albumsConfiguration: BanubaUtilities.AlbumsConfiguration, selectionBehaviour: BanubaUtilities.GallerySelectionBehaviour) -> BanubaUtilities.GalleryViewController
 }
-extension Array {
+extension Swift.Array {
   public func unique<T>(by keyPath: Swift.KeyPath<Element, T>) -> [Element] where T : Swift.Hashable
 }
-extension Error {
+extension Swift.Error {
   public var errorMessage: Swift.String {
     get
   }
@@ -569,23 +565,20 @@ extension Error {
     public var color: BanubaUtilities.SmallActivityIndicatorConfiguration.GradientColorConfiguration?
     public var image: BanubaUtilities.ImageConfigurationProtocol?
     public init(type: BanubaUtilities.SmallActivityIndicatorConfiguration.GradientTypeAdapter, color: BanubaUtilities.SmallActivityIndicatorConfiguration.GradientColorConfiguration?, image: BanubaUtilities.ImageConfigurationProtocol?)
-    @objc override dynamic public init()
     @objc deinit
   }
   @objc public class GradientColorConfiguration : ObjectiveC.NSObject {
     public var angle: CoreGraphics.CGFloat
     public var colors: [CoreGraphics.CGColor]
     public init(angle: CoreGraphics.CGFloat, colors: [CoreGraphics.CGColor])
-    @objc override dynamic public init()
     @objc deinit
   }
   public var gradientType: BanubaUtilities.SmallActivityIndicatorConfiguration.GradientType
   public var activityLineWidth: CoreGraphics.CGFloat
   public init(gradientType: BanubaUtilities.SmallActivityIndicatorConfiguration.GradientType, activityLineWidth: CoreGraphics.CGFloat)
-  @objc override dynamic public init()
   @objc deinit
 }
-extension SmallActivityIndicatorConfiguration.GradientType {
+extension BanubaUtilities.SmallActivityIndicatorConfiguration.GradientType {
   @objc public static func color(_ color: BanubaUtilities.SmallActivityIndicatorConfiguration.GradientColorConfiguration) -> BanubaUtilities.SmallActivityIndicatorConfiguration.GradientType
   @objc public static func image(_ image: BanubaUtilities.ImageConfigurationProtocol) -> BanubaUtilities.SmallActivityIndicatorConfiguration.GradientType
 }
@@ -693,8 +686,8 @@ public enum DeviceModel : Swift.String {
     get
   }
 }
-extension UIDevice {
-  public var type: BanubaUtilities.DeviceModel {
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public var type: BanubaUtilities.DeviceModel {
     get
   }
 }
@@ -709,7 +702,7 @@ public struct RoundedButtonConfiguration {
   public var titleSpacing: CoreGraphics.CGFloat?
   public init(textConfiguration: BanubaUtilities.TextConfiguration?, cornerRadius: CoreGraphics.CGFloat, backgroundColor: UIKit.UIColor, borderWidth: CoreGraphics.CGFloat? = nil, borderColor: CoreGraphics.CGColor? = nil, width: CoreGraphics.CGFloat = 70.0, height: CoreGraphics.CGFloat = 30.0)
 }
-extension Error {
+extension Swift.Error {
   public var isCancelled: Swift.Bool {
     get
   }
@@ -722,19 +715,19 @@ public class PreviewExtractor {
   @objc deinit
   public func extractPreview(at time: CoreMedia.CMTime) -> UIKit.UIImage?
 }
-@objc @_inheritsConvenienceInitializers public class VideoEditorActivityIndicator : UIKit.UIView {
-  public var configuration: BanubaUtilities.SmallActivityIndicatorConfiguration? {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VideoEditorActivityIndicator : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var configuration: BanubaUtilities.SmallActivityIndicatorConfiguration? {
     get
     set(value)
   }
-  @objc override dynamic public var bounds: CoreGraphics.CGRect {
-    @objc get
-    @objc set(value)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var bounds: CoreGraphics.CGRect {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set(value)
   }
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
-  public func startAnimating()
-  public func stopAnimating()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public func startAnimating()
+  @_Concurrency.MainActor(unsafe) public func stopAnimating()
   @objc deinit
 }
 public protocol Playable : AnyObject {
@@ -769,12 +762,12 @@ public protocol PlayerDelegate : AnyObject {
 public protocol NibLoadable : AnyObject {
   static var nib: UIKit.UINib { get }
 }
-extension NibLoadable {
+extension BanubaUtilities.NibLoadable {
   public static var nib: UIKit.UINib {
     get
   }
 }
-extension NibLoadable where Self : UIKit.UIView {
+extension BanubaUtilities.NibLoadable where Self : UIKit.UIView {
   public static func loadFromNib() -> Self
 }
 @objc public class TextConfiguration : ObjectiveC.NSObject {
@@ -785,7 +778,6 @@ extension NibLoadable where Self : UIKit.UIView {
   public var text: Swift.String?
   public var shadow: BanubaUtilities.TextShadowConfiguration?
   public init(kern: Swift.Double = 0, font: UIKit.UIFont, color: UIKit.UIColor, alignment: UIKit.NSTextAlignment = .center, text: Swift.String? = nil, shadow: BanubaUtilities.TextShadowConfiguration? = nil)
-  @objc override dynamic public init()
   @objc deinit
 }
 public struct TextShadowConfiguration {
