@@ -322,12 +322,10 @@ public struct ItemCollectionModel {
 }
 public protocol GalleryAdapter : AnyObject {
   var changesHandler: BanubaUtilities.GalleryManager.ChangesHandler? { get set }
-  var isLibraryRegister: Swift.Bool { get }
   func getPreviewImageForGallery(completion: @escaping (UIKit.UIImage?) -> ())
   func fetchMediaAsset(from album: Photos.PHAssetCollection?, type: Photos.PHAssetMediaType) -> [BanubaUtilities.BanubaGalleryItem]
   func requestAccessIfNeeded(completion: @escaping (Swift.Bool) -> ())
   func fetchSmartAlbums() -> [BanubaUtilities.ItemCollectionModel]
-  func getAuthorizationStatus() -> Photos.PHAuthorizationStatus
   func register()
 }
 @objc final public class GalleryManager : ObjectiveC.NSObject, BanubaUtilities.GalleryAdapter {
@@ -339,15 +337,11 @@ public protocol GalleryAdapter : AnyObject {
     get
   }
   final public var isCollectionsObserve: Swift.Bool
-  final public var isLibraryRegister: Swift.Bool {
-    get
-  }
   required public init(isManuallyRegister: Swift.Bool, videoResolution: BanubaUtilities.VideoResolution, minimumDurationFromGallery: Foundation.TimeInterval)
   final public func register()
   final public func requestAccessIfNeeded(completion: @escaping (Swift.Bool) -> ())
   final public func getPreviewImageForGallery(completion: @escaping (UIKit.UIImage?) -> ())
   final public func fetchAssets(in collection: Photos.PHAssetCollection, options: Photos.PHFetchOptions) -> Photos.PHFetchResult<Photos.PHAsset>
-  final public func getAuthorizationStatus() -> Photos.PHAuthorizationStatus
   @objc deinit
 }
 extension BanubaUtilities.GalleryManager : Photos.PHPhotoLibraryChangeObserver {
