@@ -226,7 +226,8 @@ public struct TextOnVideoMetadata : Swift.Codable {
   public let startTime: BanubaUtilities.TimeMetadata
   public let endTime: BanubaUtilities.TimeMetadata
   public let coordinatesParams: BanubaUtilities.CoordinatesParams
-  public init(imageData: Foundation.Data?, textParams: BanubaUtilities.TextParams, startTime: BanubaUtilities.TimeMetadata, endTime: BanubaUtilities.TimeMetadata, coordinatesParams: BanubaUtilities.CoordinatesParams)
+  public let order: Swift.Int
+  public init(imageData: Foundation.Data?, textParams: BanubaUtilities.TextParams, startTime: BanubaUtilities.TimeMetadata, endTime: BanubaUtilities.TimeMetadata, coordinatesParams: BanubaUtilities.CoordinatesParams, order: Swift.Int)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -258,7 +259,8 @@ public struct GIFOnVideoMetadata : Swift.Codable {
   public let startTime: BanubaUtilities.TimeMetadata
   public let endTime: BanubaUtilities.TimeMetadata
   public let coordinatesParams: BanubaUtilities.CoordinatesParams
-  public init(id: Swift.String, imageData: Foundation.Data?, startTime: BanubaUtilities.TimeMetadata, endTime: BanubaUtilities.TimeMetadata, coordinatesParams: BanubaUtilities.CoordinatesParams)
+  public let order: Swift.Int
+  public init(id: Swift.String, imageData: Foundation.Data?, startTime: BanubaUtilities.TimeMetadata, endTime: BanubaUtilities.TimeMetadata, coordinatesParams: BanubaUtilities.CoordinatesParams, order: Swift.Int)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -344,7 +346,8 @@ public struct InteractiveQuestionMetadata : Swift.Codable {
   public let gradientColors: [BanubaUtilities.ColorParams]?
   public let textColor: BanubaUtilities.ColorParams?
   public let coordinatesParams: BanubaUtilities.CoordinatesParams
-  public init(imageData: Foundation.Data?, text: Swift.String, gradientColors: [BanubaUtilities.ColorParams]?, textColor: BanubaUtilities.ColorParams?, coordinatesParams: BanubaUtilities.CoordinatesParams)
+  public let order: Swift.Int
+  public init(imageData: Foundation.Data?, text: Swift.String, gradientColors: [BanubaUtilities.ColorParams]?, textColor: BanubaUtilities.ColorParams?, coordinatesParams: BanubaUtilities.CoordinatesParams, order: Swift.Int)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -354,7 +357,8 @@ public struct InteractivePollMetadata : Swift.Codable {
   public let leftCardText: Swift.String
   public let rightCardText: Swift.String
   public let coordinatesParams: BanubaUtilities.CoordinatesParams
-  public init(imageData: Foundation.Data?, titleText: Swift.String, leftCardText: Swift.String, rightCardText: Swift.String, coordinatesParams: BanubaUtilities.CoordinatesParams)
+  public let order: Swift.Int
+  public init(imageData: Foundation.Data?, titleText: Swift.String, leftCardText: Swift.String, rightCardText: Swift.String, coordinatesParams: BanubaUtilities.CoordinatesParams, order: Swift.Int)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -362,7 +366,8 @@ public struct InteractiveInterestMetadata : Swift.Codable {
   public let imageData: Foundation.Data?
   public let title: Swift.String
   public let coordinatesParams: BanubaUtilities.CoordinatesParams
-  public init(imageData: Foundation.Data?, title: Swift.String, coordinatesParams: BanubaUtilities.CoordinatesParams)
+  public let order: Swift.Int
+  public init(imageData: Foundation.Data?, title: Swift.String, coordinatesParams: BanubaUtilities.CoordinatesParams, order: Swift.Int)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -373,7 +378,8 @@ public struct InteractiveTestMetadata : Swift.Codable {
   public let title: Swift.String
   public let fields: [BanubaUtilities.InteractiveTestFieldMetaData]
   public let coordinatesParams: BanubaUtilities.CoordinatesParams
-  public init(imageData: Foundation.Data?, gradientColors: [BanubaUtilities.ColorParams]?, textColor: BanubaUtilities.ColorParams?, title: Swift.String, fields: [BanubaUtilities.InteractiveTestFieldMetaData], coordinatesParams: BanubaUtilities.CoordinatesParams)
+  public let order: Swift.Int
+  public init(imageData: Foundation.Data?, gradientColors: [BanubaUtilities.ColorParams]?, textColor: BanubaUtilities.ColorParams?, title: Swift.String, fields: [BanubaUtilities.InteractiveTestFieldMetaData], coordinatesParams: BanubaUtilities.CoordinatesParams, order: Swift.Int)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -812,6 +818,7 @@ public class AudioServiceItem : BanubaUtilities.AudioItem {
 }
 public protocol AudioServicing {
   var delegate: BanubaUtilities.AudioPlayerDelegate? { get set }
+  var rate: Swift.Float { get set }
   var currentAudio: BanubaUtilities.AudioServiceItem? { get }
   var duration: Foundation.TimeInterval? { get }
   func autoRepeat(repeat: Swift.Bool)
@@ -822,6 +829,7 @@ public protocol AudioServicing {
   func toggle()
   func play()
   func pause()
+  func setRate(_ rate: Swift.Float)
   func setDelegate(_ delegate: BanubaUtilities.AudioPlayerDelegate)
 }
 @objc @_inheritsConvenienceInitializers public class AudioService : ObjectiveC.NSObject, BanubaUtilities.AudioServicing, BanubaUtilities.AudioEditorServiceAdoptable {
@@ -831,10 +839,15 @@ public protocol AudioServicing {
   public var duration: Foundation.TimeInterval? {
     get
   }
+  public var rate: Swift.Float {
+    get
+    set(newValue)
+  }
   public func autoRepeat(repeat: Swift.Bool)
   public func seekToStart(isEnabled: Swift.Bool)
   public func load(track: BanubaUtilities.AudioTrackAdoptable) throws
   public func createAudioDirectory()
+  public func setRate(_ rate: Swift.Float)
   public func changeVolume(volume: Swift.Float)
   public func load(item: BanubaUtilities.AudioServiceItem) throws
   public func load(trackUrl: Foundation.URL) throws
