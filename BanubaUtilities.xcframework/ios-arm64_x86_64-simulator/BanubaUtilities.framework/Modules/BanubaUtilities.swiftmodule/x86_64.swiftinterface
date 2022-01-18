@@ -1,9 +1,10 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name BanubaUtilities
 import AVFoundation
 import AVKit
 @_exported import BanubaUtilities
+import CloudKit
 import Foundation
 import Photos
 import Swift
@@ -762,6 +763,8 @@ public protocol ProgressAnimatableView : UIKit.UIView {
   @objc func applicationWillResignActive(_ appStateObserver: BanubaUtilities.AppStateObserver)
   @objc func applicationDidBecomeActive(_ appStateObserver: BanubaUtilities.AppStateObserver)
   @objc optional func applicationWillEnterForeground(_ appStateObserver: BanubaUtilities.AppStateObserver)
+  @objc optional func applicationWillTerminateNotification(_ appStateObserver: BanubaUtilities.AppStateObserver)
+  @objc optional func applicationDidEnterBackgroundNotification(_ appStateObserver: BanubaUtilities.AppStateObserver)
 }
 @_inheritsConvenienceInitializers @objc public class AppStateObserver : ObjectiveC.NSObject {
   weak public var delegate: BanubaUtilities.AppStateObserverDelegate?
@@ -773,6 +776,8 @@ public protocol ProgressAnimatableView : UIKit.UIView {
   @objc public func handleApplicationWillResignActiveNotification(_ notification: Foundation.Notification)
   @objc public func handleApplicationDidBecomeActiveNotification(_ notification: Foundation.Notification)
   @objc public func handleWillEnterForegroundNotification(_ notification: Foundation.Notification)
+  @objc public func handleWillTerminateNotification(_ notification: Foundation.Notification)
+  @objc public func handleDidEnterBackgroundNotification(_ notification: Foundation.Notification)
 }
 public protocol PlayerStateStorable {
   var playerState: Swift.Bool { get set }
