@@ -277,11 +277,15 @@ SWIFT_CLASS("_TtC15BanubaUtilities19AlertViewController")
 
 
 
-@class NSNotification;
 
 SWIFT_CLASS("_TtC15BanubaUtilities16AppStateObserver")
 @interface AppStateObserver : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSNotification;
+
+@interface AppStateObserver (SWIFT_EXTENSION(BanubaUtilities))
 - (void)handleApplicationWillResignActiveNotification:(NSNotification * _Nonnull)notification;
 - (void)handleApplicationDidBecomeActiveNotification:(NSNotification * _Nonnull)notification;
 - (void)handleWillEnterForegroundNotification:(NSNotification * _Nonnull)notification;
@@ -886,11 +890,15 @@ SWIFT_CLASS("_TtC15BanubaUtilities19AlertViewController")
 
 
 
-@class NSNotification;
 
 SWIFT_CLASS("_TtC15BanubaUtilities16AppStateObserver")
 @interface AppStateObserver : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSNotification;
+
+@interface AppStateObserver (SWIFT_EXTENSION(BanubaUtilities))
 - (void)handleApplicationWillResignActiveNotification:(NSNotification * _Nonnull)notification;
 - (void)handleApplicationDidBecomeActiveNotification:(NSNotification * _Nonnull)notification;
 - (void)handleWillEnterForegroundNotification:(NSNotification * _Nonnull)notification;
