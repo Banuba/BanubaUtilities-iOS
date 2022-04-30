@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name BanubaUtilities
 import AVFoundation
 import AVKit
@@ -30,15 +30,15 @@ public protocol ImageButtonConfigurationProtocol {
   }
   @_Concurrency.MainActor(unsafe) public var titleText: Swift.String? {
     get
-    set(value)
+    set
   }
   @_Concurrency.MainActor(unsafe) public var messageText: Swift.String? {
     get
-    set(value)
+    set
   }
   @_Concurrency.MainActor(unsafe) public var alertType: BanubaUtilities.AlertViewController.AlertType? {
     get
-    set(value)
+    set
   }
   @_Concurrency.MainActor(unsafe) public var configuration: BanubaUtilities.AlertViewConfiguration?
   @_Concurrency.MainActor(unsafe) public var actionHandler: ((Swift.Bool) -> Swift.Void)?
@@ -69,11 +69,11 @@ public enum AspectRatio : Swift.UInt8, Swift.Codable {
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class SlideInPresentationManager : ObjectiveC.NSObject, UIKit.UIViewControllerTransitioningDelegate {
   @_Concurrency.MainActor(unsafe) public var dimInteractionHandler: (() -> Swift.Void)? {
     get
-    set(newValue)
+    set
   }
   @_Concurrency.MainActor(unsafe) public init(coverPercentage: CoreGraphics.CGFloat, panToDismiss: Swift.Bool, isDimViewEnabled: Swift.Bool, dismissOnTapByDimView: Swift.Bool = false)
   @_Concurrency.MainActor(unsafe) public init(coverHeight: CoreGraphics.CGFloat, panToDismiss: Swift.Bool, isDimViewEnabled: Swift.Bool, dismissOnTapByDimView: Swift.Bool)
-  @objc override dynamic public convenience init()
+  @objc convenience override dynamic public init()
   @_Concurrency.MainActor(unsafe) @objc public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
   @_Concurrency.MainActor(unsafe) @objc public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
   @_Concurrency.MainActor(unsafe) @objc public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
@@ -82,9 +82,7 @@ public enum AspectRatio : Swift.UInt8, Swift.Codable {
   @objc deinit
 }
 public enum Connection : Swift.CustomStringConvertible {
-  case none
-  case wifi
-  case cellular
+  case none, wifi, cellular
   public var description: Swift.String {
     get
   }
@@ -110,15 +108,15 @@ extension BanubaUtilities.AlertPresentable where Self : UIKit.UIViewController {
 }
 public enum SharedLocalizedStrings {
   public enum Common {
-    public static var ok: Swift.String
-    public static var yes: Swift.String
-    public static var no: Swift.String
+    public static let ok: Swift.String
+    public static let yes: Swift.String
+    public static let no: Swift.String
   }
   public enum Alert {
-    public static var settings: Swift.String
-    public static var refuseSettings: Swift.String
-    public static var later: Swift.String
-    public static var discard: Swift.String
+    public static let settings: Swift.String
+    public static let refuseSettings: Swift.String
+    public static let later: Swift.String
+    public static let discard: Swift.String
   }
 }
 @_hasMissingDesignatedInitializers public class VideoDurationFormatter {
@@ -547,7 +545,7 @@ public struct MediaTrackTimeRange : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
 }
 public class MediaTrack : Swift.Codable {
-  public static var unknownId: CoreMedia.CMPersistentTrackID
+  public static let unknownId: CoreMedia.CMPersistentTrackID
   public var id: CoreMedia.CMPersistentTrackID
   final public let url: Foundation.URL
   public var timeRange: BanubaUtilities.MediaTrackTimeRange
@@ -762,7 +760,7 @@ public enum FileExtension {
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class CircularProgressView : UIKit.UIView, BanubaUtilities.ProgressAnimatableView {
   @_Concurrency.MainActor(unsafe) public var progress: Swift.Float {
     get
-    set(newValue)
+    set
   }
   @_Concurrency.MainActor(unsafe) public var progressColor: UIKit.UIColor
   @_Concurrency.MainActor(unsafe) public var shadowColor: UIKit.UIColor
@@ -794,7 +792,7 @@ public protocol ProgressAnimatableView : UIKit.UIView {
 @_inheritsConvenienceInitializers @objc public class AppStateObserver : ObjectiveC.NSObject {
   weak public var delegate: BanubaUtilities.AppStateObserverDelegate?
   @objc override dynamic public init()
-  public convenience init(delegate: BanubaUtilities.AppStateObserverDelegate?)
+  convenience public init(delegate: BanubaUtilities.AppStateObserverDelegate?)
   @objc deinit
 }
 extension BanubaUtilities.AppStateObserver {
@@ -884,7 +882,7 @@ public protocol AudioServicing {
   }
   public var rate: Swift.Float {
     get
-    set(newValue)
+    set
   }
   public func autoRepeat(repeat: Swift.Bool)
   public func seekToStart(isEnabled: Swift.Bool)
@@ -932,7 +930,7 @@ extension BanubaUtilities.AudioServicing {
   @objc func requestAVURLAsset(progressHandler: ((Swift.Double) -> (Swift.Bool))?, handler: @escaping (AVFoundation.AVURLAsset?, Swift.Error?) -> Swift.Void)
 }
 @objc open class BanubaGalleryItem : ObjectiveC.NSObject, BanubaUtilities.GalleryItem {
-  public static var defaultPreviewSize: CoreGraphics.CGSize
+  public static let defaultPreviewSize: CoreGraphics.CGSize
   final public let asset: Photos.PHAsset
   final public let videoResolution: BanubaUtilities.VideoResolution
   @objc public var preview: UIKit.UIImage?
@@ -1035,67 +1033,7 @@ public struct VideoResolutionConfiguration {
   public init(default: BanubaUtilities.VideoResolution, resolutions: [BanubaUtilities.DeviceModel : BanubaUtilities.VideoResolution], thumbnailHeights: [BanubaUtilities.DeviceModel : CoreGraphics.CGFloat], defaultThumbnailHeight: CoreGraphics.CGFloat)
 }
 public enum DeviceModel : Swift.String {
-  case simulator
-  case iPod1
-  case iPod2
-  case iPod3
-  case iPod4
-  case iPod5
-  case iPod6
-  case iPod7
-  case iPad2
-  case iPad3
-  case iPad4
-  case iPad5
-  case iPad6
-  case iPad7
-  case iPad8
-  case iPadMini1
-  case iPadMini2
-  case iPadMini3
-  case iPadMini4
-  case iPadMini5
-  case iPadAir1
-  case iPadAir2
-  case iPadAir3
-  case iPadAir4
-  case iPadPro9_7
-  case iPadPro10_5
-  case iPadPro11
-  case iPadPro2_11
-  case iPadPro3_11
-  case iPadPro12_9
-  case iPadPro2_12_9
-  case iPadPro3_12_9
-  case iPadPro4_12_9
-  case iPadPro5_12_9
-  case iPhone4
-  case iPhone4S
-  case iPhone5
-  case iPhone5S
-  case iPhone5C
-  case iPhone6
-  case iPhone6plus
-  case iPhone6S
-  case iPhone6Splus
-  case iPhoneSE
-  case iPhone7
-  case iPhone7plus
-  case iPhone8
-  case iPhone8plus
-  case iPhoneX
-  case iPhoneXS
-  case iPhoneXSmax
-  case iPhoneXR
-  case iPhone11
-  case iPhone11Pro
-  case iPhone11ProMax
-  case iPhoneSE2ndGen
-  case iPhone12
-  case iPhone12Mini
-  case iPhone12Pro
-  case iPhone12ProMax
-  case unrecognized
+  case simulator, iPod1, iPod2, iPod3, iPod4, iPod5, iPod6, iPod7, iPad2, iPad3, iPad4, iPad5, iPad6, iPad7, iPad8, iPadMini1, iPadMini2, iPadMini3, iPadMini4, iPadMini5, iPadAir1, iPadAir2, iPadAir3, iPadAir4, iPadPro9_7, iPadPro10_5, iPadPro11, iPadPro2_11, iPadPro3_11, iPadPro12_9, iPadPro2_12_9, iPadPro3_12_9, iPadPro4_12_9, iPadPro5_12_9, iPhone4, iPhone4S, iPhone5, iPhone5S, iPhone5C, iPhone6, iPhone6plus, iPhone6S, iPhone6Splus, iPhoneSE, iPhone7, iPhone7plus, iPhone8, iPhone8plus, iPhoneX, iPhoneXS, iPhoneXSmax, iPhoneXR, iPhone11, iPhone11Pro, iPhone11ProMax, iPhoneSE2ndGen, iPhone12, iPhone12Mini, iPhone12Pro, iPhone12ProMax, unrecognized
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -1137,11 +1075,11 @@ public class PreviewExtractor {
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VideoEditorActivityIndicator : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public var configuration: BanubaUtilities.SmallActivityIndicatorConfiguration? {
     get
-    set(value)
+    set
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var bounds: CoreGraphics.CGRect {
     @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set(value)
+    @_Concurrency.MainActor(unsafe) @objc set
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
@@ -1250,3 +1188,42 @@ public struct TextShadowConfiguration {
   public init(shadowColor: UIKit.UIColor = UIColor.black.withAlphaComponent(0.4), shadowOffset: CoreGraphics.CGSize = CGSize(width: 0, height: 1), shadowBlurRadius: CoreGraphics.CGFloat = 2.0)
   public func shadow() -> UIKit.NSShadow
 }
+extension BanubaUtilities.AspectRatio : Swift.Equatable {}
+extension BanubaUtilities.AspectRatio : Swift.Hashable {}
+extension BanubaUtilities.AspectRatio : Swift.RawRepresentable {}
+extension BanubaUtilities.Connection : Swift.Equatable {}
+extension BanubaUtilities.Connection : Swift.Hashable {}
+extension BanubaUtilities.VideoSequenceEditingStep : Swift.Equatable {}
+extension BanubaUtilities.VideoSequenceEditingStep : Swift.Hashable {}
+extension BanubaUtilities.VideoSequenceEditingStep : Swift.RawRepresentable {}
+extension BanubaUtilities.GalleryMediaType : Swift.Equatable {}
+extension BanubaUtilities.GalleryMediaType : Swift.Hashable {}
+extension BanubaUtilities.GalleryMediaType : Swift.RawRepresentable {}
+extension BanubaUtilities.FileExtension.Video : Swift.Equatable {}
+extension BanubaUtilities.FileExtension.Video : Swift.Hashable {}
+extension BanubaUtilities.FileExtension.Video : Swift.RawRepresentable {}
+extension BanubaUtilities.FileExtension.Music : Swift.Equatable {}
+extension BanubaUtilities.FileExtension.Music : Swift.Hashable {}
+extension BanubaUtilities.FileExtension.Music : Swift.RawRepresentable {}
+extension BanubaUtilities.BackButtonConfiguration.Position : Swift.Equatable {}
+extension BanubaUtilities.BackButtonConfiguration.Position : Swift.Hashable {}
+extension BanubaUtilities.BackButtonConfiguration.Position : Swift.Sendable {}
+extension BanubaUtilities.DrawableFigure : Swift.Equatable {}
+extension BanubaUtilities.DrawableFigure : Swift.Hashable {}
+extension BanubaUtilities.GalleryItemType : Swift.Equatable {}
+extension BanubaUtilities.GalleryItemType : Swift.Hashable {}
+extension BanubaUtilities.GalleryItemType : Swift.RawRepresentable {}
+extension BanubaUtilities.SmallActivityIndicatorConfiguration.GradientTypeAdapter : Swift.Equatable {}
+extension BanubaUtilities.SmallActivityIndicatorConfiguration.GradientTypeAdapter : Swift.Hashable {}
+extension BanubaUtilities.SmallActivityIndicatorConfiguration.GradientTypeAdapter : Swift.RawRepresentable {}
+extension BanubaUtilities.VideoResolution : Swift.Equatable {}
+extension BanubaUtilities.VideoResolution : Swift.Hashable {}
+extension BanubaUtilities.VideoResolution : Swift.RawRepresentable {}
+extension BanubaUtilities.DeviceModel : Swift.Equatable {}
+extension BanubaUtilities.DeviceModel : Swift.Hashable {}
+extension BanubaUtilities.DeviceModel : Swift.RawRepresentable {}
+extension BanubaUtilities.AudioTrackLinePosition : Swift.Equatable {}
+extension BanubaUtilities.AudioTrackLinePosition : Swift.Hashable {}
+extension BanubaUtilities.AudioTrackLinePosition : Swift.RawRepresentable {}
+extension BanubaUtilities.AudioTrackLineViewMovement : Swift.Equatable {}
+extension BanubaUtilities.AudioTrackLineViewMovement : Swift.Hashable {}
