@@ -274,6 +274,7 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities28AlbumsViewControllerDelegate_")
 
 SWIFT_CLASS("_TtC15BanubaUtilities19AlertViewController")
 @interface AlertViewController : UIViewController
+@property (nonatomic, readonly) UIStatusBarStyle preferredStatusBarStyle;
 - (void)viewWillAppear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
@@ -909,6 +910,7 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities28AlbumsViewControllerDelegate_")
 
 SWIFT_CLASS("_TtC15BanubaUtilities19AlertViewController")
 @interface AlertViewController : UIViewController
+@property (nonatomic, readonly) UIStatusBarStyle preferredStatusBarStyle;
 - (void)viewWillAppear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;

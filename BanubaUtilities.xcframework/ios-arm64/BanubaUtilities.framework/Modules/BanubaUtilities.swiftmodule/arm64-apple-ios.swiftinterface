@@ -18,6 +18,9 @@ public protocol ImageButtonConfigurationProtocol {
   var selectedImageConfiguration: BanubaUtilities.ImageConfigurationProtocol? { get set }
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class AlertViewController : UIKit.UIViewController, BanubaUtilities.NibLoadable {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
   public enum AlertType {
     case info
     case selection(_: Swift.String?, _: Swift.String?)
@@ -141,6 +144,7 @@ public enum SharedLocalizedStrings {
   @objc deinit
 }
 extension UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.ImageTextButtonConfiguration)
   @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.ImageButtonConfigurationProtocol)
   @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.BackButtonConfiguration)
   @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.RoundedButtonConfiguration)
@@ -506,7 +510,8 @@ extension Swift.Double {
   public var isCloseButtonHidden: Swift.Bool
   public var backgroundColor: UIKit.UIColor
   public var maximumSelectedCountFromGallery: Swift.Int
-  public init(videoResolution: BanubaUtilities.VideoResolution, galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration, closeButtonConfiguration: BanubaUtilities.ImageButtonConfigurationProtocol, albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration, collectionInfoHeaderConfiguration: BanubaUtilities.CollectionInfoHeaderConfiguration, galleryItemPreviewViewConfiguration: BanubaUtilities.GalleryItemPreviewViewConfiguration, nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, draftsButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, noItemsLabelConfiguration: BanubaUtilities.TextConfiguration, layoutConfiguration: BanubaUtilities.GalleryLayoutConfiguration, topBarBlurColor: UIKit.UIColor, clearSelectionButtonConfiguration: BanubaUtilities.ImageButtonConfigurationProtocol, galleryTypeButton: BanubaUtilities.TextButtonConfiguration, galleryTypeUnderlineColor: UIKit.UIColor, isPhotoSequenceAnimationEnabled: Swift.Bool, importItemsLabelConfiguration: BanubaUtilities.TextConfiguration, bottomViewConfiguration: BanubaUtilities.BackgroundConfiguration, isDraftsHidden: Swift.Bool, isCloseButtonHidden: Swift.Bool, visibleTabsInGallery: [BanubaUtilities.GalleryMediaType] = [.video, .photo], backgroundColor: UIKit.UIColor, maximumSelectedCountFromGallery: Swift.Int)
+  public var preferredStatusBarStyle: UIKit.UIStatusBarStyle
+  public init(videoResolution: BanubaUtilities.VideoResolution, galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration, closeButtonConfiguration: BanubaUtilities.ImageButtonConfigurationProtocol, albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration, collectionInfoHeaderConfiguration: BanubaUtilities.CollectionInfoHeaderConfiguration, galleryItemPreviewViewConfiguration: BanubaUtilities.GalleryItemPreviewViewConfiguration, nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, draftsButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, noItemsLabelConfiguration: BanubaUtilities.TextConfiguration, layoutConfiguration: BanubaUtilities.GalleryLayoutConfiguration, topBarBlurColor: UIKit.UIColor, clearSelectionButtonConfiguration: BanubaUtilities.ImageButtonConfigurationProtocol, galleryTypeButton: BanubaUtilities.TextButtonConfiguration, galleryTypeUnderlineColor: UIKit.UIColor, isPhotoSequenceAnimationEnabled: Swift.Bool, importItemsLabelConfiguration: BanubaUtilities.TextConfiguration, bottomViewConfiguration: BanubaUtilities.BackgroundConfiguration, isDraftsHidden: Swift.Bool, isCloseButtonHidden: Swift.Bool, visibleTabsInGallery: [BanubaUtilities.GalleryMediaType] = [.video, .photo], backgroundColor: UIKit.UIColor, maximumSelectedCountFromGallery: Swift.Int, preferredStatusBarStyle: UIKit.UIStatusBarStyle)
   @objc deinit
 }
 @objc public protocol TimeLineDataSourceDelegate {
@@ -690,16 +695,21 @@ public struct AlertViewConfiguration {
   public var cornerRadius: CoreGraphics.CGFloat
   public var refuseButtonRadius: CoreGraphics.CGFloat
   public var agreeButtonRadius: CoreGraphics.CGFloat
+  public var additionalButtonRadius: CoreGraphics.CGFloat
   public var refuseButtonBackgroundColor: UIKit.UIColor
   public var agreeButtonBackgroundColor: UIKit.UIColor
   public var additionalButtonBackgroundColor: UIKit.UIColor
+  public var refuseButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration
+  public var agreeButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration
+  public var additionalButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration
   public var resetButtonTextConfig: BanubaUtilities.TextButtonConfiguration
   public var additionalButtonTextConfig: BanubaUtilities.TextButtonConfiguration
   public var refuseButtonTextConfig: BanubaUtilities.TextButtonConfiguration
   public var agreeButtonTextConfig: BanubaUtilities.TextButtonConfiguration
   public var titleTextConfig: BanubaUtilities.TextConfiguration
   public var messageTextCongig: BanubaUtilities.TextConfiguration?
-  public init(cornerRadius: CoreGraphics.CGFloat, refuseButtonRadius: CoreGraphics.CGFloat, agreeButtonRadius: CoreGraphics.CGFloat, refuseButtonBackgroundColor: UIKit.UIColor, agreeButtonBackgroundColor: UIKit.UIColor, additionalButtonBackgroundColor: UIKit.UIColor, resetButtonTextConfig: BanubaUtilities.TextButtonConfiguration, refuseButtonTextConfig: BanubaUtilities.TextButtonConfiguration, agreeButtonTextConfig: BanubaUtilities.TextButtonConfiguration, additionalButtonTextConfig: BanubaUtilities.TextButtonConfiguration, titleTextConfig: BanubaUtilities.TextConfiguration, messageTextCongig: BanubaUtilities.TextConfiguration? = nil)
+  public var preferredStatusBarStyle: UIKit.UIStatusBarStyle
+  public init(cornerRadius: CoreGraphics.CGFloat, refuseButtonRadius: CoreGraphics.CGFloat, agreeButtonRadius: CoreGraphics.CGFloat, additionalButtonRadius: CoreGraphics.CGFloat, refuseButtonBackgroundColor: UIKit.UIColor, agreeButtonBackgroundColor: UIKit.UIColor, additionalButtonBackgroundColor: UIKit.UIColor, refuseButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration, agreeButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration, additionalButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration, resetButtonTextConfig: BanubaUtilities.TextButtonConfiguration, refuseButtonTextConfig: BanubaUtilities.TextButtonConfiguration, agreeButtonTextConfig: BanubaUtilities.TextButtonConfiguration, additionalButtonTextConfig: BanubaUtilities.TextButtonConfiguration, titleTextConfig: BanubaUtilities.TextConfiguration, messageTextCongig: BanubaUtilities.TextConfiguration? = nil, preferredStatusBarStyle: UIKit.UIStatusBarStyle)
 }
 public struct GalleryItemConfiguration {
   public var orderNumberBackgroudColor: UIKit.UIColor
@@ -919,6 +929,12 @@ extension BanubaUtilities.AppStateObserver {
 }
 public protocol PlayerStateStorable {
   var playerState: Swift.Bool { get set }
+}
+public struct ImageTextButtonConfiguration {
+  public var imageConfiguration: BanubaUtilities.ImageConfigurationProtocol?
+  public var selectedImageConfiguration: BanubaUtilities.ImageConfigurationProtocol?
+  public var style: BanubaUtilities.TextConfiguration?
+  public init(imageConfiguration: BanubaUtilities.ImageConfigurationProtocol? = nil, selectedImageConfiguration: BanubaUtilities.ImageConfigurationProtocol? = nil, style: BanubaUtilities.TextConfiguration? = nil)
 }
 public struct GalleryLayoutConfiguration {
   public var numberOfItemsPerRow: Swift.Int
@@ -1163,6 +1179,11 @@ extension UIKit.UIDevice {
 }
 extension AVFoundation.AVCaptureSession.Preset {
   public mutating func downgrade()
+}
+public struct BorderButtonConfiguration {
+  public var borderWidth: CoreGraphics.CGFloat
+  public var borderColor: CoreGraphics.CGColor
+  public init(borderWidth: CoreGraphics.CGFloat, borderColor: CoreGraphics.CGColor)
 }
 public struct RoundedButtonConfiguration {
   public var textConfiguration: BanubaUtilities.TextConfiguration?
