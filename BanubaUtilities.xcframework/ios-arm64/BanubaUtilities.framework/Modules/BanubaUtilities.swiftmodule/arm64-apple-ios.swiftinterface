@@ -389,6 +389,7 @@ public class AudioTrack : BanubaUtilities.AudioTrackAdoptable {
   public var avAssetTrack: AVFoundation.AVAssetTrack?
   public var avURLAsset: AVFoundation.AVURLAsset
   public var timeRange: CoreMedia.CMTimeRange
+  public var trimmedTimeRange: CoreMedia.CMTimeRange
   public var compositionStart: CoreMedia.CMTime
   public var url: Foundation.URL
   public var originalURL: Foundation.URL
@@ -399,7 +400,7 @@ public class AudioTrack : BanubaUtilities.AudioTrackAdoptable {
   public var position: BanubaUtilities.AudioTrackLinePosition
   public var applyedFilterId: Swift.Int?
   final public let isCameraTrack: Swift.Bool
-  required public init(url: Foundation.URL, originalURL: Foundation.URL, id: Swift.Int32, timeRange: CoreMedia.CMTimeRange, compositionStart: CoreMedia.CMTime, avURLAsset: AVFoundation.AVURLAsset, isAudioRecord: Swift.Bool, isEditable: Swift.Bool, isCameraTrack: Swift.Bool, title: Swift.String?, additionalTitle: Swift.String?, applyedFilterId: Swift.Int?)
+  required public init(url: Foundation.URL, originalURL: Foundation.URL, id: Swift.Int32, timeRange: CoreMedia.CMTimeRange, trimTimeRange trimmedTimeRange: CoreMedia.CMTimeRange, compositionStart: CoreMedia.CMTime, avURLAsset: AVFoundation.AVURLAsset, isAudioRecord: Swift.Bool, isEditable: Swift.Bool, isCameraTrack: Swift.Bool, title: Swift.String?, additionalTitle: Swift.String?, applyedFilterId: Swift.Int?)
   @objc deinit
 }
 public struct VideoInteractiveMetadata : Swift.Codable {
@@ -1268,6 +1269,7 @@ public protocol AudioTrackAdoptable : AnyObject {
   var avAssetTrack: AVFoundation.AVAssetTrack? { get set }
   var avURLAsset: AVFoundation.AVURLAsset { get set }
   var timeRange: CoreMedia.CMTimeRange { get set }
+  var trimmedTimeRange: CoreMedia.CMTimeRange { get set }
   var url: Foundation.URL { get set }
   var originalURL: Foundation.URL { get set }
   var title: Swift.String? { get set }
@@ -1277,7 +1279,7 @@ public protocol AudioTrackAdoptable : AnyObject {
   var applyedFilterId: Swift.Int? { get set }
   var isEditable: Swift.Bool { get set }
   var isCameraTrack: Swift.Bool { get }
-  init(url: Foundation.URL, originalURL: Foundation.URL, id: Swift.Int32, timeRange: CoreMedia.CMTimeRange, compositionStart: CoreMedia.CMTime, avURLAsset: AVFoundation.AVURLAsset, isAudioRecord: Swift.Bool, isEditable: Swift.Bool, isCameraTrack: Swift.Bool, title: Swift.String?, additionalTitle: Swift.String?, applyedFilterId: Swift.Int?)
+  init(url: Foundation.URL, originalURL: Foundation.URL, id: Swift.Int32, timeRange: CoreMedia.CMTimeRange, trimTimeRange: CoreMedia.CMTimeRange, compositionStart: CoreMedia.CMTime, avURLAsset: AVFoundation.AVURLAsset, isAudioRecord: Swift.Bool, isEditable: Swift.Bool, isCameraTrack: Swift.Bool, title: Swift.String?, additionalTitle: Swift.String?, applyedFilterId: Swift.Int?)
 }
 public enum AudioTrackLinePosition : Swift.Int, Swift.CaseIterable {
   case first
