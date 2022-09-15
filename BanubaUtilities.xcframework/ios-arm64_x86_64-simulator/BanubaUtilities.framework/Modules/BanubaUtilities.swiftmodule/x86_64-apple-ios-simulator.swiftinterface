@@ -13,31 +13,20 @@ import UIKit
 import _Concurrency
 import os.log
 import os
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public func roundCorners(corners: UIKit.UIRectCorner, radius: CoreGraphics.CGFloat)
+}
 public protocol ImageButtonConfigurationProtocol {
   var imageConfiguration: BanubaUtilities.ImageConfigurationProtocol { get set }
   var selectedImageConfiguration: BanubaUtilities.ImageConfigurationProtocol? { get set }
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class AlertViewController : UIKit.UIViewController, BanubaUtilities.NibLoadable {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
-    @_Concurrency.MainActor(unsafe) @objc get
-  }
   public enum AlertType {
     case info
     case selection(_: Swift.String?, _: Swift.String?)
-    case reset(_: Swift.String?, _: Swift.String?, _: Swift.String?)
     case missedPermission
     case discard
     case later
-  }
-  public enum ButtonType {
-    case agreeButton
-    case refuseButton
-    case additionalButton
-    public static func == (a: BanubaUtilities.AlertViewController.ButtonType, b: BanubaUtilities.AlertViewController.ButtonType) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
   }
   @_Concurrency.MainActor(unsafe) public var titleText: Swift.String? {
     get
@@ -52,7 +41,7 @@ public protocol ImageButtonConfigurationProtocol {
     set
   }
   @_Concurrency.MainActor(unsafe) public var configuration: BanubaUtilities.AlertViewConfiguration?
-  @_Concurrency.MainActor(unsafe) public var actionHandler: ((Swift.Bool, BanubaUtilities.AlertViewController.ButtonType) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var actionHandler: ((Swift.Bool) -> Swift.Void)?
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
@@ -108,23 +97,17 @@ public enum Connection : Swift.CustomStringConvertible {
 }
 public protocol AlertViewControllerFactory : AnyObject {
   func getAlertViewController() -> BanubaUtilities.AlertViewController?
-  func getPopoverAlertViewController() -> BanubaUtilities.PopoverAlertViewController?
-}
-extension BanubaUtilities.AlertViewControllerFactory where Self : UIKit.UIViewController {
-  public func getPopoverAlertViewController() -> BanubaUtilities.PopoverAlertViewController?
 }
 public protocol AlertPresentable : BanubaUtilities.AlertViewControllerFactory {
-  func presentAlertViewController(alertType: BanubaUtilities.AlertViewController.AlertType, title: Swift.String, message: Swift.String?, animated: Swift.Bool, completion: ((Swift.Bool, BanubaUtilities.AlertViewController.ButtonType?) -> Swift.Void)?)
-  func presentSelectionAlert(title: Swift.String, message: Swift.String?, animated: Swift.Bool, completion: ((Swift.Bool, BanubaUtilities.AlertViewController.ButtonType?) -> Swift.Void)?)
-  func presentSelectionAlert(withTitle title: Swift.String, message: Swift.String?, agreeButtonTitle: Swift.String?, disagreeButtonTitle: Swift.String?, animated: Swift.Bool, completion: @escaping ((_ success: Swift.Bool, _ buttonType: BanubaUtilities.AlertViewController.ButtonType?) -> Swift.Void))
-  func presentPopoverAlert(position: BanubaUtilities.OverlayPopoverActionsPosition, actions: [BanubaUtilities.PopoverAlertViewController.ActionType], animated: Swift.Bool, completion: @escaping ((BanubaUtilities.PopoverAlertViewController.ActionType) -> Swift.Void))
+  func presentAlertViewController(alertType: BanubaUtilities.AlertViewController.AlertType, title: Swift.String, message: Swift.String?, animated: Swift.Bool, completion: ((Swift.Bool) -> Swift.Void)?)
+  func presentSelectionAlert(title: Swift.String, message: Swift.String?, animated: Swift.Bool, completion: ((Swift.Bool) -> Swift.Void)?)
+  func presentSelectionAlert(withTitle title: Swift.String, message: Swift.String?, agreeButtonTitle: Swift.String?, disagreeButtonTitle: Swift.String?, animated: Swift.Bool, completion: @escaping ((_ success: Swift.Bool) -> Swift.Void))
 }
 extension BanubaUtilities.AlertPresentable where Self : UIKit.UIViewController {
-  public func presentAlertViewController(alertType: BanubaUtilities.AlertViewController.AlertType, title: Swift.String, message: Swift.String?, animated: Swift.Bool, completion: ((Swift.Bool, BanubaUtilities.AlertViewController.ButtonType?) -> Swift.Void)?)
-  public func presentSelectionAlert(title: Swift.String, message: Swift.String?, animated: Swift.Bool, completion: ((Swift.Bool, BanubaUtilities.AlertViewController.ButtonType?) -> Swift.Void)?)
-  public func presentAlert(alertType: BanubaUtilities.AlertViewController.AlertType, title: Swift.String, message: Swift.String?, animated: Swift.Bool = false, completion: ((Swift.Bool, BanubaUtilities.AlertViewController.ButtonType?) -> Swift.Void)?)
-  public func presentSelectionAlert(withTitle title: Swift.String, message: Swift.String?, agreeButtonTitle: Swift.String? = nil, disagreeButtonTitle: Swift.String? = nil, animated: Swift.Bool = false, completion: @escaping ((_ success: Swift.Bool, _ buttonType: BanubaUtilities.AlertViewController.ButtonType?) -> Swift.Void))
-  public func presentPopoverAlert(position: BanubaUtilities.OverlayPopoverActionsPosition, actions: [BanubaUtilities.PopoverAlertViewController.ActionType], animated: Swift.Bool, completion: @escaping ((BanubaUtilities.PopoverAlertViewController.ActionType) -> Swift.Void))
+  public func presentAlertViewController(alertType: BanubaUtilities.AlertViewController.AlertType, title: Swift.String, message: Swift.String?, animated: Swift.Bool, completion: ((Swift.Bool) -> Swift.Void)?)
+  public func presentSelectionAlert(title: Swift.String, message: Swift.String?, animated: Swift.Bool, completion: ((Swift.Bool) -> Swift.Void)?)
+  public func presentAlert(alertType: BanubaUtilities.AlertViewController.AlertType, title: Swift.String, message: Swift.String?, animated: Swift.Bool = false, completion: ((Swift.Bool) -> Swift.Void)?)
+  public func presentSelectionAlert(withTitle title: Swift.String, message: Swift.String?, agreeButtonTitle: Swift.String? = nil, disagreeButtonTitle: Swift.String? = nil, animated: Swift.Bool = false, completion: @escaping ((_ success: Swift.Bool) -> Swift.Void))
 }
 public enum SharedLocalizedStrings {
   public enum Common {
@@ -144,7 +127,6 @@ public enum SharedLocalizedStrings {
   @objc deinit
 }
 extension UIKit.UIButton {
-  @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.ImageTextButtonConfiguration)
   @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.ImageButtonConfigurationProtocol)
   @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.BackButtonConfiguration)
   @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.RoundedButtonConfiguration)
@@ -217,7 +199,6 @@ public struct MusicEditorTrack : Swift.Codable {
   public var url: Foundation.URL
   public var originalURL: Foundation.URL
   public var title: Swift.String
-  public var additionalTitle: Swift.String?
   public var id: Swift.Int32
   public var volume: Swift.Float
   public var position: Swift.Int
@@ -229,7 +210,7 @@ public struct MusicEditorTrack : Swift.Codable {
   public var isEditable: Swift.Bool
   public var applyedFilterId: Swift.Int?
   public var isCameraTrack: Swift.Bool
-  public init(url: Foundation.URL, originalURL: Foundation.URL, title: Swift.String, additionalTitle: Swift.String?, id: Swift.Int32, volume: Swift.Float, position: Swift.Int, timeScale: Foundation.TimeInterval, compositionStart: Foundation.TimeInterval, timeRangeStart: Foundation.TimeInterval, timeRangeEnd: Foundation.TimeInterval, isAudioRecord: Swift.Bool, isEditable: Swift.Bool, applyedFilterId: Swift.Int? = nil, isCameraTrack: Swift.Bool)
+  public init(url: Foundation.URL, originalURL: Foundation.URL, title: Swift.String, id: Swift.Int32, volume: Swift.Float, position: Swift.Int, timeScale: Foundation.TimeInterval, compositionStart: Foundation.TimeInterval, timeRangeStart: Foundation.TimeInterval, timeRangeEnd: Foundation.TimeInterval, isAudioRecord: Swift.Bool, isEditable: Swift.Bool, applyedFilterId: Swift.Int? = nil, isCameraTrack: Swift.Bool)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -283,16 +264,14 @@ public enum VideoSequenceEditingStep : Swift.Int, Swift.Codable {
   }
 }
 public struct VideoMetadata : Swift.Codable {
-  public var name: Swift.String
+  public let name: Swift.String
   public var isDrafted: Swift.Bool
   public var aspect: BanubaUtilities.AspectRatio
-  public var modificationDate: Foundation.Date?
-  public var totalDuration: Foundation.TimeInterval?
   public let isSlideShow: Swift.Bool
   public var parentSequenceId: Swift.String?
   public var musicTrack: BanubaUtilities.MediaTrack?
   public var editingStep: BanubaUtilities.VideoSequenceEditingStep
-  public init(isSlideShow: Swift.Bool = false, isDrafted: Swift.Bool = false, name: Swift.String, sequenceParentName: Swift.String? = nil, editingStep: BanubaUtilities.VideoSequenceEditingStep = .camera, musicTrack: BanubaUtilities.MediaTrack? = nil, aspect: BanubaUtilities.AspectRatio, modificationDate: Foundation.Date? = nil, totalDuration: Foundation.TimeInterval? = nil)
+  public init(isSlideShow: Swift.Bool = false, isDrafted: Swift.Bool = false, name: Swift.String, sequenceParentName: Swift.String? = nil, editingStep: BanubaUtilities.VideoSequenceEditingStep = .camera, musicTrack: BanubaUtilities.MediaTrack? = nil, aspect: BanubaUtilities.AspectRatio)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -389,18 +368,16 @@ public class AudioTrack : BanubaUtilities.AudioTrackAdoptable {
   public var avAssetTrack: AVFoundation.AVAssetTrack?
   public var avURLAsset: AVFoundation.AVURLAsset
   public var timeRange: CoreMedia.CMTimeRange
-  public var trimmedTimeRange: CoreMedia.CMTimeRange
   public var compositionStart: CoreMedia.CMTime
   public var url: Foundation.URL
   public var originalURL: Foundation.URL
   public var title: Swift.String?
-  public var additionalTitle: Swift.String?
   public var id: Swift.Int32
   public var isEditable: Swift.Bool
   public var position: BanubaUtilities.AudioTrackLinePosition
   public var applyedFilterId: Swift.Int?
   final public let isCameraTrack: Swift.Bool
-  required public init(url: Foundation.URL, originalURL: Foundation.URL, id: Swift.Int32, timeRange: CoreMedia.CMTimeRange, trimTimeRange trimmedTimeRange: CoreMedia.CMTimeRange, compositionStart: CoreMedia.CMTime, avURLAsset: AVFoundation.AVURLAsset, isAudioRecord: Swift.Bool, isEditable: Swift.Bool, isCameraTrack: Swift.Bool, title: Swift.String?, additionalTitle: Swift.String?, applyedFilterId: Swift.Int?)
+  required public init(url: Foundation.URL, originalURL: Foundation.URL, id: Swift.Int32, timeRange: CoreMedia.CMTimeRange, compositionStart: CoreMedia.CMTime, avURLAsset: AVFoundation.AVURLAsset, isAudioRecord: Swift.Bool, isEditable: Swift.Bool, isCameraTrack: Swift.Bool, title: Swift.String?, applyedFilterId: Swift.Int?)
   @objc deinit
 }
 public struct VideoInteractiveMetadata : Swift.Codable {
@@ -494,7 +471,6 @@ extension Swift.Double {
   public var closeButtonConfiguration: BanubaUtilities.ImageButtonConfigurationProtocol
   public var albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration
   public var collectionInfoHeaderConfiguration: BanubaUtilities.CollectionInfoHeaderConfiguration
-  public var galleryItemPreviewViewConfiguration: BanubaUtilities.GalleryItemPreviewViewConfiguration
   public var nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration
   public var draftsButtonConfiguration: BanubaUtilities.SaveButtonConfiguration
   public var noItemsLabelConfiguration: BanubaUtilities.TextConfiguration
@@ -511,8 +487,7 @@ extension Swift.Double {
   public var isCloseButtonHidden: Swift.Bool
   public var backgroundColor: UIKit.UIColor
   public var maximumSelectedCountFromGallery: Swift.Int
-  public var preferredStatusBarStyle: UIKit.UIStatusBarStyle
-  public init(videoResolution: BanubaUtilities.VideoResolution, galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration, closeButtonConfiguration: BanubaUtilities.ImageButtonConfigurationProtocol, albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration, collectionInfoHeaderConfiguration: BanubaUtilities.CollectionInfoHeaderConfiguration, galleryItemPreviewViewConfiguration: BanubaUtilities.GalleryItemPreviewViewConfiguration, nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, draftsButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, noItemsLabelConfiguration: BanubaUtilities.TextConfiguration, layoutConfiguration: BanubaUtilities.GalleryLayoutConfiguration, topBarBlurColor: UIKit.UIColor, clearSelectionButtonConfiguration: BanubaUtilities.ImageButtonConfigurationProtocol, galleryTypeButton: BanubaUtilities.TextButtonConfiguration, galleryTypeUnderlineColor: UIKit.UIColor, isPhotoSequenceAnimationEnabled: Swift.Bool, importItemsLabelConfiguration: BanubaUtilities.TextConfiguration, bottomViewConfiguration: BanubaUtilities.BackgroundConfiguration, isDraftsHidden: Swift.Bool, isCloseButtonHidden: Swift.Bool, visibleTabsInGallery: [BanubaUtilities.GalleryMediaType] = [.video, .photo], backgroundColor: UIKit.UIColor, maximumSelectedCountFromGallery: Swift.Int, preferredStatusBarStyle: UIKit.UIStatusBarStyle)
+  public init(videoResolution: BanubaUtilities.VideoResolution, galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration, closeButtonConfiguration: BanubaUtilities.ImageButtonConfigurationProtocol, albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration, collectionInfoHeaderConfiguration: BanubaUtilities.CollectionInfoHeaderConfiguration, nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, draftsButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, noItemsLabelConfiguration: BanubaUtilities.TextConfiguration, layoutConfiguration: BanubaUtilities.GalleryLayoutConfiguration, topBarBlurColor: UIKit.UIColor, clearSelectionButtonConfiguration: BanubaUtilities.ImageButtonConfigurationProtocol, galleryTypeButton: BanubaUtilities.TextButtonConfiguration, galleryTypeUnderlineColor: UIKit.UIColor, isPhotoSequenceAnimationEnabled: Swift.Bool, importItemsLabelConfiguration: BanubaUtilities.TextConfiguration, bottomViewConfiguration: BanubaUtilities.BackgroundConfiguration, isDraftsHidden: Swift.Bool, isCloseButtonHidden: Swift.Bool, visibleTabsInGallery: [BanubaUtilities.GalleryMediaType] = [.video, .photo], backgroundColor: UIKit.UIColor, maximumSelectedCountFromGallery: Swift.Int)
   @objc deinit
 }
 @objc public protocol TimeLineDataSourceDelegate {
@@ -621,9 +596,8 @@ public class MediaTrack : Swift.Codable {
   final public let url: Foundation.URL
   public var timeRange: BanubaUtilities.MediaTrackTimeRange
   final public let title: Swift.String?
-  final public let additionalTitle: Swift.String?
   final public let isEditable: Swift.Bool
-  public init(id: CoreMedia.CMPersistentTrackID, url: Foundation.URL, timeRange: BanubaUtilities.MediaTrackTimeRange, isEditable: Swift.Bool, title: Swift.String? = nil, additionalTitle: Swift.String? = nil)
+  public init(id: CoreMedia.CMPersistentTrackID, url: Foundation.URL, timeRange: BanubaUtilities.MediaTrackTimeRange, isEditable: Swift.Bool, title: Swift.String? = nil)
   @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
@@ -696,21 +670,13 @@ public struct AlertViewConfiguration {
   public var cornerRadius: CoreGraphics.CGFloat
   public var refuseButtonRadius: CoreGraphics.CGFloat
   public var agreeButtonRadius: CoreGraphics.CGFloat
-  public var additionalButtonRadius: CoreGraphics.CGFloat
   public var refuseButtonBackgroundColor: UIKit.UIColor
   public var agreeButtonBackgroundColor: UIKit.UIColor
-  public var additionalButtonBackgroundColor: UIKit.UIColor
-  public var refuseButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration
-  public var agreeButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration
-  public var additionalButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration
-  public var resetButtonTextConfig: BanubaUtilities.TextButtonConfiguration
-  public var additionalButtonTextConfig: BanubaUtilities.TextButtonConfiguration
   public var refuseButtonTextConfig: BanubaUtilities.TextButtonConfiguration
   public var agreeButtonTextConfig: BanubaUtilities.TextButtonConfiguration
   public var titleTextConfig: BanubaUtilities.TextConfiguration
   public var messageTextCongig: BanubaUtilities.TextConfiguration?
-  public var preferredStatusBarStyle: UIKit.UIStatusBarStyle
-  public init(cornerRadius: CoreGraphics.CGFloat, refuseButtonRadius: CoreGraphics.CGFloat, agreeButtonRadius: CoreGraphics.CGFloat, additionalButtonRadius: CoreGraphics.CGFloat, refuseButtonBackgroundColor: UIKit.UIColor, agreeButtonBackgroundColor: UIKit.UIColor, additionalButtonBackgroundColor: UIKit.UIColor, refuseButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration, agreeButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration, additionalButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration, resetButtonTextConfig: BanubaUtilities.TextButtonConfiguration, refuseButtonTextConfig: BanubaUtilities.TextButtonConfiguration, agreeButtonTextConfig: BanubaUtilities.TextButtonConfiguration, additionalButtonTextConfig: BanubaUtilities.TextButtonConfiguration, titleTextConfig: BanubaUtilities.TextConfiguration, messageTextCongig: BanubaUtilities.TextConfiguration? = nil, preferredStatusBarStyle: UIKit.UIStatusBarStyle)
+  public init(cornerRadius: CoreGraphics.CGFloat, refuseButtonRadius: CoreGraphics.CGFloat, agreeButtonRadius: CoreGraphics.CGFloat, refuseButtonBackgroundColor: UIKit.UIColor, agreeButtonBackgroundColor: UIKit.UIColor, refuseButtonTextConfig: BanubaUtilities.TextButtonConfiguration, agreeButtonTextConfig: BanubaUtilities.TextButtonConfiguration, titleTextConfig: BanubaUtilities.TextConfiguration, messageTextCongig: BanubaUtilities.TextConfiguration? = nil)
 }
 public struct GalleryItemConfiguration {
   public var orderNumberBackgroudColor: UIKit.UIColor
@@ -728,14 +694,10 @@ extension UIKit.UIStackView {
   @_Concurrency.MainActor(unsafe) public func addArrangedSubviews(_ subviews: [UIKit.UIView])
   @_Concurrency.MainActor(unsafe) public func removeAllArrangedSubviews()
 }
-extension UIKit.UIStackView {
-  @_Concurrency.MainActor(unsafe) public func addBackground(color: UIKit.UIColor, cornerRadius: CoreGraphics.CGFloat)
-}
 public protocol AudioItem {
   var id: Swift.Int32 { get }
   var url: Foundation.URL { get }
   var title: Swift.String? { get set }
-  var additionalTitle: Swift.String? { get set }
   var isEditable: Swift.Bool { get set }
 }
 extension CoreGraphics.CGFloat {
@@ -789,6 +751,7 @@ extension BanubaUtilities.GalleryManager {
   @objc func galleryViewControllerDidClose(_ controller: BanubaUtilities.GalleryViewController)
   @objc func galleryViewControllerDone(_ controller: BanubaUtilities.GalleryViewController, withGalleryItems items: [BanubaUtilities.GalleryItem])
   @objc func galleryViewController(_ controller: BanubaUtilities.GalleryViewController, presentMessage message: Swift.String)
+  @objc func galleryViewControllerDidTapDrafts(_ controller: BanubaUtilities.GalleryViewController)
 }
 @objc public enum GalleryMediaType : Swift.Int, Swift.CaseIterable {
   case video
@@ -849,16 +812,6 @@ extension Swift.CaseIterable where Self : Swift.Equatable {
     get
   }
 }
-public struct GalleryItemPreviewViewConfiguration {
-  public var backgroundViewBlurStyle: UIKit.UIBlurEffect.Style
-  public var selectionButtonView: BanubaUtilities.BackgroundConfiguration
-  public var selectionButtonSelectText: BanubaUtilities.TextConfiguration
-  public var selectionButtonDeselectText: BanubaUtilities.TextConfiguration
-  public var selectionButtonSelectImageName: Swift.String
-  public var selectionButtonDeselectImageName: Swift.String
-  public var previewContainerView: BanubaUtilities.BackgroundConfiguration
-  public init(backgroundViewBlurStyle: UIKit.UIBlurEffect.Style, selectionButtonView: BanubaUtilities.BackgroundConfiguration, selectionButtonSelectText: BanubaUtilities.TextConfiguration, selectionButtonDeselectText: BanubaUtilities.TextConfiguration, selectionButtonSelectImageName: Swift.String, selectionButtonDeselectImageName: Swift.String, previewContainerView: BanubaUtilities.BackgroundConfiguration)
-}
 public enum FileExtension {
   public enum Video : Swift.String {
     case mp4
@@ -877,9 +830,6 @@ public enum FileExtension {
     }
   }
 }
-public struct DeviceVibrateManager {
-  public static func vibrate(withPower power: UIKit.UIImpactFeedbackGenerator.FeedbackStyle)
-}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class CircularProgressView : UIKit.UIView, BanubaUtilities.ProgressAnimatableView {
   @_Concurrency.MainActor(unsafe) public var progress: Swift.Float {
     get
@@ -894,7 +844,6 @@ public struct DeviceVibrateManager {
 }
 @objc public protocol ImageConfigurationProtocol {
   @objc var image: UIKit.UIImage? { get }
-  @objc var tintColor: UIKit.UIColor? { get }
 }
 public protocol AnimatableView : UIKit.UIView {
   func start(completion: @escaping (Swift.Bool) -> Swift.Void)
@@ -931,12 +880,6 @@ extension BanubaUtilities.AppStateObserver {
 public protocol PlayerStateStorable {
   var playerState: Swift.Bool { get set }
 }
-public struct ImageTextButtonConfiguration {
-  public var imageConfiguration: BanubaUtilities.ImageConfigurationProtocol?
-  public var selectedImageConfiguration: BanubaUtilities.ImageConfigurationProtocol?
-  public var style: BanubaUtilities.TextConfiguration?
-  public init(imageConfiguration: BanubaUtilities.ImageConfigurationProtocol? = nil, selectedImageConfiguration: BanubaUtilities.ImageConfigurationProtocol? = nil, style: BanubaUtilities.TextConfiguration? = nil)
-}
 public struct GalleryLayoutConfiguration {
   public var numberOfItemsPerRow: Swift.Int
   public var interitemSpacing: CoreGraphics.CGFloat
@@ -954,7 +897,6 @@ public struct BackButtonConfiguration {
   public var imageConfiguration: BanubaUtilities.ImageConfigurationProtocol
   public var selectedImageConfiguration: BanubaUtilities.ImageConfigurationProtocol?
   public var position: BanubaUtilities.BackButtonConfiguration.Position?
-  public var menuActions: [BanubaUtilities.PopoverAlertViewController.ActionType]
   @frozen public enum Position {
     case left
     case right
@@ -964,7 +906,7 @@ public struct BackButtonConfiguration {
       get
     }
   }
-  public init(imageConfiguration: BanubaUtilities.ImageConfigurationProtocol, selectedImageConfiguration: BanubaUtilities.ImageConfigurationProtocol? = nil, position: BanubaUtilities.BackButtonConfiguration.Position? = nil, menuActions: [BanubaUtilities.PopoverAlertViewController.ActionType] = [])
+  public init(imageConfiguration: BanubaUtilities.ImageConfigurationProtocol, selectedImageConfiguration: BanubaUtilities.ImageConfigurationProtocol? = nil, position: BanubaUtilities.BackButtonConfiguration.Position? = nil)
 }
 public enum DrawableFigure : Swift.String, Swift.Codable {
   case circle
@@ -979,12 +921,11 @@ public class AudioServiceItem : BanubaUtilities.AudioItem {
   final public let id: Swift.Int32
   final public let url: Foundation.URL
   public var title: Swift.String?
-  public var additionalTitle: Swift.String?
   public var isEditable: Swift.Bool
   public var timeRange: CoreMedia.CMTimeRange {
     get
   }
-  public init(id: Swift.Int32, url: Foundation.URL, title: Swift.String?, additionalTitle: Swift.String?, isEditable: Swift.Bool)
+  public init(id: Swift.Int32, url: Foundation.URL, title: Swift.String?, isEditable: Swift.Bool)
   @objc deinit
 }
 public protocol AudioServicing {
@@ -1056,10 +997,9 @@ extension BanubaUtilities.AudioServicing {
   @objc var preview: UIKit.UIImage? { get set }
   @objc var duration: Foundation.TimeInterval { get }
   @objc var type: BanubaUtilities.GalleryItemType { get }
-  @objc func requestPreview(size: CoreGraphics.CGSize, synchronously: Swift.Bool, handler: @escaping (UIKit.UIImage?) -> Swift.Void)
+  @objc func requestPreview(size: CoreGraphics.CGSize, handler: @escaping (UIKit.UIImage?) -> Swift.Void)
   @objc func requestPhoto(size: CoreGraphics.CGSize, progressHandler: ((Swift.Double) -> (Swift.Bool))?, handler: @escaping (UIKit.UIImage?, Swift.Error?) -> Swift.Void)
   @objc func requestAVURLAsset(progressHandler: ((Swift.Double) -> (Swift.Bool))?, handler: @escaping (AVFoundation.AVURLAsset?, Swift.Error?) -> Swift.Void)
-  @objc func requestAVPlayerItem(progressHandler: ((Swift.Double) -> (Swift.Bool))?, handler: @escaping (AVFoundation.AVPlayerItem?, Swift.Error?) -> Swift.Void)
 }
 @objc open class BanubaGalleryItem : ObjectiveC.NSObject, BanubaUtilities.GalleryItem {
   public static let defaultPreviewSize: CoreGraphics.CGSize
@@ -1077,8 +1017,7 @@ extension BanubaUtilities.AudioServicing {
   }
   public init(asset: Photos.PHAsset, videoResolution: BanubaUtilities.VideoResolution)
   @objc open func requestAVURLAsset(progressHandler: ((Swift.Double) -> (Swift.Bool))?, handler: @escaping (AVFoundation.AVURLAsset?, Swift.Error?) -> Swift.Void)
-  @objc open func requestAVPlayerItem(progressHandler: ((Swift.Double) -> (Swift.Bool))?, handler: @escaping (AVFoundation.AVPlayerItem?, Swift.Error?) -> Swift.Void)
-  @objc open func requestPreview(size: CoreGraphics.CGSize = BanubaGalleryItem.defaultPreviewSize, synchronously: Swift.Bool, handler: @escaping (UIKit.UIImage?) -> Swift.Void)
+  @objc open func requestPreview(size: CoreGraphics.CGSize = BanubaGalleryItem.defaultPreviewSize, handler: @escaping (UIKit.UIImage?) -> Swift.Void)
   @objc open func requestPhoto(size: CoreGraphics.CGSize, progressHandler: ((Swift.Double) -> (Swift.Bool))?, handler: @escaping (UIKit.UIImage?, Swift.Error?) -> Swift.Void)
   @objc deinit
 }
@@ -1181,11 +1120,6 @@ extension UIKit.UIDevice {
 extension AVFoundation.AVCaptureSession.Preset {
   public mutating func downgrade()
 }
-public struct BorderButtonConfiguration {
-  public var borderWidth: CoreGraphics.CGFloat
-  public var borderColor: CoreGraphics.CGColor
-  public init(borderWidth: CoreGraphics.CGFloat, borderColor: CoreGraphics.CGColor)
-}
 public struct RoundedButtonConfiguration {
   public var textConfiguration: BanubaUtilities.TextConfiguration?
   public var borderWidth: CoreGraphics.CGFloat?
@@ -1210,10 +1144,6 @@ public class PreviewExtractor {
   @objc deinit
   public func extractPreview(at time: CoreMedia.CMTime) -> UIKit.UIImage?
 }
-extension UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) public func roundCorners(corners: UIKit.UIRectCorner, radius: CoreGraphics.CGFloat)
-  @_Concurrency.MainActor(unsafe) public func roundCorners(cornerMask: QuartzCore.CACornerMask, radius: CoreGraphics.CGFloat)
-}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VideoEditorActivityIndicator : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public var configuration: BanubaUtilities.SmallActivityIndicatorConfiguration? {
     get
@@ -1229,39 +1159,6 @@ extension UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public func stopAnimating()
   @objc deinit
 }
-public enum OverlayPopoverActionsPosition {
-  case bottomLeft(_: CoreGraphics.CGPoint)
-  case topLeft(_: CoreGraphics.CGPoint)
-  case topRight(_: CoreGraphics.CGPoint)
-  case bottomRight(_: CoreGraphics.CGPoint)
-  case center
-}
-public struct PopoverAlertViewConfiguration {
-  public static var `default`: BanubaUtilities.PopoverAlertViewConfiguration {
-    get
-  }
-}
-public struct OverlayPopoverActionConfiguration {
-  public init(leftImage: BanubaUtilities.ImageConfigurationProtocol?, rightImage: BanubaUtilities.ImageConfigurationProtocol?, title: BanubaUtilities.TextConfiguration, titleImageInset: CoreGraphics.CGFloat)
-}
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class PopoverAlertViewController : UIKit.UIViewController, BanubaUtilities.NibLoadable {
-  public enum ActionType {
-    case edit(BanubaUtilities.OverlayPopoverActionConfiguration)
-    case delete(BanubaUtilities.OverlayPopoverActionConfiguration)
-    case discardChanges(BanubaUtilities.OverlayPopoverActionConfiguration)
-    case updateDraft(BanubaUtilities.OverlayPopoverActionConfiguration)
-  }
-  @_Concurrency.MainActor(unsafe) public var configuration: BanubaUtilities.PopoverAlertViewConfiguration
-  @_Concurrency.MainActor(unsafe) public var actions: [BanubaUtilities.PopoverAlertViewController.ActionType]
-  @_Concurrency.MainActor(unsafe) public var actionsPosition: BanubaUtilities.OverlayPopoverActionsPosition
-  @_Concurrency.MainActor(unsafe) public var resultCompletion: ((BanubaUtilities.PopoverAlertViewController.ActionType) -> Swift.Void)?
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillLayoutSubviews()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
-}
 public protocol AudioTrackAdoptable : AnyObject {
   var position: BanubaUtilities.AudioTrackLinePosition { get set }
   var compositionTrack: AVFoundation.AVMutableCompositionTrack? { get set }
@@ -1269,17 +1166,15 @@ public protocol AudioTrackAdoptable : AnyObject {
   var avAssetTrack: AVFoundation.AVAssetTrack? { get set }
   var avURLAsset: AVFoundation.AVURLAsset { get set }
   var timeRange: CoreMedia.CMTimeRange { get set }
-  var trimmedTimeRange: CoreMedia.CMTimeRange { get set }
   var url: Foundation.URL { get set }
   var originalURL: Foundation.URL { get set }
   var title: Swift.String? { get set }
-  var additionalTitle: Swift.String? { get set }
   var id: Swift.Int32 { get set }
   var isAudioRecord: Swift.Bool { get set }
   var applyedFilterId: Swift.Int? { get set }
   var isEditable: Swift.Bool { get set }
   var isCameraTrack: Swift.Bool { get }
-  init(url: Foundation.URL, originalURL: Foundation.URL, id: Swift.Int32, timeRange: CoreMedia.CMTimeRange, trimTimeRange: CoreMedia.CMTimeRange, compositionStart: CoreMedia.CMTime, avURLAsset: AVFoundation.AVURLAsset, isAudioRecord: Swift.Bool, isEditable: Swift.Bool, isCameraTrack: Swift.Bool, title: Swift.String?, additionalTitle: Swift.String?, applyedFilterId: Swift.Int?)
+  init(url: Foundation.URL, originalURL: Foundation.URL, id: Swift.Int32, timeRange: CoreMedia.CMTimeRange, compositionStart: CoreMedia.CMTime, avURLAsset: AVFoundation.AVURLAsset, isAudioRecord: Swift.Bool, isEditable: Swift.Bool, isCameraTrack: Swift.Bool, title: Swift.String?, applyedFilterId: Swift.Int?)
 }
 public enum AudioTrackLinePosition : Swift.Int, Swift.CaseIterable {
   case first
@@ -1365,8 +1260,6 @@ public struct TextShadowConfiguration {
   public init(shadowColor: UIKit.UIColor = UIColor.black.withAlphaComponent(0.4), shadowOffset: CoreGraphics.CGSize = CGSize(width: 0, height: 1), shadowBlurRadius: CoreGraphics.CGFloat = 2.0)
   public func shadow() -> UIKit.NSShadow
 }
-extension BanubaUtilities.AlertViewController.ButtonType : Swift.Equatable {}
-extension BanubaUtilities.AlertViewController.ButtonType : Swift.Hashable {}
 extension BanubaUtilities.AspectRatio : Swift.Equatable {}
 extension BanubaUtilities.AspectRatio : Swift.Hashable {}
 extension BanubaUtilities.AspectRatio : Swift.RawRepresentable {}

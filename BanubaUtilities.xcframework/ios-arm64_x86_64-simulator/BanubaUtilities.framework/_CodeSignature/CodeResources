@@ -6,7 +6,7 @@
 	<dict>
 		<key>AlertViewController.nib</key>
 		<data>
-		r8zR53Ln4zilYxjk+twdK36ws7A=
+		sA4vE3ipSQBP1q1LiHCKJwoIWUc=
 		</data>
 		<key>Headers/BNBAsyncOperation.h</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/BanubaUtilities-Swift.h</key>
 		<data>
-		Dtk8/s9/SgaPFQRMo0nHsNDNAsg=
+		UUTjhElZuaAymHWy8XwbWZ9cN2A=
 		</data>
 		<key>Headers/BanubaUtilities.h</key>
 		<data>
@@ -22,51 +22,43 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		qO9+NWeZuFCtwWRNmU8DceIodLI=
+		YS2Tg7L4gO3+6b/RISi33+F7Zm0=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		jVw5lFrsCseOqtUa66tOYJC3HSQ=
+		6txtHVxW1EFboLWP4szRnwj8wMI=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		8UnyZmFe6xjEsSK6bNiS8G0Kezc=
+		VWG7Ily2PUIpReis5TUlMeSedY0=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		WRGCD8ShmA85WbKPjmfiKXke8Lg=
+		T/zPF+rKmwc6nhxqnSyXfSYYAQ4=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		DDpXtPimTRfxoqKMzpW0ldTyW2k=
+		B8HYErRFFnILXwUo+yXxxTiA8n8=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		KMpwdlNELGrxdpakhSf09lzKloM=
+		YfZ3/S3dFgXsHSZSX2DTtLRLHPM=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		vmXH01D7vAKmSCP+0SYogNmxhiY=
+		I2zNdaA+BfA5aD6fCvnnbqyFbrA=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		7k6bK1GX3vEvghVb+K0U0Ts4rpc=
+		PIj8Nx5IQjUrQTGSVfN9NaU4wA4=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		AwDPv9lMmtk068ZoYHaOpsLMYTc=
+		5CaJWGZhy4mP0oAv0NmiiHGD66U=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		HrTFy4gFlek+5KZaAVz7DuyDKGY=
-		</data>
-		<key>PopoverAlertViewController.nib</key>
-		<data>
-		a61MzToFjb6Hzo07NEWtDvkU7x4=
-		</data>
-		<key>PopoverOverlayAlertActionCell.nib</key>
-		<data>
-		SfmU+AKI+nGKGgOI65koY9eOlK0=
 		</data>
 		<key>VideoTimeLineCollectionViewCell.nib/objects-12.3+.nib</key>
 		<data>
@@ -83,7 +75,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			p7AFMLeBtSWrseAaehCLAoiRUtoPsRCEyF1b4omzEDE=
+			aDgAcAgMbaHdLUnlvrOJ92XXIK1+tjXpe7jMwWoPwVs=
 			</data>
 		</dict>
 		<key>Headers/BNBAsyncOperation.h</key>
@@ -97,7 +89,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			inEErOLEOBrAHM3pszr566TWzJzvcZxzaJYYXz6hG0o=
+			MxTdWb1zsqV76SvOwr5HdMCDRCQwVoCTZSLqm+ahEYA=
 			</data>
 		</dict>
 		<key>Headers/BanubaUtilities.h</key>
@@ -111,56 +103,56 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YVQd997Ib0QjkBYDX0fY9hq1anU4IDHM5w+74zHibJY=
+			7Aybwr4U9KxdAx8RvlxJot7JSs7MTXi8CaEKkULKKGY=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nKf4xNysLLPD3/RDmbsZAWg1um8ydDJFnQYHLMKNS4o=
+			RzGDxB8AwRqLtYixM2/iieocWpLB/s5Y3m/onn0dl6Y=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			i1qrDeW+Ro2LNrLgfbc8h6MkDldboIogijYtNeZLX48=
+			oOxDJyVKZ41AipPug+ydLOYg8jnF+Pd4cQ+Fk5+uNIk=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+AxOSQSYb5A6IlxikwgqxRqcJVgJKfAVMCAK7CCNcsM=
+			8Lfy/VvItnUCvWT/XlzbLLlZNE3eJwLl2GDpDyoubmQ=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CLkJ0r3gprjnQ4BTL4QMsQaV20Fq+Z3srYDU8nkFaMs=
+			bDThmZqLT3YNt6YvYe0AW496PyrqKOcUo8ExVpxgnEw=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pbqbHVxDov4Wy+n94kAWgheeGvx7adZTU8GJmfwldLw=
+			xMpP4tqc3LyCdzWtYqsubJ2FsdAYRH9hbXWAl3TiHXQ=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YBq8C46gRKJbcaTlXjkRHDH2So+3lt4EuI2eNwG8W0g=
+			mK3oVJzfG2lAZ68A4SqCj3vuYcgDJavuQ3vt+l+/3j0=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6pGTuCFoxKCZJ4HPF//9yBGVkWoyIuaJYyg7uixGkPg=
+			du5CmQnQS/yp6kv4oWVECCwmBN09vpgpKxyiFZs2dWM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -168,20 +160,6 @@
 			<key>hash2</key>
 			<data>
 			hc74Lg7TicQvBtoCDFDQclgnH39g9tGP+kMarssUTis=
-			</data>
-		</dict>
-		<key>PopoverAlertViewController.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			6MGs+k+eIHSVyhmDzH1qmzaBZbhFfewvt9mdHO8B0ZY=
-			</data>
-		</dict>
-		<key>PopoverOverlayAlertActionCell.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			y1+pa4NbNXmbmhQKGzHR+kNp4EyYa5ke4Js10jVzWiY=
 			</data>
 		</dict>
 		<key>VideoTimeLineCollectionViewCell.nib/objects-12.3+.nib</key>

@@ -274,7 +274,6 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities28AlbumsViewControllerDelegate_")
 
 SWIFT_CLASS("_TtC15BanubaUtilities19AlertViewController")
 @interface AlertViewController : UIViewController
-@property (nonatomic, readonly) UIStatusBarStyle preferredStatusBarStyle;
 - (void)viewWillAppear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
@@ -334,7 +333,6 @@ SWIFT_CLASS("_TtC15BanubaUtilities23BackgroundConfiguration")
 
 @class AVURLAsset;
 enum GalleryItemType : NSInteger;
-@class AVPlayerItem;
 
 SWIFT_PROTOCOL("_TtP15BanubaUtilities11GalleryItem_")
 @protocol GalleryItem <NSObject>
@@ -347,13 +345,11 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities11GalleryItem_")
 /// Type can be video, photo or unknown
 @property (nonatomic, readonly) enum GalleryItemType type;
 /// Requests preview for displaying in gallery list
-- (void)requestPreviewWithSize:(CGSize)size synchronously:(BOOL)synchronously handler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
+- (void)requestPreviewWithSize:(CGSize)size handler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
 /// Requests photo with desired size
 - (void)requestPhotoWithSize:(CGSize)size progressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))handler;
 /// Requests video url asset
 - (void)requestAVURLAssetWithProgressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(AVURLAsset * _Nullable, NSError * _Nullable))handler;
-/// Requests video player item
-- (void)requestAVPlayerItemWithProgressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(AVPlayerItem * _Nullable, NSError * _Nullable))handler;
 @end
 
 
@@ -364,8 +360,7 @@ SWIFT_CLASS("_TtC15BanubaUtilities17BanubaGalleryItem")
 @property (nonatomic, readonly, strong) AVURLAsset * _Nullable urlAsset;
 @property (nonatomic, readonly) enum GalleryItemType type;
 - (void)requestAVURLAssetWithProgressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(AVURLAsset * _Nullable, NSError * _Nullable))handler;
-- (void)requestAVPlayerItemWithProgressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(AVPlayerItem * _Nullable, NSError * _Nullable))handler;
-- (void)requestPreviewWithSize:(CGSize)size synchronously:(BOOL)synchronously handler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
+- (void)requestPreviewWithSize:(CGSize)size handler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
 - (void)requestPhotoWithSize:(CGSize)size progressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))handler;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -451,6 +446,8 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities29GalleryViewControllerDelegate_")
 /// Tells delegate object that he should present message.
 /// In BanubaVideoEditorSDK it presents popup message.
 - (void)galleryViewController:(GalleryViewController * _Nonnull)controller presentMessage:(NSString * _Nonnull)message;
+/// Tells delegate object about the opening Drafts
+- (void)galleryViewControllerDidTapDrafts:(GalleryViewController * _Nonnull)controller;
 @end
 
 
@@ -475,24 +472,11 @@ SWIFT_CLASS("_TtCC15BanubaUtilities35SmallActivityIndicatorConfiguration12Gradie
 + (GradientType * _Nonnull)image:(id <ImageConfigurationProtocol> _Nonnull)image SWIFT_WARN_UNUSED_RESULT;
 @end
 
-@class UIColor;
 
 /// The image configuration
 SWIFT_PROTOCOL("_TtP15BanubaUtilities26ImageConfigurationProtocol_")
 @protocol ImageConfigurationProtocol
 @property (nonatomic, readonly, strong) UIImage * _Nullable image;
-@property (nonatomic, readonly, strong) UIColor * _Nullable tintColor;
-@end
-
-
-
-SWIFT_CLASS("_TtC15BanubaUtilities26PopoverAlertViewController")
-@interface PopoverAlertViewController : UIViewController
-- (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)animated;
-- (void)viewWillLayoutSubviews;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -582,7 +566,6 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26TimeLineDataSourceDelegate_")
 /// timelineDataSource did finish fetching all thumbs
 - (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
 @end
-
 
 
 
@@ -910,7 +893,6 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities28AlbumsViewControllerDelegate_")
 
 SWIFT_CLASS("_TtC15BanubaUtilities19AlertViewController")
 @interface AlertViewController : UIViewController
-@property (nonatomic, readonly) UIStatusBarStyle preferredStatusBarStyle;
 - (void)viewWillAppear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
@@ -970,7 +952,6 @@ SWIFT_CLASS("_TtC15BanubaUtilities23BackgroundConfiguration")
 
 @class AVURLAsset;
 enum GalleryItemType : NSInteger;
-@class AVPlayerItem;
 
 SWIFT_PROTOCOL("_TtP15BanubaUtilities11GalleryItem_")
 @protocol GalleryItem <NSObject>
@@ -983,13 +964,11 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities11GalleryItem_")
 /// Type can be video, photo or unknown
 @property (nonatomic, readonly) enum GalleryItemType type;
 /// Requests preview for displaying in gallery list
-- (void)requestPreviewWithSize:(CGSize)size synchronously:(BOOL)synchronously handler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
+- (void)requestPreviewWithSize:(CGSize)size handler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
 /// Requests photo with desired size
 - (void)requestPhotoWithSize:(CGSize)size progressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))handler;
 /// Requests video url asset
 - (void)requestAVURLAssetWithProgressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(AVURLAsset * _Nullable, NSError * _Nullable))handler;
-/// Requests video player item
-- (void)requestAVPlayerItemWithProgressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(AVPlayerItem * _Nullable, NSError * _Nullable))handler;
 @end
 
 
@@ -1000,8 +979,7 @@ SWIFT_CLASS("_TtC15BanubaUtilities17BanubaGalleryItem")
 @property (nonatomic, readonly, strong) AVURLAsset * _Nullable urlAsset;
 @property (nonatomic, readonly) enum GalleryItemType type;
 - (void)requestAVURLAssetWithProgressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(AVURLAsset * _Nullable, NSError * _Nullable))handler;
-- (void)requestAVPlayerItemWithProgressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(AVPlayerItem * _Nullable, NSError * _Nullable))handler;
-- (void)requestPreviewWithSize:(CGSize)size synchronously:(BOOL)synchronously handler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
+- (void)requestPreviewWithSize:(CGSize)size handler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
 - (void)requestPhotoWithSize:(CGSize)size progressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))handler;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -1087,6 +1065,8 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities29GalleryViewControllerDelegate_")
 /// Tells delegate object that he should present message.
 /// In BanubaVideoEditorSDK it presents popup message.
 - (void)galleryViewController:(GalleryViewController * _Nonnull)controller presentMessage:(NSString * _Nonnull)message;
+/// Tells delegate object about the opening Drafts
+- (void)galleryViewControllerDidTapDrafts:(GalleryViewController * _Nonnull)controller;
 @end
 
 
@@ -1111,24 +1091,11 @@ SWIFT_CLASS("_TtCC15BanubaUtilities35SmallActivityIndicatorConfiguration12Gradie
 + (GradientType * _Nonnull)image:(id <ImageConfigurationProtocol> _Nonnull)image SWIFT_WARN_UNUSED_RESULT;
 @end
 
-@class UIColor;
 
 /// The image configuration
 SWIFT_PROTOCOL("_TtP15BanubaUtilities26ImageConfigurationProtocol_")
 @protocol ImageConfigurationProtocol
 @property (nonatomic, readonly, strong) UIImage * _Nullable image;
-@property (nonatomic, readonly, strong) UIColor * _Nullable tintColor;
-@end
-
-
-
-SWIFT_CLASS("_TtC15BanubaUtilities26PopoverAlertViewController")
-@interface PopoverAlertViewController : UIViewController
-- (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)animated;
-- (void)viewWillLayoutSubviews;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -1218,7 +1185,6 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26TimeLineDataSourceDelegate_")
 /// timelineDataSource did finish fetching all thumbs
 - (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
 @end
-
 
 
 
