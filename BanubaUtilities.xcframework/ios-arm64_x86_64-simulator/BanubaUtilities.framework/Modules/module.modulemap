@@ -6,6 +6,6 @@ framework module BanubaUtilities {
 }
 
 module BanubaUtilities.Swift {
-    header "BanubaUtilities-Swift.h"
-    requires objc
+  header "BanubaUtilities-Swift.h"
+  requires objc
 }
