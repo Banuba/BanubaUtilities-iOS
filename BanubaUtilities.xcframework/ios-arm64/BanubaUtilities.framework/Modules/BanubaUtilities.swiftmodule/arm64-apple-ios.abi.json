@@ -29530,6 +29530,441 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "BanubaUtilities",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "BanubaAsyncOperation",
+        "printedName": "BanubaAsyncOperation",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "isReady",
+            "printedName": "isReady",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@BanubaUtilities@objc(cs)BanubaAsyncOperation(py)ready",
+            "mangledName": "$s15BanubaUtilities0A14AsyncOperationC7isReadySbvp",
+            "moduleName": "BanubaUtilities",
+            "overriding": true,
+            "isOpen": true,
+            "objc_name": "ready",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@BanubaUtilities@objc(cs)BanubaAsyncOperation(im)isReady",
+                "mangledName": "$s15BanubaUtilities0A14AsyncOperationC7isReadySbvg",
+                "moduleName": "BanubaUtilities",
+                "overriding": true,
+                "isOpen": true,
+                "objc_name": "isReady",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isExecuting",
+            "printedName": "isExecuting",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@BanubaUtilities@objc(cs)BanubaAsyncOperation(py)executing",
+            "mangledName": "$s15BanubaUtilities0A14AsyncOperationC11isExecutingSbvp",
+            "moduleName": "BanubaUtilities",
+            "overriding": true,
+            "objc_name": "executing",
+            "declAttributes": [
+              "ObjC",
+              "Override",
+              "Final",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@BanubaUtilities@objc(cs)BanubaAsyncOperation(im)isExecuting",
+                "mangledName": "$s15BanubaUtilities0A14AsyncOperationC11isExecutingSbvg",
+                "moduleName": "BanubaUtilities",
+                "overriding": true,
+                "objc_name": "isExecuting",
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isFinished",
+            "printedName": "isFinished",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@BanubaUtilities@objc(cs)BanubaAsyncOperation(py)finished",
+            "mangledName": "$s15BanubaUtilities0A14AsyncOperationC10isFinishedSbvp",
+            "moduleName": "BanubaUtilities",
+            "overriding": true,
+            "objc_name": "finished",
+            "declAttributes": [
+              "ObjC",
+              "Override",
+              "Final",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@BanubaUtilities@objc(cs)BanubaAsyncOperation(im)isFinished",
+                "mangledName": "$s15BanubaUtilities0A14AsyncOperationC10isFinishedSbvg",
+                "moduleName": "BanubaUtilities",
+                "overriding": true,
+                "objc_name": "isFinished",
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isAsynchronous",
+            "printedName": "isAsynchronous",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@BanubaUtilities@objc(cs)BanubaAsyncOperation(py)asynchronous",
+            "mangledName": "$s15BanubaUtilities0A14AsyncOperationC14isAsynchronousSbvp",
+            "moduleName": "BanubaUtilities",
+            "overriding": true,
+            "objc_name": "asynchronous",
+            "declAttributes": [
+              "ObjC",
+              "Override",
+              "Final",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@BanubaUtilities@objc(cs)BanubaAsyncOperation(im)isAsynchronous",
+                "mangledName": "$s15BanubaUtilities0A14AsyncOperationC14isAsynchronousSbvg",
+                "moduleName": "BanubaUtilities",
+                "overriding": true,
+                "objc_name": "isAsynchronous",
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "keyPathsForValuesAffectingValue",
+            "printedName": "keyPathsForValuesAffectingValue(forKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Set",
+                "printedName": "Swift.Set<Swift.String>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sh"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BanubaUtilities@objc(cs)BanubaAsyncOperation(cm)keyPathsForValuesAffectingValueForKey:",
+            "mangledName": "$s15BanubaUtilities0A14AsyncOperationC31keyPathsForValuesAffectingValue6forKeyShySSGSS_tFZ",
+            "moduleName": "BanubaUtilities",
+            "static": true,
+            "overriding": true,
+            "isOpen": true,
+            "objc_name": "keyPathsForValuesAffectingValueForKey:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "start",
+            "printedName": "start()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BanubaUtilities@objc(cs)BanubaAsyncOperation(im)start",
+            "mangledName": "$s15BanubaUtilities0A14AsyncOperationC5startyyF",
+            "moduleName": "BanubaUtilities",
+            "overriding": true,
+            "objc_name": "start",
+            "declAttributes": [
+              "ObjC",
+              "Override",
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "main",
+            "printedName": "main()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BanubaUtilities@objc(cs)BanubaAsyncOperation(im)main",
+            "mangledName": "$s15BanubaUtilities0A14AsyncOperationC4mainyyF",
+            "moduleName": "BanubaUtilities",
+            "overriding": true,
+            "isOpen": true,
+            "objc_name": "main",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "finish",
+            "printedName": "finish()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15BanubaUtilities0A14AsyncOperationC6finishyyF",
+            "mangledName": "$s15BanubaUtilities0A14AsyncOperationC6finishyyF",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BanubaAsyncOperation",
+                "printedName": "BanubaUtilities.BanubaAsyncOperation",
+                "usr": "c:@M@BanubaUtilities@objc(cs)BanubaAsyncOperation"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@BanubaUtilities@objc(cs)BanubaAsyncOperation(im)init",
+            "mangledName": "$s15BanubaUtilities0A14AsyncOperationCACycfc",
+            "moduleName": "BanubaUtilities",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@BanubaUtilities@objc(cs)BanubaAsyncOperation",
+        "mangledName": "$s15BanubaUtilities0A14AsyncOperationC",
+        "moduleName": "BanubaUtilities",
+        "isOpen": true,
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSOperation",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "Foundation.Operation",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -62114,6 +62549,45 @@
               "Required"
             ],
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "gestureRecognizer",
+            "printedName": "gestureRecognizer(_:shouldReceive:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIGestureRecognizer",
+                "printedName": "UIKit.UIGestureRecognizer",
+                "usr": "c:objc(cs)UIGestureRecognizer"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UITouch",
+                "printedName": "UIKit.UITouch",
+                "usr": "c:objc(cs)UITouch"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@BanubaUtilities@objc(cs)PopoverAlertViewController(im)gestureRecognizer:shouldReceiveTouch:",
+            "mangledName": "$s15BanubaUtilities26PopoverAlertViewControllerC17gestureRecognizer_13shouldReceiveSbSo09UIGestureH0C_So7UITouchCtF",
+            "moduleName": "BanubaUtilities",
+            "isOpen": true,
+            "objc_name": "gestureRecognizer:shouldReceiveTouch:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -73727,6 +74201,41 @@
       "value": "\"BanubaUtilities.VideoTimeLineCollectionViewHandler\""
     },
     {
+      "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 321,
+      "length": 9,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 340,
+      "length": 8,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 321,
+      "length": 9,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
+      "kind": "IntegerLiteral",
+      "offset": 340,
+      "length": 8,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
+      "kind": "StringLiteral",
+      "offset": 496,
+      "length": 11,
+      "value": "\".rw.state\""
+    },
+    {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationController.swift",
       "kind": "BooleanLiteral",
       "offset": 789,
@@ -75024,7 +75533,7 @@
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
       "kind": "Array",
-      "offset": 2203,
+      "offset": 2204,
       "length": 2,
       "value": "[]"
     },

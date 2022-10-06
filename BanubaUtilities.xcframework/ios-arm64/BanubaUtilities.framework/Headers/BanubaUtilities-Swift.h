@@ -369,6 +369,21 @@ SWIFT_CLASS("_TtC15BanubaUtilities23BackgroundConfiguration")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+/// Class supports asynchronous execution block of code
+SWIFT_CLASS("_TtC15BanubaUtilities20BanubaAsyncOperation")
+@interface BanubaAsyncOperation : NSOperation
+@property (nonatomic, readonly, getter=isReady) BOOL ready;
+@property (nonatomic, readonly, getter=isExecuting) BOOL executing;
+@property (nonatomic, readonly, getter=isFinished) BOOL finished;
+@property (nonatomic, readonly, getter=isAsynchronous) BOOL asynchronous;
++ (NSSet<NSString *> * _Nonnull)keyPathsForValuesAffectingValueForKey:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
+- (void)start;
+/// Subclasses must implement this to perform their work and they must not call <code>super</code>. The default implementation of this function throws an exception.
+- (void)main;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class AVURLAsset;
 enum GalleryItemType : NSInteger;
 @class AVPlayerItem;
@@ -531,6 +546,13 @@ SWIFT_CLASS("_TtC15BanubaUtilities26PopoverAlertViewController")
 - (void)viewWillLayoutSubviews;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIGestureRecognizer;
+@class UITouch;
+
+@interface PopoverAlertViewController (SWIFT_EXTENSION(BanubaUtilities)) <UIGestureRecognizerDelegate>
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldReceiveTouch:(UITouch * _Nonnull)touch SWIFT_WARN_UNUSED_RESULT;
 @end
 
 

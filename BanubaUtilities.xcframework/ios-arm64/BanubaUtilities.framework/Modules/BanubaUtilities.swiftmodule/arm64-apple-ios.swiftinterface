@@ -619,6 +619,26 @@ extension Swift.Decodable where Self : UIKit.UIColor {
 extension Swift.Encodable where Self : UIKit.UIColor {
   public func encode(to encoder: Swift.Encoder) throws
 }
+@objc @_inheritsConvenienceInitializers open class BanubaAsyncOperation : Foundation.Operation {
+  @objc override dynamic open var isReady: Swift.Bool {
+    @objc get
+  }
+  @objc final override public var isExecuting: Swift.Bool {
+    @objc get
+  }
+  @objc final override public var isFinished: Swift.Bool {
+    @objc get
+  }
+  @objc final override public var isAsynchronous: Swift.Bool {
+    @objc get
+  }
+  @objc override dynamic open class func keyPathsForValuesAffectingValue(forKey key: Swift.String) -> Swift.Set<Swift.String>
+  @objc final override public func start()
+  @objc override dynamic open func main()
+  final public func finish()
+  @objc override dynamic public init()
+  @objc deinit
+}
 public enum BackgroundViewStyle : Swift.Equatable {
   case blur(style: UIKit.UIBlurEffect.Style)
   case dim
@@ -1295,6 +1315,9 @@ public struct OverlayPopoverActionConfiguration {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
+}
+extension BanubaUtilities.PopoverAlertViewController : UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldReceive touch: UIKit.UITouch) -> Swift.Bool
 }
 public protocol AudioTrackAdoptable : AnyObject {
   var position: BanubaUtilities.AudioTrackLinePosition { get set }
