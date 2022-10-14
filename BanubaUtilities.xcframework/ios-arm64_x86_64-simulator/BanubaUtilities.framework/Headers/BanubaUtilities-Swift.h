@@ -592,15 +592,6 @@ typedef SWIFT_ENUM(NSInteger, GradientTypeAdapter, open) {
 };
 
 
-SWIFT_CLASS("_TtCC15BanubaUtilities35SmallActivityIndicatorConfiguration23ImageConfigurationModel")
-@interface ImageConfigurationModel : NSObject <ImageConfigurationProtocol>
-@property (nonatomic, strong) UIImage * _Nullable image;
-@property (nonatomic, strong) UIColor * _Nullable tintColor;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
 
 /// The gradient configuration.
 SWIFT_CLASS("_TtCC15BanubaUtilities35SmallActivityIndicatorConfiguration26GradientColorConfiguration")
@@ -658,11 +649,6 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26TimeLineDataSourceDelegate_")
 /// timelineDataSource did finish fetching all thumbs
 - (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
 @end
-
-
-
-
-
 
 
 
@@ -1312,15 +1298,6 @@ typedef SWIFT_ENUM(NSInteger, GradientTypeAdapter, open) {
 };
 
 
-SWIFT_CLASS("_TtCC15BanubaUtilities35SmallActivityIndicatorConfiguration23ImageConfigurationModel")
-@interface ImageConfigurationModel : NSObject <ImageConfigurationProtocol>
-@property (nonatomic, strong) UIImage * _Nullable image;
-@property (nonatomic, strong) UIColor * _Nullable tintColor;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
 
 /// The gradient configuration.
 SWIFT_CLASS("_TtCC15BanubaUtilities35SmallActivityIndicatorConfiguration26GradientColorConfiguration")
@@ -1378,11 +1355,6 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26TimeLineDataSourceDelegate_")
 /// timelineDataSource did finish fetching all thumbs
 - (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
 @end
-
-
-
-
-
 
 
 

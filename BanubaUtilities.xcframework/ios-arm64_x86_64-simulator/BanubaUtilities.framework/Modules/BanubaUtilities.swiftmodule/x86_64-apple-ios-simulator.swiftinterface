@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
-// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name BanubaUtilities
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BanubaUtilities
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
 import AVKit
@@ -81,14 +81,6 @@ public enum AspectRatio : Swift.UInt8, Swift.Codable {
 }
 extension CoreFoundation.CGRect {
   public func getCenter() -> CoreFoundation.CGPoint
-}
-extension UIKit.UIImage : Swift.Codable {
-}
-extension Swift.Decodable where Self : UIKit.UIImage {
-  public init(from decoder: Swift.Decoder) throws
-}
-extension Swift.Encodable where Self : UIKit.UIImage {
-  public func encode(to encoder: Swift.Encoder) throws
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class SlideInPresentationManager : ObjectiveC.NSObject, UIKit.UIViewControllerTransitioningDelegate {
   @_Concurrency.MainActor(unsafe) public var backgroundViewInteractionHandler: (() -> Swift.Void)? {
@@ -175,8 +167,7 @@ extension UIKit.UIButton {
 }
 public struct CameraSessionMetadata : Swift.Codable {
   public var isFrontCamera: Swift.Bool
-  public var draftsHintShown: Swift.Bool
-  public init(isFrontCamera: Swift.Bool, draftsHintShown: Swift.Bool)
+  public init(isFrontCamera: Swift.Bool)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -438,6 +429,18 @@ public struct Params : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
+public enum GalleryError : Foundation.CustomNSError, Foundation.LocalizedError {
+  case uploadingFailed
+  case error(Swift.Error)
+  case uploadingCancelled
+  public var isCancelled: Swift.Bool {
+    get
+  }
+  public static var errorDomain: Swift.String
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 extension AVFoundation.AVAssetTrack {
   public var fixedPreferredTransform: CoreFoundation.CGAffineTransform {
     get
@@ -520,28 +523,8 @@ extension Swift.Encodable {
   public func toDictionary(_ encoder: Foundation.JSONEncoder = JSONEncoder()) throws -> [Swift.String : Any]
   public func toString() throws -> Swift.String
 }
-extension UIKit.UIBarStyle : Swift.Codable {
-}
-extension Swift.Decodable where Self == UIKit.UIBarStyle {
-  public init(from decoder: Swift.Decoder) throws
-}
-extension Swift.Encodable where Self == UIKit.UIBarStyle {
-  public func encode(to encoder: Swift.Encoder) throws
-}
 extension UIKit.UILabel {
   @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.TextConfiguration, with text: Swift.String)
-}
-extension UIKit.UIFont {
-  public static func fromData(_ data: Foundation.Data) -> UIKit.UIFont?
-  public func toData() -> Foundation.Data
-}
-extension UIKit.UIFont : Swift.Codable {
-}
-extension Swift.Decodable where Self : UIKit.UIFont {
-  public init(from decoder: Swift.Decoder) throws
-}
-extension Swift.Encodable where Self : UIKit.UIFont {
-  public func encode(to encoder: Swift.Encoder) throws
 }
 extension CoreFoundation.CGPoint {
   public mutating func transformToGradientSpace()
@@ -607,18 +590,6 @@ public class MediaTrack : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
 }
-extension UIKit.UIColor {
-  convenience public init(hexString: Swift.String)
-  public func toHexString() -> Swift.String
-}
-extension UIKit.UIColor : Swift.Codable {
-}
-extension Swift.Decodable where Self : UIKit.UIColor {
-  public init(from decoder: Swift.Decoder) throws
-}
-extension Swift.Encodable where Self : UIKit.UIColor {
-  public func encode(to encoder: Swift.Encoder) throws
-}
 @objc @_inheritsConvenienceInitializers open class BanubaAsyncOperation : Foundation.Operation {
   @objc override dynamic open var isReady: Swift.Bool {
     @objc get
@@ -683,26 +654,6 @@ public struct PlayerControlConfiguration {
   public var playButtonImageName: Swift.String
   public var pauseButtonImageName: Swift.String
   public init(playButtonImageName: Swift.String, pauseButtonImageName: Swift.String)
-}
-public enum GalleryError : Foundation.CustomNSError, Foundation.LocalizedError {
-  case uploadingFailed
-  case error(Swift.Error)
-  case uploadingCancelled
-  public var isCancelled: Swift.Bool {
-    get
-  }
-  public static var errorDomain: Swift.String
-  public var errorDescription: Swift.String? {
-    get
-  }
-}
-extension CoreGraphics.CGColor : Swift.Codable {
-}
-extension Swift.Decodable where Self : CoreGraphics.CGColor {
-  public init(from decoder: Swift.Decoder) throws
-}
-extension Swift.Encodable where Self : CoreGraphics.CGColor {
-  public func encode(to encoder: Swift.Encoder) throws
 }
 @_hasMissingDesignatedInitializers open class Logger {
   open class func logError(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "")
@@ -1136,8 +1087,8 @@ extension Swift.Error {
     get
   }
 }
-@objc public class SmallActivityIndicatorConfiguration : ObjectiveC.NSObject, Swift.Codable {
-  @objc public enum GradientTypeAdapter : Swift.Int, Swift.Codable {
+@objc public class SmallActivityIndicatorConfiguration : ObjectiveC.NSObject {
+  @objc public enum GradientTypeAdapter : Swift.Int {
     case color
     case image
     public init?(rawValue: Swift.Int)
@@ -1146,37 +1097,23 @@ extension Swift.Error {
       get
     }
   }
-  @objc public class ImageConfigurationModel : ObjectiveC.NSObject, BanubaUtilities.ImageConfigurationProtocol, Swift.Codable {
-    @objc public var image: UIKit.UIImage?
-    @objc public var tintColor: UIKit.UIColor?
-    public init(image: UIKit.UIImage?, tintColor: UIKit.UIColor?)
-    required public init(from decoder: Swift.Decoder) throws
-    public func encode(to encoder: Swift.Encoder) throws
-    @objc deinit
-  }
-  @objc public class GradientType : ObjectiveC.NSObject, Swift.Codable {
+  @objc public class GradientType : ObjectiveC.NSObject {
     public var type: BanubaUtilities.SmallActivityIndicatorConfiguration.GradientTypeAdapter
     public var color: BanubaUtilities.SmallActivityIndicatorConfiguration.GradientColorConfiguration?
     public var image: BanubaUtilities.ImageConfigurationProtocol?
     public init(type: BanubaUtilities.SmallActivityIndicatorConfiguration.GradientTypeAdapter, color: BanubaUtilities.SmallActivityIndicatorConfiguration.GradientColorConfiguration?, image: BanubaUtilities.ImageConfigurationProtocol?)
-    required public init(from decoder: Swift.Decoder) throws
-    public func encode(to encoder: Swift.Encoder) throws
     @objc deinit
   }
-  @objc public class GradientColorConfiguration : ObjectiveC.NSObject, Swift.Codable {
+  @objc public class GradientColorConfiguration : ObjectiveC.NSObject {
     public var angle: CoreFoundation.CGFloat
     public var colors: [CoreGraphics.CGColor]
     public init(angle: CoreFoundation.CGFloat, colors: [CoreGraphics.CGColor])
-    required public init(from decoder: Swift.Decoder) throws
-    public func encode(to encoder: Swift.Encoder) throws
     @objc deinit
   }
   public var gradientType: BanubaUtilities.SmallActivityIndicatorConfiguration.GradientType
   public var activityLineWidth: CoreFoundation.CGFloat
   public init(gradientType: BanubaUtilities.SmallActivityIndicatorConfiguration.GradientType, activityLineWidth: CoreFoundation.CGFloat)
   @objc deinit
-  public func encode(to encoder: Swift.Encoder) throws
-  required public init(from decoder: Swift.Decoder) throws
 }
 extension BanubaUtilities.SmallActivityIndicatorConfiguration.GradientType {
   @objc public static func color(_ color: BanubaUtilities.SmallActivityIndicatorConfiguration.GradientColorConfiguration) -> BanubaUtilities.SmallActivityIndicatorConfiguration.GradientType
@@ -1404,7 +1341,7 @@ extension BanubaUtilities.NibLoadable {
 extension BanubaUtilities.NibLoadable where Self : UIKit.UIView {
   public static func loadFromNib() -> Self
 }
-@objc public class TextConfiguration : ObjectiveC.NSObject, Swift.Codable {
+@objc public class TextConfiguration : ObjectiveC.NSObject {
   public var kern: Swift.Double
   public var font: UIKit.UIFont
   public var color: UIKit.UIColor
@@ -1413,18 +1350,14 @@ extension BanubaUtilities.NibLoadable where Self : UIKit.UIView {
   public var shadow: BanubaUtilities.TextShadowConfiguration?
   public var lineBreakMode: UIKit.NSLineBreakMode
   public init(kern: Swift.Double = 0, font: UIKit.UIFont, color: UIKit.UIColor, alignment: UIKit.NSTextAlignment = .center, text: Swift.String? = nil, shadow: BanubaUtilities.TextShadowConfiguration? = nil, lineBreakModel: UIKit.NSLineBreakMode = .byWordWrapping)
-  required public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
   @objc deinit
 }
-public struct TextShadowConfiguration : Swift.Codable {
+public struct TextShadowConfiguration {
   public var shadowColor: UIKit.UIColor
   public var shadowOffset: CoreFoundation.CGSize
   public var shadowBlurRadius: CoreFoundation.CGFloat
   public init(shadowColor: UIKit.UIColor = UIColor.black.withAlphaComponent(0.4), shadowOffset: CoreFoundation.CGSize = CGSize(width: 0, height: 1), shadowBlurRadius: CoreFoundation.CGFloat = 2.0)
   public func shadow() -> UIKit.NSShadow
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
 }
 extension BanubaUtilities.AlertViewController.ButtonType : Swift.Equatable {}
 extension BanubaUtilities.AlertViewController.ButtonType : Swift.Hashable {}
