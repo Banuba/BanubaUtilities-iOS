@@ -539,6 +539,7 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26ImageConfigurationProtocol_")
 
 
 
+
 SWIFT_CLASS("_TtC15BanubaUtilities26PopoverAlertViewController")
 @interface PopoverAlertViewController : UIViewController
 - (void)viewDidLoad;
@@ -656,7 +657,6 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26TimeLineDataSourceDelegate_")
 
 
 
-
 SWIFT_CLASS("_TtC15BanubaUtilities28VideoEditorActivityIndicator")
 @interface VideoEditorActivityIndicator : UIView
 @property (nonatomic) CGRect bounds;
@@ -694,6 +694,12 @@ SWIFT_CLASS("_TtC15BanubaUtilities34VideoTimeLineCollectionViewHandler")
 - (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (void)collectionView:(UICollectionView * _Nonnull)collectionView willDisplayCell:(UICollectionViewCell * _Nonnull)cell forItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+@end
+
+
+SWIFT_CLASS("_TtC15BanubaUtilities10ZipArchive")
+@interface ZipArchive : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 #endif
@@ -1245,6 +1251,7 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26ImageConfigurationProtocol_")
 
 
 
+
 SWIFT_CLASS("_TtC15BanubaUtilities26PopoverAlertViewController")
 @interface PopoverAlertViewController : UIViewController
 - (void)viewDidLoad;
@@ -1362,7 +1369,6 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26TimeLineDataSourceDelegate_")
 
 
 
-
 SWIFT_CLASS("_TtC15BanubaUtilities28VideoEditorActivityIndicator")
 @interface VideoEditorActivityIndicator : UIView
 @property (nonatomic) CGRect bounds;
@@ -1400,6 +1406,12 @@ SWIFT_CLASS("_TtC15BanubaUtilities34VideoTimeLineCollectionViewHandler")
 - (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (void)collectionView:(UICollectionView * _Nonnull)collectionView willDisplayCell:(UICollectionViewCell * _Nonnull)cell forItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+@end
+
+
+SWIFT_CLASS("_TtC15BanubaUtilities10ZipArchive")
+@interface ZipArchive : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 #endif
