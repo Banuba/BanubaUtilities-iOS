@@ -293,12 +293,12 @@ public struct VideoMetadata : Swift.Codable {
   public var isDrafted: Swift.Bool
   public var aspect: BanubaUtilities.AspectRatio
   public var modificationDate: Foundation.Date?
-  public var totalDuration: Foundation.TimeInterval?
+  public var maxVideoDuration: Foundation.TimeInterval?
   public let isSlideShow: Swift.Bool
   public var parentSequenceId: Swift.String?
   public var musicTrack: BanubaUtilities.MediaTrack?
   public var editingStep: BanubaUtilities.VideoSequenceEditingStep
-  public init(isSlideShow: Swift.Bool = false, isDrafted: Swift.Bool = false, name: Swift.String, sequenceParentName: Swift.String? = nil, editingStep: BanubaUtilities.VideoSequenceEditingStep = .camera, musicTrack: BanubaUtilities.MediaTrack? = nil, aspect: BanubaUtilities.AspectRatio, modificationDate: Foundation.Date? = nil, totalDuration: Foundation.TimeInterval? = nil)
+  public init(isSlideShow: Swift.Bool = false, isDrafted: Swift.Bool = false, name: Swift.String, maxVideoDuration: Foundation.TimeInterval?, sequenceParentName: Swift.String? = nil, editingStep: BanubaUtilities.VideoSequenceEditingStep = .camera, musicTrack: BanubaUtilities.MediaTrack? = nil, aspect: BanubaUtilities.AspectRatio, modificationDate: Foundation.Date? = nil)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -749,6 +749,7 @@ public struct PlayerControlConfiguration {
   open class func logError(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "")
   open class func logDegug(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "")
   open class func logInfo(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "")
+  open class func logPublicInfo(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "")
   open class func logFault(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "")
   open class func logDefault(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "")
   @objc deinit
@@ -1171,8 +1172,8 @@ extension BanubaUtilities.BanubaGalleryItem {
 @objc public protocol GalleryViewControllerFactory : ObjectiveC.NSObjectProtocol {
   @objc func makeGalleryViewController(withConfiguration configuration: BanubaUtilities.GalleryConfiguration, albumsConfiguration: BanubaUtilities.AlbumsConfiguration, selectionBehaviour: BanubaUtilities.GallerySelectionBehaviour) -> BanubaUtilities.GalleryViewController
 }
-extension Swift.Array {
-  public func unique<T>(by keyPath: Swift.KeyPath<Element, T>) -> [Element] where T : Swift.Hashable
+extension Swift.Array where Element : Swift.Hashable {
+  public func uniqued() -> [Element]
 }
 extension Swift.Error {
   public var errorMessage: Swift.String {
@@ -1293,6 +1294,9 @@ extension Swift.Error {
 }
 extension Foundation.NSError {
   public static func makeCancelledError(domain: Swift.String) -> Foundation.NSError
+}
+extension CoreFoundation.CGSize {
+  public func swap() -> CoreFoundation.CGSize
 }
 public class PreviewExtractor {
   final public let asset: AVFoundation.AVAsset

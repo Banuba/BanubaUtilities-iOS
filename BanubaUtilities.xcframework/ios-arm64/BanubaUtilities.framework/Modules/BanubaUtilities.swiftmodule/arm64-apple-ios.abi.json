@@ -11399,8 +11399,8 @@
           },
           {
             "kind": "Var",
-            "name": "totalDuration",
-            "printedName": "totalDuration",
+            "name": "maxVideoDuration",
+            "printedName": "maxVideoDuration",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -11418,8 +11418,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities13VideoMetadataV13totalDurationSdSgvp",
-            "mangledName": "$s15BanubaUtilities13VideoMetadataV13totalDurationSdSgvp",
+            "usr": "s:15BanubaUtilities13VideoMetadataV03maxC8DurationSdSgvp",
+            "mangledName": "$s15BanubaUtilities13VideoMetadataV03maxC8DurationSdSgvp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "HasInitialValue",
@@ -11450,8 +11450,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities13VideoMetadataV13totalDurationSdSgvg",
-                "mangledName": "$s15BanubaUtilities13VideoMetadataV13totalDurationSdSgvg",
+                "usr": "s:15BanubaUtilities13VideoMetadataV03maxC8DurationSdSgvg",
+                "mangledName": "$s15BanubaUtilities13VideoMetadataV03maxC8DurationSdSgvg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -11482,8 +11482,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities13VideoMetadataV13totalDurationSdSgvs",
-                "mangledName": "$s15BanubaUtilities13VideoMetadataV13totalDurationSdSgvs",
+                "usr": "s:15BanubaUtilities13VideoMetadataV03maxC8DurationSdSgvs",
+                "mangledName": "$s15BanubaUtilities13VideoMetadataV03maxC8DurationSdSgvs",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "set"
@@ -11500,8 +11500,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities13VideoMetadataV13totalDurationSdSgvM",
-                "mangledName": "$s15BanubaUtilities13VideoMetadataV13totalDurationSdSgvM",
+                "usr": "s:15BanubaUtilities13VideoMetadataV03maxC8DurationSdSgvM",
+                "mangledName": "$s15BanubaUtilities13VideoMetadataV03maxC8DurationSdSgvM",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -11860,7 +11860,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(isSlideShow:isDrafted:name:sequenceParentName:editingStep:musicTrack:aspect:modificationDate:totalDuration:)",
+            "printedName": "init(isSlideShow:isDrafted:name:maxVideoDuration:sequenceParentName:editingStep:musicTrack:aspect:modificationDate:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -11887,6 +11887,20 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Double?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -11945,26 +11959,11 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.Double?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Double",
-                    "printedName": "Swift.Double",
-                    "usr": "s:Sd"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities13VideoMetadataV11isSlideShow0E7Drafted4name18sequenceParentName11editingStep10musicTrack6aspect16modificationDate13totalDurationACSb_SbS2SSgAA0c15SequenceEditingN0OAA05MediaP0CSgAA11AspectRatioO10Foundation0S0VSgSdSgtcfc",
-            "mangledName": "$s15BanubaUtilities13VideoMetadataV11isSlideShow0E7Drafted4name18sequenceParentName11editingStep10musicTrack6aspect16modificationDate13totalDurationACSb_SbS2SSgAA0c15SequenceEditingN0OAA05MediaP0CSgAA11AspectRatioO10Foundation0S0VSgSdSgtcfc",
+            "usr": "s:15BanubaUtilities13VideoMetadataV11isSlideShow0E7Drafted4name03maxC8Duration18sequenceParentName11editingStep10musicTrack6aspect16modificationDateACSb_SbSSSdSgSSSgAA0c15SequenceEditingP0OAA05MediaR0CSgAA11AspectRatioO10Foundation0U0VSgtcfc",
+            "mangledName": "$s15BanubaUtilities13VideoMetadataV11isSlideShow0E7Drafted4name03maxC8Duration18sequenceParentName11editingStep10musicTrack6aspect16modificationDateACSb_SbSSSdSgSSSgAA0c15SequenceEditingP0OAA05MediaR0CSgAA11AspectRatioO10Foundation0U0VSgtcfc",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "AccessControl"
@@ -29992,6 +29991,48 @@
             "declKind": "Func",
             "usr": "s:15BanubaUtilities6LoggerC7logInfo_9subsystem8categoryySS_S2StFZ",
             "mangledName": "$s15BanubaUtilities6LoggerC7logInfo_9subsystem8categoryySS_S2StFZ",
+            "moduleName": "BanubaUtilities",
+            "static": true,
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "logPublicInfo",
+            "printedName": "logPublicInfo(_:subsystem:category:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15BanubaUtilities6LoggerC13logPublicInfo_9subsystem8categoryySS_S2StFZ",
+            "mangledName": "$s15BanubaUtilities6LoggerC13logPublicInfo_9subsystem8categoryySS_S2StFZ",
             "moduleName": "BanubaUtilities",
             "static": true,
             "isOpen": true,
@@ -60912,8 +60953,8 @@
         "children": [
           {
             "kind": "Function",
-            "name": "unique",
-            "printedName": "unique(by:)",
+            "name": "uniqued",
+            "printedName": "uniqued()",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -60927,32 +60968,14 @@
                   }
                 ],
                 "usr": "s:Sa"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "KeyPath",
-                "printedName": "Swift.KeyPath<τ_0_0, τ_1_0>",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "GenericTypeParam",
-                    "printedName": "τ_0_0"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "GenericTypeParam",
-                    "printedName": "τ_1_0"
-                  }
-                ],
-                "usr": "s:s7KeyPathC"
               }
             ],
             "declKind": "Func",
-            "usr": "s:Sa15BanubaUtilitiesE6unique2bySayxGs7KeyPathCyxqd__G_tSHRd__lF",
-            "mangledName": "$sSa15BanubaUtilitiesE6unique2bySayxGs7KeyPathCyxqd__G_tSHRd__lF",
+            "usr": "s:Sa15BanubaUtilitiesSHRzlE7uniquedSayxGyF",
+            "mangledName": "$sSa15BanubaUtilitiesSHRzlE7uniquedSayxGyF",
             "moduleName": "BanubaUtilities",
-            "genericSig": "<τ_0_0, τ_1_0 where τ_1_0 : Swift.Hashable>",
-            "sugared_genericSig": "<Element, T where T : Swift.Hashable>",
+            "genericSig": "<τ_0_0 where τ_0_0 : Swift.Hashable>",
+            "sugared_genericSig": "<Element where Element : Swift.Hashable>",
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
           }
@@ -61963,6 +61986,102 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "CGSize",
+        "printedName": "CGSize",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "swap",
+            "printedName": "swap()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGSize",
+                "printedName": "CoreFoundation.CGSize",
+                "usr": "c:@S@CGSize"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So6CGSizeV15BanubaUtilitiesE4swapAByF",
+            "mangledName": "$sSo6CGSizeV15BanubaUtilitiesE4swapAByF",
+            "moduleName": "BanubaUtilities",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "c:@S@CGSize",
+        "moduleName": "CoreFoundation",
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ObjectiveCBridgeable",
+            "printedName": "_ObjectiveCBridgeable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_ObjectiveCType",
+                "printedName": "_ObjectiveCType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSValue",
+                    "printedName": "Foundation.NSValue",
+                    "usr": "c:objc(cs)NSValue"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s21_ObjectiveCBridgeableP",
+            "mangledName": "$ss21_ObjectiveCBridgeableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomReflectable",
+            "printedName": "CustomReflectable",
+            "usr": "s:s17CustomReflectableP",
+            "mangledName": "$ss17CustomReflectableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_CustomPlaygroundQuickLookable",
+            "printedName": "_CustomPlaygroundQuickLookable",
+            "usr": "s:s30_CustomPlaygroundQuickLookableP",
+            "mangledName": "$ss30_CustomPlaygroundQuickLookableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "UIView",
         "printedName": "UIView",
         "children": [
@@ -62483,77 +62602,77 @@
     {
       "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "BooleanLiteral",
-      "offset": 1412,
+      "offset": 1420,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "FloatLiteral",
-      "offset": 1863,
+      "offset": 1871,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 1914,
+      "offset": 1922,
       "length": 9,
       "value": "1000000"
     },
     {
       "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 8487,
+      "offset": 8495,
       "length": 7,
       "value": "1"
     },
     {
       "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 8502,
+      "offset": 8510,
       "length": 6,
       "value": "2"
     },
     {
       "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 8487,
+      "offset": 8495,
       "length": 7,
       "value": "1"
     },
     {
       "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 8502,
+      "offset": 8510,
       "length": 6,
       "value": "2"
     },
     {
       "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 8487,
+      "offset": 8495,
       "length": 7,
       "value": "1"
     },
     {
       "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 8502,
+      "offset": 8510,
       "length": 6,
       "value": "2"
     },
     {
       "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "BooleanLiteral",
-      "offset": 9152,
+      "offset": 9159,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "BooleanLiteral",
-      "offset": 9181,
+      "offset": 9188,
       "length": 5,
       "value": "false"
     },
@@ -62749,28 +62868,42 @@
     {
       "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
-      "offset": 1020,
+      "offset": 1025,
       "length": 12,
       "value": "\"com.banuba\""
     },
     {
       "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
-      "offset": 1057,
+      "offset": 1062,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
-      "offset": 1287,
+      "offset": 1291,
       "length": 12,
       "value": "\"com.banuba\""
     },
     {
       "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
-      "offset": 1324,
+      "offset": 1328,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "kind": "StringLiteral",
+      "offset": 1558,
+      "length": 12,
+      "value": "\"com.banuba\""
+    },
+    {
+      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "kind": "StringLiteral",
+      "offset": 1595,
       "length": 2,
       "value": "\"\""
     },
