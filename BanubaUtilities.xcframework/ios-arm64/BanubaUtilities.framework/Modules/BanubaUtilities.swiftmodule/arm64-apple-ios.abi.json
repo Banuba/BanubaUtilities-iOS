@@ -62243,1141 +62243,1141 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/AlertViewController\/AlertViewController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/AlertViewController\/AlertViewController.swift",
       "kind": "FloatLiteral",
       "offset": 240,
       "length": 5,
       "value": "263.0"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/AlertViewController\/AlertViewController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/AlertViewController\/AlertViewController.swift",
       "kind": "FloatLiteral",
       "offset": 285,
       "length": 5,
       "value": "200.0"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextButtonConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextButtonConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 178,
       "length": 23,
       "value": "\"BanubaUtilities.TextButtonConfiguration\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 215,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 235,
       "length": 10,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 264,
       "length": 10,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 292,
       "length": 9,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 319,
       "length": 9,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 215,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 235,
       "length": 10,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 264,
       "length": 10,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 292,
       "length": 9,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 319,
       "length": 9,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 215,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 235,
       "length": 10,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 264,
       "length": 10,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 292,
       "length": 9,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 319,
       "length": 9,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationManager.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationManager.swift",
       "kind": "BooleanLiteral",
       "offset": 1222,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "StringLiteral",
       "offset": 1686,
       "length": 33,
       "value": "\"ReachabilityChangedNotification\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "StringLiteral",
       "offset": 1805,
       "length": 21,
       "value": "\"reachabilityChanged\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "BooleanLiteral",
       "offset": 3100,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "BooleanLiteral",
       "offset": 4579,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "BooleanLiteral",
       "offset": 4640,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "StringLiteral",
       "offset": 4771,
       "length": 32,
       "value": "\"uk.co.ashleymills.reachability\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIViewController+AlertPresentable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIViewController+AlertPresentable.swift",
       "kind": "BooleanLiteral",
       "offset": 2743,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIViewController+AlertPresentable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIViewController+AlertPresentable.swift",
       "kind": "BooleanLiteral",
       "offset": 3174,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 228,
       "length": 68,
       "value": "\"You don't seem to be connected to the internet. \nPlease try again\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 315,
       "length": 56,
       "value": "\"Message displayed when there is no internet connection\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 446,
       "length": 45,
       "value": "\"Cannot download media file from your iCloud\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 508,
       "length": 56,
       "value": "\"Message displayed when media file cannot be downloaded\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 652,
       "length": 4,
       "value": "\"OK\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 667,
       "length": 26,
       "value": "\"OK button title in alert\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 746,
       "length": 5,
       "value": "\"Yes\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 762,
       "length": 40,
       "value": "\"Used when the question is answered yes\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 854,
       "length": 4,
       "value": "\"No\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 869,
       "length": 41,
       "value": "\"Used when answering a negative question\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 992,
       "length": 10,
       "value": "\"Settings\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1013,
       "length": 86,
       "value": "\"The name of the button, by clicking on which you can go to the Settings application.\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1163,
       "length": 16,
       "value": "\"Settings.Close\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1190,
       "length": 93,
       "value": "\"The name of the button, by clicking on which you can refuse missed permission alert message\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1338,
       "length": 34,
       "value": "\"BanubaVideoEditor.Settings.Later\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1383,
       "length": 27,
       "value": "\"Alert action button title\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1467,
       "length": 36,
       "value": "\"BanubaVideoEditor.Settings.Discard\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1514,
       "length": 27,
       "value": "\"Alert action button title\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1628,
       "length": 39,
       "value": "\"BanubaVideoEditor.Gallery.DamagedFile\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1678,
       "length": 14,
       "value": "\"Damaged file\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1759,
       "length": 45,
       "value": "\"BanubaVideoEditor.Gallery.ExportVideoFailed\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1815,
       "length": 36,
       "value": "\"Export video from gallery failed  \""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationAnimator.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationAnimator.swift",
       "kind": "StringLiteral",
       "offset": 132,
       "length": 27,
       "value": "\"BanubaUtilities.SlideInPresentationAnimator\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/BackgroundConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/BackgroundConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 170,
       "length": 23,
       "value": "\"BanubaUtilities.BackgroundConfiguration\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "BooleanLiteral",
       "offset": 1420,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "FloatLiteral",
       "offset": 1871,
       "length": 3,
       "value": "0.5"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
       "offset": 1922,
       "length": 9,
       "value": "1000000"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
       "offset": 8495,
       "length": 7,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
       "offset": 8510,
       "length": 6,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
       "offset": 8495,
       "length": 7,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
       "offset": 8510,
       "length": 6,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
       "offset": 8495,
       "length": 7,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
       "offset": 8510,
       "length": 6,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "BooleanLiteral",
       "offset": 9159,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "BooleanLiteral",
       "offset": 9188,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryErrors.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryErrors.swift",
       "kind": "StringLiteral",
       "offset": 445,
       "length": 20,
       "value": "\"com.banuba.gallery\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/TimeInterval+Formatted.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/TimeInterval+Formatted.swift",
       "kind": "BooleanLiteral",
       "offset": 519,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/GalleryConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/GalleryConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 170,
       "length": 20,
       "value": "\"BanubaUtilities.GalleryConfiguration\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/AlbumViewModel.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/AlbumViewModel.swift",
       "kind": "FloatLiteral",
       "offset": 116,
       "length": 5,
       "value": "400.0"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/AlbumViewModel.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/AlbumViewModel.swift",
       "kind": "FloatLiteral",
       "offset": 131,
       "length": 5,
       "value": "400.0"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/AlbumViewModel.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/AlbumViewModel.swift",
       "kind": "BooleanLiteral",
       "offset": 718,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/AlbumViewModel.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/AlbumViewModel.swift",
       "kind": "StringLiteral",
       "offset": 391,
       "length": 14,
       "value": "\"BanubaUtilities.AlbumViewModel\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIDevice+Models.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIDevice+Models.swift",
       "kind": "StringLiteral",
       "offset": 15504,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIDevice+Models.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIDevice+Models.swift",
       "kind": "IntegerLiteral",
       "offset": 15590,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
       "kind": "IntegerLiteral",
       "offset": 204,
       "length": 1,
       "value": "9"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
       "kind": "IntegerLiteral",
       "offset": 215,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
       "kind": "FloatLiteral",
       "offset": 256,
       "length": 3,
       "value": "3.0"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
       "kind": "StringLiteral",
       "offset": 361,
       "length": 34,
       "value": "\"BanubaUtilities.VideoTimeLineCollectionViewHandler\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
       "kind": "IntegerLiteral",
       "offset": 321,
       "length": 9,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
       "kind": "IntegerLiteral",
       "offset": 340,
       "length": 8,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
       "kind": "IntegerLiteral",
       "offset": 321,
       "length": 9,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
       "kind": "IntegerLiteral",
       "offset": 340,
       "length": 8,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
       "kind": "StringLiteral",
       "offset": 496,
       "length": 11,
       "value": "\".rw.state\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationController.swift",
       "kind": "BooleanLiteral",
       "offset": 789,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationController.swift",
       "kind": "StringLiteral",
       "offset": 425,
       "length": 29,
       "value": "\"BanubaUtilities.SlideInPresentationController\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/AlbumsConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/AlbumsConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 146,
       "length": 19,
       "value": "\"BanubaUtilities.AlbumsConfiguration\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 222,
       "length": 12,
       "value": "\"com.banuba\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 259,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 489,
       "length": 12,
       "value": "\"com.banuba\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 526,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 755,
       "length": 12,
       "value": "\"com.banuba\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 792,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1025,
       "length": 12,
       "value": "\"com.banuba\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1062,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1291,
       "length": 12,
       "value": "\"com.banuba\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1328,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1558,
       "length": 12,
       "value": "\"com.banuba\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1595,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/GalleryManager.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/GalleryManager.swift",
       "kind": "StringLiteral",
       "offset": 1332,
       "length": 37,
       "value": "\"com.videoEditor.galleryManagerQueue\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/GalleryManager.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/GalleryManager.swift",
       "kind": "BooleanLiteral",
       "offset": 1409,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/GalleryManager.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/GalleryManager.swift",
       "kind": "BooleanLiteral",
       "offset": 1441,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/GalleryManager.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/GalleryManager.swift",
       "kind": "StringLiteral",
       "offset": 817,
       "length": 14,
       "value": "\"BanubaUtilities.GalleryManager\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryInterfaces.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryInterfaces.swift",
       "kind": "IntegerLiteral",
       "offset": 1401,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryInterfaces.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryInterfaces.swift",
       "kind": "IntegerLiteral",
       "offset": 1401,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryInterfaces.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryInterfaces.swift",
       "kind": "StringLiteral",
       "offset": 1468,
       "length": 25,
       "value": "\"BanubaUtilities.GallerySelectionBehaviour\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/SlideInPresentationManager\/AbsoluteFrameCalculator.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/SlideInPresentationManager\/AbsoluteFrameCalculator.swift",
       "kind": "IntegerLiteral",
       "offset": 248,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
       "kind": "IntegerLiteral",
       "offset": 339,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
       "kind": "IntegerLiteral",
       "offset": 655,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
       "kind": "FloatLiteral",
       "offset": 665,
       "length": 12,
       "value": "0.7529411765"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
       "kind": "FloatLiteral",
       "offset": 685,
       "length": 13,
       "value": "0.01176470588"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
       "kind": "IntegerLiteral",
       "offset": 707,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
       "kind": "IntegerLiteral",
       "offset": 761,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
       "kind": "FloatLiteral",
       "offset": 771,
       "length": 4,
       "value": "0.25"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
       "kind": "BooleanLiteral",
       "offset": 817,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/AppStateObserver.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/AppStateObserver.swift",
       "kind": "BooleanLiteral",
       "offset": 873,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/BackButtonConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/BackButtonConfiguration.swift",
       "kind": "Array",
       "offset": 881,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PixelateFigure.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PixelateFigure.swift",
       "kind": "StringLiteral",
       "offset": 255,
       "length": 8,
       "value": "\"Circle\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PixelateFigure.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PixelateFigure.swift",
       "kind": "StringLiteral",
       "offset": 297,
       "length": 8,
       "value": "\"Square\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PixelateFigure.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PixelateFigure.swift",
       "kind": "StringLiteral",
       "offset": 255,
       "length": 8,
       "value": "\"Circle\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PixelateFigure.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PixelateFigure.swift",
       "kind": "StringLiteral",
       "offset": 297,
       "length": 8,
       "value": "\"Square\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioService.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioService.swift",
       "kind": "BooleanLiteral",
       "offset": 4095,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioService.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioService.swift",
       "kind": "BooleanLiteral",
       "offset": 4149,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
       "kind": "FloatLiteral",
       "offset": 184,
       "length": 3,
       "value": "0.1"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
       "kind": "IntegerLiteral",
       "offset": 252,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
       "kind": "IntegerLiteral",
       "offset": 265,
       "length": 7,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
       "kind": "IntegerLiteral",
       "offset": 252,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
       "kind": "IntegerLiteral",
       "offset": 265,
       "length": 7,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
       "kind": "FloatLiteral",
       "offset": 1405,
       "length": 5,
       "value": "400.0"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
       "kind": "FloatLiteral",
       "offset": 1420,
       "length": 5,
       "value": "400.0"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
       "kind": "StringLiteral",
       "offset": 1299,
       "length": 17,
       "value": "\"BanubaUtilities.BanubaGalleryItem\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/SmallActivityIndicatorConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/SmallActivityIndicatorConfiguration.swift",
       "kind": "IntegerLiteral",
       "offset": 336,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/SmallActivityIndicatorConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/SmallActivityIndicatorConfiguration.swift",
       "kind": "IntegerLiteral",
       "offset": 336,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/SmallActivityIndicatorConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/SmallActivityIndicatorConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 393,
       "length": 12,
       "value": "\"BanubaUtilities.GradientType\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/SmallActivityIndicatorConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/SmallActivityIndicatorConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 1061,
       "length": 26,
       "value": "\"BanubaUtilities.GradientColorConfiguration\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/SmallActivityIndicatorConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/SmallActivityIndicatorConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 189,
       "length": 35,
       "value": "\"BanubaUtilities.SmallActivityIndicatorConfiguration\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/VideoResolutionConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/VideoResolutionConfiguration.swift",
       "kind": "IntegerLiteral",
       "offset": 276,
       "length": 2,
       "value": "80"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/RoundedButtonConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/RoundedButtonConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1087,
       "length": 4,
       "value": "70.0"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/RoundedButtonConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/RoundedButtonConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1115,
       "length": 4,
       "value": "30.0"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/RoundedButtonConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/RoundedButtonConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1150,
       "length": 3,
       "value": "2.0"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/OverlayPopoverTableViewHandler.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/OverlayPopoverTableViewHandler.swift",
       "kind": "Array",
       "offset": 553,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/OverlayPopoverTableViewHandler.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/OverlayPopoverTableViewHandler.swift",
       "kind": "StringLiteral",
       "offset": 264,
       "length": 30,
       "value": "\"BanubaUtilities.OverlayPopoverTableViewHandler\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PreviewExtractor.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PreviewExtractor.swift",
       "kind": "IntegerLiteral",
       "offset": 265,
       "length": 5,
       "value": "10000"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/VideoEditorActivityIndicator.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/VideoEditorActivityIndicator.swift",
       "kind": "FloatLiteral",
       "offset": 495,
       "length": 3,
       "value": "1.1"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
       "kind": "FloatLiteral",
       "offset": 1502,
       "length": 3,
       "value": "0.3"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
       "kind": "FloatLiteral",
       "offset": 1550,
       "length": 3,
       "value": "0.3"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
       "kind": "FloatLiteral",
       "offset": 1592,
       "length": 5,
       "value": "180.0"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
       "kind": "FloatLiteral",
       "offset": 1637,
       "length": 4,
       "value": "20.0"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
       "kind": "Array",
       "offset": 2204,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
       "offset": 1829,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
       "offset": 1869,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
       "offset": 1907,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
       "offset": 1947,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
       "offset": 1829,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
       "offset": 1869,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
       "offset": 1907,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
       "offset": 1947,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
       "offset": 1829,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
       "offset": 1869,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
       "offset": 1907,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
       "offset": 1947,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
       "kind": "IntegerLiteral",
       "offset": 821,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 156,
       "length": 17,
       "value": "\"BanubaUtilities.TextConfiguration\""
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1678,
       "length": 3,
       "value": "0.4"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
       "kind": "IntegerLiteral",
       "offset": 1725,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
       "kind": "IntegerLiteral",
       "offset": 1736,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andrei.sak\/Developer\/Video Editor\/banuba_ve_sdk_ios\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1772,
       "length": 3,
