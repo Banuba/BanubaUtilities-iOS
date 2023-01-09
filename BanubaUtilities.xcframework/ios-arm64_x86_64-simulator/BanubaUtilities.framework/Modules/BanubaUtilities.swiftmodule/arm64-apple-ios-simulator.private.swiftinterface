@@ -188,8 +188,8 @@ public struct VideoSequenceItemMetadata : Swift.Codable {
   public let isPIP: Swift.Bool
   public var transition: BanubaUtilities.TransitionEffectMetadata
   public init(videoName: Swift.String, order: Swift.Int, imageData: Foundation.Data? = nil, trimTimeRange: BanubaUtilities.TrimTimeRangeMetadata, isGalleryAsset: Swift.Bool, isSlideShow: Swift.Bool, isPIP: Swift.Bool = false, transition: BanubaUtilities.TransitionEffectMetadata)
-  public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct TransitionEffectMetadata : Swift.Codable {
   public struct Defaults {
@@ -197,11 +197,8 @@ public struct TransitionEffectMetadata : Swift.Codable {
     public static let timescale: CoreMedia.CMTimeScale
   }
   public let type: BanubaUtilities.TransitionType
-  public let start: BanubaUtilities.TimeMetadata
-  public init(type: BanubaUtilities.TransitionType, start: CoreMedia.CMTime)
+  public init(type: BanubaUtilities.TransitionType)
   public static func startTime(fromTime: CoreMedia.CMTime) -> CoreMedia.CMTime
-  public func getStartTime() -> CoreMedia.CMTime
-  public func getEndTime() -> CoreMedia.CMTime
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -226,6 +223,7 @@ public struct MusicEditorTrack : Swift.Codable {
   public var title: Swift.String
   public var additionalTitle: Swift.String?
   public var id: Swift.Int32
+  public let uuid: Foundation.UUID
   public var volume: Swift.Float
   public var position: Swift.Int
   public var timeScale: Foundation.TimeInterval
@@ -236,9 +234,9 @@ public struct MusicEditorTrack : Swift.Codable {
   public var isEditable: Swift.Bool
   public var applyedFilterId: Swift.Int?
   public var isCameraTrack: Swift.Bool
-  public init(url: Foundation.URL, originalURL: Foundation.URL, title: Swift.String, additionalTitle: Swift.String?, id: Swift.Int32, volume: Swift.Float, position: Swift.Int, timeScale: Foundation.TimeInterval, compositionStart: Foundation.TimeInterval, timeRangeStart: Foundation.TimeInterval, timeRangeEnd: Foundation.TimeInterval, isAudioRecord: Swift.Bool, isEditable: Swift.Bool, applyedFilterId: Swift.Int? = nil, isCameraTrack: Swift.Bool)
-  public func encode(to encoder: Swift.Encoder) throws
+  public init(url: Foundation.URL, originalURL: Foundation.URL, title: Swift.String, additionalTitle: Swift.String?, uuid: Foundation.UUID, id: Swift.Int32, volume: Swift.Float, position: Swift.Int, timeScale: Foundation.TimeInterval, compositionStart: Foundation.TimeInterval, timeRangeStart: Foundation.TimeInterval, timeRangeEnd: Foundation.TimeInterval, isAudioRecord: Swift.Bool, isEditable: Swift.Bool, applyedFilterId: Swift.Int? = nil, isCameraTrack: Swift.Bool)
   public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct VideoEditorMetadata : Swift.Codable {
   public var effectsOnVideoMetadata: [BanubaUtilities.EffectOnVideoMetadata]?
@@ -292,15 +290,15 @@ public struct VideoMetadata : Swift.Codable {
   public var name: Swift.String
   public var isDrafted: Swift.Bool
   public var aspect: BanubaUtilities.AspectRatio
-  public var modificationDate: Foundation.Date?
+  public var modificationDate: Foundation.Date
   public var maxVideoDuration: Foundation.TimeInterval?
   public let isSlideShow: Swift.Bool
   public var parentSequenceId: Swift.String?
   public var musicTrack: BanubaUtilities.MediaTrack?
   public var editingStep: BanubaUtilities.VideoSequenceEditingStep
-  public init(isSlideShow: Swift.Bool = false, isDrafted: Swift.Bool = false, name: Swift.String, maxVideoDuration: Foundation.TimeInterval?, sequenceParentName: Swift.String? = nil, editingStep: BanubaUtilities.VideoSequenceEditingStep = .camera, musicTrack: BanubaUtilities.MediaTrack? = nil, aspect: BanubaUtilities.AspectRatio, modificationDate: Foundation.Date? = nil)
-  public func encode(to encoder: Swift.Encoder) throws
+  public init(isSlideShow: Swift.Bool = false, isDrafted: Swift.Bool = false, name: Swift.String, maxVideoDuration: Foundation.TimeInterval?, sequenceParentName: Swift.String? = nil, editingStep: BanubaUtilities.VideoSequenceEditingStep = .camera, musicTrack: BanubaUtilities.MediaTrack? = nil, aspect: BanubaUtilities.AspectRatio, modificationDate: Foundation.Date = Date())
   public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct PixelateOnVideoMetadata : Swift.Codable {
   public let effectId: Swift.UInt
@@ -401,12 +399,13 @@ public class AudioTrack : BanubaUtilities.AudioTrackAdoptable {
   public var originalURL: Foundation.URL
   public var title: Swift.String?
   public var additionalTitle: Swift.String?
-  public var id: Swift.Int32
+  public var id: Swift.Int32?
+  final public let uuid: Foundation.UUID
   public var isEditable: Swift.Bool
   public var position: BanubaUtilities.AudioTrackLinePosition
   public var applyedFilterId: Swift.Int?
   final public let isCameraTrack: Swift.Bool
-  required public init(url: Foundation.URL, originalURL: Foundation.URL, id: Swift.Int32, timeRange: CoreMedia.CMTimeRange, trimTimeRange trimmedTimeRange: CoreMedia.CMTimeRange, compositionStart: CoreMedia.CMTime, avURLAsset: AVFoundation.AVURLAsset, isAudioRecord: Swift.Bool, isEditable: Swift.Bool, isCameraTrack: Swift.Bool, title: Swift.String?, additionalTitle: Swift.String?, applyedFilterId: Swift.Int?)
+  required public init(url: Foundation.URL, originalURL: Foundation.URL, uuid: Foundation.UUID, id: Swift.Int32?, timeRange: CoreMedia.CMTimeRange, trimTimeRange trimmedTimeRange: CoreMedia.CMTimeRange, compositionStart: CoreMedia.CMTime, avURLAsset: AVFoundation.AVURLAsset, isAudioRecord: Swift.Bool, isEditable: Swift.Bool, isCameraTrack: Swift.Bool, title: Swift.String?, additionalTitle: Swift.String?, applyedFilterId: Swift.Int?)
   @objc deinit
 }
 public struct PixelateList : Swift.Codable {
@@ -669,16 +668,17 @@ public struct MediaTrackTimeRange : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
 }
 public class MediaTrack : Swift.Codable {
-  public var id: CoreMedia.CMPersistentTrackID
+  final public let uuid: Foundation.UUID
   final public let url: Foundation.URL
   public var timeRange: BanubaUtilities.MediaTrackTimeRange
   final public let title: Swift.String?
   final public let additionalTitle: Swift.String?
   final public let isEditable: Swift.Bool
-  public init(id: CoreMedia.CMPersistentTrackID, url: Foundation.URL, timeRange: BanubaUtilities.MediaTrackTimeRange, isEditable: Swift.Bool, title: Swift.String? = nil, additionalTitle: Swift.String? = nil)
+  public var id: CoreMedia.CMPersistentTrackID?
+  public init(uuid: Foundation.UUID, id: CoreMedia.CMPersistentTrackID?, url: Foundation.URL, timeRange: BanubaUtilities.MediaTrackTimeRange, isEditable: Swift.Bool, title: Swift.String? = nil, additionalTitle: Swift.String? = nil)
+  required public init(from decoder: Swift.Decoder) throws
   @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
-  required public init(from decoder: Swift.Decoder) throws
 }
 @objc @_inheritsConvenienceInitializers open class BanubaAsyncOperation : Foundation.Operation {
   @objc override dynamic open var isReady: Swift.Bool {
@@ -730,6 +730,10 @@ public enum TransitionType : Swift.String, Swift.Codable, Swift.CaseIterable {
 }
 extension Dispatch.DispatchQueue {
   public static func checkAndPerformOnMainThreadAsync(_ block: @escaping () -> Swift.Void)
+}
+extension Swift.String {
+  public func height(forFont font: UIKit.UIFont) -> CoreFoundation.CGFloat
+  public func width(forFont font: UIKit.UIFont) -> CoreFoundation.CGFloat
 }
 extension Swift.Double {
   public func rounded(toPlaces places: Swift.Int, rule: Swift.FloatingPointRoundingRule? = nil) -> Swift.Double
@@ -811,7 +815,7 @@ extension UIKit.UIStackView {
   @_Concurrency.MainActor(unsafe) public func addBackground(color: UIKit.UIColor, cornerRadius: CoreFoundation.CGFloat)
 }
 public protocol AudioItem {
-  var id: Swift.Int32 { get }
+  var uuid: Foundation.UUID { get }
   var url: Foundation.URL { get }
   var title: Swift.String? { get set }
   var additionalTitle: Swift.String? { get set }
@@ -1021,6 +1025,19 @@ public protocol ImageTextButtonConfigurationProtocol {
   var selectedImageConfiguration: BanubaUtilities.ImageConfigurationProtocol? { get set }
   var style: BanubaUtilities.TextConfiguration? { get set }
 }
+public struct ToastConfiguration {
+  public var kern: Swift.Double
+  public var font: UIKit.UIFont
+  public var cornerRadius: CoreFoundation.CGFloat
+  public var textColor: UIKit.UIColor
+  public var backgroundColor: UIKit.UIColor
+  public init(kern: Swift.Double, font: UIKit.UIFont, cornerRadius: CoreFoundation.CGFloat, textColor: UIKit.UIColor = .white, backgroundColor: UIKit.UIColor = .black)
+}
+extension BanubaUtilities.ToastConfiguration {
+  public static var `default`: BanubaUtilities.ToastConfiguration {
+    get
+  }
+}
 public struct GalleryLayoutConfiguration {
   public var numberOfItemsPerRow: Swift.Int
   public var interitemSpacing: CoreFoundation.CGFloat
@@ -1060,7 +1077,7 @@ public enum DrawableFigure : Swift.String, Swift.Codable {
   }
 }
 public class AudioServiceItem : BanubaUtilities.AudioItem {
-  final public let id: Swift.Int32
+  final public let uuid: Foundation.UUID
   final public let url: Foundation.URL
   public var title: Swift.String?
   public var additionalTitle: Swift.String?
@@ -1068,7 +1085,7 @@ public class AudioServiceItem : BanubaUtilities.AudioItem {
   public var timeRange: CoreMedia.CMTimeRange {
     get
   }
-  public init(id: Swift.Int32, url: Foundation.URL, title: Swift.String?, additionalTitle: Swift.String?, isEditable: Swift.Bool)
+  public init(uuid: Foundation.UUID, url: Foundation.URL, title: Swift.String?, additionalTitle: Swift.String?, isEditable: Swift.Bool)
   @objc deinit
 }
 public protocol AudioServicing {
@@ -1333,9 +1350,15 @@ public enum OverlayPopoverActionsPosition {
   case center
 }
 public struct PopoverAlertViewConfiguration {
+  public var mainBackgroundColor: UIKit.UIColor
+  public var actionsViewBackgroundColor: UIKit.UIColor
+  public var cornerRadius: CoreFoundation.CGFloat
+  public var actionCellHeight: CoreFoundation.CGFloat
+  public var hideAnimated: Swift.Bool
   public static var `default`: BanubaUtilities.PopoverAlertViewConfiguration {
     get
   }
+  public init(mainBackgroundColor: UIKit.UIColor, actionsViewBackgroundColor: UIKit.UIColor, cornerRadius: CoreFoundation.CGFloat, actionCellHeight: CoreFoundation.CGFloat, hideAnimated: Swift.Bool)
 }
 public struct OverlayPopoverActionConfiguration {
   public init(leftImage: BanubaUtilities.ImageConfigurationProtocol?, rightImage: BanubaUtilities.ImageConfigurationProtocol?, title: BanubaUtilities.TextConfiguration, titleImageInset: CoreFoundation.CGFloat)
@@ -1373,12 +1396,13 @@ public protocol AudioTrackAdoptable : AnyObject {
   var originalURL: Foundation.URL { get set }
   var title: Swift.String? { get set }
   var additionalTitle: Swift.String? { get set }
-  var id: Swift.Int32 { get set }
+  var id: Swift.Int32? { get set }
+  var uuid: Foundation.UUID { get }
   var isAudioRecord: Swift.Bool { get set }
   var applyedFilterId: Swift.Int? { get set }
   var isEditable: Swift.Bool { get set }
   var isCameraTrack: Swift.Bool { get }
-  init(url: Foundation.URL, originalURL: Foundation.URL, id: Swift.Int32, timeRange: CoreMedia.CMTimeRange, trimTimeRange: CoreMedia.CMTimeRange, compositionStart: CoreMedia.CMTime, avURLAsset: AVFoundation.AVURLAsset, isAudioRecord: Swift.Bool, isEditable: Swift.Bool, isCameraTrack: Swift.Bool, title: Swift.String?, additionalTitle: Swift.String?, applyedFilterId: Swift.Int?)
+  init(url: Foundation.URL, originalURL: Foundation.URL, uuid: Foundation.UUID, id: Swift.Int32?, timeRange: CoreMedia.CMTimeRange, trimTimeRange: CoreMedia.CMTimeRange, compositionStart: CoreMedia.CMTime, avURLAsset: AVFoundation.AVURLAsset, isAudioRecord: Swift.Bool, isEditable: Swift.Bool, isCameraTrack: Swift.Bool, title: Swift.String?, additionalTitle: Swift.String?, applyedFilterId: Swift.Int?)
 }
 public enum AudioTrackLinePosition : Swift.Int, Swift.CaseIterable {
   case first
@@ -1404,6 +1428,11 @@ public enum AudioTrackLineViewMovement {
   public var hashValue: Swift.Int {
     get
   }
+}
+public class ToastPresenter {
+  public init(configuration: BanubaUtilities.ToastConfiguration)
+  public func showToast(message: Swift.String)
+  @objc deinit
 }
 public protocol VideoEditorPlayable : AnyObject {
   func startPlay(loop: Swift.Bool, fixedSpeed: Swift.Bool)

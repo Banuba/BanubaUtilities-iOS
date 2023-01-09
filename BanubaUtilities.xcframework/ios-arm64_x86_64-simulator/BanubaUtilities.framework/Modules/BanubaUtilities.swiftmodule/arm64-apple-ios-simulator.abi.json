@@ -6363,7 +6363,9 @@
             "usr": "s:15BanubaUtilities25VideoSequenceItemMetadataV4fromACs7Decoder_p_tKcfc",
             "mangledName": "$s15BanubaUtilities25VideoSequenceItemMetadataV4fromACs7Decoder_p_tKcfc",
             "moduleName": "BanubaUtilities",
-            "implicit": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
             "throwing": true,
             "init_kind": "Designated"
           },
@@ -6575,53 +6577,9 @@
             ]
           },
           {
-            "kind": "Var",
-            "name": "start",
-            "printedName": "start",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "TimeMetadata",
-                "printedName": "BanubaUtilities.TimeMetadata",
-                "usr": "s:15BanubaUtilities12TimeMetadataV"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:15BanubaUtilities24TransitionEffectMetadataV5startAA04TimeE0Vvp",
-            "mangledName": "$s15BanubaUtilities24TransitionEffectMetadataV5startAA04TimeE0Vvp",
-            "moduleName": "BanubaUtilities",
-            "declAttributes": [
-              "HasStorage",
-              "AccessControl"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "TimeMetadata",
-                    "printedName": "BanubaUtilities.TimeMetadata",
-                    "usr": "s:15BanubaUtilities12TimeMetadataV"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities24TransitionEffectMetadataV5startAA04TimeE0Vvg",
-                "mangledName": "$s15BanubaUtilities24TransitionEffectMetadataV5startAA04TimeE0Vvg",
-                "moduleName": "BanubaUtilities",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(type:start:)",
+            "printedName": "init(type:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -6634,17 +6592,11 @@
                 "name": "TransitionType",
                 "printedName": "BanubaUtilities.TransitionType",
                 "usr": "s:15BanubaUtilities14TransitionTypeO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CMTime",
-                "printedName": "CoreMedia.CMTime",
-                "usr": "c:@SA@CMTime"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities24TransitionEffectMetadataV4type5startAcA0C4TypeO_So6CMTimeatcfc",
-            "mangledName": "$s15BanubaUtilities24TransitionEffectMetadataV4type5startAcA0C4TypeO_So6CMTimeatcfc",
+            "usr": "s:15BanubaUtilities24TransitionEffectMetadataV4typeAcA0C4TypeO_tcfc",
+            "mangledName": "$s15BanubaUtilities24TransitionEffectMetadataV4typeAcA0C4TypeO_tcfc",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "AccessControl"
@@ -6674,48 +6626,6 @@
             "mangledName": "$s15BanubaUtilities24TransitionEffectMetadataV9startTime04fromG0So6CMTimeaAG_tFZ",
             "moduleName": "BanubaUtilities",
             "static": true,
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "getStartTime",
-            "printedName": "getStartTime()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "CMTime",
-                "printedName": "CoreMedia.CMTime",
-                "usr": "c:@SA@CMTime"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:15BanubaUtilities24TransitionEffectMetadataV12getStartTimeSo6CMTimeayF",
-            "mangledName": "$s15BanubaUtilities24TransitionEffectMetadataV12getStartTimeSo6CMTimeayF",
-            "moduleName": "BanubaUtilities",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "getEndTime",
-            "printedName": "getEndTime()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "CMTime",
-                "printedName": "CoreMedia.CMTime",
-                "usr": "c:@SA@CMTime"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:15BanubaUtilities24TransitionEffectMetadataV10getEndTimeSo6CMTimeayF",
-            "mangledName": "$s15BanubaUtilities24TransitionEffectMetadataV10getEndTimeSo6CMTimeayF",
-            "moduleName": "BanubaUtilities",
             "declAttributes": [
               "AccessControl"
             ],
@@ -7801,6 +7711,51 @@
           },
           {
             "kind": "Var",
+            "name": "uuid",
+            "printedName": "uuid",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities16MusicEditorTrackV4uuid10Foundation4UUIDVvp",
+            "mangledName": "$s15BanubaUtilities16MusicEditorTrackV4uuid10Foundation4UUIDVvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities16MusicEditorTrackV4uuid10Foundation4UUIDVvg",
+                "mangledName": "$s15BanubaUtilities16MusicEditorTrackV4uuid10Foundation4UUIDVvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "volume",
             "printedName": "volume",
             "children": [
@@ -8678,7 +8633,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(url:originalURL:title:additionalTitle:id:volume:position:timeScale:compositionStart:timeRangeStart:timeRangeEnd:isAudioRecord:isEditable:applyedFilterId:isCameraTrack:)",
+            "printedName": "init(url:originalURL:title:additionalTitle:uuid:id:volume:position:timeScale:compositionStart:timeRangeStart:timeRangeEnd:isAudioRecord:isEditable:applyedFilterId:isCameraTrack:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -8717,6 +8672,12 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
               },
               {
                 "kind": "TypeNominal",
@@ -8795,8 +8756,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities16MusicEditorTrackV3url11originalURL5title15additionalTitle2id6volume8position9timeScale16compositionStart0o5RangeR00oS3End13isAudioRecord0U8Editable15applyedFilterId0u6CameraE0AC10Foundation0H0V_AUS2SSgs5Int32VSfSiS4dS2bSiSgSbtcfc",
-            "mangledName": "$s15BanubaUtilities16MusicEditorTrackV3url11originalURL5title15additionalTitle2id6volume8position9timeScale16compositionStart0o5RangeR00oS3End13isAudioRecord0U8Editable15applyedFilterId0u6CameraE0AC10Foundation0H0V_AUS2SSgs5Int32VSfSiS4dS2bSiSgSbtcfc",
+            "usr": "s:15BanubaUtilities16MusicEditorTrackV3url11originalURL5title15additionalTitle4uuid2id6volume8position9timeScale16compositionStart0p5RangeS00pT3End13isAudioRecord0V8Editable15applyedFilterId0v6CameraE0AC10Foundation0H0V_AVS2SSgAT4UUIDVs5Int32VSfSiS4dS2bSiSgSbtcfc",
+            "mangledName": "$s15BanubaUtilities16MusicEditorTrackV3url11originalURL5title15additionalTitle4uuid2id6volume8position9timeScale16compositionStart0p5RangeS00pT3End13isAudioRecord0V8Editable15applyedFilterId0v6CameraE0AC10Foundation0H0V_AVS2SSgAT4UUIDVs5Int32VSfSiS4dS2bSiSgSbtcfc",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "AccessControl"
@@ -8825,7 +8786,9 @@
             "usr": "s:15BanubaUtilities16MusicEditorTrackV4fromACs7Decoder_p_tKcfc",
             "mangledName": "$s15BanubaUtilities16MusicEditorTrackV4fromACs7Decoder_p_tKcfc",
             "moduleName": "BanubaUtilities",
-            "implicit": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
             "throwing": true,
             "init_kind": "Designated"
           },
@@ -11293,25 +11256,16 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Foundation.Date?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Date",
-                    "printedName": "Foundation.Date",
-                    "usr": "s:10Foundation4DateV"
-                  }
-                ],
-                "usr": "s:Sq"
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities13VideoMetadataV16modificationDate10Foundation0F0VSgvp",
-            "mangledName": "$s15BanubaUtilities13VideoMetadataV16modificationDate10Foundation0F0VSgvp",
+            "usr": "s:15BanubaUtilities13VideoMetadataV16modificationDate10Foundation0F0Vvp",
+            "mangledName": "$s15BanubaUtilities13VideoMetadataV16modificationDate10Foundation0F0Vvp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
-              "HasInitialValue",
               "HasStorage",
               "AccessControl",
               "RawDocComment"
@@ -11325,22 +11279,14 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Foundation.Date?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Date",
-                        "printedName": "Foundation.Date",
-                        "usr": "s:10Foundation4DateV"
-                      }
-                    ],
-                    "usr": "s:Sq"
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities13VideoMetadataV16modificationDate10Foundation0F0VSgvg",
-                "mangledName": "$s15BanubaUtilities13VideoMetadataV16modificationDate10Foundation0F0VSgvg",
+                "usr": "s:15BanubaUtilities13VideoMetadataV16modificationDate10Foundation0F0Vvg",
+                "mangledName": "$s15BanubaUtilities13VideoMetadataV16modificationDate10Foundation0F0Vvg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -11357,22 +11303,14 @@
                   },
                   {
                     "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Foundation.Date?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Date",
-                        "printedName": "Foundation.Date",
-                        "usr": "s:10Foundation4DateV"
-                      }
-                    ],
-                    "usr": "s:Sq"
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities13VideoMetadataV16modificationDate10Foundation0F0VSgvs",
-                "mangledName": "$s15BanubaUtilities13VideoMetadataV16modificationDate10Foundation0F0VSgvs",
+                "usr": "s:15BanubaUtilities13VideoMetadataV16modificationDate10Foundation0F0Vvs",
+                "mangledName": "$s15BanubaUtilities13VideoMetadataV16modificationDate10Foundation0F0Vvs",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "set"
@@ -11389,8 +11327,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities13VideoMetadataV16modificationDate10Foundation0F0VSgvM",
-                "mangledName": "$s15BanubaUtilities13VideoMetadataV16modificationDate10Foundation0F0VSgvM",
+                "usr": "s:15BanubaUtilities13VideoMetadataV16modificationDate10Foundation0F0VvM",
+                "mangledName": "$s15BanubaUtilities13VideoMetadataV16modificationDate10Foundation0F0VvM",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -11947,23 +11885,15 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Foundation.Date?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Date",
-                    "printedName": "Foundation.Date",
-                    "usr": "s:10Foundation4DateV"
-                  }
-                ],
+                "name": "Date",
+                "printedName": "Foundation.Date",
                 "hasDefaultArg": true,
-                "usr": "s:Sq"
+                "usr": "s:10Foundation4DateV"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities13VideoMetadataV11isSlideShow0E7Drafted4name03maxC8Duration18sequenceParentName11editingStep10musicTrack6aspect16modificationDateACSb_SbSSSdSgSSSgAA0c15SequenceEditingP0OAA05MediaR0CSgAA11AspectRatioO10Foundation0U0VSgtcfc",
-            "mangledName": "$s15BanubaUtilities13VideoMetadataV11isSlideShow0E7Drafted4name03maxC8Duration18sequenceParentName11editingStep10musicTrack6aspect16modificationDateACSb_SbSSSdSgSSSgAA0c15SequenceEditingP0OAA05MediaR0CSgAA11AspectRatioO10Foundation0U0VSgtcfc",
+            "usr": "s:15BanubaUtilities13VideoMetadataV11isSlideShow0E7Drafted4name03maxC8Duration18sequenceParentName11editingStep10musicTrack6aspect16modificationDateACSb_SbSSSdSgSSSgAA0c15SequenceEditingP0OAA05MediaR0CSgAA11AspectRatioO10Foundation0U0Vtcfc",
+            "mangledName": "$s15BanubaUtilities13VideoMetadataV11isSlideShow0E7Drafted4name03maxC8Duration18sequenceParentName11editingStep10musicTrack6aspect16modificationDateACSb_SbSSSdSgSSSgAA0c15SequenceEditingP0OAA05MediaR0CSgAA11AspectRatioO10Foundation0U0Vtcfc",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "AccessControl"
@@ -11992,7 +11922,9 @@
             "usr": "s:15BanubaUtilities13VideoMetadataV4fromACs7Decoder_p_tKcfc",
             "mangledName": "$s15BanubaUtilities13VideoMetadataV4fromACs7Decoder_p_tKcfc",
             "moduleName": "BanubaUtilities",
-            "implicit": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
             "throwing": true,
             "init_kind": "Designated"
           },
@@ -16602,16 +16534,25 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Int32",
-                "printedName": "Swift.Int32",
-                "usr": "s:s5Int32V"
+                "name": "Optional",
+                "printedName": "Swift.Int32?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities10AudioTrackC2ids5Int32Vvp",
-            "mangledName": "$s15BanubaUtilities10AudioTrackC2ids5Int32Vvp",
+            "usr": "s:15BanubaUtilities10AudioTrackC2ids5Int32VSgvp",
+            "mangledName": "$s15BanubaUtilities10AudioTrackC2ids5Int32VSgvp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
+              "HasInitialValue",
               "HasStorage",
               "AccessControl"
             ],
@@ -16624,14 +16565,22 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Int32",
-                    "printedName": "Swift.Int32",
-                    "usr": "s:s5Int32V"
+                    "name": "Optional",
+                    "printedName": "Swift.Int32?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int32",
+                        "printedName": "Swift.Int32",
+                        "usr": "s:s5Int32V"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities10AudioTrackC2ids5Int32Vvg",
-                "mangledName": "$s15BanubaUtilities10AudioTrackC2ids5Int32Vvg",
+                "usr": "s:15BanubaUtilities10AudioTrackC2ids5Int32VSgvg",
+                "mangledName": "$s15BanubaUtilities10AudioTrackC2ids5Int32VSgvg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -16648,14 +16597,22 @@
                   },
                   {
                     "kind": "TypeNominal",
-                    "name": "Int32",
-                    "printedName": "Swift.Int32",
-                    "usr": "s:s5Int32V"
+                    "name": "Optional",
+                    "printedName": "Swift.Int32?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int32",
+                        "printedName": "Swift.Int32",
+                        "usr": "s:s5Int32V"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities10AudioTrackC2ids5Int32Vvs",
-                "mangledName": "$s15BanubaUtilities10AudioTrackC2ids5Int32Vvs",
+                "usr": "s:15BanubaUtilities10AudioTrackC2ids5Int32VSgvs",
+                "mangledName": "$s15BanubaUtilities10AudioTrackC2ids5Int32VSgvs",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "set"
@@ -16672,11 +16629,59 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities10AudioTrackC2ids5Int32VvM",
-                "mangledName": "$s15BanubaUtilities10AudioTrackC2ids5Int32VvM",
+                "usr": "s:15BanubaUtilities10AudioTrackC2ids5Int32VSgvM",
+                "mangledName": "$s15BanubaUtilities10AudioTrackC2ids5Int32VSgvM",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "uuid",
+            "printedName": "uuid",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities10AudioTrackC4uuid10Foundation4UUIDVvp",
+            "mangledName": "$s15BanubaUtilities10AudioTrackC4uuid10Foundation4UUIDVvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities10AudioTrackC4uuid10Foundation4UUIDVvg",
+                "mangledName": "$s15BanubaUtilities10AudioTrackC4uuid10Foundation4UUIDVvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
               }
             ]
           },
@@ -17012,7 +17017,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(url:originalURL:id:timeRange:trimTimeRange:compositionStart:avURLAsset:isAudioRecord:isEditable:isCameraTrack:title:additionalTitle:applyedFilterId:)",
+            "printedName": "init(url:originalURL:uuid:id:timeRange:trimTimeRange:compositionStart:avURLAsset:isAudioRecord:isEditable:isCameraTrack:title:additionalTitle:applyedFilterId:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -17034,9 +17039,23 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Int32",
-                "printedName": "Swift.Int32",
-                "usr": "s:s5Int32V"
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int32?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ],
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -17124,8 +17143,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities10AudioTrackC3url11originalURL2id9timeRange08trimTimeJ016compositionStart10avURLAsset02isC6Record0Q8Editable0q6CameraD05title15additionalTitle15applyedFilterIdAC10Foundation0G0V_ASs5Int32VSo06CMTimeJ0aAWSo6CMTimeaSo10AVURLAssetCS3bSSSgA0_SiSgtcfc",
-            "mangledName": "$s15BanubaUtilities10AudioTrackC3url11originalURL2id9timeRange08trimTimeJ016compositionStart10avURLAsset02isC6Record0Q8Editable0q6CameraD05title15additionalTitle15applyedFilterIdAC10Foundation0G0V_ASs5Int32VSo06CMTimeJ0aAWSo6CMTimeaSo10AVURLAssetCS3bSSSgA0_SiSgtcfc",
+            "usr": "s:15BanubaUtilities10AudioTrackC3url11originalURL4uuid2id9timeRange08trimTimeK016compositionStart10avURLAsset02isC6Record0R8Editable0r6CameraD05title15additionalTitle15applyedFilterIdAC10Foundation0G0V_AtR4UUIDVs5Int32VSgSo06CMTimeK0aA_So6CMTimeaSo10AVURLAssetCS3bSSSgA4_SiSgtcfc",
+            "mangledName": "$s15BanubaUtilities10AudioTrackC3url11originalURL4uuid2id9timeRange08trimTimeK016compositionStart10avURLAsset02isC6Record0R8Editable0r6CameraD05title15additionalTitle15applyedFilterIdAC10Foundation0G0V_AtR4UUIDVs5Int32VSgSo06CMTimeK0aA_So6CMTimeaSo10AVURLAssetCS3bSSSgA4_SiSgtcfc",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "Required",
@@ -27453,25 +27472,27 @@
         "children": [
           {
             "kind": "Var",
-            "name": "id",
-            "printedName": "id",
+            "name": "uuid",
+            "printedName": "uuid",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Int32",
-                "printedName": "Swift.Int32",
-                "usr": "s:s5Int32V"
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities10MediaTrackC2ids5Int32Vvp",
-            "mangledName": "$s15BanubaUtilities10MediaTrackC2ids5Int32Vvp",
+            "usr": "s:15BanubaUtilities10MediaTrackC4uuid10Foundation4UUIDVvp",
+            "mangledName": "$s15BanubaUtilities10MediaTrackC4uuid10Foundation4UUIDVvp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
+              "Final",
               "HasStorage",
               "AccessControl",
               "RawDocComment"
             ],
+            "isLet": true,
             "hasStorage": true,
             "accessors": [
               {
@@ -27481,59 +27502,20 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Int32",
-                    "printedName": "Swift.Int32",
-                    "usr": "s:s5Int32V"
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities10MediaTrackC2ids5Int32Vvg",
-                "mangledName": "$s15BanubaUtilities10MediaTrackC2ids5Int32Vvg",
+                "usr": "s:15BanubaUtilities10MediaTrackC4uuid10Foundation4UUIDVvg",
+                "mangledName": "$s15BanubaUtilities10MediaTrackC4uuid10Foundation4UUIDVvg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
                 "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int32",
-                    "printedName": "Swift.Int32",
-                    "usr": "s:s5Int32V"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities10MediaTrackC2ids5Int32Vvs",
-                "mangledName": "$s15BanubaUtilities10MediaTrackC2ids5Int32Vvs",
-                "moduleName": "BanubaUtilities",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities10MediaTrackC2ids5Int32VvM",
-                "mangledName": "$s15BanubaUtilities10MediaTrackC2ids5Int32VvM",
-                "moduleName": "BanubaUtilities",
-                "implicit": true,
-                "accessorKind": "_modify"
               }
             ]
           },
@@ -27852,9 +27834,120 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "id",
+            "printedName": "id",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int32?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities10MediaTrackC2ids5Int32VSgvp",
+            "mangledName": "$s15BanubaUtilities10MediaTrackC2ids5Int32VSgvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int32?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int32",
+                        "printedName": "Swift.Int32",
+                        "usr": "s:s5Int32V"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities10MediaTrackC2ids5Int32VSgvg",
+                "mangledName": "$s15BanubaUtilities10MediaTrackC2ids5Int32VSgvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int32?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int32",
+                        "printedName": "Swift.Int32",
+                        "usr": "s:s5Int32V"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities10MediaTrackC2ids5Int32VSgvs",
+                "mangledName": "$s15BanubaUtilities10MediaTrackC2ids5Int32VSgvs",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities10MediaTrackC2ids5Int32VSgvM",
+                "mangledName": "$s15BanubaUtilities10MediaTrackC2ids5Int32VSgvM",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(id:url:timeRange:isEditable:title:additionalTitle:)",
+            "printedName": "init(uuid:id:url:timeRange:isEditable:title:additionalTitle:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -27864,9 +27957,23 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Int32",
-                "printedName": "Swift.Int32",
-                "usr": "s:s5Int32V"
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int32?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ],
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -27918,8 +28025,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities10MediaTrackC2id3url9timeRange10isEditable5title15additionalTitleACs5Int32V_10Foundation3URLVAA0cd4TimeH0VSbSSSgAQtcfc",
-            "mangledName": "$s15BanubaUtilities10MediaTrackC2id3url9timeRange10isEditable5title15additionalTitleACs5Int32V_10Foundation3URLVAA0cd4TimeH0VSbSSSgAQtcfc",
+            "usr": "s:15BanubaUtilities10MediaTrackC4uuid2id3url9timeRange10isEditable5title15additionalTitleAC10Foundation4UUIDV_s5Int32VSgAK3URLVAA0cd4TimeI0VSbSSSgAUtcfc",
+            "mangledName": "$s15BanubaUtilities10MediaTrackC4uuid2id3url9timeRange10isEditable5title15additionalTitleAC10Foundation4UUIDV_s5Int32VSgAK3URLVAA0cd4TimeI0VSbSSSgAUtcfc",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "AccessControl",
@@ -27949,8 +28056,8 @@
             "usr": "s:15BanubaUtilities10MediaTrackC4fromACs7Decoder_p_tKcfc",
             "mangledName": "$s15BanubaUtilities10MediaTrackC4fromACs7Decoder_p_tKcfc",
             "moduleName": "BanubaUtilities",
-            "implicit": true,
             "declAttributes": [
+              "AccessControl",
               "Required"
             ],
             "throwing": true,
@@ -29318,6 +29425,16 @@
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "BanubaUtilities",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
         "declKind": "Import",
         "moduleName": "BanubaUtilities",
         "declAttributes": [
@@ -33270,19 +33387,19 @@
         "children": [
           {
             "kind": "Var",
-            "name": "id",
-            "printedName": "id",
+            "name": "uuid",
+            "printedName": "uuid",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Int32",
-                "printedName": "Swift.Int32",
-                "usr": "s:s5Int32V"
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities9AudioItemP2ids5Int32Vvp",
-            "mangledName": "$s15BanubaUtilities9AudioItemP2ids5Int32Vvp",
+            "usr": "s:15BanubaUtilities9AudioItemP4uuid10Foundation4UUIDVvp",
+            "mangledName": "$s15BanubaUtilities9AudioItemP4uuid10Foundation4UUIDVvp",
             "moduleName": "BanubaUtilities",
             "protocolReq": true,
             "declAttributes": [
@@ -33296,14 +33413,14 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Int32",
-                    "printedName": "Swift.Int32",
-                    "usr": "s:s5Int32V"
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities9AudioItemP2ids5Int32Vvg",
-                "mangledName": "$s15BanubaUtilities9AudioItemP2ids5Int32Vvg",
+                "usr": "s:15BanubaUtilities9AudioItemP4uuid10Foundation4UUIDVvg",
+                "mangledName": "$s15BanubaUtilities9AudioItemP4uuid10Foundation4UUIDVvg",
                 "moduleName": "BanubaUtilities",
                 "genericSig": "<τ_0_0 where τ_0_0 : BanubaUtilities.AudioItem>",
                 "sugared_genericSig": "<Self where Self : BanubaUtilities.AudioItem>",
@@ -41627,6 +41744,556 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "ToastConfiguration",
+        "printedName": "ToastConfiguration",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "kern",
+            "printedName": "kern",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities18ToastConfigurationV4kernSdvp",
+            "mangledName": "$s15BanubaUtilities18ToastConfigurationV4kernSdvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities18ToastConfigurationV4kernSdvg",
+                "mangledName": "$s15BanubaUtilities18ToastConfigurationV4kernSdvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities18ToastConfigurationV4kernSdvs",
+                "mangledName": "$s15BanubaUtilities18ToastConfigurationV4kernSdvs",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities18ToastConfigurationV4kernSdvM",
+                "mangledName": "$s15BanubaUtilities18ToastConfigurationV4kernSdvM",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "font",
+            "printedName": "font",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIFont",
+                "printedName": "UIKit.UIFont",
+                "usr": "c:objc(cs)UIFont"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities18ToastConfigurationV4fontSo6UIFontCvp",
+            "mangledName": "$s15BanubaUtilities18ToastConfigurationV4fontSo6UIFontCvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIFont",
+                    "printedName": "UIKit.UIFont",
+                    "usr": "c:objc(cs)UIFont"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities18ToastConfigurationV4fontSo6UIFontCvg",
+                "mangledName": "$s15BanubaUtilities18ToastConfigurationV4fontSo6UIFontCvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIFont",
+                    "printedName": "UIKit.UIFont",
+                    "usr": "c:objc(cs)UIFont"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities18ToastConfigurationV4fontSo6UIFontCvs",
+                "mangledName": "$s15BanubaUtilities18ToastConfigurationV4fontSo6UIFontCvs",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities18ToastConfigurationV4fontSo6UIFontCvM",
+                "mangledName": "$s15BanubaUtilities18ToastConfigurationV4fontSo6UIFontCvM",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cornerRadius",
+            "printedName": "cornerRadius",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGFloat",
+                "printedName": "CoreGraphics.CGFloat",
+                "usr": "s:14CoreFoundation7CGFloatV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities18ToastConfigurationV12cornerRadius14CoreFoundation7CGFloatVvp",
+            "mangledName": "$s15BanubaUtilities18ToastConfigurationV12cornerRadius12CoreGraphics7CGFloatVvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities18ToastConfigurationV12cornerRadius14CoreFoundation7CGFloatVvg",
+                "mangledName": "$s15BanubaUtilities18ToastConfigurationV12cornerRadius12CoreGraphics7CGFloatVvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities18ToastConfigurationV12cornerRadius14CoreFoundation7CGFloatVvs",
+                "mangledName": "$s15BanubaUtilities18ToastConfigurationV12cornerRadius12CoreGraphics7CGFloatVvs",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities18ToastConfigurationV12cornerRadius14CoreFoundation7CGFloatVvM",
+                "mangledName": "$s15BanubaUtilities18ToastConfigurationV12cornerRadius12CoreGraphics7CGFloatVvM",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "textColor",
+            "printedName": "textColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities18ToastConfigurationV9textColorSo7UIColorCvp",
+            "mangledName": "$s15BanubaUtilities18ToastConfigurationV9textColorSo7UIColorCvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities18ToastConfigurationV9textColorSo7UIColorCvg",
+                "mangledName": "$s15BanubaUtilities18ToastConfigurationV9textColorSo7UIColorCvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities18ToastConfigurationV9textColorSo7UIColorCvs",
+                "mangledName": "$s15BanubaUtilities18ToastConfigurationV9textColorSo7UIColorCvs",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities18ToastConfigurationV9textColorSo7UIColorCvM",
+                "mangledName": "$s15BanubaUtilities18ToastConfigurationV9textColorSo7UIColorCvM",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "backgroundColor",
+            "printedName": "backgroundColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities18ToastConfigurationV15backgroundColorSo7UIColorCvp",
+            "mangledName": "$s15BanubaUtilities18ToastConfigurationV15backgroundColorSo7UIColorCvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities18ToastConfigurationV15backgroundColorSo7UIColorCvg",
+                "mangledName": "$s15BanubaUtilities18ToastConfigurationV15backgroundColorSo7UIColorCvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities18ToastConfigurationV15backgroundColorSo7UIColorCvs",
+                "mangledName": "$s15BanubaUtilities18ToastConfigurationV15backgroundColorSo7UIColorCvs",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities18ToastConfigurationV15backgroundColorSo7UIColorCvM",
+                "mangledName": "$s15BanubaUtilities18ToastConfigurationV15backgroundColorSo7UIColorCvM",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(kern:font:cornerRadius:textColor:backgroundColor:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ToastConfiguration",
+                "printedName": "BanubaUtilities.ToastConfiguration",
+                "usr": "s:15BanubaUtilities18ToastConfigurationV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIFont",
+                "printedName": "UIKit.UIFont",
+                "usr": "c:objc(cs)UIFont"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGFloat",
+                "printedName": "CoreGraphics.CGFloat",
+                "usr": "s:14CoreFoundation7CGFloatV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "hasDefaultArg": true,
+                "usr": "c:objc(cs)UIColor"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "hasDefaultArg": true,
+                "usr": "c:objc(cs)UIColor"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15BanubaUtilities18ToastConfigurationV4kern4font12cornerRadius9textColor010backgroundJ0ACSd_So6UIFontC14CoreFoundation7CGFloatVSo7UIColorCAOtcfc",
+            "mangledName": "$s15BanubaUtilities18ToastConfigurationV4kern4font12cornerRadius9textColor010backgroundJ0ACSd_So6UIFontC12CoreGraphics7CGFloatVSo7UIColorCAOtcfc",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "default",
+            "printedName": "default",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ToastConfiguration",
+                "printedName": "BanubaUtilities.ToastConfiguration",
+                "usr": "s:15BanubaUtilities18ToastConfigurationV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities18ToastConfigurationV7defaultACvpZ",
+            "mangledName": "$s15BanubaUtilities18ToastConfigurationV7defaultACvpZ",
+            "moduleName": "BanubaUtilities",
+            "static": true,
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ToastConfiguration",
+                    "printedName": "BanubaUtilities.ToastConfiguration",
+                    "usr": "s:15BanubaUtilities18ToastConfigurationV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities18ToastConfigurationV7defaultACvgZ",
+                "mangledName": "$s15BanubaUtilities18ToastConfigurationV7defaultACvgZ",
+                "moduleName": "BanubaUtilities",
+                "static": true,
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:15BanubaUtilities18ToastConfigurationV",
+        "mangledName": "$s15BanubaUtilities18ToastConfigurationV",
+        "moduleName": "BanubaUtilities",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "BanubaUtilities",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "GalleryLayoutConfiguration",
         "printedName": "GalleryLayoutConfiguration",
         "children": [
@@ -42967,19 +43634,19 @@
         "children": [
           {
             "kind": "Var",
-            "name": "id",
-            "printedName": "id",
+            "name": "uuid",
+            "printedName": "uuid",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Int32",
-                "printedName": "Swift.Int32",
-                "usr": "s:s5Int32V"
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities16AudioServiceItemC2ids5Int32Vvp",
-            "mangledName": "$s15BanubaUtilities16AudioServiceItemC2ids5Int32Vvp",
+            "usr": "s:15BanubaUtilities16AudioServiceItemC4uuid10Foundation4UUIDVvp",
+            "mangledName": "$s15BanubaUtilities16AudioServiceItemC4uuid10Foundation4UUIDVvp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "Final",
@@ -42997,14 +43664,14 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Int32",
-                    "printedName": "Swift.Int32",
-                    "usr": "s:s5Int32V"
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities16AudioServiceItemC2ids5Int32Vvg",
-                "mangledName": "$s15BanubaUtilities16AudioServiceItemC2ids5Int32Vvg",
+                "usr": "s:15BanubaUtilities16AudioServiceItemC4uuid10Foundation4UUIDVvg",
+                "mangledName": "$s15BanubaUtilities16AudioServiceItemC4uuid10Foundation4UUIDVvg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "declAttributes": [
@@ -43415,7 +44082,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(id:url:title:additionalTitle:isEditable:)",
+            "printedName": "init(uuid:url:title:additionalTitle:isEditable:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -43425,9 +44092,9 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Int32",
-                "printedName": "Swift.Int32",
-                "usr": "s:s5Int32V"
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
               },
               {
                 "kind": "TypeNominal",
@@ -43471,8 +44138,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities16AudioServiceItemC2id3url5title15additionalTitle10isEditableACs5Int32V_10Foundation3URLVSSSgANSbtcfc",
-            "mangledName": "$s15BanubaUtilities16AudioServiceItemC2id3url5title15additionalTitle10isEditableACs5Int32V_10Foundation3URLVSSSgANSbtcfc",
+            "usr": "s:15BanubaUtilities16AudioServiceItemC4uuid3url5title15additionalTitle10isEditableAC10Foundation4UUIDV_AI3URLVSSSgANSbtcfc",
+            "mangledName": "$s15BanubaUtilities16AudioServiceItemC4uuid3url5title15additionalTitle10isEditableAC10Foundation4UUIDV_AI3URLVSSSgANSbtcfc",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "AccessControl",
@@ -52152,6 +52819,436 @@
         "children": [
           {
             "kind": "Var",
+            "name": "mainBackgroundColor",
+            "printedName": "mainBackgroundColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities29PopoverAlertViewConfigurationV19mainBackgroundColorSo7UIColorCvp",
+            "mangledName": "$s15BanubaUtilities29PopoverAlertViewConfigurationV19mainBackgroundColorSo7UIColorCvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities29PopoverAlertViewConfigurationV19mainBackgroundColorSo7UIColorCvg",
+                "mangledName": "$s15BanubaUtilities29PopoverAlertViewConfigurationV19mainBackgroundColorSo7UIColorCvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities29PopoverAlertViewConfigurationV19mainBackgroundColorSo7UIColorCvs",
+                "mangledName": "$s15BanubaUtilities29PopoverAlertViewConfigurationV19mainBackgroundColorSo7UIColorCvs",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities29PopoverAlertViewConfigurationV19mainBackgroundColorSo7UIColorCvM",
+                "mangledName": "$s15BanubaUtilities29PopoverAlertViewConfigurationV19mainBackgroundColorSo7UIColorCvM",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "actionsViewBackgroundColor",
+            "printedName": "actionsViewBackgroundColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities29PopoverAlertViewConfigurationV07actionsE15BackgroundColorSo7UIColorCvp",
+            "mangledName": "$s15BanubaUtilities29PopoverAlertViewConfigurationV07actionsE15BackgroundColorSo7UIColorCvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities29PopoverAlertViewConfigurationV07actionsE15BackgroundColorSo7UIColorCvg",
+                "mangledName": "$s15BanubaUtilities29PopoverAlertViewConfigurationV07actionsE15BackgroundColorSo7UIColorCvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities29PopoverAlertViewConfigurationV07actionsE15BackgroundColorSo7UIColorCvs",
+                "mangledName": "$s15BanubaUtilities29PopoverAlertViewConfigurationV07actionsE15BackgroundColorSo7UIColorCvs",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities29PopoverAlertViewConfigurationV07actionsE15BackgroundColorSo7UIColorCvM",
+                "mangledName": "$s15BanubaUtilities29PopoverAlertViewConfigurationV07actionsE15BackgroundColorSo7UIColorCvM",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cornerRadius",
+            "printedName": "cornerRadius",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGFloat",
+                "printedName": "CoreGraphics.CGFloat",
+                "usr": "s:14CoreFoundation7CGFloatV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities29PopoverAlertViewConfigurationV12cornerRadius14CoreFoundation7CGFloatVvp",
+            "mangledName": "$s15BanubaUtilities29PopoverAlertViewConfigurationV12cornerRadius12CoreGraphics7CGFloatVvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities29PopoverAlertViewConfigurationV12cornerRadius14CoreFoundation7CGFloatVvg",
+                "mangledName": "$s15BanubaUtilities29PopoverAlertViewConfigurationV12cornerRadius12CoreGraphics7CGFloatVvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities29PopoverAlertViewConfigurationV12cornerRadius14CoreFoundation7CGFloatVvs",
+                "mangledName": "$s15BanubaUtilities29PopoverAlertViewConfigurationV12cornerRadius12CoreGraphics7CGFloatVvs",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities29PopoverAlertViewConfigurationV12cornerRadius14CoreFoundation7CGFloatVvM",
+                "mangledName": "$s15BanubaUtilities29PopoverAlertViewConfigurationV12cornerRadius12CoreGraphics7CGFloatVvM",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "actionCellHeight",
+            "printedName": "actionCellHeight",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGFloat",
+                "printedName": "CoreGraphics.CGFloat",
+                "usr": "s:14CoreFoundation7CGFloatV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities29PopoverAlertViewConfigurationV16actionCellHeight14CoreFoundation7CGFloatVvp",
+            "mangledName": "$s15BanubaUtilities29PopoverAlertViewConfigurationV16actionCellHeight12CoreGraphics7CGFloatVvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities29PopoverAlertViewConfigurationV16actionCellHeight14CoreFoundation7CGFloatVvg",
+                "mangledName": "$s15BanubaUtilities29PopoverAlertViewConfigurationV16actionCellHeight12CoreGraphics7CGFloatVvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities29PopoverAlertViewConfigurationV16actionCellHeight14CoreFoundation7CGFloatVvs",
+                "mangledName": "$s15BanubaUtilities29PopoverAlertViewConfigurationV16actionCellHeight12CoreGraphics7CGFloatVvs",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities29PopoverAlertViewConfigurationV16actionCellHeight14CoreFoundation7CGFloatVvM",
+                "mangledName": "$s15BanubaUtilities29PopoverAlertViewConfigurationV16actionCellHeight12CoreGraphics7CGFloatVvM",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "hideAnimated",
+            "printedName": "hideAnimated",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities29PopoverAlertViewConfigurationV12hideAnimatedSbvp",
+            "mangledName": "$s15BanubaUtilities29PopoverAlertViewConfigurationV12hideAnimatedSbvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities29PopoverAlertViewConfigurationV12hideAnimatedSbvg",
+                "mangledName": "$s15BanubaUtilities29PopoverAlertViewConfigurationV12hideAnimatedSbvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities29PopoverAlertViewConfigurationV12hideAnimatedSbvs",
+                "mangledName": "$s15BanubaUtilities29PopoverAlertViewConfigurationV12hideAnimatedSbvs",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities29PopoverAlertViewConfigurationV12hideAnimatedSbvM",
+                "mangledName": "$s15BanubaUtilities29PopoverAlertViewConfigurationV12hideAnimatedSbvM",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "default",
             "printedName": "default",
             "children": [
@@ -52191,6 +53288,57 @@
                 "accessorKind": "get"
               }
             ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(mainBackgroundColor:actionsViewBackgroundColor:cornerRadius:actionCellHeight:hideAnimated:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PopoverAlertViewConfiguration",
+                "printedName": "BanubaUtilities.PopoverAlertViewConfiguration",
+                "usr": "s:15BanubaUtilities29PopoverAlertViewConfigurationV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGFloat",
+                "printedName": "CoreGraphics.CGFloat",
+                "usr": "s:14CoreFoundation7CGFloatV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGFloat",
+                "printedName": "CoreGraphics.CGFloat",
+                "usr": "s:14CoreFoundation7CGFloatV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15BanubaUtilities29PopoverAlertViewConfigurationV19mainBackgroundColor07actionsehI012cornerRadius16actionCellHeight12hideAnimatedACSo7UIColorC_AJ14CoreFoundation7CGFloatVAMSbtcfc",
+            "mangledName": "$s15BanubaUtilities29PopoverAlertViewConfigurationV19mainBackgroundColor07actionsehI012cornerRadius16actionCellHeight12hideAnimatedACSo7UIColorC_AJ12CoreGraphics7CGFloatVAMSbtcfc",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
           }
         ],
         "declKind": "Struct",
@@ -54390,14 +55538,22 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Int32",
-                "printedName": "Swift.Int32",
-                "usr": "s:s5Int32V"
+                "name": "Optional",
+                "printedName": "Swift.Int32?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities19AudioTrackAdoptableP2ids5Int32Vvp",
-            "mangledName": "$s15BanubaUtilities19AudioTrackAdoptableP2ids5Int32Vvp",
+            "usr": "s:15BanubaUtilities19AudioTrackAdoptableP2ids5Int32VSgvp",
+            "mangledName": "$s15BanubaUtilities19AudioTrackAdoptableP2ids5Int32VSgvp",
             "moduleName": "BanubaUtilities",
             "protocolReq": true,
             "declAttributes": [
@@ -54411,14 +55567,22 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Int32",
-                    "printedName": "Swift.Int32",
-                    "usr": "s:s5Int32V"
+                    "name": "Optional",
+                    "printedName": "Swift.Int32?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int32",
+                        "printedName": "Swift.Int32",
+                        "usr": "s:s5Int32V"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities19AudioTrackAdoptableP2ids5Int32Vvg",
-                "mangledName": "$s15BanubaUtilities19AudioTrackAdoptableP2ids5Int32Vvg",
+                "usr": "s:15BanubaUtilities19AudioTrackAdoptableP2ids5Int32VSgvg",
+                "mangledName": "$s15BanubaUtilities19AudioTrackAdoptableP2ids5Int32VSgvg",
                 "moduleName": "BanubaUtilities",
                 "genericSig": "<τ_0_0 where τ_0_0 : BanubaUtilities.AudioTrackAdoptable>",
                 "sugared_genericSig": "<Self where Self : BanubaUtilities.AudioTrackAdoptable>",
@@ -54438,14 +55602,22 @@
                   },
                   {
                     "kind": "TypeNominal",
-                    "name": "Int32",
-                    "printedName": "Swift.Int32",
-                    "usr": "s:s5Int32V"
+                    "name": "Optional",
+                    "printedName": "Swift.Int32?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int32",
+                        "printedName": "Swift.Int32",
+                        "usr": "s:s5Int32V"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities19AudioTrackAdoptableP2ids5Int32Vvs",
-                "mangledName": "$s15BanubaUtilities19AudioTrackAdoptableP2ids5Int32Vvs",
+                "usr": "s:15BanubaUtilities19AudioTrackAdoptableP2ids5Int32VSgvs",
+                "mangledName": "$s15BanubaUtilities19AudioTrackAdoptableP2ids5Int32VSgvs",
                 "moduleName": "BanubaUtilities",
                 "genericSig": "<τ_0_0 where τ_0_0 : BanubaUtilities.AudioTrackAdoptable>",
                 "sugared_genericSig": "<Self where Self : BanubaUtilities.AudioTrackAdoptable>",
@@ -54465,8 +55637,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities19AudioTrackAdoptableP2ids5Int32VvM",
-                "mangledName": "$s15BanubaUtilities19AudioTrackAdoptableP2ids5Int32VvM",
+                "usr": "s:15BanubaUtilities19AudioTrackAdoptableP2ids5Int32VSgvM",
+                "mangledName": "$s15BanubaUtilities19AudioTrackAdoptableP2ids5Int32VSgvM",
                 "moduleName": "BanubaUtilities",
                 "genericSig": "<τ_0_0 where τ_0_0 : BanubaUtilities.AudioTrackAdoptable>",
                 "sugared_genericSig": "<Self where Self : BanubaUtilities.AudioTrackAdoptable>",
@@ -54474,6 +55646,51 @@
                 "implicit": true,
                 "reqNewWitnessTableEntry": true,
                 "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "uuid",
+            "printedName": "uuid",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities19AudioTrackAdoptableP4uuid10Foundation4UUIDVvp",
+            "mangledName": "$s15BanubaUtilities19AudioTrackAdoptableP4uuid10Foundation4UUIDVvp",
+            "moduleName": "BanubaUtilities",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities19AudioTrackAdoptableP4uuid10Foundation4UUIDVvg",
+                "mangledName": "$s15BanubaUtilities19AudioTrackAdoptableP4uuid10Foundation4UUIDVvg",
+                "moduleName": "BanubaUtilities",
+                "genericSig": "<τ_0_0 where τ_0_0 : BanubaUtilities.AudioTrackAdoptable>",
+                "sugared_genericSig": "<Self where Self : BanubaUtilities.AudioTrackAdoptable>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
               }
             ]
           },
@@ -54831,7 +56048,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(url:originalURL:id:timeRange:trimTimeRange:compositionStart:avURLAsset:isAudioRecord:isEditable:isCameraTrack:title:additionalTitle:applyedFilterId:)",
+            "printedName": "init(url:originalURL:uuid:id:timeRange:trimTimeRange:compositionStart:avURLAsset:isAudioRecord:isEditable:isCameraTrack:title:additionalTitle:applyedFilterId:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -54852,9 +56069,23 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Int32",
-                "printedName": "Swift.Int32",
-                "usr": "s:s5Int32V"
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int32?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ],
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -54942,8 +56173,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities19AudioTrackAdoptableP3url11originalURL2id9timeRange08trimTimeK016compositionStart10avURLAsset02isC6Record0R8Editable0r6CameraD05title15additionalTitle15applyedFilterIdx10Foundation0H0V_ASs5Int32VSo06CMTimeK0aAWSo6CMTimeaSo10AVURLAssetCS3bSSSgA0_SiSgtcfc",
-            "mangledName": "$s15BanubaUtilities19AudioTrackAdoptableP3url11originalURL2id9timeRange08trimTimeK016compositionStart10avURLAsset02isC6Record0R8Editable0r6CameraD05title15additionalTitle15applyedFilterIdx10Foundation0H0V_ASs5Int32VSo06CMTimeK0aAWSo6CMTimeaSo10AVURLAssetCS3bSSSgA0_SiSgtcfc",
+            "usr": "s:15BanubaUtilities19AudioTrackAdoptableP3url11originalURL4uuid2id9timeRange08trimTimeL016compositionStart10avURLAsset02isC6Record0S8Editable0s6CameraD05title15additionalTitle15applyedFilterIdx10Foundation0H0V_AtR4UUIDVs5Int32VSgSo06CMTimeL0aA_So6CMTimeaSo10AVURLAssetCS3bSSSgA4_SiSgtcfc",
+            "mangledName": "$s15BanubaUtilities19AudioTrackAdoptableP3url11originalURL4uuid2id9timeRange08trimTimeL016compositionStart10avURLAsset02isC6Record0S8Editable0s6CameraD05title15additionalTitle15applyedFilterIdx10Foundation0H0V_AtR4UUIDVs5Int32VSgSo06CMTimeL0aA_So6CMTimeaSo10AVURLAssetCS3bSSSgA4_SiSgtcfc",
             "moduleName": "BanubaUtilities",
             "genericSig": "<τ_0_0 where τ_0_0 : BanubaUtilities.AudioTrackAdoptable>",
             "sugared_genericSig": "<Self where Self : BanubaUtilities.AudioTrackAdoptable>",
@@ -55585,6 +56816,83 @@
             "usr": "s:SH",
             "mangledName": "$sSH"
           }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "BanubaUtilities",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ToastPresenter",
+        "printedName": "ToastPresenter",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(configuration:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ToastPresenter",
+                "printedName": "BanubaUtilities.ToastPresenter",
+                "usr": "s:15BanubaUtilities14ToastPresenterC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ToastConfiguration",
+                "printedName": "BanubaUtilities.ToastConfiguration",
+                "usr": "s:15BanubaUtilities18ToastConfigurationV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15BanubaUtilities14ToastPresenterC13configurationAcA0C13ConfigurationV_tcfc",
+            "mangledName": "$s15BanubaUtilities14ToastPresenterC13configurationAcA0C13ConfigurationV_tcfc",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "showToast",
+            "printedName": "showToast(message:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15BanubaUtilities14ToastPresenterC04showC07messageySS_tF",
+            "mangledName": "$s15BanubaUtilities14ToastPresenterC04showC07messageySS_tF",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:15BanubaUtilities14ToastPresenterC",
+        "mangledName": "$s15BanubaUtilities14ToastPresenterC",
+        "moduleName": "BanubaUtilities",
+        "declAttributes": [
+          "AccessControl"
         ]
       },
       {
@@ -59608,6 +60916,56 @@
             ],
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "height",
+            "printedName": "height(forFont:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGFloat",
+                "printedName": "CoreGraphics.CGFloat",
+                "usr": "s:14CoreFoundation7CGFloatV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIFont",
+                "printedName": "UIKit.UIFont",
+                "usr": "c:objc(cs)UIFont"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:SS15BanubaUtilitiesE6height7forFont14CoreFoundation7CGFloatVSo6UIFontC_tF",
+            "mangledName": "$sSS15BanubaUtilitiesE6height7forFont12CoreGraphics7CGFloatVSo6UIFontC_tF",
+            "moduleName": "BanubaUtilities",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "width",
+            "printedName": "width(forFont:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGFloat",
+                "printedName": "CoreGraphics.CGFloat",
+                "usr": "s:14CoreFoundation7CGFloatV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIFont",
+                "printedName": "UIKit.UIFont",
+                "usr": "c:objc(cs)UIFont"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:SS15BanubaUtilitiesE5width7forFont14CoreFoundation7CGFloatVSo6UIFontC_tF",
+            "mangledName": "$sSS15BanubaUtilitiesE5width7forFont12CoreGraphics7CGFloatVSo6UIFontC_tF",
+            "moduleName": "BanubaUtilities",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Struct",
@@ -62243,1141 +63601,1162 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/AlertViewController\/AlertViewController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/AlertViewController\/AlertViewController.swift",
       "kind": "FloatLiteral",
       "offset": 240,
       "length": 5,
       "value": "263.0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/AlertViewController\/AlertViewController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/AlertViewController\/AlertViewController.swift",
       "kind": "FloatLiteral",
       "offset": 285,
       "length": 5,
       "value": "200.0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextButtonConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextButtonConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 178,
       "length": 23,
       "value": "\"BanubaUtilities.TextButtonConfiguration\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 215,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 235,
       "length": 10,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 264,
       "length": 10,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 292,
       "length": 9,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 319,
       "length": 9,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 215,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 235,
       "length": 10,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 264,
       "length": 10,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 292,
       "length": 9,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 319,
       "length": 9,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 215,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 235,
       "length": 10,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 264,
       "length": 10,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 292,
       "length": 9,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 319,
       "length": 9,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationManager.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationManager.swift",
       "kind": "BooleanLiteral",
       "offset": 1222,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "StringLiteral",
       "offset": 1686,
       "length": 33,
       "value": "\"ReachabilityChangedNotification\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "StringLiteral",
       "offset": 1805,
       "length": 21,
       "value": "\"reachabilityChanged\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "BooleanLiteral",
       "offset": 3100,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "BooleanLiteral",
       "offset": 4552,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "BooleanLiteral",
       "offset": 4640,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "StringLiteral",
       "offset": 4771,
       "length": 32,
       "value": "\"uk.co.ashleymills.reachability\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIViewController+AlertPresentable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIViewController+AlertPresentable.swift",
       "kind": "BooleanLiteral",
       "offset": 2743,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIViewController+AlertPresentable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIViewController+AlertPresentable.swift",
       "kind": "BooleanLiteral",
       "offset": 3174,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 228,
       "length": 68,
       "value": "\"You don't seem to be connected to the internet. \nPlease try again\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 315,
       "length": 56,
       "value": "\"Message displayed when there is no internet connection\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 446,
       "length": 45,
       "value": "\"Cannot download media file from your iCloud\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 508,
       "length": 56,
       "value": "\"Message displayed when media file cannot be downloaded\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 652,
       "length": 4,
       "value": "\"OK\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 667,
       "length": 26,
       "value": "\"OK button title in alert\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 746,
       "length": 5,
       "value": "\"Yes\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 762,
       "length": 40,
       "value": "\"Used when the question is answered yes\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 854,
       "length": 4,
       "value": "\"No\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 869,
       "length": 41,
       "value": "\"Used when answering a negative question\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 992,
       "length": 10,
       "value": "\"Settings\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1013,
       "length": 86,
       "value": "\"The name of the button, by clicking on which you can go to the Settings application.\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1163,
       "length": 16,
       "value": "\"Settings.Close\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1190,
       "length": 93,
       "value": "\"The name of the button, by clicking on which you can refuse missed permission alert message\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1338,
       "length": 34,
       "value": "\"BanubaVideoEditor.Settings.Later\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1383,
       "length": 27,
       "value": "\"Alert action button title\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1467,
       "length": 36,
       "value": "\"BanubaVideoEditor.Settings.Discard\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1514,
       "length": 27,
       "value": "\"Alert action button title\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1628,
       "length": 39,
       "value": "\"BanubaVideoEditor.Gallery.DamagedFile\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1678,
       "length": 14,
       "value": "\"Damaged file\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1759,
       "length": 45,
       "value": "\"BanubaVideoEditor.Gallery.ExportVideoFailed\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1815,
       "length": 36,
       "value": "\"Export video from gallery failed  \""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationAnimator.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationAnimator.swift",
       "kind": "StringLiteral",
       "offset": 132,
       "length": 27,
       "value": "\"BanubaUtilities.SlideInPresentationAnimator\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/BackgroundConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/BackgroundConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 170,
       "length": 23,
       "value": "\"BanubaUtilities.BackgroundConfiguration\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "BooleanLiteral",
       "offset": 1420,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "FloatLiteral",
-      "offset": 1871,
+      "offset": 2878,
       "length": 3,
       "value": "0.5"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 1922,
+      "offset": 2929,
       "length": 9,
       "value": "1000000"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 8495,
+      "offset": 10722,
       "length": 7,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 8510,
+      "offset": 10737,
       "length": 6,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 8495,
+      "offset": 10722,
       "length": 7,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 8510,
+      "offset": 10737,
       "length": 6,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 8495,
+      "offset": 10722,
       "length": 7,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 8510,
+      "offset": 10737,
       "length": 6,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "BooleanLiteral",
-      "offset": 9159,
+      "offset": 11385,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "BooleanLiteral",
-      "offset": 9188,
+      "offset": 11414,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryErrors.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryErrors.swift",
       "kind": "StringLiteral",
       "offset": 445,
       "length": 20,
       "value": "\"com.banuba.gallery\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/TimeInterval+Formatted.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/TimeInterval+Formatted.swift",
       "kind": "BooleanLiteral",
       "offset": 519,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/GalleryConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/GalleryConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 170,
       "length": 20,
       "value": "\"BanubaUtilities.GalleryConfiguration\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/AlbumViewModel.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/AlbumViewModel.swift",
       "kind": "FloatLiteral",
       "offset": 116,
       "length": 5,
       "value": "400.0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/AlbumViewModel.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/AlbumViewModel.swift",
       "kind": "FloatLiteral",
       "offset": 131,
       "length": 5,
       "value": "400.0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/AlbumViewModel.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/AlbumViewModel.swift",
       "kind": "BooleanLiteral",
       "offset": 718,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/AlbumViewModel.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/AlbumViewModel.swift",
       "kind": "StringLiteral",
       "offset": 391,
       "length": 14,
       "value": "\"BanubaUtilities.AlbumViewModel\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIDevice+Models.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIDevice+Models.swift",
       "kind": "StringLiteral",
       "offset": 15504,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIDevice+Models.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIDevice+Models.swift",
       "kind": "IntegerLiteral",
       "offset": 15590,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
       "kind": "IntegerLiteral",
       "offset": 204,
       "length": 1,
       "value": "9"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
       "kind": "IntegerLiteral",
       "offset": 215,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
       "kind": "FloatLiteral",
       "offset": 256,
       "length": 3,
       "value": "3.0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
       "kind": "StringLiteral",
       "offset": 361,
       "length": 34,
       "value": "\"BanubaUtilities.VideoTimeLineCollectionViewHandler\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
       "kind": "IntegerLiteral",
       "offset": 321,
       "length": 9,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
       "kind": "IntegerLiteral",
       "offset": 340,
       "length": 8,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
       "kind": "IntegerLiteral",
       "offset": 321,
       "length": 9,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
       "kind": "IntegerLiteral",
       "offset": 340,
       "length": 8,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Operations\/BanubaAsyncOperation.swift",
       "kind": "StringLiteral",
       "offset": 496,
       "length": 11,
       "value": "\".rw.state\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationController.swift",
       "kind": "BooleanLiteral",
       "offset": 789,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationController.swift",
       "kind": "StringLiteral",
       "offset": 425,
       "length": 29,
       "value": "\"BanubaUtilities.SlideInPresentationController\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/AlbumsConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/AlbumsConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 146,
       "length": 19,
       "value": "\"BanubaUtilities.AlbumsConfiguration\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 222,
       "length": 12,
       "value": "\"com.banuba\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 259,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 489,
       "length": 12,
       "value": "\"com.banuba\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 526,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 755,
       "length": 12,
       "value": "\"com.banuba\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 792,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1025,
       "length": 12,
       "value": "\"com.banuba\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1062,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1291,
       "length": 12,
       "value": "\"com.banuba\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1328,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1558,
       "length": 12,
       "value": "\"com.banuba\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1595,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/GalleryManager.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/GalleryManager.swift",
       "kind": "StringLiteral",
       "offset": 1332,
       "length": 37,
       "value": "\"com.videoEditor.galleryManagerQueue\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/GalleryManager.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/GalleryManager.swift",
       "kind": "BooleanLiteral",
       "offset": 1409,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/GalleryManager.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/GalleryManager.swift",
       "kind": "BooleanLiteral",
       "offset": 1441,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/GalleryManager.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Managers\/GalleryManager.swift",
       "kind": "StringLiteral",
       "offset": 817,
       "length": 14,
       "value": "\"BanubaUtilities.GalleryManager\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryInterfaces.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryInterfaces.swift",
       "kind": "IntegerLiteral",
       "offset": 1401,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryInterfaces.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryInterfaces.swift",
       "kind": "IntegerLiteral",
       "offset": 1401,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryInterfaces.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryInterfaces.swift",
       "kind": "StringLiteral",
       "offset": 1468,
       "length": 25,
       "value": "\"BanubaUtilities.GallerySelectionBehaviour\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/SlideInPresentationManager\/AbsoluteFrameCalculator.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/SlideInPresentationManager\/AbsoluteFrameCalculator.swift",
       "kind": "IntegerLiteral",
       "offset": 248,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
       "kind": "IntegerLiteral",
       "offset": 339,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
       "kind": "IntegerLiteral",
       "offset": 655,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
       "kind": "FloatLiteral",
       "offset": 665,
       "length": 12,
       "value": "0.7529411765"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
       "kind": "FloatLiteral",
       "offset": 685,
       "length": 13,
       "value": "0.01176470588"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
       "kind": "IntegerLiteral",
       "offset": 707,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
       "kind": "IntegerLiteral",
       "offset": 761,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
       "kind": "FloatLiteral",
       "offset": 771,
       "length": 4,
       "value": "0.25"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
       "kind": "BooleanLiteral",
       "offset": 817,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/AppStateObserver.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/AppStateObserver.swift",
       "kind": "BooleanLiteral",
       "offset": 873,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/BackButtonConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/BackButtonConfiguration.swift",
       "kind": "Array",
       "offset": 881,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PixelateFigure.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PixelateFigure.swift",
       "kind": "StringLiteral",
       "offset": 255,
       "length": 8,
       "value": "\"Circle\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PixelateFigure.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PixelateFigure.swift",
       "kind": "StringLiteral",
       "offset": 297,
       "length": 8,
       "value": "\"Square\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PixelateFigure.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PixelateFigure.swift",
       "kind": "StringLiteral",
       "offset": 255,
       "length": 8,
       "value": "\"Circle\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PixelateFigure.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PixelateFigure.swift",
       "kind": "StringLiteral",
       "offset": 297,
       "length": 8,
       "value": "\"Square\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioService.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioService.swift",
       "kind": "BooleanLiteral",
-      "offset": 4095,
+      "offset": 4105,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioService.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioService.swift",
       "kind": "BooleanLiteral",
-      "offset": 4149,
+      "offset": 4159,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
       "kind": "FloatLiteral",
       "offset": 184,
       "length": 3,
       "value": "0.1"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
       "kind": "IntegerLiteral",
       "offset": 252,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
       "kind": "IntegerLiteral",
       "offset": 265,
       "length": 7,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
       "kind": "IntegerLiteral",
       "offset": 252,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
       "kind": "IntegerLiteral",
       "offset": 265,
       "length": 7,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
       "kind": "FloatLiteral",
       "offset": 1405,
       "length": 5,
       "value": "400.0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
       "kind": "FloatLiteral",
       "offset": 1420,
       "length": 5,
       "value": "400.0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Gallery\/GalleryItem.swift",
       "kind": "StringLiteral",
       "offset": 1299,
       "length": 17,
       "value": "\"BanubaUtilities.BanubaGalleryItem\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/SmallActivityIndicatorConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/SmallActivityIndicatorConfiguration.swift",
       "kind": "IntegerLiteral",
       "offset": 336,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/SmallActivityIndicatorConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/SmallActivityIndicatorConfiguration.swift",
       "kind": "IntegerLiteral",
       "offset": 336,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/SmallActivityIndicatorConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/SmallActivityIndicatorConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 393,
       "length": 12,
       "value": "\"BanubaUtilities.GradientType\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/SmallActivityIndicatorConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/SmallActivityIndicatorConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 1061,
       "length": 26,
       "value": "\"BanubaUtilities.GradientColorConfiguration\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/SmallActivityIndicatorConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/SmallActivityIndicatorConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 189,
       "length": 35,
       "value": "\"BanubaUtilities.SmallActivityIndicatorConfiguration\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/VideoResolutionConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/VideoResolutionConfiguration.swift",
       "kind": "IntegerLiteral",
       "offset": 276,
       "length": 2,
       "value": "80"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/RoundedButtonConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/RoundedButtonConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1087,
       "length": 4,
       "value": "70.0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/RoundedButtonConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/RoundedButtonConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1115,
       "length": 4,
       "value": "30.0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/RoundedButtonConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/RoundedButtonConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1150,
       "length": 3,
       "value": "2.0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/OverlayPopoverTableViewHandler.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/OverlayPopoverTableViewHandler.swift",
       "kind": "Array",
       "offset": 553,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/OverlayPopoverTableViewHandler.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/OverlayPopoverTableViewHandler.swift",
       "kind": "StringLiteral",
       "offset": 264,
       "length": 30,
       "value": "\"BanubaUtilities.OverlayPopoverTableViewHandler\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PreviewExtractor.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PreviewExtractor.swift",
       "kind": "IntegerLiteral",
       "offset": 265,
       "length": 5,
       "value": "10000"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/VideoEditorActivityIndicator.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/VideoEditorActivityIndicator.swift",
       "kind": "FloatLiteral",
       "offset": 495,
       "length": 3,
       "value": "1.1"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 1502,
+      "offset": 2196,
       "length": 3,
       "value": "0.3"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 1550,
+      "offset": 2244,
       "length": 3,
       "value": "0.3"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 1592,
+      "offset": 2286,
       "length": 5,
       "value": "180.0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 1637,
+      "offset": 2331,
       "length": 4,
       "value": "20.0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
       "kind": "Array",
-      "offset": 2204,
+      "offset": 2898,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
-      "offset": 1829,
+      "offset": 1892,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
-      "offset": 1869,
+      "offset": 1932,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
-      "offset": 1907,
+      "offset": 1970,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
-      "offset": 1947,
+      "offset": 2010,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
-      "offset": 1829,
+      "offset": 1892,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
-      "offset": 1869,
+      "offset": 1932,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
-      "offset": 1907,
+      "offset": 1970,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
-      "offset": 1947,
+      "offset": 2010,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
-      "offset": 1829,
+      "offset": 1892,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
-      "offset": 1869,
+      "offset": 1932,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
-      "offset": 1907,
+      "offset": 1970,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Music\/AudioTrackLineAdoptable.swift",
       "kind": "IntegerLiteral",
-      "offset": 1947,
+      "offset": 2010,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/ToastPresenter.swift",
+      "kind": "FloatLiteral",
+      "offset": 164,
+      "length": 3,
+      "value": "3.0"
+    },
+    {
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/ToastPresenter.swift",
+      "kind": "FloatLiteral",
+      "offset": 203,
+      "length": 4,
+      "value": "30.0"
+    },
+    {
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/ToastPresenter.swift",
+      "kind": "FloatLiteral",
+      "offset": 244,
+      "length": 4,
+      "value": "30.0"
+    },
+    {
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
       "kind": "IntegerLiteral",
       "offset": 821,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 156,
       "length": 17,
       "value": "\"BanubaUtilities.TextConfiguration\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1678,
       "length": 3,
       "value": "0.4"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
       "kind": "IntegerLiteral",
       "offset": 1725,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
       "kind": "IntegerLiteral",
       "offset": 1736,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Update_modules_iOS\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/Configurations\/TextConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1772,
       "length": 3,
