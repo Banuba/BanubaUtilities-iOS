@@ -9362,24 +9362,24 @@
           },
           {
             "kind": "Var",
-            "name": "pixelateOnVideoMetadata",
-            "printedName": "pixelateOnVideoMetadata",
+            "name": "blurOnVideoMetadata",
+            "printedName": "blurOnVideoMetadata",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "[BanubaUtilities.PixelateOnVideoMetadata]?",
+                "printedName": "[BanubaUtilities.BlurOnVideoMetadata]?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "Array",
-                    "printedName": "[BanubaUtilities.PixelateOnVideoMetadata]",
+                    "printedName": "[BanubaUtilities.BlurOnVideoMetadata]",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "PixelateOnVideoMetadata",
-                        "printedName": "BanubaUtilities.PixelateOnVideoMetadata",
-                        "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV"
+                        "name": "BlurOnVideoMetadata",
+                        "printedName": "BanubaUtilities.BlurOnVideoMetadata",
+                        "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV"
                       }
                     ],
                     "usr": "s:Sa"
@@ -9389,8 +9389,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities19VideoEditorMetadataV010pixelateOncE0SayAA08PixelategcE0VGSgvp",
-            "mangledName": "$s15BanubaUtilities19VideoEditorMetadataV010pixelateOncE0SayAA08PixelategcE0VGSgvp",
+            "usr": "s:15BanubaUtilities19VideoEditorMetadataV06blurOncE0SayAA04BlurgcE0VGSgvp",
+            "mangledName": "$s15BanubaUtilities19VideoEditorMetadataV06blurOncE0SayAA04BlurgcE0VGSgvp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "HasInitialValue",
@@ -9407,18 +9407,18 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "[BanubaUtilities.PixelateOnVideoMetadata]?",
+                    "printedName": "[BanubaUtilities.BlurOnVideoMetadata]?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "Array",
-                        "printedName": "[BanubaUtilities.PixelateOnVideoMetadata]",
+                        "printedName": "[BanubaUtilities.BlurOnVideoMetadata]",
                         "children": [
                           {
                             "kind": "TypeNominal",
-                            "name": "PixelateOnVideoMetadata",
-                            "printedName": "BanubaUtilities.PixelateOnVideoMetadata",
-                            "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV"
+                            "name": "BlurOnVideoMetadata",
+                            "printedName": "BanubaUtilities.BlurOnVideoMetadata",
+                            "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV"
                           }
                         ],
                         "usr": "s:Sa"
@@ -9428,8 +9428,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities19VideoEditorMetadataV010pixelateOncE0SayAA08PixelategcE0VGSgvg",
-                "mangledName": "$s15BanubaUtilities19VideoEditorMetadataV010pixelateOncE0SayAA08PixelategcE0VGSgvg",
+                "usr": "s:15BanubaUtilities19VideoEditorMetadataV06blurOncE0SayAA04BlurgcE0VGSgvg",
+                "mangledName": "$s15BanubaUtilities19VideoEditorMetadataV06blurOncE0SayAA04BlurgcE0VGSgvg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -9447,18 +9447,18 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "[BanubaUtilities.PixelateOnVideoMetadata]?",
+                    "printedName": "[BanubaUtilities.BlurOnVideoMetadata]?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "Array",
-                        "printedName": "[BanubaUtilities.PixelateOnVideoMetadata]",
+                        "printedName": "[BanubaUtilities.BlurOnVideoMetadata]",
                         "children": [
                           {
                             "kind": "TypeNominal",
-                            "name": "PixelateOnVideoMetadata",
-                            "printedName": "BanubaUtilities.PixelateOnVideoMetadata",
-                            "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV"
+                            "name": "BlurOnVideoMetadata",
+                            "printedName": "BanubaUtilities.BlurOnVideoMetadata",
+                            "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV"
                           }
                         ],
                         "usr": "s:Sa"
@@ -9468,8 +9468,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities19VideoEditorMetadataV010pixelateOncE0SayAA08PixelategcE0VGSgvs",
-                "mangledName": "$s15BanubaUtilities19VideoEditorMetadataV010pixelateOncE0SayAA08PixelategcE0VGSgvs",
+                "usr": "s:15BanubaUtilities19VideoEditorMetadataV06blurOncE0SayAA04BlurgcE0VGSgvs",
+                "mangledName": "$s15BanubaUtilities19VideoEditorMetadataV06blurOncE0SayAA04BlurgcE0VGSgvs",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "set"
@@ -9486,8 +9486,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities19VideoEditorMetadataV010pixelateOncE0SayAA08PixelategcE0VGSgvM",
-                "mangledName": "$s15BanubaUtilities19VideoEditorMetadataV010pixelateOncE0SayAA08PixelategcE0VGSgvM",
+                "usr": "s:15BanubaUtilities19VideoEditorMetadataV06blurOncE0SayAA04BlurgcE0VGSgvM",
+                "mangledName": "$s15BanubaUtilities19VideoEditorMetadataV06blurOncE0SayAA04BlurgcE0VGSgvM",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -9607,7 +9607,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(effectsOnVideoMetadata:colorOnVideoMetadata:textOnVideoMetadata:gifOnVideoMetadata:pixelateOnVideoMetadata:analyticsMetadataJSON:)",
+            "printedName": "init(effectsOnVideoMetadata:colorOnVideoMetadata:textOnVideoMetadata:gifOnVideoMetadata:blurOnVideoMetadata:analyticsMetadataJSON:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -9702,18 +9702,18 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "[BanubaUtilities.PixelateOnVideoMetadata]?",
+                "printedName": "[BanubaUtilities.BlurOnVideoMetadata]?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "Array",
-                    "printedName": "[BanubaUtilities.PixelateOnVideoMetadata]",
+                    "printedName": "[BanubaUtilities.BlurOnVideoMetadata]",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "PixelateOnVideoMetadata",
-                        "printedName": "BanubaUtilities.PixelateOnVideoMetadata",
-                        "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV"
+                        "name": "BlurOnVideoMetadata",
+                        "printedName": "BanubaUtilities.BlurOnVideoMetadata",
+                        "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV"
                       }
                     ],
                     "usr": "s:Sa"
@@ -9739,8 +9739,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities19VideoEditorMetadataV09effectsOncE005colorgcE004textgcE003gifgcE008pixelategcE009analyticsE4JSONACSayAA06EffectgcE0VGSg_AA05ColorgcE0VSgSayAA04TextgcE0VGSgSayAA05GIFOncE0VGSgSayAA08PixelategcE0VGSgSSSgtcfc",
-            "mangledName": "$s15BanubaUtilities19VideoEditorMetadataV09effectsOncE005colorgcE004textgcE003gifgcE008pixelategcE009analyticsE4JSONACSayAA06EffectgcE0VGSg_AA05ColorgcE0VSgSayAA04TextgcE0VGSgSayAA05GIFOncE0VGSgSayAA08PixelategcE0VGSgSSSgtcfc",
+            "usr": "s:15BanubaUtilities19VideoEditorMetadataV09effectsOncE005colorgcE004textgcE003gifgcE004blurgcE009analyticsE4JSONACSayAA06EffectgcE0VGSg_AA05ColorgcE0VSgSayAA04TextgcE0VGSgSayAA05GIFOncE0VGSgSayAA04BlurgcE0VGSgSSSgtcfc",
+            "mangledName": "$s15BanubaUtilities19VideoEditorMetadataV09effectsOncE005colorgcE004textgcE003gifgcE004blurgcE009analyticsE4JSONACSayAA06EffectgcE0VGSg_AA05ColorgcE0VSgSayAA04TextgcE0VGSgSayAA05GIFOncE0VGSgSayAA04BlurgcE0VGSgSSSgtcfc",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "AccessControl"
@@ -9749,27 +9749,27 @@
           },
           {
             "kind": "Function",
-            "name": "adjustPixelateEffectMetadata",
-            "printedName": "adjustPixelateEffectMetadata()",
+            "name": "adjustBlurEffectMetadata",
+            "printedName": "adjustBlurEffectMetadata()",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "BanubaUtilities.PixelateList?",
+                "printedName": "BanubaUtilities.BlurList?",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "PixelateList",
-                    "printedName": "BanubaUtilities.PixelateList",
-                    "usr": "s:15BanubaUtilities12PixelateListV"
+                    "name": "BlurList",
+                    "printedName": "BanubaUtilities.BlurList",
+                    "usr": "s:15BanubaUtilities8BlurListV"
                   }
                 ],
                 "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15BanubaUtilities19VideoEditorMetadataV020adjustPixelateEffectE0AA0G4ListVSgyF",
-            "mangledName": "$s15BanubaUtilities19VideoEditorMetadataV020adjustPixelateEffectE0AA0G4ListVSgyF",
+            "usr": "s:15BanubaUtilities19VideoEditorMetadataV016adjustBlurEffectE0AA0G4ListVSgyF",
+            "mangledName": "$s15BanubaUtilities19VideoEditorMetadataV016adjustBlurEffectE0AA0G4ListVSgyF",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "AccessControl",
@@ -11981,8 +11981,8 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "PixelateOnVideoMetadata",
-        "printedName": "PixelateOnVideoMetadata",
+        "name": "BlurOnVideoMetadata",
+        "printedName": "BlurOnVideoMetadata",
         "children": [
           {
             "kind": "Var",
@@ -11997,8 +11997,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV8effectIdSuvp",
-            "mangledName": "$s15BanubaUtilities23PixelateOnVideoMetadataV8effectIdSuvp",
+            "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV8effectIdSuvp",
+            "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV8effectIdSuvp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "HasStorage",
@@ -12021,8 +12021,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV8effectIdSuvg",
-                "mangledName": "$s15BanubaUtilities23PixelateOnVideoMetadataV8effectIdSuvg",
+                "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV8effectIdSuvg",
+                "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV8effectIdSuvg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -12042,8 +12042,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV2idSSvp",
-            "mangledName": "$s15BanubaUtilities23PixelateOnVideoMetadataV2idSSvp",
+            "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV2idSSvp",
+            "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV2idSSvp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "HasStorage",
@@ -12066,8 +12066,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV2idSSvg",
-                "mangledName": "$s15BanubaUtilities23PixelateOnVideoMetadataV2idSSvg",
+                "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV2idSSvg",
+                "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV2idSSvg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -12087,8 +12087,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV9startTimeAA0hF0Vvp",
-            "mangledName": "$s15BanubaUtilities23PixelateOnVideoMetadataV9startTimeAA0hF0Vvp",
+            "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV9startTimeAA0hF0Vvp",
+            "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV9startTimeAA0hF0Vvp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "HasStorage",
@@ -12111,8 +12111,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV9startTimeAA0hF0Vvg",
-                "mangledName": "$s15BanubaUtilities23PixelateOnVideoMetadataV9startTimeAA0hF0Vvg",
+                "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV9startTimeAA0hF0Vvg",
+                "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV9startTimeAA0hF0Vvg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -12132,8 +12132,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV7endTimeAA0hF0Vvp",
-            "mangledName": "$s15BanubaUtilities23PixelateOnVideoMetadataV7endTimeAA0hF0Vvp",
+            "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV7endTimeAA0hF0Vvp",
+            "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV7endTimeAA0hF0Vvp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "HasStorage",
@@ -12156,8 +12156,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV7endTimeAA0hF0Vvg",
-                "mangledName": "$s15BanubaUtilities23PixelateOnVideoMetadataV7endTimeAA0hF0Vvg",
+                "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV7endTimeAA0hF0Vvg",
+                "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV7endTimeAA0hF0Vvg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -12166,19 +12166,19 @@
           },
           {
             "kind": "Var",
-            "name": "pixelateCoordinateParams",
-            "printedName": "pixelateCoordinateParams",
+            "name": "blurCoordinateParams",
+            "printedName": "blurCoordinateParams",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "PixelateCoordinateParams",
-                "printedName": "BanubaUtilities.PixelateCoordinateParams",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV"
+                "name": "BlurCoordinateParams",
+                "printedName": "BanubaUtilities.BlurCoordinateParams",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV"
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV24pixelateCoordinateParamsAA0chI0Vvp",
-            "mangledName": "$s15BanubaUtilities23PixelateOnVideoMetadataV24pixelateCoordinateParamsAA0chI0Vvp",
+            "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV20blurCoordinateParamsAA0chI0Vvp",
+            "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV20blurCoordinateParamsAA0chI0Vvp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "HasStorage",
@@ -12195,14 +12195,14 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "PixelateCoordinateParams",
-                    "printedName": "BanubaUtilities.PixelateCoordinateParams",
-                    "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV"
+                    "name": "BlurCoordinateParams",
+                    "printedName": "BanubaUtilities.BlurCoordinateParams",
+                    "usr": "s:15BanubaUtilities20BlurCoordinateParamsV"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV24pixelateCoordinateParamsAA0chI0Vvg",
-                "mangledName": "$s15BanubaUtilities23PixelateOnVideoMetadataV24pixelateCoordinateParamsAA0chI0Vvg",
+                "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV20blurCoordinateParamsAA0chI0Vvg",
+                "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV20blurCoordinateParamsAA0chI0Vvg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -12222,8 +12222,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV17coordinatesParamsAA011CoordinatesH0Vvp",
-            "mangledName": "$s15BanubaUtilities23PixelateOnVideoMetadataV17coordinatesParamsAA011CoordinatesH0Vvp",
+            "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV17coordinatesParamsAA011CoordinatesH0Vvp",
+            "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV17coordinatesParamsAA011CoordinatesH0Vvp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "HasStorage",
@@ -12246,8 +12246,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV17coordinatesParamsAA011CoordinatesH0Vvg",
-                "mangledName": "$s15BanubaUtilities23PixelateOnVideoMetadataV17coordinatesParamsAA011CoordinatesH0Vvg",
+                "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV17coordinatesParamsAA011CoordinatesH0Vvg",
+                "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV17coordinatesParamsAA011CoordinatesH0Vvg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -12256,8 +12256,8 @@
           },
           {
             "kind": "Var",
-            "name": "pixelateFigure",
-            "printedName": "pixelateFigure",
+            "name": "blurFigure",
+            "printedName": "blurFigure",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -12267,8 +12267,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV14pixelateFigureAA08DrawableH0Ovp",
-            "mangledName": "$s15BanubaUtilities23PixelateOnVideoMetadataV14pixelateFigureAA08DrawableH0Ovp",
+            "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV10blurFigureAA08DrawableH0Ovp",
+            "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV10blurFigureAA08DrawableH0Ovp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "HasStorage",
@@ -12291,8 +12291,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV14pixelateFigureAA08DrawableH0Ovg",
-                "mangledName": "$s15BanubaUtilities23PixelateOnVideoMetadataV14pixelateFigureAA08DrawableH0Ovg",
+                "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV10blurFigureAA08DrawableH0Ovg",
+                "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV10blurFigureAA08DrawableH0Ovg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -12312,8 +12312,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV5orderSivp",
-            "mangledName": "$s15BanubaUtilities23PixelateOnVideoMetadataV5orderSivp",
+            "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV5orderSivp",
+            "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV5orderSivp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "HasStorage",
@@ -12336,8 +12336,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV5orderSivg",
-                "mangledName": "$s15BanubaUtilities23PixelateOnVideoMetadataV5orderSivg",
+                "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV5orderSivg",
+                "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV5orderSivg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -12347,13 +12347,13 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(id:effectId:startTime:endTime:pixelateCoordinateParams:coordinatesParams:pixelateFigure:order:)",
+            "printedName": "init(id:effectId:startTime:endTime:blurCoordinateParams:coordinatesParams:blurFigure:order:)",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "PixelateOnVideoMetadata",
-                "printedName": "BanubaUtilities.PixelateOnVideoMetadata",
-                "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV"
+                "name": "BlurOnVideoMetadata",
+                "printedName": "BanubaUtilities.BlurOnVideoMetadata",
+                "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV"
               },
               {
                 "kind": "TypeNominal",
@@ -12381,9 +12381,9 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "PixelateCoordinateParams",
-                "printedName": "BanubaUtilities.PixelateCoordinateParams",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV"
+                "name": "BlurCoordinateParams",
+                "printedName": "BanubaUtilities.BlurCoordinateParams",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV"
               },
               {
                 "kind": "TypeNominal",
@@ -12405,8 +12405,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV2id8effectId9startTime03endK024pixelateCoordinateParams011coordinatesO00M6Figure5orderACSS_SuAA0kF0VAmA0cnO0VAA011CoordinatesO0VAA08DrawableQ0OSitcfc",
-            "mangledName": "$s15BanubaUtilities23PixelateOnVideoMetadataV2id8effectId9startTime03endK024pixelateCoordinateParams011coordinatesO00M6Figure5orderACSS_SuAA0kF0VAmA0cnO0VAA011CoordinatesO0VAA08DrawableQ0OSitcfc",
+            "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV2id8effectId9startTime03endK020blurCoordinateParams011coordinatesO00M6Figure5orderACSS_SuAA0kF0VAmA0cnO0VAA011CoordinatesO0VAA08DrawableQ0OSitcfc",
+            "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV2id8effectId9startTime03endK020blurCoordinateParams011coordinatesO00M6Figure5orderACSS_SuAA0kF0VAmA0cnO0VAA011CoordinatesO0VAA08DrawableQ0OSitcfc",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "AccessControl",
@@ -12421,9 +12421,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "PixelateOnVideoMetadata",
-                "printedName": "BanubaUtilities.PixelateOnVideoMetadata",
-                "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV"
+                "name": "BlurOnVideoMetadata",
+                "printedName": "BanubaUtilities.BlurOnVideoMetadata",
+                "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV"
               },
               {
                 "kind": "TypeNominal",
@@ -12433,8 +12433,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV4fromACs7Decoder_p_tKcfc",
-            "mangledName": "$s15BanubaUtilities23PixelateOnVideoMetadataV4fromACs7Decoder_p_tKcfc",
+            "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV4fromACs7Decoder_p_tKcfc",
             "moduleName": "BanubaUtilities",
             "implicit": true,
             "throwing": true,
@@ -12458,8 +12458,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV6encode2toys7Encoder_p_tKF",
-            "mangledName": "$s15BanubaUtilities23PixelateOnVideoMetadataV6encode2toys7Encoder_p_tKF",
+            "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV6encode2toys7Encoder_p_tKF",
             "moduleName": "BanubaUtilities",
             "implicit": true,
             "throwing": true,
@@ -12467,8 +12467,8 @@
           }
         ],
         "declKind": "Struct",
-        "usr": "s:15BanubaUtilities23PixelateOnVideoMetadataV",
-        "mangledName": "$s15BanubaUtilities23PixelateOnVideoMetadataV",
+        "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV",
+        "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV",
         "moduleName": "BanubaUtilities",
         "declAttributes": [
           "AccessControl",
@@ -12920,8 +12920,8 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "PixelateCoordinateParams",
-        "printedName": "PixelateCoordinateParams",
+        "name": "BlurCoordinateParams",
+        "printedName": "BlurCoordinateParams",
         "children": [
           {
             "kind": "Var",
@@ -12936,8 +12936,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV6centerSo7CGPointVvp",
-            "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV6centerSo7CGPointVvp",
+            "usr": "s:15BanubaUtilities20BlurCoordinateParamsV6centerSo7CGPointVvp",
+            "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV6centerSo7CGPointVvp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "HasStorage",
@@ -12959,8 +12959,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV6centerSo7CGPointVvg",
-                "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV6centerSo7CGPointVvg",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV6centerSo7CGPointVvg",
+                "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV6centerSo7CGPointVvg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -12983,8 +12983,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV6centerSo7CGPointVvs",
-                "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV6centerSo7CGPointVvs",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV6centerSo7CGPointVvs",
+                "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV6centerSo7CGPointVvs",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "set"
@@ -13001,8 +13001,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV6centerSo7CGPointVvM",
-                "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV6centerSo7CGPointVvM",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV6centerSo7CGPointVvM",
+                "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV6centerSo7CGPointVvM",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -13022,8 +13022,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV5width14CoreFoundation7CGFloatVvp",
-            "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV5width12CoreGraphics7CGFloatVvp",
+            "usr": "s:15BanubaUtilities20BlurCoordinateParamsV5width14CoreFoundation7CGFloatVvp",
+            "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV5width12CoreGraphics7CGFloatVvp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "HasStorage",
@@ -13045,8 +13045,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV5width14CoreFoundation7CGFloatVvg",
-                "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV5width12CoreGraphics7CGFloatVvg",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV5width14CoreFoundation7CGFloatVvg",
+                "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV5width12CoreGraphics7CGFloatVvg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -13069,8 +13069,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV5width14CoreFoundation7CGFloatVvs",
-                "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV5width12CoreGraphics7CGFloatVvs",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV5width14CoreFoundation7CGFloatVvs",
+                "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV5width12CoreGraphics7CGFloatVvs",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "set"
@@ -13087,8 +13087,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV5width14CoreFoundation7CGFloatVvM",
-                "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV5width12CoreGraphics7CGFloatVvM",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV5width14CoreFoundation7CGFloatVvM",
+                "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV5width12CoreGraphics7CGFloatVvM",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -13108,8 +13108,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV6height14CoreFoundation7CGFloatVvp",
-            "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV6height12CoreGraphics7CGFloatVvp",
+            "usr": "s:15BanubaUtilities20BlurCoordinateParamsV6height14CoreFoundation7CGFloatVvp",
+            "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV6height12CoreGraphics7CGFloatVvp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "HasStorage",
@@ -13131,8 +13131,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV6height14CoreFoundation7CGFloatVvg",
-                "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV6height12CoreGraphics7CGFloatVvg",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV6height14CoreFoundation7CGFloatVvg",
+                "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV6height12CoreGraphics7CGFloatVvg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -13155,8 +13155,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV6height14CoreFoundation7CGFloatVvs",
-                "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV6height12CoreGraphics7CGFloatVvs",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV6height14CoreFoundation7CGFloatVvs",
+                "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV6height12CoreGraphics7CGFloatVvs",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "set"
@@ -13173,8 +13173,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV6height14CoreFoundation7CGFloatVvM",
-                "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV6height12CoreGraphics7CGFloatVvM",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV6height14CoreFoundation7CGFloatVvM",
+                "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV6height12CoreGraphics7CGFloatVvM",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -13194,8 +13194,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV6radius14CoreFoundation7CGFloatVvp",
-            "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV6radius12CoreGraphics7CGFloatVvp",
+            "usr": "s:15BanubaUtilities20BlurCoordinateParamsV6radius14CoreFoundation7CGFloatVvp",
+            "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV6radius12CoreGraphics7CGFloatVvp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "HasStorage",
@@ -13217,8 +13217,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV6radius14CoreFoundation7CGFloatVvg",
-                "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV6radius12CoreGraphics7CGFloatVvg",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV6radius14CoreFoundation7CGFloatVvg",
+                "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV6radius12CoreGraphics7CGFloatVvg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -13241,8 +13241,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV6radius14CoreFoundation7CGFloatVvs",
-                "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV6radius12CoreGraphics7CGFloatVvs",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV6radius14CoreFoundation7CGFloatVvs",
+                "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV6radius12CoreGraphics7CGFloatVvs",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "set"
@@ -13259,8 +13259,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV6radius14CoreFoundation7CGFloatVvM",
-                "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV6radius12CoreGraphics7CGFloatVvM",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV6radius14CoreFoundation7CGFloatVvM",
+                "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV6radius12CoreGraphics7CGFloatVvM",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -13280,8 +13280,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV14absoluteCenterSo7CGPointVvp",
-            "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV14absoluteCenterSo7CGPointVvp",
+            "usr": "s:15BanubaUtilities20BlurCoordinateParamsV14absoluteCenterSo7CGPointVvp",
+            "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV14absoluteCenterSo7CGPointVvp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "HasStorage",
@@ -13303,8 +13303,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV14absoluteCenterSo7CGPointVvg",
-                "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV14absoluteCenterSo7CGPointVvg",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV14absoluteCenterSo7CGPointVvg",
+                "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV14absoluteCenterSo7CGPointVvg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -13327,8 +13327,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV14absoluteCenterSo7CGPointVvs",
-                "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV14absoluteCenterSo7CGPointVvs",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV14absoluteCenterSo7CGPointVvs",
+                "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV14absoluteCenterSo7CGPointVvs",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "set"
@@ -13345,8 +13345,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV14absoluteCenterSo7CGPointVvM",
-                "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV14absoluteCenterSo7CGPointVvM",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV14absoluteCenterSo7CGPointVvM",
+                "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV14absoluteCenterSo7CGPointVvM",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -13366,8 +13366,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV14absoluteRadius14CoreFoundation7CGFloatVvp",
-            "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV14absoluteRadius12CoreGraphics7CGFloatVvp",
+            "usr": "s:15BanubaUtilities20BlurCoordinateParamsV14absoluteRadius14CoreFoundation7CGFloatVvp",
+            "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV14absoluteRadius12CoreGraphics7CGFloatVvp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "HasStorage",
@@ -13389,8 +13389,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV14absoluteRadius14CoreFoundation7CGFloatVvg",
-                "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV14absoluteRadius12CoreGraphics7CGFloatVvg",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV14absoluteRadius14CoreFoundation7CGFloatVvg",
+                "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV14absoluteRadius12CoreGraphics7CGFloatVvg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -13413,8 +13413,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV14absoluteRadius14CoreFoundation7CGFloatVvs",
-                "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV14absoluteRadius12CoreGraphics7CGFloatVvs",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV14absoluteRadius14CoreFoundation7CGFloatVvs",
+                "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV14absoluteRadius12CoreGraphics7CGFloatVvs",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "set"
@@ -13431,8 +13431,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV14absoluteRadius14CoreFoundation7CGFloatVvM",
-                "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV14absoluteRadius12CoreGraphics7CGFloatVvM",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV14absoluteRadius14CoreFoundation7CGFloatVvM",
+                "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV14absoluteRadius12CoreGraphics7CGFloatVvM",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -13446,14 +13446,14 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "PixelateCoordinateParams",
-                "printedName": "BanubaUtilities.PixelateCoordinateParams",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV"
+                "name": "BlurCoordinateParams",
+                "printedName": "BanubaUtilities.BlurCoordinateParams",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV"
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV4zeroACvpZ",
-            "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV4zeroACvpZ",
+            "usr": "s:15BanubaUtilities20BlurCoordinateParamsV4zeroACvpZ",
+            "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV4zeroACvpZ",
             "moduleName": "BanubaUtilities",
             "static": true,
             "declAttributes": [
@@ -13468,14 +13468,14 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "PixelateCoordinateParams",
-                    "printedName": "BanubaUtilities.PixelateCoordinateParams",
-                    "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV"
+                    "name": "BlurCoordinateParams",
+                    "printedName": "BanubaUtilities.BlurCoordinateParams",
+                    "usr": "s:15BanubaUtilities20BlurCoordinateParamsV"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV4zeroACvgZ",
-                "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV4zeroACvgZ",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV4zeroACvgZ",
+                "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV4zeroACvgZ",
                 "moduleName": "BanubaUtilities",
                 "static": true,
                 "accessorKind": "get"
@@ -13489,9 +13489,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "PixelateCoordinateParams",
-                "printedName": "BanubaUtilities.PixelateCoordinateParams",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV"
+                "name": "BlurCoordinateParams",
+                "printedName": "BanubaUtilities.BlurCoordinateParams",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV"
               },
               {
                 "kind": "TypeNominal",
@@ -13519,8 +13519,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV6center5width6height6radiusACSo7CGPointV_14CoreFoundation7CGFloatVA2Ltcfc",
-            "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV6center5width6height6radiusACSo7CGPointV_12CoreGraphics7CGFloatVA2Ltcfc",
+            "usr": "s:15BanubaUtilities20BlurCoordinateParamsV6center5width6height6radiusACSo7CGPointV_14CoreFoundation7CGFloatVA2Ltcfc",
+            "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV6center5width6height6radiusACSo7CGPointV_12CoreGraphics7CGFloatVA2Ltcfc",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "AccessControl",
@@ -13535,9 +13535,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "PixelateCoordinateParams",
-                "printedName": "BanubaUtilities.PixelateCoordinateParams",
-                "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV"
+                "name": "BlurCoordinateParams",
+                "printedName": "BanubaUtilities.BlurCoordinateParams",
+                "usr": "s:15BanubaUtilities20BlurCoordinateParamsV"
               },
               {
                 "kind": "TypeNominal",
@@ -13547,8 +13547,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV4fromACs7Decoder_p_tKcfc",
-            "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV4fromACs7Decoder_p_tKcfc",
+            "usr": "s:15BanubaUtilities20BlurCoordinateParamsV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV4fromACs7Decoder_p_tKcfc",
             "moduleName": "BanubaUtilities",
             "implicit": true,
             "throwing": true,
@@ -13572,8 +13572,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV6encode2toys7Encoder_p_tKF",
-            "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV6encode2toys7Encoder_p_tKF",
+            "usr": "s:15BanubaUtilities20BlurCoordinateParamsV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV6encode2toys7Encoder_p_tKF",
             "moduleName": "BanubaUtilities",
             "implicit": true,
             "throwing": true,
@@ -13581,8 +13581,8 @@
           }
         ],
         "declKind": "Struct",
-        "usr": "s:15BanubaUtilities24PixelateCoordinateParamsV",
-        "mangledName": "$s15BanubaUtilities24PixelateCoordinateParamsV",
+        "usr": "s:15BanubaUtilities20BlurCoordinateParamsV",
+        "mangledName": "$s15BanubaUtilities20BlurCoordinateParamsV",
         "moduleName": "BanubaUtilities",
         "declAttributes": [
           "AccessControl",
@@ -17172,32 +17172,32 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "PixelateList",
-        "printedName": "PixelateList",
+        "name": "BlurList",
+        "printedName": "BlurList",
         "children": [
           {
             "kind": "Var",
-            "name": "pixelMask",
-            "printedName": "pixelMask",
+            "name": "blurMask",
+            "printedName": "blurMask",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Array",
-                "printedName": "[BanubaUtilities.PixelMask]",
+                "printedName": "[BanubaUtilities.BlurMask]",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "PixelMask",
-                    "printedName": "BanubaUtilities.PixelMask",
-                    "usr": "s:15BanubaUtilities9PixelMaskV"
+                    "name": "BlurMask",
+                    "printedName": "BanubaUtilities.BlurMask",
+                    "usr": "s:15BanubaUtilities8BlurMaskV"
                   }
                 ],
                 "usr": "s:Sa"
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities12PixelateListV9pixelMaskSayAA05PixelF0VGvp",
-            "mangledName": "$s15BanubaUtilities12PixelateListV9pixelMaskSayAA05PixelF0VGvp",
+            "usr": "s:15BanubaUtilities8BlurListV8blurMaskSayAA0cF0VGvp",
+            "mangledName": "$s15BanubaUtilities8BlurListV8blurMaskSayAA0cF0VGvp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "HasStorage",
@@ -17214,21 +17214,21 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Array",
-                    "printedName": "[BanubaUtilities.PixelMask]",
+                    "printedName": "[BanubaUtilities.BlurMask]",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "PixelMask",
-                        "printedName": "BanubaUtilities.PixelMask",
-                        "usr": "s:15BanubaUtilities9PixelMaskV"
+                        "name": "BlurMask",
+                        "printedName": "BanubaUtilities.BlurMask",
+                        "usr": "s:15BanubaUtilities8BlurMaskV"
                       }
                     ],
                     "usr": "s:Sa"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities12PixelateListV9pixelMaskSayAA05PixelF0VGvg",
-                "mangledName": "$s15BanubaUtilities12PixelateListV9pixelMaskSayAA05PixelF0VGvg",
+                "usr": "s:15BanubaUtilities8BlurListV8blurMaskSayAA0cF0VGvg",
+                "mangledName": "$s15BanubaUtilities8BlurListV8blurMaskSayAA0cF0VGvg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -17242,9 +17242,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "PixelateList",
-                "printedName": "BanubaUtilities.PixelateList",
-                "usr": "s:15BanubaUtilities12PixelateListV"
+                "name": "BlurList",
+                "printedName": "BanubaUtilities.BlurList",
+                "usr": "s:15BanubaUtilities8BlurListV"
               },
               {
                 "kind": "TypeNominal",
@@ -17254,8 +17254,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities12PixelateListV4fromACs7Decoder_p_tKcfc",
-            "mangledName": "$s15BanubaUtilities12PixelateListV4fromACs7Decoder_p_tKcfc",
+            "usr": "s:15BanubaUtilities8BlurListV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s15BanubaUtilities8BlurListV4fromACs7Decoder_p_tKcfc",
             "moduleName": "BanubaUtilities",
             "implicit": true,
             "throwing": true,
@@ -17279,8 +17279,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:15BanubaUtilities12PixelateListV6encode2toys7Encoder_p_tKF",
-            "mangledName": "$s15BanubaUtilities12PixelateListV6encode2toys7Encoder_p_tKF",
+            "usr": "s:15BanubaUtilities8BlurListV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s15BanubaUtilities8BlurListV6encode2toys7Encoder_p_tKF",
             "moduleName": "BanubaUtilities",
             "implicit": true,
             "throwing": true,
@@ -17288,8 +17288,8 @@
           }
         ],
         "declKind": "Struct",
-        "usr": "s:15BanubaUtilities12PixelateListV",
-        "mangledName": "$s15BanubaUtilities12PixelateListV",
+        "usr": "s:15BanubaUtilities8BlurListV",
+        "mangledName": "$s15BanubaUtilities8BlurListV",
         "moduleName": "BanubaUtilities",
         "declAttributes": [
           "AccessControl",
@@ -17314,8 +17314,8 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "PixelMask",
-        "printedName": "PixelMask",
+        "name": "BlurMask",
+        "printedName": "BlurMask",
         "children": [
           {
             "kind": "Var",
@@ -17330,8 +17330,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities9PixelMaskV2idSSvp",
-            "mangledName": "$s15BanubaUtilities9PixelMaskV2idSSvp",
+            "usr": "s:15BanubaUtilities8BlurMaskV2idSSvp",
+            "mangledName": "$s15BanubaUtilities8BlurMaskV2idSSvp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "HasStorage",
@@ -17353,8 +17353,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities9PixelMaskV2idSSvg",
-                "mangledName": "$s15BanubaUtilities9PixelMaskV2idSSvg",
+                "usr": "s:15BanubaUtilities8BlurMaskV2idSSvg",
+                "mangledName": "$s15BanubaUtilities8BlurMaskV2idSSvg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -17374,8 +17374,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities9PixelMaskV4typeSSvp",
-            "mangledName": "$s15BanubaUtilities9PixelMaskV4typeSSvp",
+            "usr": "s:15BanubaUtilities8BlurMaskV4typeSSvp",
+            "mangledName": "$s15BanubaUtilities8BlurMaskV4typeSSvp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "HasStorage",
@@ -17397,8 +17397,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities9PixelMaskV4typeSSvg",
-                "mangledName": "$s15BanubaUtilities9PixelMaskV4typeSSvg",
+                "usr": "s:15BanubaUtilities8BlurMaskV4typeSSvg",
+                "mangledName": "$s15BanubaUtilities8BlurMaskV4typeSSvg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -17418,8 +17418,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities9PixelMaskV9startTimeSivp",
-            "mangledName": "$s15BanubaUtilities9PixelMaskV9startTimeSivp",
+            "usr": "s:15BanubaUtilities8BlurMaskV9startTimeSivp",
+            "mangledName": "$s15BanubaUtilities8BlurMaskV9startTimeSivp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "HasStorage",
@@ -17441,8 +17441,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities9PixelMaskV9startTimeSivg",
-                "mangledName": "$s15BanubaUtilities9PixelMaskV9startTimeSivg",
+                "usr": "s:15BanubaUtilities8BlurMaskV9startTimeSivg",
+                "mangledName": "$s15BanubaUtilities8BlurMaskV9startTimeSivg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -17462,8 +17462,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities9PixelMaskV7endTimeSivp",
-            "mangledName": "$s15BanubaUtilities9PixelMaskV7endTimeSivp",
+            "usr": "s:15BanubaUtilities8BlurMaskV7endTimeSivp",
+            "mangledName": "$s15BanubaUtilities8BlurMaskV7endTimeSivp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "HasStorage",
@@ -17485,8 +17485,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities9PixelMaskV7endTimeSivg",
-                "mangledName": "$s15BanubaUtilities9PixelMaskV7endTimeSivg",
+                "usr": "s:15BanubaUtilities8BlurMaskV7endTimeSivg",
+                "mangledName": "$s15BanubaUtilities8BlurMaskV7endTimeSivg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -17506,8 +17506,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:15BanubaUtilities9PixelMaskV6paramsAA6ParamsVvp",
-            "mangledName": "$s15BanubaUtilities9PixelMaskV6paramsAA6ParamsVvp",
+            "usr": "s:15BanubaUtilities8BlurMaskV6paramsAA6ParamsVvp",
+            "mangledName": "$s15BanubaUtilities8BlurMaskV6paramsAA6ParamsVvp",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "HasStorage",
@@ -17529,8 +17529,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities9PixelMaskV6paramsAA6ParamsVvg",
-                "mangledName": "$s15BanubaUtilities9PixelMaskV6paramsAA6ParamsVvg",
+                "usr": "s:15BanubaUtilities8BlurMaskV6paramsAA6ParamsVvg",
+                "mangledName": "$s15BanubaUtilities8BlurMaskV6paramsAA6ParamsVvg",
                 "moduleName": "BanubaUtilities",
                 "implicit": true,
                 "accessorKind": "get"
@@ -17544,9 +17544,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "PixelMask",
-                "printedName": "BanubaUtilities.PixelMask",
-                "usr": "s:15BanubaUtilities9PixelMaskV"
+                "name": "BlurMask",
+                "printedName": "BanubaUtilities.BlurMask",
+                "usr": "s:15BanubaUtilities8BlurMaskV"
               },
               {
                 "kind": "TypeNominal",
@@ -17556,8 +17556,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities9PixelMaskV4fromACs7Decoder_p_tKcfc",
-            "mangledName": "$s15BanubaUtilities9PixelMaskV4fromACs7Decoder_p_tKcfc",
+            "usr": "s:15BanubaUtilities8BlurMaskV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s15BanubaUtilities8BlurMaskV4fromACs7Decoder_p_tKcfc",
             "moduleName": "BanubaUtilities",
             "implicit": true,
             "throwing": true,
@@ -17581,8 +17581,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:15BanubaUtilities9PixelMaskV6encode2toys7Encoder_p_tKF",
-            "mangledName": "$s15BanubaUtilities9PixelMaskV6encode2toys7Encoder_p_tKF",
+            "usr": "s:15BanubaUtilities8BlurMaskV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s15BanubaUtilities8BlurMaskV6encode2toys7Encoder_p_tKF",
             "moduleName": "BanubaUtilities",
             "implicit": true,
             "throwing": true,
@@ -17590,8 +17590,8 @@
           }
         ],
         "declKind": "Struct",
-        "usr": "s:15BanubaUtilities9PixelMaskV",
-        "mangledName": "$s15BanubaUtilities9PixelMaskV",
+        "usr": "s:15BanubaUtilities8BlurMaskV",
+        "mangledName": "$s15BanubaUtilities8BlurMaskV",
         "moduleName": "BanubaUtilities",
         "declAttributes": [
           "AccessControl",
@@ -63981,56 +63981,56 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 10722,
+      "offset": 10631,
       "length": 7,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 10737,
+      "offset": 10646,
       "length": 6,
       "value": "2"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 10722,
+      "offset": 10631,
       "length": 7,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 10737,
+      "offset": 10646,
       "length": 6,
       "value": "2"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 10722,
+      "offset": 10631,
       "length": 7,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 10737,
+      "offset": 10646,
       "length": 6,
       "value": "2"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "BooleanLiteral",
-      "offset": 11385,
+      "offset": 11294,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "BooleanLiteral",
-      "offset": 11414,
+      "offset": 11323,
       "length": 5,
       "value": "false"
     },
@@ -64392,30 +64392,30 @@
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PixelateFigure.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/BlurFigure.swift",
       "kind": "StringLiteral",
-      "offset": 255,
+      "offset": 251,
       "length": 8,
       "value": "\"Circle\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PixelateFigure.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/BlurFigure.swift",
       "kind": "StringLiteral",
-      "offset": 297,
+      "offset": 293,
       "length": 8,
       "value": "\"Square\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PixelateFigure.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/BlurFigure.swift",
       "kind": "StringLiteral",
-      "offset": 255,
+      "offset": 251,
       "length": 8,
       "value": "\"Circle\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/PixelateFigure.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/BlurFigure.swift",
       "kind": "StringLiteral",
-      "offset": 297,
+      "offset": 293,
       "length": 8,
       "value": "\"Square\""
     },

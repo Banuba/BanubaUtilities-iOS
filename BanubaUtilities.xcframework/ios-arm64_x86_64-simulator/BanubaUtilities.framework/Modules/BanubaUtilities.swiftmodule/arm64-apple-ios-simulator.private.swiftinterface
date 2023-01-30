@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
-// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BanubaUtilities
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BanubaUtilities
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
 import AVKit
@@ -243,10 +243,10 @@ public struct VideoEditorMetadata : Swift.Codable {
   public var colorOnVideoMetadata: BanubaUtilities.ColorOnVideoMetadata?
   public var textOnVideoMetadata: [BanubaUtilities.TextOnVideoMetadata]?
   public var gifOnVideoMetadata: [BanubaUtilities.GIFOnVideoMetadata]?
-  public var pixelateOnVideoMetadata: [BanubaUtilities.PixelateOnVideoMetadata]?
+  public var blurOnVideoMetadata: [BanubaUtilities.BlurOnVideoMetadata]?
   public var analyticsMetadataJSON: Swift.String?
-  public init(effectsOnVideoMetadata: [BanubaUtilities.EffectOnVideoMetadata]? = nil, colorOnVideoMetadata: BanubaUtilities.ColorOnVideoMetadata? = nil, textOnVideoMetadata: [BanubaUtilities.TextOnVideoMetadata]? = nil, gifOnVideoMetadata: [BanubaUtilities.GIFOnVideoMetadata]? = nil, pixelateOnVideoMetadata: [BanubaUtilities.PixelateOnVideoMetadata]? = nil, analyticsMetadataJSON: Swift.String? = nil)
-  public func adjustPixelateEffectMetadata() -> BanubaUtilities.PixelateList?
+  public init(effectsOnVideoMetadata: [BanubaUtilities.EffectOnVideoMetadata]? = nil, colorOnVideoMetadata: BanubaUtilities.ColorOnVideoMetadata? = nil, textOnVideoMetadata: [BanubaUtilities.TextOnVideoMetadata]? = nil, gifOnVideoMetadata: [BanubaUtilities.GIFOnVideoMetadata]? = nil, blurOnVideoMetadata: [BanubaUtilities.BlurOnVideoMetadata]? = nil, analyticsMetadataJSON: Swift.String? = nil)
+  public func adjustBlurEffectMetadata() -> BanubaUtilities.BlurList?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -300,16 +300,16 @@ public struct VideoMetadata : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
-public struct PixelateOnVideoMetadata : Swift.Codable {
+public struct BlurOnVideoMetadata : Swift.Codable {
   public let effectId: Swift.UInt
   public let id: Swift.String
   public let startTime: BanubaUtilities.TimeMetadata
   public let endTime: BanubaUtilities.TimeMetadata
-  public let pixelateCoordinateParams: BanubaUtilities.PixelateCoordinateParams
+  public let blurCoordinateParams: BanubaUtilities.BlurCoordinateParams
   public let coordinatesParams: BanubaUtilities.CoordinatesParams
-  public let pixelateFigure: BanubaUtilities.DrawableFigure
+  public let blurFigure: BanubaUtilities.DrawableFigure
   public let order: Swift.Int
-  public init(id: Swift.String, effectId: Swift.UInt, startTime: BanubaUtilities.TimeMetadata, endTime: BanubaUtilities.TimeMetadata, pixelateCoordinateParams: BanubaUtilities.PixelateCoordinateParams, coordinatesParams: BanubaUtilities.CoordinatesParams, pixelateFigure: BanubaUtilities.DrawableFigure, order: Swift.Int)
+  public init(id: Swift.String, effectId: Swift.UInt, startTime: BanubaUtilities.TimeMetadata, endTime: BanubaUtilities.TimeMetadata, blurCoordinateParams: BanubaUtilities.BlurCoordinateParams, coordinatesParams: BanubaUtilities.CoordinatesParams, blurFigure: BanubaUtilities.DrawableFigure, order: Swift.Int)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -324,14 +324,14 @@ public struct GIFOnVideoMetadata : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
-public struct PixelateCoordinateParams : Swift.Codable {
+public struct BlurCoordinateParams : Swift.Codable {
   public var center: CoreFoundation.CGPoint
   public var width: CoreFoundation.CGFloat
   public var height: CoreFoundation.CGFloat
   public var radius: CoreFoundation.CGFloat
   public var absoluteCenter: CoreFoundation.CGPoint
   public var absoluteRadius: CoreFoundation.CGFloat
-  public static var zero: BanubaUtilities.PixelateCoordinateParams {
+  public static var zero: BanubaUtilities.BlurCoordinateParams {
     get
   }
   public init(center: CoreFoundation.CGPoint, width: CoreFoundation.CGFloat, height: CoreFoundation.CGFloat, radius: CoreFoundation.CGFloat)
@@ -408,12 +408,12 @@ public class AudioTrack : BanubaUtilities.AudioTrackAdoptable {
   required public init(url: Foundation.URL, originalURL: Foundation.URL, uuid: Foundation.UUID, id: Swift.Int32?, timeRange: CoreMedia.CMTimeRange, trimTimeRange trimmedTimeRange: CoreMedia.CMTimeRange, compositionStart: CoreMedia.CMTime, avURLAsset: AVFoundation.AVURLAsset, isAudioRecord: Swift.Bool, isEditable: Swift.Bool, isCameraTrack: Swift.Bool, title: Swift.String?, additionalTitle: Swift.String?, applyedFilterId: Swift.Int?)
   @objc deinit
 }
-public struct PixelateList : Swift.Codable {
-  public let pixelMask: [BanubaUtilities.PixelMask]
+public struct BlurList : Swift.Codable {
+  public let blurMask: [BanubaUtilities.BlurMask]
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
-public struct PixelMask : Swift.Codable {
+public struct BlurMask : Swift.Codable {
   public let id: Swift.String
   public let type: Swift.String
   public let startTime: Swift.Int, endTime: Swift.Int
