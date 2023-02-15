@@ -187,7 +187,8 @@ public struct VideoSequenceItemMetadata : Swift.Codable {
   public let isSlideShow: Swift.Bool
   public let isPIP: Swift.Bool
   public var transition: BanubaUtilities.TransitionEffectMetadata
-  public init(videoName: Swift.String, order: Swift.Int, imageData: Foundation.Data? = nil, trimTimeRange: BanubaUtilities.TrimTimeRangeMetadata, isGalleryAsset: Swift.Bool, isSlideShow: Swift.Bool, isPIP: Swift.Bool = false, transition: BanubaUtilities.TransitionEffectMetadata)
+  public var aspectRatio: BanubaUtilities.AspectRatio
+  public init(videoName: Swift.String, order: Swift.Int, imageData: Foundation.Data? = nil, trimTimeRange: BanubaUtilities.TrimTimeRangeMetadata, isGalleryAsset: Swift.Bool, isSlideShow: Swift.Bool, isPIP: Swift.Bool = false, transition: BanubaUtilities.TransitionEffectMetadata, aspectRatio: BanubaUtilities.AspectRatio)
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
@@ -308,10 +309,11 @@ public struct BlurOnVideoMetadata : Swift.Codable {
   public let blurCoordinateParams: BanubaUtilities.BlurCoordinateParams
   public let coordinatesParams: BanubaUtilities.CoordinatesParams
   public let blurFigure: BanubaUtilities.DrawableFigure
+  public let titleIndex: Swift.Int
   public let order: Swift.Int
-  public init(id: Swift.String, effectId: Swift.UInt, startTime: BanubaUtilities.TimeMetadata, endTime: BanubaUtilities.TimeMetadata, blurCoordinateParams: BanubaUtilities.BlurCoordinateParams, coordinatesParams: BanubaUtilities.CoordinatesParams, blurFigure: BanubaUtilities.DrawableFigure, order: Swift.Int)
-  public func encode(to encoder: Swift.Encoder) throws
+  public init(id: Swift.String, effectId: Swift.UInt, startTime: BanubaUtilities.TimeMetadata, endTime: BanubaUtilities.TimeMetadata, blurCoordinateParams: BanubaUtilities.BlurCoordinateParams, coordinatesParams: BanubaUtilities.CoordinatesParams, blurFigure: BanubaUtilities.DrawableFigure, titleIndex: Swift.Int, order: Swift.Int)
   public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct GIFOnVideoMetadata : Swift.Codable {
   public let id: Swift.String
@@ -627,7 +629,6 @@ extension Swift.String {
   final public let collectionView: UIKit.UICollectionView
   final public let timeLineDataSource: BanubaUtilities.TimeLineDataSource
   final public let cornerRadius: CoreFoundation.CGFloat
-  public var collectionViewDidTap: (() -> Swift.Void)?
   public init(collectionView: UIKit.UICollectionView, timeLineDataSource: BanubaUtilities.TimeLineDataSource, cornerRadius: CoreFoundation.CGFloat)
   @objc deinit
 }

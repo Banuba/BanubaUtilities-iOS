@@ -6262,9 +6262,95 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "aspectRatio",
+            "printedName": "aspectRatio",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AspectRatio",
+                "printedName": "BanubaUtilities.AspectRatio",
+                "usr": "s:15BanubaUtilities11AspectRatioO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities25VideoSequenceItemMetadataV11aspectRatioAA06AspectH0Ovp",
+            "mangledName": "$s15BanubaUtilities25VideoSequenceItemMetadataV11aspectRatioAA06AspectH0Ovp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AspectRatio",
+                    "printedName": "BanubaUtilities.AspectRatio",
+                    "usr": "s:15BanubaUtilities11AspectRatioO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities25VideoSequenceItemMetadataV11aspectRatioAA06AspectH0Ovg",
+                "mangledName": "$s15BanubaUtilities25VideoSequenceItemMetadataV11aspectRatioAA06AspectH0Ovg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AspectRatio",
+                    "printedName": "BanubaUtilities.AspectRatio",
+                    "usr": "s:15BanubaUtilities11AspectRatioO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities25VideoSequenceItemMetadataV11aspectRatioAA06AspectH0Ovs",
+                "mangledName": "$s15BanubaUtilities25VideoSequenceItemMetadataV11aspectRatioAA06AspectH0Ovs",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities25VideoSequenceItemMetadataV11aspectRatioAA06AspectH0OvM",
+                "mangledName": "$s15BanubaUtilities25VideoSequenceItemMetadataV11aspectRatioAA06AspectH0OvM",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(videoName:order:imageData:trimTimeRange:isGalleryAsset:isSlideShow:isPIP:transition:)",
+            "printedName": "init(videoName:order:imageData:trimTimeRange:isGalleryAsset:isSlideShow:isPIP:transition:aspectRatio:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -6329,11 +6415,17 @@
                 "name": "TransitionEffectMetadata",
                 "printedName": "BanubaUtilities.TransitionEffectMetadata",
                 "usr": "s:15BanubaUtilities24TransitionEffectMetadataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AspectRatio",
+                "printedName": "BanubaUtilities.AspectRatio",
+                "usr": "s:15BanubaUtilities11AspectRatioO"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities25VideoSequenceItemMetadataV9videoName5order9imageData13trimTimeRange14isGalleryAsset0O9SlideShow0O3PIP10transitionACSS_Si10Foundation0K0VSgAA04TrimmnF0VS3bAA016TransitionEffectF0Vtcfc",
-            "mangledName": "$s15BanubaUtilities25VideoSequenceItemMetadataV9videoName5order9imageData13trimTimeRange14isGalleryAsset0O9SlideShow0O3PIP10transitionACSS_Si10Foundation0K0VSgAA04TrimmnF0VS3bAA016TransitionEffectF0Vtcfc",
+            "usr": "s:15BanubaUtilities25VideoSequenceItemMetadataV9videoName5order9imageData13trimTimeRange14isGalleryAsset0O9SlideShow0O3PIP10transition11aspectRatioACSS_Si10Foundation0K0VSgAA04TrimmnF0VS3bAA016TransitionEffectF0VAA06AspectW0Otcfc",
+            "mangledName": "$s15BanubaUtilities25VideoSequenceItemMetadataV9videoName5order9imageData13trimTimeRange14isGalleryAsset0O9SlideShow0O3PIP10transition11aspectRatioACSS_Si10Foundation0K0VSgAA04TrimmnF0VS3bAA016TransitionEffectF0VAA06AspectW0Otcfc",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "AccessControl",
@@ -12301,6 +12393,51 @@
           },
           {
             "kind": "Var",
+            "name": "titleIndex",
+            "printedName": "titleIndex",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV10titleIndexSivp",
+            "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV10titleIndexSivp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV10titleIndexSivg",
+                "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV10titleIndexSivg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "order",
             "printedName": "order",
             "children": [
@@ -12347,7 +12484,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(id:effectId:startTime:endTime:blurCoordinateParams:coordinatesParams:blurFigure:order:)",
+            "printedName": "init(id:effectId:startTime:endTime:blurCoordinateParams:coordinatesParams:blurFigure:titleIndex:order:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -12402,11 +12539,17 @@
                 "name": "Int",
                 "printedName": "Swift.Int",
                 "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV2id8effectId9startTime03endK020blurCoordinateParams011coordinatesO00M6Figure5orderACSS_SuAA0kF0VAmA0cnO0VAA011CoordinatesO0VAA08DrawableQ0OSitcfc",
-            "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV2id8effectId9startTime03endK020blurCoordinateParams011coordinatesO00M6Figure5orderACSS_SuAA0kF0VAmA0cnO0VAA011CoordinatesO0VAA08DrawableQ0OSitcfc",
+            "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV2id8effectId9startTime03endK020blurCoordinateParams011coordinatesO00M6Figure10titleIndex5orderACSS_SuAA0kF0VAnA0cnO0VAA011CoordinatesO0VAA08DrawableQ0OS2itcfc",
+            "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV2id8effectId9startTime03endK020blurCoordinateParams011coordinatesO00M6Figure10titleIndex5orderACSS_SuAA0kF0VAnA0cnO0VAA011CoordinatesO0VAA08DrawableQ0OS2itcfc",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "AccessControl",
@@ -12436,7 +12579,9 @@
             "usr": "s:15BanubaUtilities19BlurOnVideoMetadataV4fromACs7Decoder_p_tKcfc",
             "mangledName": "$s15BanubaUtilities19BlurOnVideoMetadataV4fromACs7Decoder_p_tKcfc",
             "moduleName": "BanubaUtilities",
-            "implicit": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
             "throwing": true,
             "init_kind": "Designated"
           },
@@ -26355,150 +26500,6 @@
                   "Final"
                 ],
                 "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "collectionViewDidTap",
-            "printedName": "collectionViewDidTap",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "(() -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "() -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      }
-                    ]
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:15BanubaUtilities34VideoTimeLineCollectionViewHandlerC010collectionG6DidTapyycSgvp",
-            "mangledName": "$s15BanubaUtilities34VideoTimeLineCollectionViewHandlerC010collectionG6DidTapyycSgvp",
-            "moduleName": "BanubaUtilities",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "(() -> ())?",
-                    "children": [
-                      {
-                        "kind": "TypeFunc",
-                        "name": "Function",
-                        "printedName": "() -> ()",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Void",
-                            "printedName": "()"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Void",
-                            "printedName": "()"
-                          }
-                        ]
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities34VideoTimeLineCollectionViewHandlerC010collectionG6DidTapyycSgvg",
-                "mangledName": "$s15BanubaUtilities34VideoTimeLineCollectionViewHandlerC010collectionG6DidTapyycSgvg",
-                "moduleName": "BanubaUtilities",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "(() -> ())?",
-                    "children": [
-                      {
-                        "kind": "TypeFunc",
-                        "name": "Function",
-                        "printedName": "() -> ()",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Void",
-                            "printedName": "()"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Void",
-                            "printedName": "()"
-                          }
-                        ]
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities34VideoTimeLineCollectionViewHandlerC010collectionG6DidTapyycSgvs",
-                "mangledName": "$s15BanubaUtilities34VideoTimeLineCollectionViewHandlerC010collectionG6DidTapyycSgvs",
-                "moduleName": "BanubaUtilities",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities34VideoTimeLineCollectionViewHandlerC010collectionG6DidTapyycSgvM",
-                "mangledName": "$s15BanubaUtilities34VideoTimeLineCollectionViewHandlerC010collectionG6DidTapyycSgvM",
-                "moduleName": "BanubaUtilities",
-                "implicit": true,
-                "accessorKind": "_modify"
               }
             ]
           },
@@ -63960,77 +63961,77 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "BooleanLiteral",
-      "offset": 1420,
+      "offset": 1492,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "FloatLiteral",
-      "offset": 2878,
+      "offset": 3174,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 2929,
+      "offset": 3225,
       "length": 9,
       "value": "1000000"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 10631,
+      "offset": 10927,
       "length": 7,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 10646,
+      "offset": 10942,
       "length": 6,
       "value": "2"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 10631,
+      "offset": 10927,
       "length": 7,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 10646,
+      "offset": 10942,
       "length": 6,
       "value": "2"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 10631,
+      "offset": 10927,
       "length": 7,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 10646,
+      "offset": 10942,
       "length": 6,
       "value": "2"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "BooleanLiteral",
-      "offset": 11294,
+      "offset": 11590,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "BooleanLiteral",
-      "offset": 11323,
+      "offset": 11619,
       "length": 5,
       "value": "false"
     },

@@ -682,7 +682,6 @@ SWIFT_CLASS("_TtC15BanubaUtilities34VideoTimeLineCollectionViewHandler")
 
 
 
-
 @interface VideoTimeLineCollectionViewHandler (SWIFT_EXTENSION(BanubaUtilities)) <TimeLineDataSourceDelegate>
 - (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didLoadImage:(UIImage * _Nonnull)image at:(NSInteger)index;
 - (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
