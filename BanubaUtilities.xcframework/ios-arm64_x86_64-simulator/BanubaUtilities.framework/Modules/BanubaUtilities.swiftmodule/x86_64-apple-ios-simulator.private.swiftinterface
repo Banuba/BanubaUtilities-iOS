@@ -213,8 +213,9 @@ public struct TrimTimeRangeMetadata : Swift.Codable {
 }
 public struct MusicEditorMetadata : Swift.Codable {
   public var tracks: [BanubaUtilities.MusicEditorTrack]
+  public var pipVolume: Swift.Float?
   public var videoVolume: Swift.Float
-  public init(tracks: [BanubaUtilities.MusicEditorTrack], videoVolume: Swift.Float)
+  public init(tracks: [BanubaUtilities.MusicEditorTrack], pipVolume: Swift.Float?, videoVolume: Swift.Float)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -1431,7 +1432,7 @@ public enum AudioTrackLineViewMovement {
   }
 }
 public class ToastPresenter {
-  public init(configuration: BanubaUtilities.ToastConfiguration)
+  public init(configuration: BanubaUtilities.ToastConfiguration, toastLifeTime: Foundation.TimeInterval? = nil)
   public func showToast(message: Swift.String)
   @objc deinit
 }

@@ -7139,6 +7139,117 @@
           },
           {
             "kind": "Var",
+            "name": "pipVolume",
+            "printedName": "pipVolume",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Float?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Float",
+                    "printedName": "Swift.Float",
+                    "usr": "s:Sf"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities19MusicEditorMetadataV9pipVolumeSfSgvp",
+            "mangledName": "$s15BanubaUtilities19MusicEditorMetadataV9pipVolumeSfSgvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Float?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Float",
+                        "printedName": "Swift.Float",
+                        "usr": "s:Sf"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities19MusicEditorMetadataV9pipVolumeSfSgvg",
+                "mangledName": "$s15BanubaUtilities19MusicEditorMetadataV9pipVolumeSfSgvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Float?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Float",
+                        "printedName": "Swift.Float",
+                        "usr": "s:Sf"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities19MusicEditorMetadataV9pipVolumeSfSgvs",
+                "mangledName": "$s15BanubaUtilities19MusicEditorMetadataV9pipVolumeSfSgvs",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities19MusicEditorMetadataV9pipVolumeSfSgvM",
+                "mangledName": "$s15BanubaUtilities19MusicEditorMetadataV9pipVolumeSfSgvM",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "videoVolume",
             "printedName": "videoVolume",
             "children": [
@@ -7226,7 +7337,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(tracks:videoVolume:)",
+            "printedName": "init(tracks:pipVolume:videoVolume:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -7250,14 +7361,28 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Float?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Float",
+                    "printedName": "Swift.Float",
+                    "usr": "s:Sf"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "Float",
                 "printedName": "Swift.Float",
                 "usr": "s:Sf"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities19MusicEditorMetadataV6tracks11videoVolumeACSayAA0cD5TrackVG_Sftcfc",
-            "mangledName": "$s15BanubaUtilities19MusicEditorMetadataV6tracks11videoVolumeACSayAA0cD5TrackVG_Sftcfc",
+            "usr": "s:15BanubaUtilities19MusicEditorMetadataV6tracks9pipVolume05videoH0ACSayAA0cD5TrackVG_SfSgSftcfc",
+            "mangledName": "$s15BanubaUtilities19MusicEditorMetadataV6tracks9pipVolume05videoH0ACSayAA0cD5TrackVG_SfSgSftcfc",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "AccessControl"
@@ -56837,7 +56962,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(configuration:)",
+            "printedName": "init(configuration:toastLifeTime:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -56850,11 +56975,26 @@
                 "name": "ToastConfiguration",
                 "printedName": "BanubaUtilities.ToastConfiguration",
                 "usr": "s:15BanubaUtilities18ToastConfigurationV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Double?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities14ToastPresenterC13configurationAcA0C13ConfigurationV_tcfc",
-            "mangledName": "$s15BanubaUtilities14ToastPresenterC13configurationAcA0C13ConfigurationV_tcfc",
+            "usr": "s:15BanubaUtilities14ToastPresenterC13configuration13toastLifeTimeAcA0C13ConfigurationV_SdSgtcfc",
+            "mangledName": "$s15BanubaUtilities14ToastPresenterC13configuration13toastLifeTimeAcA0C13ConfigurationV_SdSgtcfc",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "AccessControl"
@@ -63982,56 +64122,56 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 10927,
+      "offset": 11029,
       "length": 7,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 10942,
+      "offset": 11044,
       "length": 6,
       "value": "2"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 10927,
+      "offset": 11029,
       "length": 7,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 10942,
+      "offset": 11044,
       "length": 6,
       "value": "2"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 10927,
+      "offset": 11029,
       "length": 7,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 10942,
+      "offset": 11044,
       "length": 6,
       "value": "2"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "BooleanLiteral",
-      "offset": 11590,
+      "offset": 11692,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "BooleanLiteral",
-      "offset": 11619,
+      "offset": 11721,
       "length": 5,
       "value": "false"
     },
@@ -64703,21 +64843,21 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/ToastPresenter.swift",
       "kind": "FloatLiteral",
-      "offset": 164,
+      "offset": 172,
       "length": 3,
       "value": "3.0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/ToastPresenter.swift",
       "kind": "FloatLiteral",
-      "offset": 203,
+      "offset": 211,
       "length": 4,
       "value": "30.0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/ToastPresenter.swift",
       "kind": "FloatLiteral",
-      "offset": 244,
+      "offset": 252,
       "length": 4,
       "value": "30.0"
     },
