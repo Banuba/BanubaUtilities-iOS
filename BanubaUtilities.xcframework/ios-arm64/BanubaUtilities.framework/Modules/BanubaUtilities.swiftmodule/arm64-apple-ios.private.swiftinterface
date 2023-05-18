@@ -4,11 +4,14 @@
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
 import AVKit
+import Accelerate
 @_exported import BanubaUtilities
 import CloudKit
+import CoreMedia
 import Foundation
 import Photos
 import Swift
+import SwiftUI
 import SystemConfiguration
 import UIKit
 import _Concurrency
@@ -19,7 +22,14 @@ public protocol ImageButtonConfigurationProtocol {
   var imageConfiguration: BanubaUtilities.ImageConfigurationProtocol { get set }
   var selectedImageConfiguration: BanubaUtilities.ImageConfigurationProtocol? { get set }
 }
+public struct BanubaImageButtonConfiguration : BanubaUtilities.ImageButtonConfigurationProtocol {
+  public var imageConfiguration: BanubaUtilities.ImageConfigurationProtocol
+  public var selectedImageConfiguration: BanubaUtilities.ImageConfigurationProtocol?
+  public init(imageConfiguration: BanubaUtilities.ImageConfigurationProtocol, selectedImageConfiguration: BanubaUtilities.ImageConfigurationProtocol? = nil)
+}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class AlertViewController : UIKit.UIViewController, BanubaUtilities.NibLoadable {
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak public var contextView: UIKit.UIView!
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak public var backgroundView: UIKit.UIView!
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
     @objc get
   }
@@ -59,6 +69,12 @@ public protocol ImageButtonConfigurationProtocol {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
+}
+public struct AudioContext {
+  public static let averagePeak: Swift.Float
+  public static func averagePowers(audioFileURL: Foundation.URL, forChannel channelNumber: Swift.Int, compositionStart: Foundation.TimeInterval, compositionEnd: Foundation.TimeInterval?, duration: Foundation.TimeInterval, numberOfPeaks: Swift.Int, completionHandler: @escaping (_ success: [Swift.Float]) -> ())
+  public static func amplitudeSamples(audioFileURL: Foundation.URL, numberOfSamples: Swift.Int) -> [Swift.Float]
+  public static func amplitudeSamples(audioFileURL: Foundation.URL, numberOfSamples: Swift.Int, completionHandler: @escaping (_ success: [Swift.Float]) -> ())
 }
 @objc public class TextButtonConfiguration : ObjectiveC.NSObject {
   public var style: BanubaUtilities.TextConfiguration
@@ -145,6 +161,8 @@ public enum SharedLocalizedStrings {
     public static let damagedFile: Swift.String
     public static let exportVideoFailed: Swift.String
   }
+  public enum AutoCut {
+  }
 }
 @_hasMissingDesignatedInitializers public class VideoDurationFormatter {
   public static func format(_ timeInterval: Foundation.TimeInterval) -> Swift.String
@@ -159,6 +177,7 @@ extension UIKit.UIButton {
   @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.SaveButtonConfiguration)
   @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.TextButtonConfiguration, with title: Swift.String)
   @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.TextConfiguration, with title: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.ImageConfigurationProtocol?, forState controlState: UIKit.UIControl.State)
 }
 @objc public class BackgroundConfiguration : ObjectiveC.NSObject {
   public var cornerRadius: CoreFoundation.CGFloat
@@ -246,8 +265,13 @@ public struct VideoEditorMetadata : Swift.Codable {
   public var textOnVideoMetadata: [BanubaUtilities.TextOnVideoMetadata]?
   public var gifOnVideoMetadata: [BanubaUtilities.GIFOnVideoMetadata]?
   public var blurOnVideoMetadata: [BanubaUtilities.BlurOnVideoMetadata]?
+  public var filtersOnVideoMetadata: [BanubaUtilities.FilterOnVideoMetadata]?
+  public var captionsMetadata: BanubaUtilities.CaptionsMetadata?
   public var analyticsMetadataJSON: Swift.String?
-  public init(effectsOnVideoMetadata: [BanubaUtilities.EffectOnVideoMetadata]? = nil, colorOnVideoMetadata: BanubaUtilities.ColorOnVideoMetadata? = nil, textOnVideoMetadata: [BanubaUtilities.TextOnVideoMetadata]? = nil, gifOnVideoMetadata: [BanubaUtilities.GIFOnVideoMetadata]? = nil, blurOnVideoMetadata: [BanubaUtilities.BlurOnVideoMetadata]? = nil, analyticsMetadataJSON: Swift.String? = nil)
+  public static var empty: BanubaUtilities.VideoEditorMetadata {
+    get
+  }
+  public init(effectsOnVideoMetadata: [BanubaUtilities.EffectOnVideoMetadata]?, colorOnVideoMetadata: BanubaUtilities.ColorOnVideoMetadata?, textOnVideoMetadata: [BanubaUtilities.TextOnVideoMetadata]?, gifOnVideoMetadata: [BanubaUtilities.GIFOnVideoMetadata]?, blurOnVideoMetadata: [BanubaUtilities.BlurOnVideoMetadata]?, filtersOnVideoMetadata: [BanubaUtilities.FilterOnVideoMetadata]?, captionsMetadata: BanubaUtilities.CaptionsMetadata?, analyticsMetadataJSON: Swift.String?)
   public func adjustBlurEffectMetadata() -> BanubaUtilities.BlurList?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
@@ -255,6 +279,23 @@ public struct VideoEditorMetadata : Swift.Codable {
 public struct ColorOnVideoMetadata : Swift.Codable {
   public let title: Swift.String
   public init(title: Swift.String)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct FilterOnVideoMetadata : Swift.Codable {
+  public let title: Swift.String
+  public let startTime: BanubaUtilities.TimeMetadata
+  public let endTime: BanubaUtilities.TimeMetadata
+  public init(title: Swift.String, startTime: BanubaUtilities.TimeMetadata, endTime: BanubaUtilities.TimeMetadata)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct CaptionsMetadata : Swift.Codable {
+  public let existingCaptionIds: [Swift.String]
+  public let storedLocation: Swift.String?
+  public let styleParams: BanubaUtilities.TextParams
+  public let styleTextColorDestinationId: Swift.Int
+  public init(existingCaptionIds: [Swift.String], storedLocation: Swift.String?, styleParams: BanubaUtilities.TextParams, styleTextColorDestinationId: Swift.Int)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -268,15 +309,16 @@ public struct EffectOnVideoMetadata : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
 }
 public struct TextOnVideoMetadata : Swift.Codable {
+  public let id: Swift.String
   public let imageData: Foundation.Data?
   public let textParams: BanubaUtilities.TextParams
   public let startTime: BanubaUtilities.TimeMetadata
   public let endTime: BanubaUtilities.TimeMetadata
   public let coordinatesParams: BanubaUtilities.CoordinatesParams
   public let order: Swift.Int
-  public init(imageData: Foundation.Data?, textParams: BanubaUtilities.TextParams, startTime: BanubaUtilities.TimeMetadata, endTime: BanubaUtilities.TimeMetadata, coordinatesParams: BanubaUtilities.CoordinatesParams, order: Swift.Int)
-  public func encode(to encoder: Swift.Encoder) throws
+  public init(id: Swift.String, imageData: Foundation.Data?, textParams: BanubaUtilities.TextParams, startTime: BanubaUtilities.TimeMetadata, endTime: BanubaUtilities.TimeMetadata, coordinatesParams: BanubaUtilities.CoordinatesParams, order: Swift.Int)
   public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public enum VideoSequenceEditingStep : Swift.Int, Swift.Codable {
   case camera
@@ -303,7 +345,6 @@ public struct VideoMetadata : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
 }
 public struct BlurOnVideoMetadata : Swift.Codable {
-  public let effectId: Swift.UInt
   public let id: Swift.String
   public let startTime: BanubaUtilities.TimeMetadata
   public let endTime: BanubaUtilities.TimeMetadata
@@ -312,7 +353,7 @@ public struct BlurOnVideoMetadata : Swift.Codable {
   public let blurFigure: BanubaUtilities.DrawableFigure
   public let titleIndex: Swift.Int
   public let order: Swift.Int
-  public init(id: Swift.String, effectId: Swift.UInt, startTime: BanubaUtilities.TimeMetadata, endTime: BanubaUtilities.TimeMetadata, blurCoordinateParams: BanubaUtilities.BlurCoordinateParams, coordinatesParams: BanubaUtilities.CoordinatesParams, blurFigure: BanubaUtilities.DrawableFigure, titleIndex: Swift.Int, order: Swift.Int)
+  public init(id: Swift.String, startTime: BanubaUtilities.TimeMetadata, endTime: BanubaUtilities.TimeMetadata, blurCoordinateParams: BanubaUtilities.BlurCoordinateParams, coordinatesParams: BanubaUtilities.CoordinatesParams, blurFigure: BanubaUtilities.DrawableFigure, titleIndex: Swift.Int, order: Swift.Int)
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
@@ -406,9 +447,9 @@ public class AudioTrack : BanubaUtilities.AudioTrackAdoptable {
   final public let uuid: Foundation.UUID
   public var isEditable: Swift.Bool
   public var position: BanubaUtilities.AudioTrackLinePosition
-  public var applyedFilterId: Swift.Int?
+  public var appliedFilterId: Swift.Int?
   final public let isCameraTrack: Swift.Bool
-  required public init(url: Foundation.URL, originalURL: Foundation.URL, uuid: Foundation.UUID, id: Swift.Int32?, timeRange: CoreMedia.CMTimeRange, trimTimeRange trimmedTimeRange: CoreMedia.CMTimeRange, compositionStart: CoreMedia.CMTime, avURLAsset: AVFoundation.AVURLAsset, isAudioRecord: Swift.Bool, isEditable: Swift.Bool, isCameraTrack: Swift.Bool, title: Swift.String?, additionalTitle: Swift.String?, applyedFilterId: Swift.Int?)
+  required public init(url: Foundation.URL, originalURL: Foundation.URL, uuid: Foundation.UUID, id: Swift.Int32?, timeRange: CoreMedia.CMTimeRange, trimTimeRange trimmedTimeRange: CoreMedia.CMTimeRange, compositionStart: CoreMedia.CMTime, avURLAsset: AVFoundation.AVURLAsset, isAudioRecord: Swift.Bool, isEditable: Swift.Bool, isCameraTrack: Swift.Bool, title: Swift.String?, additionalTitle: Swift.String?, appliedFilterId: Swift.Int?)
   @objc deinit
 }
 public struct BlurList : Swift.Codable {
@@ -450,10 +491,19 @@ extension AVFoundation.AVAssetTrack {
     get
   }
 }
+extension UIKit.UIColor {
+  convenience public init(red: Swift.Int, green: Swift.Int, blue: Swift.Int, a: CoreFoundation.CGFloat = 1.0)
+  convenience public init(rgb: Swift.Int, a: CoreFoundation.CGFloat = 1.0)
+}
 @_inheritsConvenienceInitializers @objc public class ZipArchive : ObjectiveC.NSObject {
   public static func zip(to destinationUrl: Foundation.URL, folderUrl: Foundation.URL) -> Swift.Bool
   public static func unzip(at sourceUrl: Foundation.URL, destination: Foundation.URL, overwrite: Swift.Bool) throws
   @objc override dynamic public init()
+  @objc deinit
+}
+public class BanubaCancelHandler {
+  public init(handler: @escaping () -> Swift.Void)
+  public func cancel()
   @objc deinit
 }
 extension Swift.Double {
@@ -634,7 +684,8 @@ extension Swift.String {
   @objc deinit
 }
 extension BanubaUtilities.VideoTimeLineCollectionViewHandler {
-  public func applyContentInset(appliedWidth: CoreFoundation.CGFloat)
+  public func applyContentInset(appliedWidth: CoreFoundation.CGFloat, cursorOffset: CoreFoundation.CGFloat? = nil)
+  public func applyContentOffset(_ offset: CoreFoundation.CGPoint)
   public func cellSize() -> CoreFoundation.CGSize
 }
 extension BanubaUtilities.VideoTimeLineCollectionViewHandler : BanubaUtilities.TimeLineDataSourceDelegate {
@@ -648,6 +699,8 @@ extension BanubaUtilities.VideoTimeLineCollectionViewHandler : UIKit.UICollectio
 }
 extension BanubaUtilities.VideoTimeLineCollectionViewHandler : UIKit.UICollectionViewDelegateFlowLayout {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, sizeForItemAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGSize
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Swift.Int) -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, minimumLineSpacingForSectionAt section: Swift.Int) -> CoreFoundation.CGFloat
 }
 @_hasMissingDesignatedInitializers public class ConnectionListener {
   final public let onConnectionChanged: ((BanubaUtilities.Connection) -> ())
@@ -749,13 +802,16 @@ extension Swift.Double {
 public struct PlayerControlConfiguration {
   public var playButtonImageName: Swift.String
   public var pauseButtonImageName: Swift.String
-  public init(playButtonImageName: Swift.String, pauseButtonImageName: Swift.String)
+  public var tintColor: UIKit.UIColor?
+  public var playImage: UIKit.UIImage?
+  public var pauseImage: UIKit.UIImage?
+  public init(playButtonImageName: Swift.String, pauseButtonImageName: Swift.String, tintColor: UIKit.UIColor? = nil)
+  public init(playImage: UIKit.UIImage?, pauseImage: UIKit.UIImage?)
 }
 @_hasMissingDesignatedInitializers open class Logger {
   open class func logError(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "")
   open class func logDegug(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "")
   open class func logInfo(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "")
-  open class func logPublicInfo(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "")
   open class func logFault(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "")
   open class func logDefault(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "")
   @objc deinit
@@ -876,6 +932,7 @@ extension BanubaUtilities.GalleryManager {
   @objc func galleryViewController(_ controller: BanubaUtilities.GalleryViewController, didEndExportWith error: Swift.Error?, hideProgressViewCompletion: @escaping () -> Swift.Void)
   @objc func galleryViewControllerDidClose(_ controller: BanubaUtilities.GalleryViewController)
   @objc func galleryViewControllerDone(_ controller: BanubaUtilities.GalleryViewController, withGalleryItems items: [BanubaUtilities.GalleryItem])
+  @objc func galleryViewControllerDoneForAutoCut(_ controller: BanubaUtilities.GalleryViewController, withGalleryItems items: [BanubaUtilities.GalleryItem])
   @objc func galleryViewController(_ controller: BanubaUtilities.GalleryViewController, presentMessage message: Swift.String)
 }
 @objc public enum GalleryMediaType : Swift.Int, Swift.CaseIterable {
@@ -897,7 +954,8 @@ extension BanubaUtilities.GalleryManager {
   final public let isMultiselectModeEnabled: Swift.Bool
   final public let minimumGalleryVideoDuration: Foundation.TimeInterval
   final public let allowedMediaTypes: [BanubaUtilities.GalleryMediaType]
-  public init(maximumSelectedCount: Swift.Int, selectedItemsCount: Swift.Int? = nil, isMultiselectModeEnabled: Swift.Bool, minimumGalleryVideoDuration: Foundation.TimeInterval, allowedMediaTypes: [BanubaUtilities.GalleryMediaType])
+  final public let slideshowDuration: Foundation.TimeInterval
+  public init(maximumSelectedCount: Swift.Int, selectedItemsCount: Swift.Int? = nil, isMultiselectModeEnabled: Swift.Bool, minimumGalleryVideoDuration: Foundation.TimeInterval, allowedMediaTypes: [BanubaUtilities.GalleryMediaType], slideshowDuration: Foundation.TimeInterval)
   public var isAdditionalItemsRequired: Swift.Bool {
     get
   }
@@ -969,13 +1027,21 @@ public struct DeviceVibrateManager {
   public static func vibrate(withPower power: UIKit.UIImpactFeedbackGenerator.FeedbackStyle)
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class CircularProgressView : UIKit.UIView, BanubaUtilities.ProgressAnimatableView {
+  @_Concurrency.MainActor(unsafe) public var progressColor: UIKit.UIColor {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var shadowColor: UIKit.UIColor {
+    get
+    set
+  }
   @_Concurrency.MainActor(unsafe) public var progress: Swift.Float {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var progressColor: UIKit.UIColor
-  @_Concurrency.MainActor(unsafe) public var shadowColor: UIKit.UIColor
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) public var shadowLineWidth: CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) public var progressLineWidth: CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSublayers(of layer: QuartzCore.CALayer)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
@@ -983,6 +1049,12 @@ public struct DeviceVibrateManager {
 @objc public protocol ImageConfigurationProtocol {
   @objc var image: UIKit.UIImage? { get }
   @objc var tintColor: UIKit.UIColor? { get }
+}
+public class BanubaImageConfiguration : BanubaUtilities.ImageConfigurationProtocol {
+  @objc final public let image: UIKit.UIImage?
+  @objc final public let tintColor: UIKit.UIColor?
+  public init(image: UIKit.UIImage?, tintColor: UIKit.UIColor? = nil)
+  @objc deinit
 }
 public protocol AnimatableView : UIKit.UIView {
   func start(completion: @escaping (Swift.Bool) -> Swift.Void)
@@ -1084,13 +1156,12 @@ public class AudioServiceItem : BanubaUtilities.AudioItem {
   public var title: Swift.String?
   public var additionalTitle: Swift.String?
   public var isEditable: Swift.Bool
-  public var timeRange: CoreMedia.CMTimeRange {
-    get
-  }
-  public init(uuid: Foundation.UUID, url: Foundation.URL, title: Swift.String?, additionalTitle: Swift.String?, isEditable: Swift.Bool)
+  public var timeRange: CoreMedia.CMTimeRange?
+  public init(uuid: Foundation.UUID, url: Foundation.URL, title: Swift.String?, additionalTitle: Swift.String?, isEditable: Swift.Bool, timeRange: CoreMedia.CMTimeRange? = nil)
   @objc deinit
 }
 public protocol AudioServicing {
+  var player: AVFAudio.AVAudioPlayer? { get set }
   var delegate: BanubaUtilities.AudioPlayerDelegate? { get set }
   var rate: Swift.Float { get set }
   var currentAudio: BanubaUtilities.AudioServiceItem? { get }
@@ -1099,12 +1170,14 @@ public protocol AudioServicing {
   func seekToStart()
   func seek(to: Foundation.TimeInterval)
   func load(item: BanubaUtilities.AudioServiceItem) throws
+  func load(track: BanubaUtilities.AudioTrackAdoptable) throws
   func unload()
   func toggle()
   func play()
   func pause()
   func setRate(_ rate: Swift.Float)
   func setDelegate(_ delegate: BanubaUtilities.AudioPlayerDelegate)
+  func changeVolume(volume: Swift.Float)
 }
 @objc @_inheritsConvenienceInitializers public class AudioService : ObjectiveC.NSObject, BanubaUtilities.AudioServicing, BanubaUtilities.AudioEditorServiceAdoptable {
   weak public var delegate: BanubaUtilities.AudioPlayerDelegate?
@@ -1113,6 +1186,7 @@ public protocol AudioServicing {
   public var duration: Foundation.TimeInterval? {
     get
   }
+  public var playingTimeRange: CoreMedia.CMTimeRange?
   public var rate: Swift.Float {
     get
     set
@@ -1191,6 +1265,26 @@ extension BanubaUtilities.BanubaGalleryItem {
 @objc public protocol GalleryViewControllerFactory : ObjectiveC.NSObjectProtocol {
   @objc func makeGalleryViewController(withConfiguration configuration: BanubaUtilities.GalleryConfiguration, albumsConfiguration: BanubaUtilities.AlbumsConfiguration, selectionBehaviour: BanubaUtilities.GallerySelectionBehaviour) -> BanubaUtilities.GalleryViewController
 }
+public struct AudioPartSelectionViewConfiguration {
+  public static var dark: BanubaUtilities.AudioPartSelectionViewConfiguration {
+    get
+  }
+  public static var light: BanubaUtilities.AudioPartSelectionViewConfiguration {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class AudioPartSelectionView : UIKit.UIView, UIKit.UIScrollViewDelegate {
+  @_Concurrency.MainActor(unsafe) final public var didScrollHandler: ((CoreMedia.CMTimeRange) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) @objc override final public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) final public func set(audioDuration: Foundation.TimeInterval, videoDuration: Foundation.TimeInterval)
+  @_Concurrency.MainActor(unsafe) final public func set(playbackProgress: Swift.Double)
+  @_Concurrency.MainActor(unsafe) final public func showAudioAmplitude(samples: [Swift.Float])
+  @_Concurrency.MainActor(unsafe) final public func apply(configuration: BanubaUtilities.AudioPartSelectionViewConfiguration)
+  @_Concurrency.MainActor(unsafe) @objc final public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) @objc final public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) @objc final public func scrollViewDidEndDragging(_ scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
+  @objc deinit
+}
 extension Swift.Array where Element : Swift.Hashable {
   public func uniqued() -> [Element]
 }
@@ -1198,6 +1292,9 @@ extension Swift.Error {
   public var errorMessage: Swift.String {
     get
   }
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public func dropShadow(_ offset: CoreFoundation.CGSize = CGSize(width: 0, height: 1), blur: CoreFoundation.CGFloat = 1, opacity: Swift.Float = 1)
 }
 @objc public class SmallActivityIndicatorConfiguration : ObjectiveC.NSObject {
   @objc public enum GradientTypeAdapter : Swift.Int {
@@ -1306,6 +1403,9 @@ public struct RoundedButtonConfiguration {
   public var titleSpacing: CoreFoundation.CGFloat?
   public init(textConfiguration: BanubaUtilities.TextConfiguration?, cornerRadius: CoreFoundation.CGFloat, backgroundColor: UIKit.UIColor, borderWidth: CoreFoundation.CGFloat? = nil, borderColor: CoreGraphics.CGColor? = nil, width: CoreFoundation.CGFloat = 70.0, height: CoreFoundation.CGFloat = 30.0, titleSpacing: CoreFoundation.CGFloat? = 2.0)
 }
+extension UIKit.UIImageView {
+  @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ imageConfiguration: BanubaUtilities.ImageConfigurationProtocol?)
+}
 extension Swift.Error {
   public var isCancelled: Swift.Bool {
     get
@@ -1328,6 +1428,7 @@ public class PreviewExtractor {
 extension UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public func roundCorners(corners: UIKit.UIRectCorner, radius: CoreFoundation.CGFloat)
   @_Concurrency.MainActor(unsafe) public func roundCorners(cornerMask: QuartzCore.CACornerMask, radius: CoreFoundation.CGFloat)
+  @_Concurrency.MainActor(unsafe) public func roundCorners(radius: CoreFoundation.CGFloat)
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VideoEditorActivityIndicator : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public var configuration: BanubaUtilities.SmallActivityIndicatorConfiguration? {
@@ -1401,10 +1502,10 @@ public protocol AudioTrackAdoptable : AnyObject {
   var id: Swift.Int32? { get set }
   var uuid: Foundation.UUID { get }
   var isAudioRecord: Swift.Bool { get set }
-  var applyedFilterId: Swift.Int? { get set }
+  var appliedFilterId: Swift.Int? { get set }
   var isEditable: Swift.Bool { get set }
   var isCameraTrack: Swift.Bool { get }
-  init(url: Foundation.URL, originalURL: Foundation.URL, uuid: Foundation.UUID, id: Swift.Int32?, timeRange: CoreMedia.CMTimeRange, trimTimeRange: CoreMedia.CMTimeRange, compositionStart: CoreMedia.CMTime, avURLAsset: AVFoundation.AVURLAsset, isAudioRecord: Swift.Bool, isEditable: Swift.Bool, isCameraTrack: Swift.Bool, title: Swift.String?, additionalTitle: Swift.String?, applyedFilterId: Swift.Int?)
+  init(url: Foundation.URL, originalURL: Foundation.URL, uuid: Foundation.UUID, id: Swift.Int32?, timeRange: CoreMedia.CMTimeRange, trimTimeRange: CoreMedia.CMTimeRange, compositionStart: CoreMedia.CMTime, avURLAsset: AVFoundation.AVURLAsset, isAudioRecord: Swift.Bool, isEditable: Swift.Bool, isCameraTrack: Swift.Bool, title: Swift.String?, additionalTitle: Swift.String?, appliedFilterId: Swift.Int?)
 }
 public enum AudioTrackLinePosition : Swift.Int, Swift.CaseIterable {
   case first
@@ -1436,31 +1537,25 @@ public class ToastPresenter {
   public func showToast(message: Swift.String)
   @objc deinit
 }
+extension Foundation.NSNotification.Name {
+  public static let videoEditorPlayerCurrentTimeChanged: Foundation.Notification.Name
+}
 public protocol VideoEditorPlayable : AnyObject {
-  func startPlay(loop: Swift.Bool, fixedSpeed: Swift.Bool)
-  func startPlay(loop: Swift.Bool, fixedSpeed: Swift.Bool, start: CoreMedia.CMTime, end: CoreMedia.CMTime)
-  func startStopPlay(loop: Swift.Bool, fixedSpeed: Swift.Bool)
-  func pausePlay()
-  func stopPlay()
-  func resumePlay()
-  func previewLayer() -> AVFoundation.AVPlayerLayer
-  func smoothlySeek(to time: CoreMedia.CMTime)
-  func seek(to time: CoreMedia.CMTime)
-  func reloadPreview()
-  func reloadPreview(shouldAutoStart: Swift.Bool)
-  func reloadComposition(shouldAutoStart: Swift.Bool)
   var isPlaying: Swift.Bool { get }
-  var isMuted: Swift.Bool { get set }
   var playerItem: AVFoundation.AVPlayerItem? { get }
+  var avPlayer: AVFoundation.AVPlayer { get }
+  var currentTime: CoreMedia.CMTime { get }
+  var videoDuration: CoreMedia.CMTime { get }
+  var playingRange: CoreMedia.CMTimeRange { get }
+  var isMuted: Swift.Bool { get set }
   var audioMix: AVFoundation.AVAudioMix? { get set }
   var playerDelegate: BanubaUtilities.VideoEditorPlayerDelegate? { get set }
-  var avPlayer: AVFoundation.AVPlayer { get }
-  var currentTime: Foundation.TimeInterval { get }
-  var videoDuration: Swift.Double { get }
-  var currentTimeInCMTime: CoreMedia.CMTime { get }
-  var videoDurationCMTime: CoreMedia.CMTime { get }
-  var startTimePlay: CoreMedia.CMTime { get }
-  var endTimePlay: CoreMedia.CMTime { get }
+  func play(loop: Swift.Bool, fixedSpeed: Swift.Bool)
+  func play(loop: Swift.Bool, fixedSpeed: Swift.Bool, range: CoreMedia.CMTimeRange)
+  func pause()
+  func seek(to time: CoreMedia.CMTime)
+  func smoothlySeek(to time: CoreMedia.CMTime)
+  func reloadPreview(shouldAutoStart: Swift.Bool)
 }
 public protocol VideoEditorPlayerDelegate : AnyObject {
   func playerPlaysFrame(_ player: BanubaUtilities.VideoEditorPlayable, atTime time: CoreMedia.CMTime)
@@ -1485,7 +1580,8 @@ extension BanubaUtilities.NibLoadable where Self : UIKit.UIView {
   public var text: Swift.String?
   public var shadow: BanubaUtilities.TextShadowConfiguration?
   public var lineBreakMode: UIKit.NSLineBreakMode
-  public init(kern: Swift.Double = 0, font: UIKit.UIFont, color: UIKit.UIColor, alignment: UIKit.NSTextAlignment = .center, text: Swift.String? = nil, shadow: BanubaUtilities.TextShadowConfiguration? = nil, lineBreakModel: UIKit.NSLineBreakMode = .byWordWrapping)
+  public init(kern: Swift.Double = 0, font: UIKit.UIFont, color: UIKit.UIColor, alignment: UIKit.NSTextAlignment = .center, text: Swift.String? = nil, shadow: BanubaUtilities.TextShadowConfiguration? = nil, lineBreakMode: UIKit.NSLineBreakMode = .byWordWrapping)
+  @objc override dynamic public func copy() -> Any
   @objc deinit
 }
 public struct TextShadowConfiguration {

@@ -308,9 +308,12 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities28AlbumsViewControllerDelegate_")
 - (void)albumsViewControllerDidClose:(AlbumsViewController * _Nonnull)controller;
 @end
 
+@class UIView;
 
 SWIFT_CLASS("_TtC15BanubaUtilities19AlertViewController")
 @interface AlertViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified contextView;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified backgroundView;
 @property (nonatomic, readonly) UIStatusBarStyle preferredStatusBarStyle;
 - (void)viewWillAppear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
@@ -346,6 +349,18 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities24AppStateObserverDelegate_")
 - (void)applicationWillEnterForeground:(AppStateObserver * _Nonnull)appStateObserver;
 - (void)applicationWillTerminateNotification:(AppStateObserver * _Nonnull)appStateObserver;
 - (void)applicationDidEnterBackgroundNotification:(AppStateObserver * _Nonnull)appStateObserver;
+@end
+
+@class UIScrollView;
+
+SWIFT_CLASS("_TtC15BanubaUtilities22AudioPartSelectionView")
+@interface AudioPartSelectionView : UIView <UIScrollViewDelegate>
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
+- (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
+- (void)scrollViewDidEndDecelerating:(UIScrollView * _Nonnull)scrollView;
+- (void)scrollViewDidEndDragging:(UIScrollView * _Nonnull)scrollView willDecelerate:(BOOL)decelerate;
 @end
 
 
@@ -429,10 +444,12 @@ SWIFT_CLASS("_TtC15BanubaUtilities17BanubaGalleryItem")
 @end
 
 
+@class CALayer;
 
+/// Simple circular progress view
 SWIFT_CLASS("_TtC15BanubaUtilities20CircularProgressView")
 @interface CircularProgressView : UIView
-- (void)layoutSubviews;
+- (void)layoutSublayersOfLayer:(CALayer * _Nonnull)layer;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -501,6 +518,8 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities29GalleryViewControllerDelegate_")
 - (void)galleryViewControllerDidClose:(GalleryViewController * _Nonnull)controller;
 /// Tells delegate object about completion picking gallery items.
 - (void)galleryViewControllerDone:(GalleryViewController * _Nonnull)controller withGalleryItems:(NSArray<id <GalleryItem>> * _Nonnull)items;
+/// Tells delegate object about completion picking gallery items for AutoCut feature
+- (void)galleryViewControllerDoneForAutoCut:(GalleryViewController * _Nonnull)controller withGalleryItems:(NSArray<id <GalleryItem>> * _Nonnull)items;
 /// Tells delegate object that he should present message.
 /// In BanubaVideoEditorSDK it presents popup message.
 - (void)galleryViewController:(GalleryViewController * _Nonnull)controller presentMessage:(NSString * _Nonnull)message;
@@ -613,6 +632,7 @@ SWIFT_CLASS("_TtC15BanubaUtilities23TextButtonConfiguration")
 /// The text configuration
 SWIFT_CLASS("_TtC15BanubaUtilities17TextConfiguration")
 @interface TextConfiguration : NSObject
+- (id _Nonnull)copy SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -657,6 +677,9 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26TimeLineDataSourceDelegate_")
 
 
 
+
+
+
 SWIFT_CLASS("_TtC15BanubaUtilities28VideoEditorActivityIndicator")
 @interface VideoEditorActivityIndicator : UIView
 @property (nonatomic) CGRect bounds;
@@ -672,19 +695,21 @@ SWIFT_CLASS("_TtC15BanubaUtilities34VideoTimeLineCollectionViewHandler")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+@interface VideoTimeLineCollectionViewHandler (SWIFT_EXTENSION(BanubaUtilities)) <TimeLineDataSourceDelegate>
+- (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didLoadImage:(UIImage * _Nonnull)image at:(NSInteger)index;
+- (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
+@end
+
+
 @class UICollectionView;
 @class UICollectionViewLayout;
 @class NSIndexPath;
 
 @interface VideoTimeLineCollectionViewHandler (SWIFT_EXTENSION(BanubaUtilities)) <UICollectionViewDelegateFlowLayout>
 - (CGSize)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-
-@interface VideoTimeLineCollectionViewHandler (SWIFT_EXTENSION(BanubaUtilities)) <TimeLineDataSourceDelegate>
-- (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didLoadImage:(UIImage * _Nonnull)image at:(NSInteger)index;
-- (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
+- (CGFloat)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class UICollectionViewCell;
