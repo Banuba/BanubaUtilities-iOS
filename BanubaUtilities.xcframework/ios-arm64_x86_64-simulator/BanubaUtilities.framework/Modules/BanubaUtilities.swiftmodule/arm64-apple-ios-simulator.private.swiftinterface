@@ -292,10 +292,10 @@ public struct FilterOnVideoMetadata : Swift.Codable {
 }
 public struct CaptionsMetadata : Swift.Codable {
   public let existingCaptionIds: [Swift.String]
-  public let storedLocation: Swift.String?
   public let styleParams: BanubaUtilities.TextParams
   public let styleTextColorDestinationId: Swift.Int
-  public init(existingCaptionIds: [Swift.String], storedLocation: Swift.String?, styleParams: BanubaUtilities.TextParams, styleTextColorDestinationId: Swift.Int)
+  public let languageCode: Swift.String?
+  public init(existingCaptionIds: [Swift.String], styleParams: BanubaUtilities.TextParams, styleTextColorDestinationId: Swift.Int, languageCode: Swift.String?)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -316,7 +316,8 @@ public struct TextOnVideoMetadata : Swift.Codable {
   public let endTime: BanubaUtilities.TimeMetadata
   public let coordinatesParams: BanubaUtilities.CoordinatesParams
   public let order: Swift.Int
-  public init(id: Swift.String, imageData: Foundation.Data?, textParams: BanubaUtilities.TextParams, startTime: BanubaUtilities.TimeMetadata, endTime: BanubaUtilities.TimeMetadata, coordinatesParams: BanubaUtilities.CoordinatesParams, order: Swift.Int)
+  public let textColorDestinationId: Swift.Int
+  public init(id: Swift.String, imageData: Foundation.Data?, textParams: BanubaUtilities.TextParams, startTime: BanubaUtilities.TimeMetadata, endTime: BanubaUtilities.TimeMetadata, coordinatesParams: BanubaUtilities.CoordinatesParams, order: Swift.Int, textColorDestinationId: Swift.Int)
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
@@ -471,6 +472,24 @@ public struct Params : Swift.Codable {
   public let radius: Swift.Float
   public let width: Swift.Float
   public let height: Swift.Float
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct AutoCutEffectsMetadata : Swift.Codable {
+  public let intervals: [BanubaUtilities.AutoCutEffectsInterval]
+  public static var empty: BanubaUtilities.AutoCutEffectsMetadata {
+    get
+  }
+  public init(intervals: [BanubaUtilities.AutoCutEffectsInterval])
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct AutoCutEffectsInterval : Swift.Codable {
+  public let from: CoreMedia.CMTime
+  public let to: CoreMedia.CMTime
+  public let visualEffectApplicatorTypeRawValues: [Swift.String]
+  public let transitionTypeRawValues: [Swift.String]
+  public init(from: CoreMedia.CMTime, to: CoreMedia.CMTime, visualEffectApplicatorTypeRawValues: [Swift.String], transitionTypeRawValues: [Swift.String])
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -1023,6 +1042,9 @@ public enum FileExtension {
     }
   }
 }
+extension Swift.Int32 {
+  public static let `default`: CoreMedia.CMTimeScale
+}
 public struct DeviceVibrateManager {
   public static func vibrate(withPower power: UIKit.UIImpactFeedbackGenerator.FeedbackStyle)
 }
@@ -1429,6 +1451,10 @@ extension UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public func roundCorners(corners: UIKit.UIRectCorner, radius: CoreFoundation.CGFloat)
   @_Concurrency.MainActor(unsafe) public func roundCorners(cornerMask: QuartzCore.CACornerMask, radius: CoreFoundation.CGFloat)
   @_Concurrency.MainActor(unsafe) public func roundCorners(radius: CoreFoundation.CGFloat)
+}
+extension CoreMedia.CMTime : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VideoEditorActivityIndicator : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public var configuration: BanubaUtilities.SmallActivityIndicatorConfiguration? {

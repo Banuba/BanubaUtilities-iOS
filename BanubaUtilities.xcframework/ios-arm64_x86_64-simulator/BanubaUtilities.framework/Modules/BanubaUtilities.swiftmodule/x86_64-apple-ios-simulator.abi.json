@@ -11630,66 +11630,6 @@
           },
           {
             "kind": "Var",
-            "name": "storedLocation",
-            "printedName": "storedLocation",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:15BanubaUtilities16CaptionsMetadataV14storedLocationSSSgvp",
-            "mangledName": "$s15BanubaUtilities16CaptionsMetadataV14storedLocationSSSgvp",
-            "moduleName": "BanubaUtilities",
-            "declAttributes": [
-              "HasStorage",
-              "AccessControl"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Swift.String?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:15BanubaUtilities16CaptionsMetadataV14storedLocationSSSgvg",
-                "mangledName": "$s15BanubaUtilities16CaptionsMetadataV14storedLocationSSSgvg",
-                "moduleName": "BanubaUtilities",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
             "name": "styleParams",
             "printedName": "styleParams",
             "children": [
@@ -11777,9 +11717,69 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "languageCode",
+            "printedName": "languageCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities16CaptionsMetadataV12languageCodeSSSgvp",
+            "mangledName": "$s15BanubaUtilities16CaptionsMetadataV12languageCodeSSSgvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities16CaptionsMetadataV12languageCodeSSSgvg",
+                "mangledName": "$s15BanubaUtilities16CaptionsMetadataV12languageCodeSSSgvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(existingCaptionIds:storedLocation:styleParams:styleTextColorDestinationId:)",
+            "printedName": "init(existingCaptionIds:styleParams:styleTextColorDestinationId:languageCode:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -11803,6 +11803,18 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "TextParams",
+                "printedName": "BanubaUtilities.TextParams",
+                "usr": "s:15BanubaUtilities10TextParamsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "Optional",
                 "printedName": "Swift.String?",
                 "children": [
@@ -11814,23 +11826,11 @@
                   }
                 ],
                 "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "TextParams",
-                "printedName": "BanubaUtilities.TextParams",
-                "usr": "s:15BanubaUtilities10TextParamsV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities16CaptionsMetadataV18existingCaptionIds14storedLocation11styleParams0J22TextColorDestinationIdACSaySSG_SSSgAA0lK0VSitcfc",
-            "mangledName": "$s15BanubaUtilities16CaptionsMetadataV18existingCaptionIds14storedLocation11styleParams0J22TextColorDestinationIdACSaySSG_SSSgAA0lK0VSitcfc",
+            "usr": "s:15BanubaUtilities16CaptionsMetadataV18existingCaptionIds11styleParams0H22TextColorDestinationId12languageCodeACSaySSG_AA0jI0VSiSSSgtcfc",
+            "mangledName": "$s15BanubaUtilities16CaptionsMetadataV18existingCaptionIds11styleParams0H22TextColorDestinationId12languageCodeACSaySSG_AA0jI0VSiSSSgtcfc",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "AccessControl"
@@ -12546,9 +12546,53 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "textColorDestinationId",
+            "printedName": "textColorDestinationId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities19TextOnVideoMetadataV22textColorDestinationIdSivp",
+            "mangledName": "$s15BanubaUtilities19TextOnVideoMetadataV22textColorDestinationIdSivp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities19TextOnVideoMetadataV22textColorDestinationIdSivg",
+                "mangledName": "$s15BanubaUtilities19TextOnVideoMetadataV22textColorDestinationIdSivg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(id:imageData:textParams:startTime:endTime:coordinatesParams:order:)",
+            "printedName": "init(id:imageData:textParams:startTime:endTime:coordinatesParams:order:textColorDestinationId:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -12605,11 +12649,17 @@
                 "name": "Int",
                 "printedName": "Swift.Int",
                 "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities19TextOnVideoMetadataV2id9imageData10textParams9startTime03endM0011coordinatesK05orderACSS_10Foundation0I0VSgAA0cK0VAA0mF0VArA011CoordinatesK0VSitcfc",
-            "mangledName": "$s15BanubaUtilities19TextOnVideoMetadataV2id9imageData10textParams9startTime03endM0011coordinatesK05orderACSS_10Foundation0I0VSgAA0cK0VAA0mF0VArA011CoordinatesK0VSitcfc",
+            "usr": "s:15BanubaUtilities19TextOnVideoMetadataV2id9imageData10textParams9startTime03endM0011coordinatesK05order0J18ColorDestinationIdACSS_10Foundation0I0VSgAA0cK0VAA0mF0VAsA011CoordinatesK0VS2itcfc",
+            "mangledName": "$s15BanubaUtilities19TextOnVideoMetadataV2id9imageData10textParams9startTime03endM0011coordinatesK05order0J18ColorDestinationIdACSS_10Foundation0I0VSgAA0cK0VAA0mF0VAsA011CoordinatesK0VS2itcfc",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "AccessControl"
@@ -19859,6 +19909,575 @@
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AutoCutEffectsMetadata",
+        "printedName": "AutoCutEffectsMetadata",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "intervals",
+            "printedName": "intervals",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[BanubaUtilities.AutoCutEffectsInterval]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AutoCutEffectsInterval",
+                    "printedName": "BanubaUtilities.AutoCutEffectsInterval",
+                    "usr": "s:15BanubaUtilities22AutoCutEffectsIntervalV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities22AutoCutEffectsMetadataV9intervalsSayAA0cdE8IntervalVGvp",
+            "mangledName": "$s15BanubaUtilities22AutoCutEffectsMetadataV9intervalsSayAA0cdE8IntervalVGvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[BanubaUtilities.AutoCutEffectsInterval]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AutoCutEffectsInterval",
+                        "printedName": "BanubaUtilities.AutoCutEffectsInterval",
+                        "usr": "s:15BanubaUtilities22AutoCutEffectsIntervalV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities22AutoCutEffectsMetadataV9intervalsSayAA0cdE8IntervalVGvg",
+                "mangledName": "$s15BanubaUtilities22AutoCutEffectsMetadataV9intervalsSayAA0cdE8IntervalVGvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "empty",
+            "printedName": "empty",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AutoCutEffectsMetadata",
+                "printedName": "BanubaUtilities.AutoCutEffectsMetadata",
+                "usr": "s:15BanubaUtilities22AutoCutEffectsMetadataV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities22AutoCutEffectsMetadataV5emptyACvpZ",
+            "mangledName": "$s15BanubaUtilities22AutoCutEffectsMetadataV5emptyACvpZ",
+            "moduleName": "BanubaUtilities",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AutoCutEffectsMetadata",
+                    "printedName": "BanubaUtilities.AutoCutEffectsMetadata",
+                    "usr": "s:15BanubaUtilities22AutoCutEffectsMetadataV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities22AutoCutEffectsMetadataV5emptyACvgZ",
+                "mangledName": "$s15BanubaUtilities22AutoCutEffectsMetadataV5emptyACvgZ",
+                "moduleName": "BanubaUtilities",
+                "static": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(intervals:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AutoCutEffectsMetadata",
+                "printedName": "BanubaUtilities.AutoCutEffectsMetadata",
+                "usr": "s:15BanubaUtilities22AutoCutEffectsMetadataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[BanubaUtilities.AutoCutEffectsInterval]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AutoCutEffectsInterval",
+                    "printedName": "BanubaUtilities.AutoCutEffectsInterval",
+                    "usr": "s:15BanubaUtilities22AutoCutEffectsIntervalV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15BanubaUtilities22AutoCutEffectsMetadataV9intervalsACSayAA0cdE8IntervalVG_tcfc",
+            "mangledName": "$s15BanubaUtilities22AutoCutEffectsMetadataV9intervalsACSayAA0cdE8IntervalVG_tcfc",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AutoCutEffectsMetadata",
+                "printedName": "BanubaUtilities.AutoCutEffectsMetadata",
+                "usr": "s:15BanubaUtilities22AutoCutEffectsMetadataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15BanubaUtilities22AutoCutEffectsMetadataV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s15BanubaUtilities22AutoCutEffectsMetadataV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "BanubaUtilities",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15BanubaUtilities22AutoCutEffectsMetadataV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s15BanubaUtilities22AutoCutEffectsMetadataV6encode2toys7Encoder_p_tKF",
+            "moduleName": "BanubaUtilities",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:15BanubaUtilities22AutoCutEffectsMetadataV",
+        "mangledName": "$s15BanubaUtilities22AutoCutEffectsMetadataV",
+        "moduleName": "BanubaUtilities",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AutoCutEffectsInterval",
+        "printedName": "AutoCutEffectsInterval",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "from",
+            "printedName": "from",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CMTime",
+                "printedName": "CoreMedia.CMTime",
+                "usr": "c:@SA@CMTime"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities22AutoCutEffectsIntervalV4fromSo6CMTimeavp",
+            "mangledName": "$s15BanubaUtilities22AutoCutEffectsIntervalV4fromSo6CMTimeavp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CMTime",
+                    "printedName": "CoreMedia.CMTime",
+                    "usr": "c:@SA@CMTime"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities22AutoCutEffectsIntervalV4fromSo6CMTimeavg",
+                "mangledName": "$s15BanubaUtilities22AutoCutEffectsIntervalV4fromSo6CMTimeavg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "to",
+            "printedName": "to",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CMTime",
+                "printedName": "CoreMedia.CMTime",
+                "usr": "c:@SA@CMTime"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities22AutoCutEffectsIntervalV2toSo6CMTimeavp",
+            "mangledName": "$s15BanubaUtilities22AutoCutEffectsIntervalV2toSo6CMTimeavp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CMTime",
+                    "printedName": "CoreMedia.CMTime",
+                    "usr": "c:@SA@CMTime"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities22AutoCutEffectsIntervalV2toSo6CMTimeavg",
+                "mangledName": "$s15BanubaUtilities22AutoCutEffectsIntervalV2toSo6CMTimeavg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "visualEffectApplicatorTypeRawValues",
+            "printedName": "visualEffectApplicatorTypeRawValues",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities22AutoCutEffectsIntervalV35visualEffectApplicatorTypeRawValuesSaySSGvp",
+            "mangledName": "$s15BanubaUtilities22AutoCutEffectsIntervalV35visualEffectApplicatorTypeRawValuesSaySSGvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities22AutoCutEffectsIntervalV35visualEffectApplicatorTypeRawValuesSaySSGvg",
+                "mangledName": "$s15BanubaUtilities22AutoCutEffectsIntervalV35visualEffectApplicatorTypeRawValuesSaySSGvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "transitionTypeRawValues",
+            "printedName": "transitionTypeRawValues",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities22AutoCutEffectsIntervalV23transitionTypeRawValuesSaySSGvp",
+            "mangledName": "$s15BanubaUtilities22AutoCutEffectsIntervalV23transitionTypeRawValuesSaySSGvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities22AutoCutEffectsIntervalV23transitionTypeRawValuesSaySSGvg",
+                "mangledName": "$s15BanubaUtilities22AutoCutEffectsIntervalV23transitionTypeRawValuesSaySSGvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:to:visualEffectApplicatorTypeRawValues:transitionTypeRawValues:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AutoCutEffectsInterval",
+                "printedName": "BanubaUtilities.AutoCutEffectsInterval",
+                "usr": "s:15BanubaUtilities22AutoCutEffectsIntervalV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CMTime",
+                "printedName": "CoreMedia.CMTime",
+                "usr": "c:@SA@CMTime"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CMTime",
+                "printedName": "CoreMedia.CMTime",
+                "usr": "c:@SA@CMTime"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15BanubaUtilities22AutoCutEffectsIntervalV4from2to35visualEffectApplicatorTypeRawValues010transitionlmN0ACSo6CMTimea_AISaySSGAJtcfc",
+            "mangledName": "$s15BanubaUtilities22AutoCutEffectsIntervalV4from2to35visualEffectApplicatorTypeRawValues010transitionlmN0ACSo6CMTimea_AISaySSGAJtcfc",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AutoCutEffectsInterval",
+                "printedName": "BanubaUtilities.AutoCutEffectsInterval",
+                "usr": "s:15BanubaUtilities22AutoCutEffectsIntervalV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15BanubaUtilities22AutoCutEffectsIntervalV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s15BanubaUtilities22AutoCutEffectsIntervalV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "BanubaUtilities",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15BanubaUtilities22AutoCutEffectsIntervalV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s15BanubaUtilities22AutoCutEffectsIntervalV6encode2toys7Encoder_p_tKF",
+            "moduleName": "BanubaUtilities",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:15BanubaUtilities22AutoCutEffectsIntervalV",
+        "mangledName": "$s15BanubaUtilities22AutoCutEffectsIntervalV",
+        "moduleName": "BanubaUtilities",
+        "declAttributes": [
+          "AccessControl"
         ],
         "conformances": [
           {
@@ -42122,6 +42741,16 @@
       },
       {
         "kind": "Import",
+        "name": "CoreMedia",
+        "printedName": "CoreMedia",
+        "declKind": "Import",
+        "moduleName": "BanubaUtilities",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -56069,6 +56698,16 @@
       },
       {
         "kind": "Import",
+        "name": "CoreMedia",
+        "printedName": "CoreMedia",
+        "declKind": "Import",
+        "moduleName": "BanubaUtilities",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -66574,6 +67213,467 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "Int32",
+        "printedName": "Int32",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "default",
+            "printedName": "default",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:s5Int32V15BanubaUtilitiesE7defaultABvpZ",
+            "mangledName": "$ss5Int32V15BanubaUtilitiesE7defaultABvpZ",
+            "moduleName": "BanubaUtilities",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:s5Int32V15BanubaUtilitiesE7defaultABvgZ",
+                "mangledName": "$ss5Int32V15BanubaUtilitiesE7defaultABvgZ",
+                "moduleName": "BanubaUtilities",
+                "static": true,
+                "implicit": true,
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:s5Int32V",
+        "mangledName": "$ss5Int32V",
+        "moduleName": "Swift",
+        "declAttributes": [
+          "Frozen"
+        ],
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "FixedWidthInteger",
+            "printedName": "FixedWidthInteger",
+            "usr": "s:s17FixedWidthIntegerP",
+            "mangledName": "$ss17FixedWidthIntegerP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SignedInteger",
+            "printedName": "SignedInteger",
+            "usr": "s:SZ",
+            "mangledName": "$sSZ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ExpressibleByBuiltinIntegerLiteral",
+            "printedName": "_ExpressibleByBuiltinIntegerLiteral",
+            "usr": "s:s35_ExpressibleByBuiltinIntegerLiteralP",
+            "mangledName": "$ss35_ExpressibleByBuiltinIntegerLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BinaryInteger",
+            "printedName": "BinaryInteger",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Words",
+                "printedName": "Words",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Words",
+                    "printedName": "Swift.Int32.Words",
+                    "usr": "s:s5Int32V5WordsV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sz",
+            "mangledName": "$sSz"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LosslessStringConvertible",
+            "printedName": "LosslessStringConvertible",
+            "usr": "s:s25LosslessStringConvertibleP",
+            "mangledName": "$ss25LosslessStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SignedNumeric",
+            "printedName": "SignedNumeric",
+            "usr": "s:s13SignedNumericP",
+            "mangledName": "$ss13SignedNumericP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Numeric",
+            "printedName": "Numeric",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Magnitude",
+                "printedName": "Magnitude",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt32",
+                    "printedName": "Swift.UInt32",
+                    "usr": "s:s6UInt32V"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sj",
+            "mangledName": "$sSj"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Strideable",
+            "printedName": "Strideable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Stride",
+                "printedName": "Stride",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sx",
+            "mangledName": "$sSx"
+          },
+          {
+            "kind": "Conformance",
+            "name": "AdditiveArithmetic",
+            "printedName": "AdditiveArithmetic",
+            "usr": "s:s18AdditiveArithmeticP",
+            "mangledName": "$ss18AdditiveArithmeticP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByIntegerLiteral",
+            "printedName": "ExpressibleByIntegerLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "IntegerLiteralType",
+                "printedName": "IntegerLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s27ExpressibleByIntegerLiteralP",
+            "mangledName": "$ss27ExpressibleByIntegerLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Comparable",
+            "printedName": "Comparable",
+            "usr": "s:SL",
+            "mangledName": "$sSL"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomReflectable",
+            "printedName": "CustomReflectable",
+            "usr": "s:s17CustomReflectableP",
+            "mangledName": "$ss17CustomReflectableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_CustomPlaygroundQuickLookable",
+            "printedName": "_CustomPlaygroundQuickLookable",
+            "usr": "s:s30_CustomPlaygroundQuickLookableP",
+            "mangledName": "$ss30_CustomPlaygroundQuickLookableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_HasCustomAnyHashableRepresentation",
+            "printedName": "_HasCustomAnyHashableRepresentation",
+            "usr": "s:s35_HasCustomAnyHashableRepresentationP",
+            "mangledName": "$ss35_HasCustomAnyHashableRepresentationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SIMDScalar",
+            "printedName": "SIMDScalar",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "SIMDMaskScalar",
+                "printedName": "SIMDMaskScalar",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SIMD2Storage",
+                "printedName": "SIMD2Storage",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SIMD2Storage",
+                    "printedName": "Swift.Int32.SIMD2Storage",
+                    "usr": "s:s5Int32V12SIMD2StorageV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SIMD4Storage",
+                "printedName": "SIMD4Storage",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SIMD4Storage",
+                    "printedName": "Swift.Int32.SIMD4Storage",
+                    "usr": "s:s5Int32V12SIMD4StorageV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SIMD8Storage",
+                "printedName": "SIMD8Storage",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SIMD8Storage",
+                    "printedName": "Swift.Int32.SIMD8Storage",
+                    "usr": "s:s5Int32V12SIMD8StorageV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SIMD16Storage",
+                "printedName": "SIMD16Storage",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SIMD16Storage",
+                    "printedName": "Swift.Int32.SIMD16Storage",
+                    "usr": "s:s5Int32V13SIMD16StorageV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SIMD32Storage",
+                "printedName": "SIMD32Storage",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SIMD32Storage",
+                    "printedName": "Swift.Int32.SIMD32Storage",
+                    "usr": "s:s5Int32V13SIMD32StorageV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SIMD64Storage",
+                "printedName": "SIMD64Storage",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SIMD64Storage",
+                    "printedName": "Swift.Int32.SIMD64Storage",
+                    "usr": "s:s5Int32V13SIMD64StorageV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s10SIMDScalarP",
+            "mangledName": "$ss10SIMDScalarP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_FormatSpecifiable",
+            "printedName": "_FormatSpecifiable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_Arg",
+                "printedName": "_Arg",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:10Foundation18_FormatSpecifiableP",
+            "mangledName": "$s10Foundation18_FormatSpecifiableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ObjectiveCBridgeable",
+            "printedName": "_ObjectiveCBridgeable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_ObjectiveCType",
+                "printedName": "_ObjectiveCType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s21_ObjectiveCBridgeableP",
+            "mangledName": "$ss21_ObjectiveCBridgeableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "vDSP_IntegerConvertable",
+            "printedName": "vDSP_IntegerConvertable",
+            "usr": "s:10Accelerate23vDSP_IntegerConvertableP",
+            "mangledName": "$s10Accelerate23vDSP_IntegerConvertableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BNNSScalar",
+            "printedName": "BNNSScalar",
+            "usr": "s:10Accelerate10BNNSScalarP",
+            "mangledName": "$s10Accelerate10BNNSScalarP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_FormatSpecifiable",
+            "printedName": "_FormatSpecifiable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_Arg",
+                "printedName": "_Arg",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:7SwiftUI18_FormatSpecifiableP",
+            "mangledName": "$s7SwiftUI18_FormatSpecifiableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CKRecordValueProtocol",
+            "printedName": "CKRecordValueProtocol",
+            "usr": "s:8CloudKit21CKRecordValueProtocolP",
+            "mangledName": "$s8CloudKit21CKRecordValueProtocolP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "Array",
         "printedName": "Array",
         "children": [
@@ -68125,6 +69225,137 @@
             "mangledName": "$s7SwiftUI10AnimatableP"
           }
         ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CMTime",
+        "printedName": "CMTime",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So6CMTimea15BanubaUtilitiesE6encode2toys7Encoder_p_tKF",
+            "mangledName": "$sSo6CMTimea15BanubaUtilitiesE6encode2toys7Encoder_p_tKF",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CMTime",
+                "printedName": "CoreMedia.CMTime",
+                "usr": "c:@SA@CMTime"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:So6CMTimea15BanubaUtilitiesE4fromABs7Decoder_p_tKcfc",
+            "mangledName": "$sSo6CMTimea15BanubaUtilitiesE4fromABs7Decoder_p_tKcfc",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "c:@SA@CMTime",
+        "moduleName": "CoreMedia",
+        "intro_iOS": "4.0",
+        "declAttributes": [
+          "Available"
+        ],
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Comparable",
+            "printedName": "Comparable",
+            "usr": "s:SL",
+            "mangledName": "$sSL"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ObjectiveCBridgeable",
+            "printedName": "_ObjectiveCBridgeable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_ObjectiveCType",
+                "printedName": "_ObjectiveCType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSValue",
+                    "printedName": "Foundation.NSValue",
+                    "usr": "c:objc(cs)NSValue"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s21_ObjectiveCBridgeableP",
+            "mangledName": "$ss21_ObjectiveCBridgeableP"
+          }
+        ]
       }
     ],
     "json_format_version": 8
@@ -68143,6 +69374,13 @@
       "offset": 285,
       "length": 5,
       "value": "200.0"
+    },
+    {
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/AlertViewController\/AlertViewController.swift",
+      "kind": "FloatLiteral",
+      "offset": 325,
+      "length": 4,
+      "value": "90.0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/AudioPartSelectionView\/AudioContext.swift",
@@ -68455,42 +69693,56 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
-      "offset": 1628,
+      "offset": 1606,
+      "length": 48,
+      "value": "\"banuba.alert.camera.no.headphones.button.title\""
+    },
+    {
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "kind": "StringLiteral",
+      "offset": 1665,
+      "length": 92,
+      "value": "\"Used in a message to the user when microphone is not muted and headphones are not plugged)\""
+    },
+    {
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
+      "kind": "StringLiteral",
+      "offset": 1844,
       "length": 39,
       "value": "\"BanubaVideoEditor.Gallery.DamagedFile\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
-      "offset": 1678,
+      "offset": 1894,
       "length": 14,
       "value": "\"Damaged file\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
-      "offset": 1759,
+      "offset": 1975,
       "length": 45,
       "value": "\"BanubaVideoEditor.Gallery.ExportVideoFailed\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
-      "offset": 1815,
+      "offset": 2031,
       "length": 36,
       "value": "\"Export video from gallery failed  \""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
-      "offset": 1938,
+      "offset": 2154,
       "length": 31,
       "value": "\"com.banuba.autocut.choosePart\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/LocalizedStrings.swift",
       "kind": "StringLiteral",
-      "offset": 1980,
+      "offset": 2196,
       "length": 2,
       "value": "\"\""
     },
@@ -68532,56 +69784,56 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 13320,
+      "offset": 13559,
       "length": 7,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 13335,
+      "offset": 13574,
       "length": 6,
       "value": "2"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 13320,
+      "offset": 13559,
       "length": 7,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 13335,
+      "offset": 13574,
       "length": 6,
       "value": "2"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 13320,
+      "offset": 13559,
       "length": 7,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "IntegerLiteral",
-      "offset": 13335,
+      "offset": 13574,
       "length": 6,
       "value": "2"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "BooleanLiteral",
-      "offset": 13983,
+      "offset": 14222,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Models\/VideoMetadata.swift",
       "kind": "BooleanLiteral",
-      "offset": 14012,
+      "offset": 14251,
       "length": 5,
       "value": "false"
     },
@@ -68871,6 +70123,13 @@
       "offset": 248,
       "length": 1,
       "value": "0"
+    },
+    {
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/CMTimeScale+Default.swift",
+      "kind": "IntegerLiteral",
+      "offset": 275,
+      "length": 6,
+      "value": "10000"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/ios\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/UIEntities\/CircularProgressView.swift",
