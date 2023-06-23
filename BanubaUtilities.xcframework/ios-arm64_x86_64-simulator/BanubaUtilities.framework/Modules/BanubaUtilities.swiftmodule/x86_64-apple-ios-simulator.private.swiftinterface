@@ -7,8 +7,13 @@ import AVKit
 import Accelerate
 @_exported import BanubaUtilities
 import CloudKit
+import CommonCrypto
+import CoreGraphics
+import CoreImage
 import CoreMedia
 import Foundation
+import ImageIO
+import MobileCoreServices
 import Photos
 import Swift
 import SwiftUI
@@ -70,6 +75,86 @@ public struct BanubaImageButtonConfiguration : BanubaUtilities.ImageButtonConfig
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
+public enum KingfisherError : Swift.Error {
+  public enum RequestErrorReason {
+    case emptyRequest
+    case invalidURL(request: Foundation.URLRequest)
+    case taskCancelled(task: BanubaUtilities.SessionDataTask, token: BanubaUtilities.SessionDataTask.CancelToken)
+  }
+  public enum ResponseErrorReason {
+    case invalidURLResponse(response: Foundation.URLResponse)
+    case invalidHTTPStatusCode(response: Foundation.HTTPURLResponse)
+    case URLSessionError(error: any Swift.Error)
+    case dataModifyingFailed(task: BanubaUtilities.SessionDataTask)
+    case noURLResponse(task: BanubaUtilities.SessionDataTask)
+    case cancelledByDelegate(response: Foundation.URLResponse)
+  }
+  public enum CacheErrorReason {
+    case fileEnumeratorCreationFailed(url: Foundation.URL)
+    case invalidFileEnumeratorContent(url: Foundation.URL)
+    case invalidURLResource(error: any Swift.Error, key: Swift.String, url: Foundation.URL)
+    case cannotLoadDataFromDisk(url: Foundation.URL, error: any Swift.Error)
+    case cannotCreateDirectory(path: Swift.String, error: any Swift.Error)
+    case imageNotExisting(key: Swift.String)
+    case cannotConvertToData(object: Any, error: any Swift.Error)
+    case cannotSerializeImage(image: BanubaUtilities.KFCrossPlatformImage?, original: Foundation.Data?, serializer: any BanubaUtilities.CacheSerializer)
+    case cannotCreateCacheFile(fileURL: Foundation.URL, key: Swift.String, data: Foundation.Data, error: any Swift.Error)
+    case cannotSetCacheFileAttribute(filePath: Swift.String, attributes: [Foundation.FileAttributeKey : Any], error: any Swift.Error)
+    case diskStorageIsNotReady(cacheURL: Foundation.URL)
+  }
+  public enum ProcessorErrorReason {
+    case processingFailed(processor: any BanubaUtilities.ImageProcessor, item: BanubaUtilities.ImageProcessItem)
+  }
+  public enum ImageSettingErrorReason {
+    case emptySource
+    case notCurrentSourceTask(result: BanubaUtilities.RetrieveImageResult?, error: (any Swift.Error)?, source: BanubaUtilities.Source)
+    case dataProviderError(provider: any BanubaUtilities.ImageDataProvider, error: any Swift.Error)
+    case alternativeSourcesExhausted([BanubaUtilities.PropagationError])
+  }
+  case requestError(reason: BanubaUtilities.KingfisherError.RequestErrorReason)
+  case responseError(reason: BanubaUtilities.KingfisherError.ResponseErrorReason)
+  case cacheError(reason: BanubaUtilities.KingfisherError.CacheErrorReason)
+  case processorError(reason: BanubaUtilities.KingfisherError.ProcessorErrorReason)
+  case imageSettingError(reason: BanubaUtilities.KingfisherError.ImageSettingErrorReason)
+  public var isTaskCancelled: Swift.Bool {
+    get
+  }
+  public func isInvalidResponseStatusCode(_ code: Swift.Int) -> Swift.Bool
+  public var isInvalidResponseStatusCode: Swift.Bool {
+    get
+  }
+  public var isNotCurrentTask: Swift.Bool {
+    get
+  }
+}
+extension BanubaUtilities.KingfisherError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+extension BanubaUtilities.KingfisherError : Foundation.CustomNSError {
+  public static let domain: Swift.String
+  public var errorCode: Swift.Int {
+    get
+  }
+}
+public protocol AsyncImageDownloadRequestModifier {
+  func modified(for request: Foundation.URLRequest, reportModified: @escaping (Foundation.URLRequest?) -> Swift.Void)
+  var onDownloadTaskStarted: ((BanubaUtilities.DownloadTask?) -> Swift.Void)? { get }
+}
+public protocol ImageDownloadRequestModifier : BanubaUtilities.AsyncImageDownloadRequestModifier {
+  func modified(for request: Foundation.URLRequest) -> Foundation.URLRequest?
+}
+extension BanubaUtilities.ImageDownloadRequestModifier {
+  public func modified(for request: Foundation.URLRequest, reportModified: @escaping (Foundation.URLRequest?) -> Swift.Void)
+  public var onDownloadTaskStarted: ((BanubaUtilities.DownloadTask?) -> Swift.Void)? {
+    get
+  }
+}
+public struct AnyModifier : BanubaUtilities.ImageDownloadRequestModifier {
+  public func modified(for request: Foundation.URLRequest) -> Foundation.URLRequest?
+  public init(modify: @escaping (Foundation.URLRequest) -> Foundation.URLRequest?)
+}
 public struct AudioContext {
   public static let averagePeak: Swift.Float
   public static func averagePowers(audioFileURL: Foundation.URL, forChannel channelNumber: Swift.Int, compositionStart: Foundation.TimeInterval, compositionEnd: Foundation.TimeInterval?, duration: Foundation.TimeInterval, numberOfPeaks: Swift.Int, completionHandler: @escaping (_ success: [Swift.Float]) -> ())
@@ -114,6 +199,31 @@ extension CoreFoundation.CGRect {
   @_Concurrency.MainActor(unsafe) @objc public func interactionControllerForDismissal(using animator: any UIKit.UIViewControllerAnimatedTransitioning) -> (any UIKit.UIViewControllerInteractiveTransitioning)?
   @objc deinit
 }
+public typealias DownloadProgressBlock = ((_ receivedSize: Swift.Int64, _ totalSize: Swift.Int64) -> Swift.Void)
+public struct RetrieveImageResult {
+  public let image: BanubaUtilities.KFCrossPlatformImage
+  public let cacheType: BanubaUtilities.CacheType
+  public let source: BanubaUtilities.Source
+  public let originalSource: BanubaUtilities.Source
+  public let data: () -> Foundation.Data?
+}
+public struct PropagationError {
+  public let source: BanubaUtilities.Source
+  public let error: BanubaUtilities.KingfisherError
+}
+public typealias DownloadTaskUpdatedBlock = ((_ newTask: BanubaUtilities.DownloadTask?) -> Swift.Void)
+public class KingfisherManager {
+  public static let shared: BanubaUtilities.KingfisherManager
+  public var cache: BanubaUtilities.ImageCache
+  public var downloader: BanubaUtilities.ImageDownloader
+  public var defaultOptions: BanubaUtilities.KingfisherOptionsInfo
+  public init(downloader: BanubaUtilities.ImageDownloader, cache: BanubaUtilities.ImageCache)
+  @discardableResult
+  public func retrieveImage(with resource: any BanubaUtilities.Resource, options: BanubaUtilities.KingfisherOptionsInfo? = nil, progressBlock: BanubaUtilities.DownloadProgressBlock? = nil, downloadTaskUpdated: BanubaUtilities.DownloadTaskUpdatedBlock? = nil, completionHandler: ((Swift.Result<BanubaUtilities.RetrieveImageResult, BanubaUtilities.KingfisherError>) -> Swift.Void)?) -> BanubaUtilities.DownloadTask?
+  @discardableResult
+  public func retrieveImage(with source: BanubaUtilities.Source, options: BanubaUtilities.KingfisherOptionsInfo? = nil, progressBlock: BanubaUtilities.DownloadProgressBlock? = nil, downloadTaskUpdated: BanubaUtilities.DownloadTaskUpdatedBlock? = nil, completionHandler: ((Swift.Result<BanubaUtilities.RetrieveImageResult, BanubaUtilities.KingfisherError>) -> Swift.Void)?) -> BanubaUtilities.DownloadTask?
+  @objc deinit
+}
 @_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) open class BaseTrackSelectionViewController : UIKit.UINavigationController, BanubaUtilities.TrackSelectionViewController {
   @_Concurrency.MainActor(unsafe) weak public var trackSelectionDelegate: (any BanubaUtilities.TrackSelectionViewControllerDelegate)?
   @available(iOS 5.0, *)
@@ -136,6 +246,33 @@ extension BanubaUtilities.TrackSelectionViewControllerDelegate {
 }
 public protocol TrackSelectionViewController : UIKit.UIViewController {
   var trackSelectionDelegate: (any BanubaUtilities.TrackSelectionViewControllerDelegate)? { get set }
+}
+public class Delegate<Input, Output> {
+  public init()
+  public func delegate<T>(on target: T, block: ((T, Input) -> Output)?) where T : AnyObject
+  public func call(_ input: Input) -> Output?
+  public func callAsFunction(_ input: Input) -> Output?
+  @objc deinit
+}
+extension BanubaUtilities.Delegate where Input == () {
+  public func call() -> Output?
+  public func callAsFunction() -> Output?
+}
+extension BanubaUtilities.Delegate where Input == (), Output : BanubaUtilities.OptionalProtocol {
+  public func call() -> Output
+  public func callAsFunction() -> Output
+}
+extension BanubaUtilities.Delegate where Output : BanubaUtilities.OptionalProtocol {
+  public func call(_ input: Input) -> Output
+  public func callAsFunction(_ input: Input) -> Output
+}
+public protocol OptionalProtocol {
+  static var _createNil: Self { get }
+}
+extension Swift.Optional : BanubaUtilities.OptionalProtocol {
+  public static var _createNil: Swift.Optional<Wrapped> {
+    get
+  }
 }
 public enum Connection : Swift.CustomStringConvertible {
   case none, wifi, cellular
@@ -202,12 +339,252 @@ extension UIKit.UIButton {
   @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.TextConfiguration, with title: Swift.String)
   @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: (any BanubaUtilities.ImageConfigurationProtocol)?, forState controlState: UIKit.UIControl.State)
 }
+public protocol Placeholder {
+  func add(to imageView: BanubaUtilities.KFCrossPlatformImageView)
+  func remove(from imageView: BanubaUtilities.KFCrossPlatformImageView)
+}
+extension UIKit.UIImage : BanubaUtilities.Placeholder {
+  public func add(to imageView: BanubaUtilities.KFCrossPlatformImageView)
+  public func remove(from imageView: BanubaUtilities.KFCrossPlatformImageView)
+}
+extension BanubaUtilities.Placeholder where Self : UIKit.UIView {
+  public func add(to imageView: BanubaUtilities.KFCrossPlatformImageView)
+  public func remove(from imageView: BanubaUtilities.KFCrossPlatformImageView)
+}
+public protocol KFOptionSetter {
+  var options: BanubaUtilities.KingfisherParsedOptionsInfo { get nonmutating set }
+  var onFailureDelegate: BanubaUtilities.Delegate<BanubaUtilities.KingfisherError, Swift.Void> { get }
+  var onSuccessDelegate: BanubaUtilities.Delegate<BanubaUtilities.RetrieveImageResult, Swift.Void> { get }
+  var onProgressDelegate: BanubaUtilities.Delegate<(Swift.Int64, Swift.Int64), Swift.Void> { get }
+  var delegateObserver: Swift.AnyObject { get }
+}
+extension BanubaUtilities.KF.Builder : BanubaUtilities.KFOptionSetter {
+  public var delegateObserver: Swift.AnyObject {
+    get
+  }
+}
+extension BanubaUtilities.KFOptionSetter {
+  public func onProgress(_ block: BanubaUtilities.DownloadProgressBlock?) -> Self
+  public func onSuccess(_ block: ((BanubaUtilities.RetrieveImageResult) -> Swift.Void)?) -> Self
+  public func onFailure(_ block: ((BanubaUtilities.KingfisherError) -> Swift.Void)?) -> Self
+}
+extension BanubaUtilities.KFOptionSetter {
+  public func targetCache(_ cache: BanubaUtilities.ImageCache) -> Self
+  public func originalCache(_ cache: BanubaUtilities.ImageCache) -> Self
+  public func downloader(_ downloader: BanubaUtilities.ImageDownloader) -> Self
+  public func downloadPriority(_ priority: Swift.Float) -> Self
+  public func forceRefresh(_ enabled: Swift.Bool = true) -> Self
+  public func fromMemoryCacheOrRefresh(_ enabled: Swift.Bool = true) -> Self
+  public func cacheMemoryOnly(_ enabled: Swift.Bool = true) -> Self
+  public func waitForCache(_ enabled: Swift.Bool = true) -> Self
+  public func onlyFromCache(_ enabled: Swift.Bool = true) -> Self
+  public func backgroundDecode(_ enabled: Swift.Bool = true) -> Self
+  public func callbackQueue(_ queue: BanubaUtilities.CallbackQueue) -> Self
+  public func scaleFactor(_ factor: CoreFoundation.CGFloat) -> Self
+  public func cacheOriginalImage(_ enabled: Swift.Bool = true) -> Self
+  public func diskStoreWriteOptions(_ writingOptions: Foundation.Data.WritingOptions) -> Self
+  public func loadDiskFileSynchronously(_ enabled: Swift.Bool = true) -> Self
+  public func processingQueue(_ queue: BanubaUtilities.CallbackQueue?) -> Self
+  public func alternativeSources(_ sources: [BanubaUtilities.Source]?) -> Self
+  public func retry(_ strategy: (any BanubaUtilities.RetryStrategy)?) -> Self
+  public func retry(maxCount: Swift.Int, interval: BanubaUtilities.DelayRetryStrategy.Interval = .seconds(3)) -> Self
+  public func lowDataModeSource(_ source: BanubaUtilities.Source?) -> Self
+  public func forceTransition(_ enabled: Swift.Bool = true) -> Self
+  public func onFailureImage(_ image: BanubaUtilities.KFCrossPlatformImage?) -> Self
+}
+extension BanubaUtilities.KFOptionSetter {
+  public func requestModifier(_ modifier: any BanubaUtilities.AsyncImageDownloadRequestModifier) -> Self
+  public func requestModifier(_ modifyBlock: @escaping (inout Foundation.URLRequest) -> Swift.Void) -> Self
+}
+extension BanubaUtilities.KFOptionSetter {
+  public func redirectHandler(_ handler: any BanubaUtilities.ImageDownloadRedirectHandler) -> Self
+  public func redirectHandler(_ block: @escaping (BanubaUtilities.KF.RedirectPayload) -> Swift.Void) -> Self
+}
+extension BanubaUtilities.KFOptionSetter {
+  public func setProcessor(_ processor: any BanubaUtilities.ImageProcessor) -> Self
+  public func setProcessors(_ processors: [any BanubaUtilities.ImageProcessor]) -> Self
+  public func appendProcessor(_ processor: any BanubaUtilities.ImageProcessor) -> Self
+  public func roundCorner(radius: BanubaUtilities.Radius, targetSize: CoreFoundation.CGSize? = nil, roundingCorners corners: BanubaUtilities.RectCorner = .all, backgroundColor: BanubaUtilities.KFCrossPlatformColor? = nil) -> Self
+  public func blur(radius: CoreFoundation.CGFloat) -> Self
+  public func overlay(color: BanubaUtilities.KFCrossPlatformColor, fraction: CoreFoundation.CGFloat = 0.5) -> Self
+  public func tint(color: BanubaUtilities.KFCrossPlatformColor) -> Self
+  public func blackWhite() -> Self
+  public func cropping(size: CoreFoundation.CGSize, anchor: CoreFoundation.CGPoint = .init(x: 0.5, y: 0.5)) -> Self
+  public func downsampling(size: CoreFoundation.CGSize) -> Self
+  public func resizing(referenceSize: CoreFoundation.CGSize, mode: BanubaUtilities.ContentMode = .none) -> Self
+}
+extension BanubaUtilities.KFOptionSetter {
+  public func serialize(by cacheSerializer: any BanubaUtilities.CacheSerializer) -> Self
+  public func serialize(as format: BanubaUtilities.ImageFormat, jpegCompressionQuality: CoreFoundation.CGFloat? = nil) -> Self
+}
+extension BanubaUtilities.KFOptionSetter {
+  public func imageModifier(_ modifier: (any BanubaUtilities.ImageModifier)?) -> Self
+  public func imageModifier(_ block: @escaping (inout BanubaUtilities.KFCrossPlatformImage) throws -> Swift.Void) -> Self
+}
+extension BanubaUtilities.KFOptionSetter {
+  public func memoryCacheExpiration(_ expiration: BanubaUtilities.StorageExpiration?) -> Self
+  public func memoryCacheAccessExtending(_ extending: BanubaUtilities.ExpirationExtending) -> Self
+  public func diskCacheExpiration(_ expiration: BanubaUtilities.StorageExpiration?) -> Self
+  public func diskCacheAccessExtending(_ extending: BanubaUtilities.ExpirationExtending) -> Self
+}
+public typealias PrefetcherProgressBlock = ((_ skippedResources: [any BanubaUtilities.Resource], _ failedResources: [any BanubaUtilities.Resource], _ completedResources: [any BanubaUtilities.Resource]) -> Swift.Void)
+public typealias PrefetcherSourceProgressBlock = ((_ skippedSources: [BanubaUtilities.Source], _ failedSources: [BanubaUtilities.Source], _ completedSources: [BanubaUtilities.Source]) -> Swift.Void)
+public typealias PrefetcherCompletionHandler = ((_ skippedResources: [any BanubaUtilities.Resource], _ failedResources: [any BanubaUtilities.Resource], _ completedResources: [any BanubaUtilities.Resource]) -> Swift.Void)
+public typealias PrefetcherSourceCompletionHandler = ((_ skippedSources: [BanubaUtilities.Source], _ failedSources: [BanubaUtilities.Source], _ completedSources: [BanubaUtilities.Source]) -> Swift.Void)
+@_hasMissingDesignatedInitializers public class ImagePrefetcher : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+  public var maxConcurrentDownloads: Swift.Int
+  convenience public init(urls: [Foundation.URL], options: BanubaUtilities.KingfisherOptionsInfo? = nil, progressBlock: BanubaUtilities.PrefetcherProgressBlock? = nil, completionHandler: BanubaUtilities.PrefetcherCompletionHandler? = nil)
+  convenience public init(urls: [Foundation.URL], options: BanubaUtilities.KingfisherOptionsInfo? = nil, completionHandler: BanubaUtilities.PrefetcherCompletionHandler? = nil)
+  convenience public init(resources: [any BanubaUtilities.Resource], options: BanubaUtilities.KingfisherOptionsInfo? = nil, progressBlock: BanubaUtilities.PrefetcherProgressBlock? = nil, completionHandler: BanubaUtilities.PrefetcherCompletionHandler? = nil)
+  convenience public init(resources: [any BanubaUtilities.Resource], options: BanubaUtilities.KingfisherOptionsInfo? = nil, completionHandler: BanubaUtilities.PrefetcherCompletionHandler? = nil)
+  convenience public init(sources: [BanubaUtilities.Source], options: BanubaUtilities.KingfisherOptionsInfo? = nil, progressBlock: BanubaUtilities.PrefetcherSourceProgressBlock? = nil, completionHandler: BanubaUtilities.PrefetcherSourceCompletionHandler? = nil)
+  convenience public init(sources: [BanubaUtilities.Source], options: BanubaUtilities.KingfisherOptionsInfo? = nil, completionHandler: BanubaUtilities.PrefetcherSourceCompletionHandler? = nil)
+  public func start()
+  public func stop()
+  @objc deinit
+}
 @objc public class BackgroundConfiguration : ObjectiveC.NSObject {
   public var cornerRadius: CoreFoundation.CGFloat
   public var color: UIKit.UIColor
   public init(cornerRadius: CoreFoundation.CGFloat, color: UIKit.UIColor)
   @objc deinit
 }
+public enum ImageProcessItem {
+  case image(BanubaUtilities.KFCrossPlatformImage)
+  case data(Foundation.Data)
+}
+public protocol ImageProcessor {
+  var identifier: Swift.String { get }
+  func process(item: BanubaUtilities.ImageProcessItem, options: BanubaUtilities.KingfisherParsedOptionsInfo) -> BanubaUtilities.KFCrossPlatformImage?
+}
+extension BanubaUtilities.ImageProcessor {
+  public func append(another: any BanubaUtilities.ImageProcessor) -> any BanubaUtilities.ImageProcessor
+}
+public struct DefaultImageProcessor : BanubaUtilities.ImageProcessor {
+  public static let `default`: BanubaUtilities.DefaultImageProcessor
+  public let identifier: Swift.String
+  public init()
+  public func process(item: BanubaUtilities.ImageProcessItem, options: BanubaUtilities.KingfisherParsedOptionsInfo) -> BanubaUtilities.KFCrossPlatformImage?
+}
+public struct RectCorner : Swift.OptionSet {
+  public let rawValue: Swift.Int
+  public static let topLeft: BanubaUtilities.RectCorner
+  public static let topRight: BanubaUtilities.RectCorner
+  public static let bottomLeft: BanubaUtilities.RectCorner
+  public static let bottomRight: BanubaUtilities.RectCorner
+  public static let all: BanubaUtilities.RectCorner
+  public init(rawValue: Swift.Int)
+  public typealias ArrayLiteralElement = BanubaUtilities.RectCorner
+  public typealias Element = BanubaUtilities.RectCorner
+  public typealias RawValue = Swift.Int
+}
+public struct BlendImageProcessor : BanubaUtilities.ImageProcessor {
+  public let identifier: Swift.String
+  public let blendMode: CoreGraphics.CGBlendMode
+  public let alpha: CoreFoundation.CGFloat
+  public let backgroundColor: BanubaUtilities.KFCrossPlatformColor?
+  public init(blendMode: CoreGraphics.CGBlendMode, alpha: CoreFoundation.CGFloat = 1.0, backgroundColor: BanubaUtilities.KFCrossPlatformColor? = nil)
+  public func process(item: BanubaUtilities.ImageProcessItem, options: BanubaUtilities.KingfisherParsedOptionsInfo) -> BanubaUtilities.KFCrossPlatformImage?
+}
+public enum Radius {
+  case widthFraction(CoreFoundation.CGFloat)
+  case heightFraction(CoreFoundation.CGFloat)
+  case point(CoreFoundation.CGFloat)
+  public func compute(with size: CoreFoundation.CGSize) -> CoreFoundation.CGFloat
+}
+public struct RoundCornerImageProcessor : BanubaUtilities.ImageProcessor {
+  public let identifier: Swift.String
+  public let radius: BanubaUtilities.Radius
+  public let roundingCorners: BanubaUtilities.RectCorner
+  public let targetSize: CoreFoundation.CGSize?
+  public let backgroundColor: BanubaUtilities.KFCrossPlatformColor?
+  public init(cornerRadius: CoreFoundation.CGFloat, targetSize: CoreFoundation.CGSize? = nil, roundingCorners corners: BanubaUtilities.RectCorner = .all, backgroundColor: BanubaUtilities.KFCrossPlatformColor? = nil)
+  public init(radius: BanubaUtilities.Radius, targetSize: CoreFoundation.CGSize? = nil, roundingCorners corners: BanubaUtilities.RectCorner = .all, backgroundColor: BanubaUtilities.KFCrossPlatformColor? = nil)
+  public func process(item: BanubaUtilities.ImageProcessItem, options: BanubaUtilities.KingfisherParsedOptionsInfo) -> BanubaUtilities.KFCrossPlatformImage?
+}
+public struct Border {
+  public var color: BanubaUtilities.KFCrossPlatformColor
+  public var lineWidth: CoreFoundation.CGFloat
+  public var radius: BanubaUtilities.Radius
+  public var roundingCorners: BanubaUtilities.RectCorner
+  public init(color: BanubaUtilities.KFCrossPlatformColor = .black, lineWidth: CoreFoundation.CGFloat = 4, radius: BanubaUtilities.Radius = .point(0), roundingCorners: BanubaUtilities.RectCorner = .all)
+}
+public struct BorderImageProcessor : BanubaUtilities.ImageProcessor {
+  public var identifier: Swift.String {
+    get
+  }
+  public let border: BanubaUtilities.Border
+  public init(border: BanubaUtilities.Border)
+  public func process(item: BanubaUtilities.ImageProcessItem, options: BanubaUtilities.KingfisherParsedOptionsInfo) -> BanubaUtilities.KFCrossPlatformImage?
+}
+public enum ContentMode {
+  case none
+  case aspectFit
+  case aspectFill
+  public static func == (a: BanubaUtilities.ContentMode, b: BanubaUtilities.ContentMode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct ResizingImageProcessor : BanubaUtilities.ImageProcessor {
+  public let identifier: Swift.String
+  public let referenceSize: CoreFoundation.CGSize
+  public let targetContentMode: BanubaUtilities.ContentMode
+  public init(referenceSize: CoreFoundation.CGSize, mode: BanubaUtilities.ContentMode = .none)
+  public func process(item: BanubaUtilities.ImageProcessItem, options: BanubaUtilities.KingfisherParsedOptionsInfo) -> BanubaUtilities.KFCrossPlatformImage?
+}
+public struct BlurImageProcessor : BanubaUtilities.ImageProcessor {
+  public let identifier: Swift.String
+  public let blurRadius: CoreFoundation.CGFloat
+  public init(blurRadius: CoreFoundation.CGFloat)
+  public func process(item: BanubaUtilities.ImageProcessItem, options: BanubaUtilities.KingfisherParsedOptionsInfo) -> BanubaUtilities.KFCrossPlatformImage?
+}
+public struct OverlayImageProcessor : BanubaUtilities.ImageProcessor {
+  public let identifier: Swift.String
+  public let overlay: BanubaUtilities.KFCrossPlatformColor
+  public let fraction: CoreFoundation.CGFloat
+  public init(overlay: BanubaUtilities.KFCrossPlatformColor, fraction: CoreFoundation.CGFloat = 0.5)
+  public func process(item: BanubaUtilities.ImageProcessItem, options: BanubaUtilities.KingfisherParsedOptionsInfo) -> BanubaUtilities.KFCrossPlatformImage?
+}
+public struct TintImageProcessor : BanubaUtilities.ImageProcessor {
+  public let identifier: Swift.String
+  public let tint: BanubaUtilities.KFCrossPlatformColor
+  public init(tint: BanubaUtilities.KFCrossPlatformColor)
+  public func process(item: BanubaUtilities.ImageProcessItem, options: BanubaUtilities.KingfisherParsedOptionsInfo) -> BanubaUtilities.KFCrossPlatformImage?
+}
+public struct ColorControlsProcessor : BanubaUtilities.ImageProcessor {
+  public let identifier: Swift.String
+  public let brightness: CoreFoundation.CGFloat
+  public let contrast: CoreFoundation.CGFloat
+  public let saturation: CoreFoundation.CGFloat
+  public let inputEV: CoreFoundation.CGFloat
+  public init(brightness: CoreFoundation.CGFloat, contrast: CoreFoundation.CGFloat, saturation: CoreFoundation.CGFloat, inputEV: CoreFoundation.CGFloat)
+  public func process(item: BanubaUtilities.ImageProcessItem, options: BanubaUtilities.KingfisherParsedOptionsInfo) -> BanubaUtilities.KFCrossPlatformImage?
+}
+public struct BlackWhiteProcessor : BanubaUtilities.ImageProcessor {
+  public let identifier: Swift.String
+  public init()
+  public func process(item: BanubaUtilities.ImageProcessItem, options: BanubaUtilities.KingfisherParsedOptionsInfo) -> BanubaUtilities.KFCrossPlatformImage?
+}
+public struct CroppingImageProcessor : BanubaUtilities.ImageProcessor {
+  public let identifier: Swift.String
+  public let size: CoreFoundation.CGSize
+  public let anchor: CoreFoundation.CGPoint
+  public init(size: CoreFoundation.CGSize, anchor: CoreFoundation.CGPoint = CGPoint(x: 0.5, y: 0.5))
+  public func process(item: BanubaUtilities.ImageProcessItem, options: BanubaUtilities.KingfisherParsedOptionsInfo) -> BanubaUtilities.KFCrossPlatformImage?
+}
+public struct DownsamplingImageProcessor : BanubaUtilities.ImageProcessor {
+  public let size: CoreFoundation.CGSize
+  public let identifier: Swift.String
+  public init(size: CoreFoundation.CGSize)
+  public func process(item: BanubaUtilities.ImageProcessItem, options: BanubaUtilities.KingfisherParsedOptionsInfo) -> BanubaUtilities.KFCrossPlatformImage?
+}
+infix operator |> : AdditionPrecedence
+public func |> (left: any BanubaUtilities.ImageProcessor, right: any BanubaUtilities.ImageProcessor) -> any BanubaUtilities.ImageProcessor
 public struct BlurCoordinateParams : Swift.Codable {
   public var center: CoreFoundation.CGPoint
   public var width: CoreFoundation.CGFloat
@@ -243,6 +620,44 @@ extension UIKit.UIColor {
   convenience public init(red: Swift.Int, green: Swift.Int, blue: Swift.Int, a: CoreFoundation.CGFloat = 1.0)
   convenience public init(rgb: Swift.Int, a: CoreFoundation.CGFloat = 1.0)
 }
+public protocol ImageDataProvider {
+  var cacheKey: Swift.String { get }
+  func data(handler: @escaping (Swift.Result<Foundation.Data, any Swift.Error>) -> Swift.Void)
+  var contentURL: Foundation.URL? { get }
+}
+extension BanubaUtilities.ImageDataProvider {
+  public var contentURL: Foundation.URL? {
+    get
+  }
+  public func convertToSource() -> BanubaUtilities.Source
+}
+public struct LocalFileImageDataProvider : BanubaUtilities.ImageDataProvider {
+  public let fileURL: Foundation.URL
+  public init(fileURL: Foundation.URL, cacheKey: Swift.String? = nil, loadingQueue: BanubaUtilities.ExecutionQueue = .dispatch(DispatchQueue.global(qos: .userInitiated)))
+  public var cacheKey: Swift.String
+  public func data(handler: @escaping (Swift.Result<Foundation.Data, any Swift.Error>) -> Swift.Void)
+  #if compiler(>=5.3) && $EffectfulProp
+  @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+  public var data: Foundation.Data {
+    get async throws
+  }
+  #endif
+  public var contentURL: Foundation.URL? {
+    get
+  }
+}
+public struct Base64ImageDataProvider : BanubaUtilities.ImageDataProvider {
+  public let base64String: Swift.String
+  public init(base64String: Swift.String, cacheKey: Swift.String)
+  public var cacheKey: Swift.String
+  public func data(handler: (Swift.Result<Foundation.Data, any Swift.Error>) -> Swift.Void)
+}
+public struct RawImageDataProvider : BanubaUtilities.ImageDataProvider {
+  public let data: Foundation.Data
+  public init(data: Foundation.Data, cacheKey: Swift.String)
+  public var cacheKey: Swift.String
+  public func data(handler: @escaping (Swift.Result<Foundation.Data, any Swift.Error>) -> Swift.Void)
+}
 @_inheritsConvenienceInitializers @objc public class ZipArchive : ObjectiveC.NSObject {
   public static func zip(to destinationUrl: Foundation.URL, folderUrl: Foundation.URL) -> Swift.Bool
   public static func unzip(at sourceUrl: Foundation.URL, destination: Foundation.URL, overwrite: Swift.Bool) throws
@@ -253,6 +668,22 @@ public class BanubaCancelHandler {
   public init(handler: @escaping () -> Swift.Void)
   public func cancel()
   @objc deinit
+}
+public typealias Transformer = (CoreImage.CIImage) -> CoreImage.CIImage?
+public protocol CIImageProcessor : BanubaUtilities.ImageProcessor {
+  var filter: BanubaUtilities.Filter { get }
+}
+extension BanubaUtilities.CIImageProcessor {
+  public func process(item: BanubaUtilities.ImageProcessItem, options: BanubaUtilities.KingfisherParsedOptionsInfo) -> BanubaUtilities.KFCrossPlatformImage?
+}
+public struct Filter {
+  public init(transform: @escaping BanubaUtilities.Transformer)
+  public static var tint: (_ color: BanubaUtilities.KFCrossPlatformColor) -> BanubaUtilities.Filter
+  public typealias ColorElement = (CoreFoundation.CGFloat, CoreFoundation.CGFloat, CoreFoundation.CGFloat, CoreFoundation.CGFloat)
+  public static var colorControl: (_ arg: BanubaUtilities.Filter.ColorElement) -> BanubaUtilities.Filter
+}
+extension BanubaUtilities.KingfisherWrapper where Base : UIKit.UIImage {
+  public func apply(_ filter: BanubaUtilities.Filter) -> BanubaUtilities.KFCrossPlatformImage
 }
 extension Swift.Double {
   public func formatted(isMiliSecondsEnabled: Swift.Bool = true) -> Swift.String
@@ -284,6 +715,92 @@ extension Swift.Double {
   public init(videoResolution: BanubaUtilities.VideoResolution, galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration, closeButtonConfiguration: any BanubaUtilities.ImageButtonConfigurationProtocol, albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration, collectionInfoHeaderConfiguration: BanubaUtilities.CollectionInfoHeaderConfiguration, galleryItemPreviewViewConfiguration: BanubaUtilities.GalleryItemPreviewViewConfiguration, nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, noItemsLabelConfiguration: BanubaUtilities.TextConfiguration, layoutConfiguration: BanubaUtilities.GalleryLayoutConfiguration, topBarBlurColor: UIKit.UIColor, clearSelectionButtonConfiguration: any BanubaUtilities.ImageButtonConfigurationProtocol, galleryTypeButton: BanubaUtilities.TextButtonConfiguration, galleryTypeUnderlineColor: UIKit.UIColor, isPhotoSequenceAnimationEnabled: Swift.Bool, importItemsLabelConfiguration: BanubaUtilities.TextConfiguration, bottomViewConfiguration: BanubaUtilities.BackgroundConfiguration, isCloseButtonHidden: Swift.Bool, visibleTabsInGallery: [BanubaUtilities.GalleryMediaType] = [.video, .photo], backgroundColor: UIKit.UIColor, maximumSelectedCountFromGallery: Swift.Int, preferredStatusBarStyle: UIKit.UIStatusBarStyle, alertConfiguration: BanubaUtilities.AlertViewConfiguration)
   @objc deinit
 }
+extension Foundation.NSNotification.Name {
+  public static let KingfisherDidCleanDiskCache: Foundation.Notification.Name
+}
+public let KingfisherDiskCacheCleanedHashKey: Swift.String
+public enum CacheType {
+  case none
+  case memory
+  case disk
+  public var cached: Swift.Bool {
+    get
+  }
+  public static func == (a: BanubaUtilities.CacheType, b: BanubaUtilities.CacheType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct CacheStoreResult {
+  public let memoryCacheResult: Swift.Result<(), Swift.Never>
+  public let diskCacheResult: Swift.Result<(), BanubaUtilities.KingfisherError>
+}
+extension UIKit.UIImage : BanubaUtilities.CacheCostCalculable {
+  public var cacheCost: Swift.Int {
+    get
+  }
+}
+extension Foundation.Data : BanubaUtilities.DataTransformable {
+  public func toData() throws -> Foundation.Data
+  public static func fromData(_ data: Foundation.Data) throws -> Foundation.Data
+  public static let empty: Foundation.Data
+}
+public enum ImageCacheResult {
+  case disk(BanubaUtilities.KFCrossPlatformImage)
+  case memory(BanubaUtilities.KFCrossPlatformImage)
+  case none
+  public var image: BanubaUtilities.KFCrossPlatformImage? {
+    get
+  }
+  public var cacheType: BanubaUtilities.CacheType {
+    get
+  }
+}
+open class ImageCache {
+  public static let `default`: BanubaUtilities.ImageCache
+  final public let memoryStorage: BanubaUtilities.MemoryStorage.Backend<BanubaUtilities.KFCrossPlatformImage>
+  final public let diskStorage: BanubaUtilities.DiskStorage.Backend<Foundation.Data>
+  public typealias DiskCachePathClosure = (Foundation.URL, Swift.String) -> Foundation.URL
+  public init(memoryStorage: BanubaUtilities.MemoryStorage.Backend<BanubaUtilities.KFCrossPlatformImage>, diskStorage: BanubaUtilities.DiskStorage.Backend<Foundation.Data>)
+  convenience public init(name: Swift.String)
+  convenience public init(name: Swift.String, cacheDirectoryURL: Foundation.URL?, diskCachePathClosure: BanubaUtilities.ImageCache.DiskCachePathClosure? = nil) throws
+  @objc deinit
+  open func store(_ image: BanubaUtilities.KFCrossPlatformImage, original: Foundation.Data? = nil, forKey key: Swift.String, options: BanubaUtilities.KingfisherParsedOptionsInfo, toDisk: Swift.Bool = true, completionHandler: ((BanubaUtilities.CacheStoreResult) -> Swift.Void)? = nil)
+  open func store(_ image: BanubaUtilities.KFCrossPlatformImage, original: Foundation.Data? = nil, forKey key: Swift.String, processorIdentifier identifier: Swift.String = "", cacheSerializer serializer: any BanubaUtilities.CacheSerializer = DefaultCacheSerializer.default, toDisk: Swift.Bool = true, callbackQueue: BanubaUtilities.CallbackQueue = .untouch, completionHandler: ((BanubaUtilities.CacheStoreResult) -> Swift.Void)? = nil)
+  open func storeToDisk(_ data: Foundation.Data, forKey key: Swift.String, processorIdentifier identifier: Swift.String = "", expiration: BanubaUtilities.StorageExpiration? = nil, callbackQueue: BanubaUtilities.CallbackQueue = .untouch, completionHandler: ((BanubaUtilities.CacheStoreResult) -> Swift.Void)? = nil)
+  open func removeImage(forKey key: Swift.String, processorIdentifier identifier: Swift.String = "", fromMemory: Swift.Bool = true, fromDisk: Swift.Bool = true, callbackQueue: BanubaUtilities.CallbackQueue = .untouch, completionHandler: (() -> Swift.Void)? = nil)
+  open func retrieveImage(forKey key: Swift.String, options: BanubaUtilities.KingfisherParsedOptionsInfo, callbackQueue: BanubaUtilities.CallbackQueue = .mainCurrentOrAsync, completionHandler: ((Swift.Result<BanubaUtilities.ImageCacheResult, BanubaUtilities.KingfisherError>) -> Swift.Void)?)
+  open func retrieveImage(forKey key: Swift.String, options: BanubaUtilities.KingfisherOptionsInfo? = nil, callbackQueue: BanubaUtilities.CallbackQueue = .mainCurrentOrAsync, completionHandler: ((Swift.Result<BanubaUtilities.ImageCacheResult, BanubaUtilities.KingfisherError>) -> Swift.Void)?)
+  open func retrieveImageInMemoryCache(forKey key: Swift.String, options: BanubaUtilities.KingfisherParsedOptionsInfo) -> BanubaUtilities.KFCrossPlatformImage?
+  open func retrieveImageInMemoryCache(forKey key: Swift.String, options: BanubaUtilities.KingfisherOptionsInfo? = nil) -> BanubaUtilities.KFCrossPlatformImage?
+  open func retrieveImageInDiskCache(forKey key: Swift.String, options: BanubaUtilities.KingfisherOptionsInfo? = nil, callbackQueue: BanubaUtilities.CallbackQueue = .untouch, completionHandler: @escaping (Swift.Result<BanubaUtilities.KFCrossPlatformImage?, BanubaUtilities.KingfisherError>) -> Swift.Void)
+  public func clearCache(completion handler: (() -> Swift.Void)? = nil)
+  @objc public func clearMemoryCache()
+  open func clearDiskCache(completion handler: (() -> Swift.Void)? = nil)
+  open func cleanExpiredCache(completion handler: (() -> Swift.Void)? = nil)
+  open func cleanExpiredMemoryCache()
+  open func cleanExpiredDiskCache(completion handler: (() -> Swift.Void)? = nil)
+  @objc public func backgroundCleanExpiredDiskCache()
+  open func imageCachedType(forKey key: Swift.String, processorIdentifier identifier: Swift.String = DefaultImageProcessor.default.identifier) -> BanubaUtilities.CacheType
+  public func isCached(forKey key: Swift.String, processorIdentifier identifier: Swift.String = DefaultImageProcessor.default.identifier) -> Swift.Bool
+  open func hash(forKey key: Swift.String, processorIdentifier identifier: Swift.String = DefaultImageProcessor.default.identifier) -> Swift.String
+  open func calculateDiskStorageSize(completion handler: @escaping ((Swift.Result<Swift.UInt, BanubaUtilities.KingfisherError>) -> Swift.Void))
+  #if compiler(>=5.3) && $EffectfulProp
+  @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+  open var diskStorageSize: Swift.UInt {
+    get async throws
+  }
+  #endif
+  open func cachePath(forKey key: Swift.String, processorIdentifier identifier: Swift.String = DefaultImageProcessor.default.identifier) -> Swift.String
+}
+extension UIKit.UIApplication : BanubaUtilities.KingfisherCompatible {
+}
+extension BanubaUtilities.KingfisherWrapper where Base : UIKit.UIApplication {
+  public static var shared: UIKit.UIApplication? {
+    get
+  }
+}
 @objc public protocol TimeLineDataSourceDelegate {
   @objc optional func timelineDataSource(_ timelineDataSource: any BanubaUtilities.TimeLineDataSource, didPreloadPreview preview: UIKit.UIImage)
   @objc func timelineDataSource(_ timelineDataSource: any BanubaUtilities.TimeLineDataSource, didLoadImage image: UIKit.UIImage, at index: Swift.Int)
@@ -301,6 +818,34 @@ extension Swift.Double {
   @objc func getImage(at index: Swift.Int) -> UIKit.UIImage?
   @objc func loadTimelineThumbs(completion: (() -> Swift.Void)?)
 }
+public enum DiskStorage {
+  @_hasMissingDesignatedInitializers public class Backend<T> where T : BanubaUtilities.DataTransformable {
+    public var config: BanubaUtilities.DiskStorage.Config
+    final public let directoryURL: Foundation.URL
+    convenience public init(config: BanubaUtilities.DiskStorage.Config) throws
+    public func store(value: T, forKey key: Swift.String, expiration: BanubaUtilities.StorageExpiration? = nil, writeOptions: Foundation.Data.WritingOptions = []) throws
+    public func value(forKey key: Swift.String, extendingExpiration: BanubaUtilities.ExpirationExtending = .cacheTime) throws -> T?
+    public func isCached(forKey key: Swift.String) -> Swift.Bool
+    public func isCached(forKey key: Swift.String, referenceDate: Foundation.Date) -> Swift.Bool
+    public func remove(forKey key: Swift.String) throws
+    public func removeAll() throws
+    public func cacheFileURL(forKey key: Swift.String) -> Foundation.URL
+    public func removeExpiredValues() throws -> [Foundation.URL]
+    public func totalSize() throws -> Swift.UInt
+    @objc deinit
+  }
+}
+extension BanubaUtilities.DiskStorage {
+  public struct Config {
+    public var sizeLimit: Swift.UInt
+    public var expiration: BanubaUtilities.StorageExpiration
+    public var pathExtension: Swift.String?
+    public var usesHashedFileName: Swift.Bool
+    public var autoExtAfterHashedFileName: Swift.Bool
+    public var cachePathBlock: ((_ directory: Foundation.URL, _ cacheName: Swift.String) -> Foundation.URL)!
+    public init(name: Swift.String, sizeLimit: Swift.UInt, fileManager: Foundation.FileManager = .default, directory: Foundation.URL? = nil)
+  }
+}
 @objc public protocol AlbumModel {
   @objc var name: Swift.String? { get set }
   @objc var preview: UIKit.UIImage? { get set }
@@ -315,6 +860,14 @@ extension Swift.Double {
   public init(collection: BanubaUtilities.ItemCollectionModel)
   public func requestPreview(handler: @escaping (UIKit.UIImage?) -> Swift.Void)
   @objc deinit
+}
+extension CoreFoundation.CGSize : BanubaUtilities.KingfisherCompatibleValue {
+}
+extension BanubaUtilities.KingfisherWrapper where Base == CoreFoundation.CGSize {
+  public func resize(to size: CoreFoundation.CGSize, for contentMode: BanubaUtilities.ContentMode) -> CoreFoundation.CGSize
+  public func constrained(_ size: CoreFoundation.CGSize) -> CoreFoundation.CGSize
+  public func filling(_ size: CoreFoundation.CGSize) -> CoreFoundation.CGSize
+  public func constrainedRect(for size: CoreFoundation.CGSize, anchor: CoreFoundation.CGPoint) -> CoreFoundation.CGRect
 }
 public enum DeviceModel : Swift.String {
   case iPodTouch5
@@ -411,6 +964,106 @@ public struct SaveButtonConfiguration {
   public var inactiveBackgroundColor: UIKit.UIColor
   public init(textConfiguration: BanubaUtilities.TextConfiguration, inactiveTextConfiguration: BanubaUtilities.TextConfiguration, text: Swift.String, width: CoreFoundation.CGFloat, height: CoreFoundation.CGFloat, cornerRadius: CoreFoundation.CGFloat, backgroundColor: UIKit.UIColor, inactiveBackgroundColor: UIKit.UIColor)
 }
+extension Swift.String : BanubaUtilities.KingfisherCompatibleValue {
+}
+public enum Source {
+  public enum Identifier {
+    public typealias Value = Swift.UInt
+  }
+  case network(any BanubaUtilities.Resource)
+  case provider(any BanubaUtilities.ImageDataProvider)
+  public var cacheKey: Swift.String {
+    get
+  }
+  public var url: Foundation.URL? {
+    get
+  }
+}
+extension BanubaUtilities.Source : Swift.Hashable {
+  public static func == (lhs: BanubaUtilities.Source, rhs: BanubaUtilities.Source) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public typealias KingfisherOptionsInfo = [BanubaUtilities.KingfisherOptionsInfoItem]
+public enum KingfisherOptionsInfoItem {
+  case targetCache(BanubaUtilities.ImageCache)
+  case originalCache(BanubaUtilities.ImageCache)
+  case downloader(BanubaUtilities.ImageDownloader)
+  case transition(BanubaUtilities.ImageTransition)
+  case downloadPriority(Swift.Float)
+  case forceRefresh
+  case fromMemoryCacheOrRefresh
+  case forceTransition
+  case cacheMemoryOnly
+  case waitForCache
+  case onlyFromCache
+  case backgroundDecode
+  case callbackQueue(BanubaUtilities.CallbackQueue)
+  case scaleFactor(CoreFoundation.CGFloat)
+  case preloadAllAnimationData
+  case requestModifier(any BanubaUtilities.AsyncImageDownloadRequestModifier)
+  case redirectHandler(any BanubaUtilities.ImageDownloadRedirectHandler)
+  case processor(any BanubaUtilities.ImageProcessor)
+  case cacheSerializer(any BanubaUtilities.CacheSerializer)
+  case imageModifier(any BanubaUtilities.ImageModifier)
+  case keepCurrentImageWhileLoading
+  case onlyLoadFirstFrame
+  case cacheOriginalImage
+  case onFailureImage(BanubaUtilities.KFCrossPlatformImage?)
+  case alsoPrefetchToMemory
+  case loadDiskFileSynchronously
+  case diskStoreWriteOptions(Foundation.Data.WritingOptions)
+  case memoryCacheExpiration(BanubaUtilities.StorageExpiration)
+  case memoryCacheAccessExtendingExpiration(BanubaUtilities.ExpirationExtending)
+  case diskCacheExpiration(BanubaUtilities.StorageExpiration)
+  case diskCacheAccessExtendingExpiration(BanubaUtilities.ExpirationExtending)
+  case processingQueue(BanubaUtilities.CallbackQueue)
+  case progressiveJPEG(BanubaUtilities.ImageProgressive)
+  case alternativeSources([BanubaUtilities.Source])
+  case retryStrategy(any BanubaUtilities.RetryStrategy)
+  case lowDataMode(BanubaUtilities.Source?)
+}
+public struct KingfisherParsedOptionsInfo {
+  public var targetCache: BanubaUtilities.ImageCache?
+  public var originalCache: BanubaUtilities.ImageCache?
+  public var downloader: BanubaUtilities.ImageDownloader?
+  public var transition: BanubaUtilities.ImageTransition
+  public var downloadPriority: Swift.Float
+  public var forceRefresh: Swift.Bool
+  public var fromMemoryCacheOrRefresh: Swift.Bool
+  public var forceTransition: Swift.Bool
+  public var cacheMemoryOnly: Swift.Bool
+  public var waitForCache: Swift.Bool
+  public var onlyFromCache: Swift.Bool
+  public var backgroundDecode: Swift.Bool
+  public var preloadAllAnimationData: Swift.Bool
+  public var callbackQueue: BanubaUtilities.CallbackQueue
+  public var scaleFactor: CoreFoundation.CGFloat
+  public var requestModifier: (any BanubaUtilities.AsyncImageDownloadRequestModifier)?
+  public var redirectHandler: (any BanubaUtilities.ImageDownloadRedirectHandler)?
+  public var processor: any BanubaUtilities.ImageProcessor
+  public var imageModifier: (any BanubaUtilities.ImageModifier)?
+  public var cacheSerializer: any BanubaUtilities.CacheSerializer
+  public var keepCurrentImageWhileLoading: Swift.Bool
+  public var onlyLoadFirstFrame: Swift.Bool
+  public var cacheOriginalImage: Swift.Bool
+  public var onFailureImage: BanubaUtilities.KFCrossPlatformImage??
+  public var alsoPrefetchToMemory: Swift.Bool
+  public var loadDiskFileSynchronously: Swift.Bool
+  public var diskStoreWriteOptions: Foundation.Data.WritingOptions
+  public var memoryCacheExpiration: BanubaUtilities.StorageExpiration?
+  public var memoryCacheAccessExtendingExpiration: BanubaUtilities.ExpirationExtending
+  public var diskCacheExpiration: BanubaUtilities.StorageExpiration?
+  public var diskCacheAccessExtendingExpiration: BanubaUtilities.ExpirationExtending
+  public var processingQueue: BanubaUtilities.CallbackQueue?
+  public var progressiveJPEG: BanubaUtilities.ImageProgressive?
+  public var alternativeSources: [BanubaUtilities.Source]?
+  public var retryStrategy: (any BanubaUtilities.RetryStrategy)?
+  public var lowDataModeSource: BanubaUtilities.Source?
+  public init(_ info: BanubaUtilities.KingfisherOptionsInfo?)
+}
 extension Swift.Encodable {
   public func toDictionary(_ encoder: Foundation.JSONEncoder = JSONEncoder()) throws -> [Swift.String : Any]
   public func toString() throws -> Swift.String
@@ -423,8 +1076,49 @@ extension CoreFoundation.CGPoint {
   public func oppositePoint() -> CoreFoundation.CGPoint
   public static func gradientPointForAngle(_ angle: CoreFoundation.CGFloat) -> CoreFoundation.CGPoint
 }
+public enum ImageTransition {
+  case none
+  case fade(Foundation.TimeInterval)
+  case flipFromLeft(Foundation.TimeInterval)
+  case flipFromRight(Foundation.TimeInterval)
+  case flipFromTop(Foundation.TimeInterval)
+  case flipFromBottom(Foundation.TimeInterval)
+  case custom(duration: Foundation.TimeInterval, options: UIKit.UIView.AnimationOptions, animations: ((UIKit.UIImageView, UIKit.UIImage) -> Swift.Void)?, completion: ((Swift.Bool) -> Swift.Void)?)
+}
+public protocol Resource {
+  var cacheKey: Swift.String { get }
+  var downloadURL: Foundation.URL { get }
+}
+extension BanubaUtilities.Resource {
+  public func convertToSource(overrideCacheKey: Swift.String? = nil) -> BanubaUtilities.Source
+}
+public struct ImageResource : BanubaUtilities.Resource {
+  public init(downloadURL: Foundation.URL, cacheKey: Swift.String? = nil)
+  public let cacheKey: Swift.String
+  public let downloadURL: Foundation.URL
+}
+extension Foundation.URL : BanubaUtilities.Resource {
+  public var cacheKey: Swift.String {
+    get
+  }
+  public var downloadURL: Foundation.URL {
+    get
+  }
+}
 extension Swift.String {
   public func lookUpForImage(in bundle: Foundation.Bundle) -> UIKit.UIImage?
+}
+public struct ImageProgressive {
+  public enum UpdatingStrategy {
+    case `default`
+    case keepCurrent
+    case replace(BanubaUtilities.KFCrossPlatformImage?)
+  }
+  @available(*, deprecated, renamed: "init()", message: "Getting a default `ImageProgressive` is deprecated due to its syntax symatic is not clear. Use `ImageProgressive.init` instead.")
+  public static let `default`: BanubaUtilities.ImageProgressive
+  public let onImageUpdated: BanubaUtilities.Delegate<BanubaUtilities.KFCrossPlatformImage, BanubaUtilities.ImageProgressive.UpdatingStrategy>
+  public init()
+  public init(isBlur: Swift.Bool, isFastestScan: Swift.Bool, scanInterval: Foundation.TimeInterval)
 }
 public protocol EffectSelectionViewControllerDelegate : AnyObject {
   func effectSelectionViewController(viewController: any BanubaUtilities.EffectSelectionViewController, didSelectFile url: Foundation.URL, isEditable: Swift.Bool, title: Swift.String, additionalTitle: Swift.String?, uuid: Foundation.UUID)
@@ -460,6 +1154,66 @@ extension BanubaUtilities.VideoTimeLineCollectionViewHandler : UIKit.UICollectio
   @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Swift.Int) -> CoreFoundation.CGFloat
   @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, minimumLineSpacingForSectionAt section: Swift.Int) -> CoreFoundation.CGFloat
 }
+public protocol ImageDownloaderDelegate : AnyObject {
+  func imageDownloader(_ downloader: BanubaUtilities.ImageDownloader, willDownloadImageForURL url: Foundation.URL, with request: Foundation.URLRequest?)
+  func imageDownloader(_ downloader: BanubaUtilities.ImageDownloader, didFinishDownloadingImageForURL url: Foundation.URL, with response: Foundation.URLResponse?, error: (any Swift.Error)?)
+  func imageDownloader(_ downloader: BanubaUtilities.ImageDownloader, didDownload data: Foundation.Data, with dataTask: BanubaUtilities.SessionDataTask) -> Foundation.Data?
+  func imageDownloader(_ downloader: BanubaUtilities.ImageDownloader, didDownload data: Foundation.Data, for url: Foundation.URL) -> Foundation.Data?
+  func imageDownloader(_ downloader: BanubaUtilities.ImageDownloader, didDownload image: BanubaUtilities.KFCrossPlatformImage, for url: Foundation.URL, with response: Foundation.URLResponse?)
+  func isValidStatusCode(_ code: Swift.Int, for downloader: BanubaUtilities.ImageDownloader) -> Swift.Bool
+  func imageDownloader(_ downloader: BanubaUtilities.ImageDownloader, didReceive response: Foundation.URLResponse, completionHandler: @escaping (Foundation.URLSession.ResponseDisposition) -> Swift.Void)
+}
+extension BanubaUtilities.ImageDownloaderDelegate {
+  public func imageDownloader(_ downloader: BanubaUtilities.ImageDownloader, willDownloadImageForURL url: Foundation.URL, with request: Foundation.URLRequest?)
+  public func imageDownloader(_ downloader: BanubaUtilities.ImageDownloader, didFinishDownloadingImageForURL url: Foundation.URL, with response: Foundation.URLResponse?, error: (any Swift.Error)?)
+  public func imageDownloader(_ downloader: BanubaUtilities.ImageDownloader, didDownload image: BanubaUtilities.KFCrossPlatformImage, for url: Foundation.URL, with response: Foundation.URLResponse?)
+  public func isValidStatusCode(_ code: Swift.Int, for downloader: BanubaUtilities.ImageDownloader) -> Swift.Bool
+  public func imageDownloader(_ downloader: BanubaUtilities.ImageDownloader, didDownload data: Foundation.Data, with task: BanubaUtilities.SessionDataTask) -> Foundation.Data?
+  public func imageDownloader(_ downloader: BanubaUtilities.ImageDownloader, didDownload data: Foundation.Data, for url: Foundation.URL) -> Foundation.Data?
+  public func imageDownloader(_ downloader: BanubaUtilities.ImageDownloader, didReceive response: Foundation.URLResponse, completionHandler: @escaping (Foundation.URLSession.ResponseDisposition) -> Swift.Void)
+}
+public struct ImageLoadingResult {
+  public let image: BanubaUtilities.KFCrossPlatformImage
+  public let url: Foundation.URL?
+  public let originalData: Foundation.Data
+}
+public struct DownloadTask {
+  public let sessionTask: BanubaUtilities.SessionDataTask
+  public let cancelToken: BanubaUtilities.SessionDataTask.CancelToken
+  public func cancel()
+}
+open class ImageDownloader {
+  public static let `default`: BanubaUtilities.ImageDownloader
+  open var downloadTimeout: Swift.Double
+  open var trustedHosts: Swift.Set<Swift.String>?
+  open var sessionConfiguration: Foundation.URLSessionConfiguration {
+    get
+    set
+  }
+  open var sessionDelegate: BanubaUtilities.SessionDelegate {
+    get
+    set
+  }
+  open var requestsUsePipelining: Swift.Bool
+  weak open var delegate: (any BanubaUtilities.ImageDownloaderDelegate)?
+  weak open var authenticationChallengeResponder: (any BanubaUtilities.AuthenticationChallengeResponsible)?
+  public init(name: Swift.String)
+  @objc deinit
+  @discardableResult
+  open func downloadImage(with url: Foundation.URL, options: BanubaUtilities.KingfisherParsedOptionsInfo, completionHandler: ((Swift.Result<BanubaUtilities.ImageLoadingResult, BanubaUtilities.KingfisherError>) -> Swift.Void)? = nil) -> BanubaUtilities.DownloadTask?
+  @discardableResult
+  open func downloadImage(with url: Foundation.URL, options: BanubaUtilities.KingfisherOptionsInfo? = nil, progressBlock: BanubaUtilities.DownloadProgressBlock? = nil, completionHandler: ((Swift.Result<BanubaUtilities.ImageLoadingResult, BanubaUtilities.KingfisherError>) -> Swift.Void)? = nil) -> BanubaUtilities.DownloadTask?
+  @discardableResult
+  open func downloadImage(with url: Foundation.URL, options: BanubaUtilities.KingfisherOptionsInfo? = nil, completionHandler: ((Swift.Result<BanubaUtilities.ImageLoadingResult, BanubaUtilities.KingfisherError>) -> Swift.Void)? = nil) -> BanubaUtilities.DownloadTask?
+}
+extension BanubaUtilities.ImageDownloader {
+  public func cancelAll()
+  public func cancel(url: Foundation.URL)
+}
+extension BanubaUtilities.ImageDownloader : BanubaUtilities.AuthenticationChallengeResponsible {
+}
+extension BanubaUtilities.ImageDownloader : BanubaUtilities.ImageDownloaderDelegate {
+}
 @_hasMissingDesignatedInitializers public class ConnectionListener {
   final public let onConnectionChanged: ((BanubaUtilities.Connection) -> ())
   @objc deinit
@@ -472,6 +1226,47 @@ public protocol ReachabilityServicing {
 }
 public struct ReachabilityServiceBuilder {
   public static func build() -> (any BanubaUtilities.ReachabilityServicing)?
+}
+public enum StorageExpiration {
+  case never
+  case seconds(Foundation.TimeInterval)
+  case days(Swift.Int)
+  case date(Foundation.Date)
+  case expired
+}
+public enum ExpirationExtending {
+  case none
+  case cacheTime
+  case expirationTime(_: BanubaUtilities.StorageExpiration)
+}
+public protocol CacheCostCalculable {
+  var cacheCost: Swift.Int { get }
+}
+public protocol DataTransformable {
+  func toData() throws -> Foundation.Data
+  static func fromData(_ data: Foundation.Data) throws -> Self
+  static var empty: Self { get }
+}
+public protocol ImageModifier {
+  func modify(_ image: BanubaUtilities.KFCrossPlatformImage) -> BanubaUtilities.KFCrossPlatformImage
+}
+public struct AnyImageModifier : BanubaUtilities.ImageModifier {
+  public init(modify: @escaping (BanubaUtilities.KFCrossPlatformImage) throws -> BanubaUtilities.KFCrossPlatformImage)
+  public func modify(_ image: BanubaUtilities.KFCrossPlatformImage) -> BanubaUtilities.KFCrossPlatformImage
+}
+public struct RenderingModeImageModifier : BanubaUtilities.ImageModifier {
+  public let renderingMode: UIKit.UIImage.RenderingMode
+  public init(renderingMode: UIKit.UIImage.RenderingMode = .automatic)
+  public func modify(_ image: BanubaUtilities.KFCrossPlatformImage) -> BanubaUtilities.KFCrossPlatformImage
+}
+public struct FlipsForRightToLeftLayoutDirectionImageModifier : BanubaUtilities.ImageModifier {
+  public init()
+  public func modify(_ image: BanubaUtilities.KFCrossPlatformImage) -> BanubaUtilities.KFCrossPlatformImage
+}
+public struct AlignmentRectInsetsImageModifier : BanubaUtilities.ImageModifier {
+  public let alignmentInsets: UIKit.UIEdgeInsets
+  public init(alignmentInsets: UIKit.UIEdgeInsets)
+  public func modify(_ image: BanubaUtilities.KFCrossPlatformImage) -> BanubaUtilities.KFCrossPlatformImage
 }
 public struct MediaTrackTimeRange : Swift.Codable {
   public let startTime: CoreMedia.CMTime
@@ -492,6 +1287,15 @@ public class MediaTrack : Swift.Codable {
   required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers public class SessionDataTask {
+  public typealias CancelToken = Swift.Int
+  public var mutableData: Foundation.Data {
+    get
+  }
+  final public let originalURL: Foundation.URL?
+  final public let task: Foundation.URLSessionDataTask
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers open class BanubaAsyncOperation : Foundation.Operation {
   @objc override dynamic open var isReady: Swift.Bool {
@@ -550,6 +1354,18 @@ extension Swift.String {
 }
 extension Swift.Double {
   public func rounded(toPlaces places: Swift.Int, rule: Swift.FloatingPointRoundingRule? = nil) -> Swift.Double
+}
+extension BanubaUtilities.KingfisherWrapper where Base : UIKit.NSTextAttachment {
+  @discardableResult
+  public func setImage(with source: BanubaUtilities.Source?, attributedView: @autoclosure @escaping () -> BanubaUtilities.KFCrossPlatformView, placeholder: BanubaUtilities.KFCrossPlatformImage? = nil, options: BanubaUtilities.KingfisherOptionsInfo? = nil, progressBlock: BanubaUtilities.DownloadProgressBlock? = nil, completionHandler: ((Swift.Result<BanubaUtilities.RetrieveImageResult, BanubaUtilities.KingfisherError>) -> Swift.Void)? = nil) -> BanubaUtilities.DownloadTask?
+  @discardableResult
+  public func setImage(with resource: (any BanubaUtilities.Resource)?, attributedView: @autoclosure @escaping () -> BanubaUtilities.KFCrossPlatformView, placeholder: BanubaUtilities.KFCrossPlatformImage? = nil, options: BanubaUtilities.KingfisherOptionsInfo? = nil, progressBlock: BanubaUtilities.DownloadProgressBlock? = nil, completionHandler: ((Swift.Result<BanubaUtilities.RetrieveImageResult, BanubaUtilities.KingfisherError>) -> Swift.Void)? = nil) -> BanubaUtilities.DownloadTask?
+  public func cancelDownloadTask()
+}
+extension BanubaUtilities.KingfisherWrapper where Base : UIKit.NSTextAttachment {
+  public var taskIdentifier: BanubaUtilities.Source.Identifier.Value? {
+    get
+  }
 }
 @objc public class AlbumsConfiguration : ObjectiveC.NSObject {
   public var textButton: BanubaUtilities.TextButtonConfiguration
@@ -611,6 +1427,14 @@ public struct AlertViewConfiguration {
   public var preferredStatusBarStyle: UIKit.UIStatusBarStyle
   public init(cornerRadius: CoreFoundation.CGFloat, refuseButtonRadius: CoreFoundation.CGFloat, agreeButtonRadius: CoreFoundation.CGFloat, additionalButtonRadius: CoreFoundation.CGFloat, refuseButtonBackgroundColor: UIKit.UIColor, agreeButtonBackgroundColor: UIKit.UIColor, additionalButtonBackgroundColor: UIKit.UIColor, refuseButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration, agreeButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration, additionalButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration, resetButtonTextConfig: BanubaUtilities.TextButtonConfiguration, refuseButtonTextConfig: BanubaUtilities.TextButtonConfiguration, agreeButtonTextConfig: BanubaUtilities.TextButtonConfiguration, additionalButtonTextConfig: BanubaUtilities.TextButtonConfiguration, titleTextConfig: BanubaUtilities.TextConfiguration, messageTextCongig: BanubaUtilities.TextConfiguration? = nil, preferredStatusBarStyle: UIKit.UIStatusBarStyle)
 }
+public typealias ExecutionQueue = BanubaUtilities.CallbackQueue
+public enum CallbackQueue {
+  case mainAsync
+  case mainCurrentOrAsync
+  case untouch
+  case dispatch(Dispatch.DispatchQueue)
+  public func execute(_ block: @escaping () -> Swift.Void)
+}
 public struct GalleryItemConfiguration {
   public var orderNumberBackgroudColor: UIKit.UIColor
   public var orderNumberTitleColor: UIKit.UIColor
@@ -622,6 +1446,55 @@ public struct GalleryItemConfiguration {
   public var activityIndicatorConfiguration: BanubaUtilities.SmallActivityIndicatorConfiguration
   public var cornerRadius: CoreFoundation.CGFloat
   public init(orderNumberBackgroudColor: UIKit.UIColor, orderNumberTitleColor: UIKit.UIColor, orderNumberTitleFont: UIKit.UIFont, backgroundSelectionIndicatorImageName: Swift.String, hideSelectionIndicatorBySelection: Swift.Bool, durationLabelConfiguration: BanubaUtilities.TextConfiguration, durationLabelBackgroundColor: UIKit.UIColor, activityIndicatorConfiguration: BanubaUtilities.SmallActivityIndicatorConfiguration, cornerRadius: CoreFoundation.CGFloat)
+}
+public enum KF {
+  public static func source(_ source: BanubaUtilities.Source?) -> BanubaUtilities.KF.Builder
+  public static func resource(_ resource: (any BanubaUtilities.Resource)?) -> BanubaUtilities.KF.Builder
+  public static func url(_ url: Foundation.URL?, cacheKey: Swift.String? = nil) -> BanubaUtilities.KF.Builder
+  public static func dataProvider(_ provider: (any BanubaUtilities.ImageDataProvider)?) -> BanubaUtilities.KF.Builder
+  public static func data(_ data: Foundation.Data?, cacheKey: Swift.String) -> BanubaUtilities.KF.Builder
+}
+extension BanubaUtilities.KF {
+  @_hasMissingDesignatedInitializers public class Builder {
+    public var options: BanubaUtilities.KingfisherParsedOptionsInfo
+    final public let onFailureDelegate: BanubaUtilities.Delegate<BanubaUtilities.KingfisherError, Swift.Void>
+    final public let onSuccessDelegate: BanubaUtilities.Delegate<BanubaUtilities.RetrieveImageResult, Swift.Void>
+    final public let onProgressDelegate: BanubaUtilities.Delegate<(Swift.Int64, Swift.Int64), Swift.Void>
+    @objc deinit
+  }
+}
+extension BanubaUtilities.KF.Builder {
+  @discardableResult
+  public func set(to imageView: BanubaUtilities.KFCrossPlatformImageView) -> BanubaUtilities.DownloadTask?
+  @discardableResult
+  public func set(to attachment: UIKit.NSTextAttachment, attributedView: @autoclosure @escaping () -> BanubaUtilities.KFCrossPlatformView) -> BanubaUtilities.DownloadTask?
+  @discardableResult
+  public func set(to button: UIKit.UIButton, for state: UIKit.UIControl.State) -> BanubaUtilities.DownloadTask?
+  @discardableResult
+  public func setBackground(to button: UIKit.UIButton, for state: UIKit.UIControl.State) -> BanubaUtilities.DownloadTask?
+}
+extension BanubaUtilities.KF.Builder {
+  public func placeholder(_ placeholder: (any BanubaUtilities.Placeholder)?) -> Self
+  public func placeholder(_ image: BanubaUtilities.KFCrossPlatformImage?) -> Self
+}
+extension BanubaUtilities.KF.Builder {
+  public func transition(_ transition: BanubaUtilities.ImageTransition) -> Self
+  public func fade(duration: Foundation.TimeInterval) -> Self
+  public func keepCurrentImageWhileLoading(_ enabled: Swift.Bool = true) -> Self
+  public func onlyLoadFirstFrame(_ enabled: Swift.Bool = true) -> Self
+  public func progressiveJPEG(_ progressive: BanubaUtilities.ImageProgressive? = .init()) -> Self
+}
+extension BanubaUtilities.KF.Builder {
+  @available(*, deprecated, message: "This is not necessary anymore since `@StateObject` is used. It does nothing now and please just remove it.")
+  public func loadImmediately(_ start: Swift.Bool = true) -> Self
+}
+extension BanubaUtilities.KF {
+  public struct RedirectPayload {
+    public let task: BanubaUtilities.SessionDataTask
+    public let response: Foundation.HTTPURLResponse
+    public let newRequest: Foundation.URLRequest
+    public let completionHandler: (Foundation.URLRequest?) -> Swift.Void
+  }
 }
 extension UIKit.UIStackView {
   @_Concurrency.MainActor(unsafe) public func addArrangedSubviews(_ subviews: [UIKit.UIView])
@@ -641,6 +1514,18 @@ extension CoreFoundation.CGFloat {
   public var gradientPoints: (CoreFoundation.CGPoint, CoreFoundation.CGPoint) {
     get
   }
+}
+@_inheritsConvenienceInitializers @objc(KFSessionDelegate) open class SessionDelegate : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension BanubaUtilities.SessionDelegate : Foundation.URLSessionDataDelegate {
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive response: Foundation.URLResponse, completionHandler: @escaping (Foundation.URLSession.ResponseDisposition) -> Swift.Void)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive data: Foundation.Data)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didCompleteWithError error: (any Swift.Error)?)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+  @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, willPerformHTTPRedirection response: Foundation.HTTPURLResponse, newRequest request: Foundation.URLRequest, completionHandler: @escaping (Foundation.URLRequest?) -> Swift.Void)
 }
 public struct ItemCollectionModel {
   public var assetCollection: Photos.PHAssetCollection
@@ -684,6 +1569,18 @@ extension BanubaUtilities.GalleryManager {
 }
 extension BanubaUtilities.GalleryManager {
   public static func requestAccessIfNeeded(completion: @escaping (Swift.Bool) -> ())
+}
+public struct ImageCreatingOptions {
+  public let scale: CoreFoundation.CGFloat
+  public let duration: Foundation.TimeInterval
+  public let preloadAll: Swift.Bool
+  public let onlyFirstFrame: Swift.Bool
+  public init(scale: CoreFoundation.CGFloat = 1.0, duration: Foundation.TimeInterval = 0.0, preloadAll: Swift.Bool = false, onlyFirstFrame: Swift.Bool = false)
+}
+@_hasMissingDesignatedInitializers public class GIFAnimatedImage {
+  public static func getFrameDuration(from gifInfo: [Swift.String : Any]?) -> Foundation.TimeInterval
+  public static func getFrameDuration(from imageSource: ImageIO.CGImageSource, at index: Swift.Int) -> Foundation.TimeInterval
+  @objc deinit
 }
 @objc public protocol GalleryViewControllerDelegate {
   @objc func galleryViewController(_ controller: BanubaUtilities.GalleryViewController, didStartExportWith progressHandler: BanubaUtilities.ProgressHandler)
@@ -787,6 +1684,27 @@ extension Swift.Int32 {
 public struct DeviceVibrateManager {
   public static func vibrate(withPower power: UIKit.UIImpactFeedbackGenerator.FeedbackStyle)
 }
+public protocol CacheSerializer {
+  func data(with image: BanubaUtilities.KFCrossPlatformImage, original: Foundation.Data?) -> Foundation.Data?
+  func image(with data: Foundation.Data, options: BanubaUtilities.KingfisherParsedOptionsInfo) -> BanubaUtilities.KFCrossPlatformImage?
+  var originalDataUsed: Swift.Bool { get }
+}
+extension BanubaUtilities.CacheSerializer {
+  public var originalDataUsed: Swift.Bool {
+    get
+  }
+}
+public struct DefaultCacheSerializer : BanubaUtilities.CacheSerializer {
+  public static let `default`: BanubaUtilities.DefaultCacheSerializer
+  public var compressionQuality: CoreFoundation.CGFloat
+  public var preferCacheOriginalData: Swift.Bool
+  public var originalDataUsed: Swift.Bool {
+    get
+  }
+  public init()
+  public func data(with image: BanubaUtilities.KFCrossPlatformImage, original: Foundation.Data?) -> Foundation.Data?
+  public func image(with data: Foundation.Data, options: BanubaUtilities.KingfisherParsedOptionsInfo) -> BanubaUtilities.KFCrossPlatformImage?
+}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class CircularProgressView : UIKit.UIView, BanubaUtilities.ProgressAnimatableView {
   @_Concurrency.MainActor(unsafe) public var progressColor: UIKit.UIColor {
     get
@@ -807,6 +1725,64 @@ public struct DeviceVibrateManager {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
+}
+public typealias KFCrossPlatformImage = UIKit.UIImage
+public typealias KFCrossPlatformColor = UIKit.UIColor
+public typealias KFCrossPlatformImageView = UIKit.UIImageView
+public typealias KFCrossPlatformView = UIKit.UIView
+public typealias KFCrossPlatformButton = UIKit.UIButton
+public struct KingfisherWrapper<Base> {
+  public let base: Base
+  public init(_ base: Base)
+}
+public protocol KingfisherCompatible : AnyObject {
+}
+public protocol KingfisherCompatibleValue {
+}
+extension BanubaUtilities.KingfisherCompatible {
+  public var kf: BanubaUtilities.KingfisherWrapper<Self> {
+    get
+    set
+  }
+}
+extension BanubaUtilities.KingfisherCompatibleValue {
+  public var kf: BanubaUtilities.KingfisherWrapper<Self> {
+    get
+    set
+  }
+}
+extension UIKit.UIImage : BanubaUtilities.KingfisherCompatible {
+}
+extension UIKit.UIImageView : BanubaUtilities.KingfisherCompatible {
+}
+extension UIKit.UIButton : BanubaUtilities.KingfisherCompatible {
+}
+extension UIKit.NSTextAttachment : BanubaUtilities.KingfisherCompatible {
+}
+public typealias IndicatorView = UIKit.UIView
+public enum IndicatorType {
+  case none
+  case activity(color: UIKit.UIColor)
+  case image(imageData: Foundation.Data)
+  case custom(indicator: any BanubaUtilities.Indicator)
+}
+public protocol Indicator {
+  func startAnimatingView()
+  func stopAnimatingView()
+  var centerOffset: CoreFoundation.CGPoint { get }
+  var view: BanubaUtilities.IndicatorView { get }
+  func sizeStrategy(in imageView: BanubaUtilities.KFCrossPlatformImageView) -> BanubaUtilities.IndicatorSizeStrategy
+}
+public enum IndicatorSizeStrategy {
+  case intrinsicSize
+  case full
+  case size(CoreFoundation.CGSize)
+}
+extension BanubaUtilities.Indicator {
+  public var centerOffset: CoreFoundation.CGPoint {
+    get
+  }
+  public func sizeStrategy(in imageView: BanubaUtilities.KFCrossPlatformImageView) -> BanubaUtilities.IndicatorSizeStrategy
 }
 @objc public protocol ImageConfigurationProtocol {
   @objc var image: UIKit.UIImage? { get }
@@ -865,6 +1841,31 @@ extension UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public func embed(toView view: UIKit.UIView, offset: CoreFoundation.CGFloat = .zero, forceLayoutPass: Swift.Bool = true)
   @_Concurrency.MainActor(unsafe) public func unembed()
 }
+extension BanubaUtilities.KingfisherWrapper where Base : UIKit.UIImage {
+  public var imageFrameCount: Swift.Int? {
+    get
+    set
+  }
+  public var imageSource: ImageIO.CGImageSource? {
+    get
+  }
+}
+extension BanubaUtilities.KingfisherWrapper where Base : UIKit.UIImage {
+  public var normalized: BanubaUtilities.KFCrossPlatformImage {
+    get
+  }
+}
+extension BanubaUtilities.KingfisherWrapper where Base : UIKit.UIImage {
+  public func pngRepresentation() -> Foundation.Data?
+  public func jpegRepresentation(compressionQuality: CoreFoundation.CGFloat) -> Foundation.Data?
+  public func gifRepresentation() -> Foundation.Data?
+  public func data(format: BanubaUtilities.ImageFormat, compressionQuality: CoreFoundation.CGFloat = 1.0) -> Foundation.Data?
+}
+extension BanubaUtilities.KingfisherWrapper where Base : UIKit.UIImage {
+  public static func animatedImage(data: Foundation.Data, options: BanubaUtilities.ImageCreatingOptions) -> BanubaUtilities.KFCrossPlatformImage?
+  public static func image(data: Foundation.Data, options: BanubaUtilities.ImageCreatingOptions) -> BanubaUtilities.KFCrossPlatformImage?
+  public static func downsampledImage(data: Foundation.Data, to pointSize: CoreFoundation.CGSize, scale: CoreFoundation.CGFloat) -> BanubaUtilities.KFCrossPlatformImage?
+}
 public struct ToastConfiguration {
   public var kern: Swift.Double
   public var font: UIKit.UIFont
@@ -884,11 +1885,57 @@ extension BanubaUtilities.ToastConfiguration {
   @_Concurrency.MainActor(unsafe) open func commonInit()
   @objc deinit
 }
+public enum MemoryStorage {
+  public class Backend<T> where T : BanubaUtilities.CacheCostCalculable {
+    public var config: BanubaUtilities.MemoryStorage.Config {
+      get
+      set
+    }
+    public init(config: BanubaUtilities.MemoryStorage.Config)
+    public func removeExpired()
+    public func store(value: T, forKey key: Swift.String, expiration: BanubaUtilities.StorageExpiration? = nil)
+    public func value(forKey key: Swift.String, extendingExpiration: BanubaUtilities.ExpirationExtending = .cacheTime) -> T?
+    public func isCached(forKey key: Swift.String) -> Swift.Bool
+    public func remove(forKey key: Swift.String)
+    public func removeAll()
+    @objc deinit
+  }
+}
+extension BanubaUtilities.MemoryStorage {
+  public struct Config {
+    public var totalCostLimit: Swift.Int
+    public var countLimit: Swift.Int
+    public var expiration: BanubaUtilities.StorageExpiration
+    public var cleanInterval: Foundation.TimeInterval
+    public var keepWhenEnteringBackground: Swift.Bool
+    public init(totalCostLimit: Swift.Int, cleanInterval: Foundation.TimeInterval = 120)
+  }
+}
 public struct GalleryLayoutConfiguration {
   public var numberOfItemsPerRow: Swift.Int
   public var interitemSpacing: CoreFoundation.CGFloat
   public var edgeInsets: UIKit.UIEdgeInsets
   public init(numberOfItemsPerRow: Swift.Int, interitemSpacing: CoreFoundation.CGFloat, edgeInsets: UIKit.UIEdgeInsets)
+}
+extension BanubaUtilities.KingfisherWrapper where Base : UIKit.UIButton {
+  @discardableResult
+  public func setImage(with source: BanubaUtilities.Source?, for state: UIKit.UIControl.State, placeholder: UIKit.UIImage? = nil, options: BanubaUtilities.KingfisherOptionsInfo? = nil, progressBlock: BanubaUtilities.DownloadProgressBlock? = nil, completionHandler: ((Swift.Result<BanubaUtilities.RetrieveImageResult, BanubaUtilities.KingfisherError>) -> Swift.Void)? = nil) -> BanubaUtilities.DownloadTask?
+  @discardableResult
+  public func setImage(with resource: (any BanubaUtilities.Resource)?, for state: UIKit.UIControl.State, placeholder: UIKit.UIImage? = nil, options: BanubaUtilities.KingfisherOptionsInfo? = nil, progressBlock: BanubaUtilities.DownloadProgressBlock? = nil, completionHandler: ((Swift.Result<BanubaUtilities.RetrieveImageResult, BanubaUtilities.KingfisherError>) -> Swift.Void)? = nil) -> BanubaUtilities.DownloadTask?
+  @discardableResult
+  public func setImage(with source: BanubaUtilities.Source?, for state: UIKit.UIControl.State, placeholder: UIKit.UIImage? = nil, parsedOptions: BanubaUtilities.KingfisherParsedOptionsInfo, progressBlock: BanubaUtilities.DownloadProgressBlock? = nil, completionHandler: ((Swift.Result<BanubaUtilities.RetrieveImageResult, BanubaUtilities.KingfisherError>) -> Swift.Void)? = nil) -> BanubaUtilities.DownloadTask?
+  public func cancelImageDownloadTask()
+  @discardableResult
+  public func setBackgroundImage(with source: BanubaUtilities.Source?, for state: UIKit.UIControl.State, placeholder: UIKit.UIImage? = nil, options: BanubaUtilities.KingfisherOptionsInfo? = nil, progressBlock: BanubaUtilities.DownloadProgressBlock? = nil, completionHandler: ((Swift.Result<BanubaUtilities.RetrieveImageResult, BanubaUtilities.KingfisherError>) -> Swift.Void)? = nil) -> BanubaUtilities.DownloadTask?
+  @discardableResult
+  public func setBackgroundImage(with resource: (any BanubaUtilities.Resource)?, for state: UIKit.UIControl.State, placeholder: UIKit.UIImage? = nil, options: BanubaUtilities.KingfisherOptionsInfo? = nil, progressBlock: BanubaUtilities.DownloadProgressBlock? = nil, completionHandler: ((Swift.Result<BanubaUtilities.RetrieveImageResult, BanubaUtilities.KingfisherError>) -> Swift.Void)? = nil) -> BanubaUtilities.DownloadTask?
+  public func cancelBackgroundImageDownloadTask()
+}
+extension BanubaUtilities.KingfisherWrapper where Base : UIKit.UIButton {
+  public func taskIdentifier(for state: UIKit.UIControl.State) -> BanubaUtilities.Source.Identifier.Value?
+}
+extension BanubaUtilities.KingfisherWrapper where Base : UIKit.UIButton {
+  public func backgroundTaskIdentifier(for state: UIKit.UIControl.State) -> BanubaUtilities.Source.Identifier.Value?
 }
 public protocol ReusableView : AnyObject {
 }
@@ -921,6 +1968,27 @@ public enum DrawableFigure : Swift.String, Swift.Codable {
   public var rawValue: Swift.String {
     get
   }
+}
+extension BanubaUtilities.KingfisherWrapper where Base : UIKit.UIImage {
+  public func image(withBlendMode blendMode: CoreGraphics.CGBlendMode, alpha: CoreFoundation.CGFloat = 1.0, backgroundColor: BanubaUtilities.KFCrossPlatformColor? = nil) -> BanubaUtilities.KFCrossPlatformImage
+  public func image(withRadius radius: BanubaUtilities.Radius, fit size: CoreFoundation.CGSize, roundingCorners corners: BanubaUtilities.RectCorner = .all, backgroundColor: BanubaUtilities.KFCrossPlatformColor? = nil) -> BanubaUtilities.KFCrossPlatformImage
+  public func image(withRoundRadius radius: CoreFoundation.CGFloat, fit size: CoreFoundation.CGSize, roundingCorners corners: BanubaUtilities.RectCorner = .all, backgroundColor: BanubaUtilities.KFCrossPlatformColor? = nil) -> BanubaUtilities.KFCrossPlatformImage
+  public func resize(to size: CoreFoundation.CGSize) -> BanubaUtilities.KFCrossPlatformImage
+  public func resize(to targetSize: CoreFoundation.CGSize, for contentMode: BanubaUtilities.ContentMode) -> BanubaUtilities.KFCrossPlatformImage
+  public func crop(to size: CoreFoundation.CGSize, anchorOn anchor: CoreFoundation.CGPoint) -> BanubaUtilities.KFCrossPlatformImage
+  public func blurred(withRadius radius: CoreFoundation.CGFloat) -> BanubaUtilities.KFCrossPlatformImage
+  public func addingBorder(_ border: BanubaUtilities.Border) -> BanubaUtilities.KFCrossPlatformImage
+  public func overlaying(with color: BanubaUtilities.KFCrossPlatformColor, fraction: CoreFoundation.CGFloat) -> BanubaUtilities.KFCrossPlatformImage
+  public func tinted(with color: BanubaUtilities.KFCrossPlatformColor) -> BanubaUtilities.KFCrossPlatformImage
+  public func adjusted(brightness: CoreFoundation.CGFloat, contrast: CoreFoundation.CGFloat, saturation: CoreFoundation.CGFloat, inputEV: CoreFoundation.CGFloat) -> BanubaUtilities.KFCrossPlatformImage
+  public func scaled(to scale: CoreFoundation.CGFloat) -> BanubaUtilities.KFCrossPlatformImage
+}
+extension BanubaUtilities.KingfisherWrapper where Base : UIKit.UIImage {
+  public var decoded: BanubaUtilities.KFCrossPlatformImage {
+    get
+  }
+  public func decoded(scale: CoreFoundation.CGFloat) -> BanubaUtilities.KFCrossPlatformImage
+  public func decoded(on context: CoreGraphics.CGContext) -> BanubaUtilities.KFCrossPlatformImage
 }
 public class AudioServiceItem : BanubaUtilities.AudioItem {
   final public let uuid: Foundation.UUID
@@ -1037,6 +2105,13 @@ extension BanubaUtilities.BanubaGalleryItem {
 @objc public protocol GalleryViewControllerFactory : ObjectiveC.NSObjectProtocol {
   @objc func makeGalleryViewController(withConfiguration configuration: BanubaUtilities.GalleryConfiguration, albumsConfiguration: BanubaUtilities.AlbumsConfiguration, selectionBehaviour: BanubaUtilities.GallerySelectionBehaviour) -> BanubaUtilities.GalleryViewController
 }
+public protocol ImageDownloadRedirectHandler {
+  func handleHTTPRedirection(for task: BanubaUtilities.SessionDataTask, response: Foundation.HTTPURLResponse, newRequest: Foundation.URLRequest, completionHandler: @escaping (Foundation.URLRequest?) -> Swift.Void)
+}
+public struct AnyRedirectHandler : BanubaUtilities.ImageDownloadRedirectHandler {
+  public func handleHTTPRedirection(for task: BanubaUtilities.SessionDataTask, response: Foundation.HTTPURLResponse, newRequest: Foundation.URLRequest, completionHandler: @escaping (Foundation.URLRequest?) -> Swift.Void)
+  public init(handle: @escaping (BanubaUtilities.SessionDataTask, Foundation.HTTPURLResponse, Foundation.URLRequest, @escaping (Foundation.URLRequest?) -> Swift.Void) -> Swift.Void)
+}
 public struct AudioPartSelectionViewConfiguration {
   public static var dark: BanubaUtilities.AudioPartSelectionViewConfiguration {
     get
@@ -1064,6 +2139,41 @@ extension Swift.Error {
   public var errorMessage: Swift.String {
     get
   }
+}
+@_hasMissingDesignatedInitializers public class RetryContext {
+  final public let source: BanubaUtilities.Source
+  final public let error: BanubaUtilities.KingfisherError
+  public var retriedCount: Swift.Int
+  public var userInfo: Any? {
+    get
+  }
+  @objc deinit
+}
+public enum RetryDecision {
+  case retry(userInfo: Any?)
+  case stop
+}
+public protocol RetryStrategy {
+  func retry(context: BanubaUtilities.RetryContext, retryHandler: @escaping (BanubaUtilities.RetryDecision) -> Swift.Void)
+}
+public struct DelayRetryStrategy : BanubaUtilities.RetryStrategy {
+  public enum Interval {
+    case seconds(Foundation.TimeInterval)
+    case accumulated(Foundation.TimeInterval)
+    case custom(block: (_ retriedCount: Swift.Int) -> Foundation.TimeInterval)
+  }
+  public let maxRetryCount: Swift.Int
+  public let retryInterval: BanubaUtilities.DelayRetryStrategy.Interval
+  public init(maxRetryCount: Swift.Int, retryInterval: BanubaUtilities.DelayRetryStrategy.Interval = .seconds(3))
+  public func retry(context: BanubaUtilities.RetryContext, retryHandler: @escaping (BanubaUtilities.RetryDecision) -> Swift.Void)
+}
+public struct FormatIndicatedCacheSerializer : BanubaUtilities.CacheSerializer {
+  public static let png: BanubaUtilities.FormatIndicatedCacheSerializer
+  public static let jpeg: BanubaUtilities.FormatIndicatedCacheSerializer
+  public static func jpeg(compressionQuality: CoreFoundation.CGFloat) -> BanubaUtilities.FormatIndicatedCacheSerializer
+  public static let gif: BanubaUtilities.FormatIndicatedCacheSerializer
+  public func data(with image: BanubaUtilities.KFCrossPlatformImage, original: Foundation.Data?) -> Foundation.Data?
+  public func image(with data: Foundation.Data, options: BanubaUtilities.KingfisherParsedOptionsInfo) -> BanubaUtilities.KFCrossPlatformImage?
 }
 extension UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public func dropShadow(_ offset: CoreFoundation.CGSize = CGSize(width: 0, height: 1), blur: CoreFoundation.CGFloat = 1, opacity: Swift.Float = 1)
@@ -1158,6 +2268,36 @@ public struct VideoResolutionConfiguration {
 }
 extension AVFoundation.AVCaptureSession.Preset {
   public mutating func downgrade()
+}
+extension BanubaUtilities.KingfisherWrapper where Base : UIKit.UIImageView {
+  @discardableResult
+  public func setImage(with source: BanubaUtilities.Source?, placeholder: (any BanubaUtilities.Placeholder)? = nil, options: BanubaUtilities.KingfisherOptionsInfo? = nil, progressBlock: BanubaUtilities.DownloadProgressBlock? = nil, completionHandler: ((Swift.Result<BanubaUtilities.RetrieveImageResult, BanubaUtilities.KingfisherError>) -> Swift.Void)? = nil) -> BanubaUtilities.DownloadTask?
+  @discardableResult
+  public func setImage(with source: BanubaUtilities.Source?, placeholder: (any BanubaUtilities.Placeholder)? = nil, options: BanubaUtilities.KingfisherOptionsInfo? = nil, completionHandler: ((Swift.Result<BanubaUtilities.RetrieveImageResult, BanubaUtilities.KingfisherError>) -> Swift.Void)? = nil) -> BanubaUtilities.DownloadTask?
+  @discardableResult
+  public func setImage(with resource: (any BanubaUtilities.Resource)?, placeholder: (any BanubaUtilities.Placeholder)? = nil, options: BanubaUtilities.KingfisherOptionsInfo? = nil, progressBlock: BanubaUtilities.DownloadProgressBlock? = nil, completionHandler: ((Swift.Result<BanubaUtilities.RetrieveImageResult, BanubaUtilities.KingfisherError>) -> Swift.Void)? = nil) -> BanubaUtilities.DownloadTask?
+  @discardableResult
+  public func setImage(with resource: (any BanubaUtilities.Resource)?, placeholder: (any BanubaUtilities.Placeholder)? = nil, options: BanubaUtilities.KingfisherOptionsInfo? = nil, completionHandler: ((Swift.Result<BanubaUtilities.RetrieveImageResult, BanubaUtilities.KingfisherError>) -> Swift.Void)? = nil) -> BanubaUtilities.DownloadTask?
+  @discardableResult
+  public func setImage(with provider: (any BanubaUtilities.ImageDataProvider)?, placeholder: (any BanubaUtilities.Placeholder)? = nil, options: BanubaUtilities.KingfisherOptionsInfo? = nil, progressBlock: BanubaUtilities.DownloadProgressBlock? = nil, completionHandler: ((Swift.Result<BanubaUtilities.RetrieveImageResult, BanubaUtilities.KingfisherError>) -> Swift.Void)? = nil) -> BanubaUtilities.DownloadTask?
+  @discardableResult
+  public func setImage(with provider: (any BanubaUtilities.ImageDataProvider)?, placeholder: (any BanubaUtilities.Placeholder)? = nil, options: BanubaUtilities.KingfisherOptionsInfo? = nil, completionHandler: ((Swift.Result<BanubaUtilities.RetrieveImageResult, BanubaUtilities.KingfisherError>) -> Swift.Void)? = nil) -> BanubaUtilities.DownloadTask?
+  public func cancelDownloadTask()
+}
+extension BanubaUtilities.KingfisherWrapper where Base : UIKit.UIImageView {
+  public var taskIdentifier: BanubaUtilities.Source.Identifier.Value? {
+    get
+  }
+  public var indicatorType: BanubaUtilities.IndicatorType {
+    get
+    set
+  }
+  public var indicator: (any BanubaUtilities.Indicator)? {
+    get
+  }
+  public var placeholder: (any BanubaUtilities.Placeholder)? {
+    get
+  }
 }
 public struct BorderButtonConfiguration {
   public var borderWidth: CoreFoundation.CGFloat
@@ -1348,6 +2488,47 @@ extension BanubaUtilities.NibLoadable {
 extension BanubaUtilities.NibLoadable where Self : UIKit.UIView {
   public static func loadFromNib() -> Self
 }
+public enum ImageFormat {
+  case unknown
+  case PNG
+  case JPEG
+  case GIF
+  public enum JPEGMarker {
+    case SOF0
+    case SOF2
+    case DHT
+    case DQT
+    case DRI
+    case SOS
+    case RSTn(Swift.UInt8)
+    case APPn
+    case COM
+    case EOI
+  }
+  public static func == (a: BanubaUtilities.ImageFormat, b: BanubaUtilities.ImageFormat) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension Foundation.Data : BanubaUtilities.KingfisherCompatibleValue {
+}
+extension BanubaUtilities.KingfisherWrapper where Base == Foundation.Data {
+  public var imageFormat: BanubaUtilities.ImageFormat {
+    get
+  }
+  public func contains(jpeg marker: BanubaUtilities.ImageFormat.JPEGMarker) -> Swift.Bool
+}
+@available(*, deprecated, renamed: "AuthenticationChallengeResponsible", message: "Typo. Use `AuthenticationChallengeResponsible` instead")
+public typealias AuthenticationChallengeResponsable = BanubaUtilities.AuthenticationChallengeResponsible
+public protocol AuthenticationChallengeResponsible : AnyObject {
+  func downloader(_ downloader: BanubaUtilities.ImageDownloader, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+  func downloader(_ downloader: BanubaUtilities.ImageDownloader, task: Foundation.URLSessionTask, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+}
+extension BanubaUtilities.AuthenticationChallengeResponsible {
+  public func downloader(_ downloader: BanubaUtilities.ImageDownloader, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+  public func downloader(_ downloader: BanubaUtilities.ImageDownloader, task: Foundation.URLSessionTask, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+}
 @objc public class TextConfiguration : ObjectiveC.NSObject {
   public var kern: Swift.Double
   public var font: UIKit.UIFont
@@ -1374,6 +2555,10 @@ extension BanubaUtilities.AspectRatio : Swift.Hashable {}
 extension BanubaUtilities.AspectRatio : Swift.RawRepresentable {}
 extension BanubaUtilities.Connection : Swift.Equatable {}
 extension BanubaUtilities.Connection : Swift.Hashable {}
+extension BanubaUtilities.ContentMode : Swift.Equatable {}
+extension BanubaUtilities.ContentMode : Swift.Hashable {}
+extension BanubaUtilities.CacheType : Swift.Equatable {}
+extension BanubaUtilities.CacheType : Swift.Hashable {}
 extension BanubaUtilities.DeviceModel : Swift.Equatable {}
 extension BanubaUtilities.DeviceModel : Swift.Hashable {}
 extension BanubaUtilities.DeviceModel : Swift.RawRepresentable {}
@@ -1408,3 +2593,5 @@ extension BanubaUtilities.AudioTrackLinePosition : Swift.Hashable {}
 extension BanubaUtilities.AudioTrackLinePosition : Swift.RawRepresentable {}
 extension BanubaUtilities.AudioTrackLineViewMovement : Swift.Equatable {}
 extension BanubaUtilities.AudioTrackLineViewMovement : Swift.Hashable {}
+extension BanubaUtilities.ImageFormat : Swift.Equatable {}
+extension BanubaUtilities.ImageFormat : Swift.Hashable {}

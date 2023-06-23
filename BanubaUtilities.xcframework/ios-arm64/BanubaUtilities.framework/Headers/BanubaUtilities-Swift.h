@@ -495,6 +495,7 @@ SWIFT_CLASS("_TtC15BanubaUtilities20CircularProgressView")
 
 
 
+
 /// The Gallery configuration
 SWIFT_CLASS("_TtC15BanubaUtilities20GalleryConfiguration")
 @interface GalleryConfiguration : NSObject
@@ -597,6 +598,7 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26ImageConfigurationProtocol_")
 
 
 
+
 SWIFT_CLASS("_TtC15BanubaUtilities7NibView")
 @interface NibView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
@@ -627,6 +629,31 @@ SWIFT_CLASS("_TtC15BanubaUtilities26PopoverAlertViewController")
 SWIFT_CLASS("_TtC15BanubaUtilities15ProgressHandler")
 @interface ProgressHandler : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS_NAMED("SessionDelegate")
+@interface KFSessionDelegate : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSURLSession;
+@class NSURLSessionDataTask;
+@class NSURLResponse;
+@class NSData;
+@class NSURLSessionTask;
+@class NSURLAuthenticationChallenge;
+@class NSURLCredential;
+@class NSHTTPURLResponse;
+@class NSURLRequest;
+
+@interface KFSessionDelegate (SWIFT_EXTENSION(BanubaUtilities)) <NSURLSessionDataDelegate>
+- (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask didReceiveResponse:(NSURLResponse * _Nonnull)response completionHandler:(void (^ _Nonnull)(NSURLSessionResponseDisposition))completionHandler;
+- (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask didReceiveData:(NSData * _Nonnull)data;
+- (void)URLSession:(NSURLSession * _Nonnull)session task:(NSURLSessionTask * _Nonnull)task didCompleteWithError:(NSError * _Nullable)error;
+- (void)URLSession:(NSURLSession * _Nonnull)session didReceiveChallenge:(NSURLAuthenticationChallenge * _Nonnull)challenge completionHandler:(void (^ _Nonnull)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler;
+- (void)URLSession:(NSURLSession * _Nonnull)session task:(NSURLSessionTask * _Nonnull)task didReceiveChallenge:(NSURLAuthenticationChallenge * _Nonnull)challenge completionHandler:(void (^ _Nonnull)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler;
+- (void)URLSession:(NSURLSession * _Nonnull)session task:(NSURLSessionTask * _Nonnull)task willPerformHTTPRedirection:(NSHTTPURLResponse * _Nonnull)response newRequest:(NSURLRequest * _Nonnull)request completionHandler:(void (^ _Nonnull)(NSURLRequest * _Nullable))completionHandler;
 @end
 
 @class UIPresentationController;
@@ -722,6 +749,14 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26TimeLineDataSourceDelegate_")
 /// timelineDataSource did finish fetching all thumbs
 - (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
 @end
+
+
+
+
+
+
+
+
 
 
 
