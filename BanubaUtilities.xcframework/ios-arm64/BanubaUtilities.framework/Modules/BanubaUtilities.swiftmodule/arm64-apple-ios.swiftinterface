@@ -1419,13 +1419,15 @@ public struct AlertViewConfiguration {
   public var agreeButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration
   public var additionalButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration
   public var resetButtonTextConfig: BanubaUtilities.TextButtonConfiguration
+  public var resetCancelButtonBackgroundColor: UIKit.UIColor
+  public var resetCancelTextConfig: BanubaUtilities.TextButtonConfiguration
   public var additionalButtonTextConfig: BanubaUtilities.TextButtonConfiguration
   public var refuseButtonTextConfig: BanubaUtilities.TextButtonConfiguration
   public var agreeButtonTextConfig: BanubaUtilities.TextButtonConfiguration
   public var titleTextConfig: BanubaUtilities.TextConfiguration
   public var messageTextCongig: BanubaUtilities.TextConfiguration?
   public var preferredStatusBarStyle: UIKit.UIStatusBarStyle
-  public init(cornerRadius: CoreFoundation.CGFloat, refuseButtonRadius: CoreFoundation.CGFloat, agreeButtonRadius: CoreFoundation.CGFloat, additionalButtonRadius: CoreFoundation.CGFloat, refuseButtonBackgroundColor: UIKit.UIColor, agreeButtonBackgroundColor: UIKit.UIColor, additionalButtonBackgroundColor: UIKit.UIColor, refuseButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration, agreeButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration, additionalButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration, resetButtonTextConfig: BanubaUtilities.TextButtonConfiguration, refuseButtonTextConfig: BanubaUtilities.TextButtonConfiguration, agreeButtonTextConfig: BanubaUtilities.TextButtonConfiguration, additionalButtonTextConfig: BanubaUtilities.TextButtonConfiguration, titleTextConfig: BanubaUtilities.TextConfiguration, messageTextCongig: BanubaUtilities.TextConfiguration? = nil, preferredStatusBarStyle: UIKit.UIStatusBarStyle)
+  public init(cornerRadius: CoreFoundation.CGFloat, refuseButtonRadius: CoreFoundation.CGFloat, agreeButtonRadius: CoreFoundation.CGFloat, additionalButtonRadius: CoreFoundation.CGFloat, refuseButtonBackgroundColor: UIKit.UIColor, agreeButtonBackgroundColor: UIKit.UIColor, additionalButtonBackgroundColor: UIKit.UIColor, refuseButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration, agreeButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration, additionalButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration, resetButtonTextConfig: BanubaUtilities.TextButtonConfiguration, resetCancelButtonBackgroundColor: UIKit.UIColor, resetCancelTextConfig: BanubaUtilities.TextButtonConfiguration, refuseButtonTextConfig: BanubaUtilities.TextButtonConfiguration, agreeButtonTextConfig: BanubaUtilities.TextButtonConfiguration, additionalButtonTextConfig: BanubaUtilities.TextButtonConfiguration, titleTextConfig: BanubaUtilities.TextConfiguration, messageTextCongig: BanubaUtilities.TextConfiguration? = nil, preferredStatusBarStyle: UIKit.UIStatusBarStyle)
 }
 public typealias ExecutionQueue = BanubaUtilities.CallbackQueue
 public enum CallbackQueue {
