@@ -189,8 +189,8 @@ extension CoreFoundation.CGRect {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public init(coverPercentage: CoreFoundation.CGFloat, panToDismiss: Swift.Bool, backgroundViewStyle: BanubaUtilities.BackgroundViewStyle, dismissOnTapByBackgroundView: Swift.Bool = false)
-  @_Concurrency.MainActor(unsafe) public init(coverHeight: CoreFoundation.CGFloat, panToDismiss: Swift.Bool, backgroundViewStyle: BanubaUtilities.BackgroundViewStyle, dismissOnTapByBackgroundView: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public init(coverPercentage: CoreFoundation.CGFloat, panToDismiss: Swift.Bool, backgroundViewStyle: BanubaUtilities.BackgroundViewStyle, dismissOnTapByBackgroundView: Swift.Bool = false, transitionDuration: Foundation.TimeInterval = 0.3)
+  @_Concurrency.MainActor(unsafe) public init(coverHeight: CoreFoundation.CGFloat, panToDismiss: Swift.Bool, backgroundViewStyle: BanubaUtilities.BackgroundViewStyle, dismissOnTapByBackgroundView: Swift.Bool, transitionDuration: Foundation.TimeInterval = 0.3)
   @_Concurrency.MainActor(unsafe) @objc convenience override dynamic public init()
   @_Concurrency.MainActor(unsafe) @objc public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
   @_Concurrency.MainActor(unsafe) @objc public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
@@ -661,6 +661,10 @@ public struct RawImageDataProvider : BanubaUtilities.ImageDataProvider {
 @_inheritsConvenienceInitializers @objc public class ZipArchive : ObjectiveC.NSObject {
   public static func zip(to destinationUrl: Foundation.URL, folderUrl: Foundation.URL) -> Swift.Bool
   public static func unzip(at sourceUrl: Foundation.URL, destination: Foundation.URL, overwrite: Swift.Bool) throws
+  #if compiler(>=5.3) && $AsyncAwait
+  @discardableResult
+  public static func unzip(at sourceUrl: Foundation.URL, destination: Foundation.URL, overwrite: Swift.Bool) async throws -> Swift.String
+  #endif
   @objc override dynamic public init()
   @objc deinit
 }
@@ -712,7 +716,8 @@ extension Swift.Double {
   public var maximumSelectedCountFromGallery: Swift.Int
   public var preferredStatusBarStyle: UIKit.UIStatusBarStyle
   public var alertConfiguration: BanubaUtilities.AlertViewConfiguration
-  public init(videoResolution: BanubaUtilities.VideoResolution, galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration, closeButtonConfiguration: any BanubaUtilities.ImageButtonConfigurationProtocol, albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration, collectionInfoHeaderConfiguration: BanubaUtilities.CollectionInfoHeaderConfiguration, galleryItemPreviewViewConfiguration: BanubaUtilities.GalleryItemPreviewViewConfiguration, nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, noItemsLabelConfiguration: BanubaUtilities.TextConfiguration, layoutConfiguration: BanubaUtilities.GalleryLayoutConfiguration, topBarBlurColor: UIKit.UIColor, clearSelectionButtonConfiguration: any BanubaUtilities.ImageButtonConfigurationProtocol, galleryTypeButton: BanubaUtilities.TextButtonConfiguration, galleryTypeUnderlineColor: UIKit.UIColor, isPhotoSequenceAnimationEnabled: Swift.Bool, importItemsLabelConfiguration: BanubaUtilities.TextConfiguration, bottomViewConfiguration: BanubaUtilities.BackgroundConfiguration, isCloseButtonHidden: Swift.Bool, visibleTabsInGallery: [BanubaUtilities.GalleryMediaType] = [.video, .photo], backgroundColor: UIKit.UIColor, maximumSelectedCountFromGallery: Swift.Int, preferredStatusBarStyle: UIKit.UIStatusBarStyle, alertConfiguration: BanubaUtilities.AlertViewConfiguration)
+  public var autoCutGalleryConfiguration: BanubaUtilities.AutoCutGalleryConfiguration?
+  public init(videoResolution: BanubaUtilities.VideoResolution, galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration, closeButtonConfiguration: any BanubaUtilities.ImageButtonConfigurationProtocol, albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration, collectionInfoHeaderConfiguration: BanubaUtilities.CollectionInfoHeaderConfiguration, galleryItemPreviewViewConfiguration: BanubaUtilities.GalleryItemPreviewViewConfiguration, nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, noItemsLabelConfiguration: BanubaUtilities.TextConfiguration, layoutConfiguration: BanubaUtilities.GalleryLayoutConfiguration, topBarBlurColor: UIKit.UIColor, clearSelectionButtonConfiguration: any BanubaUtilities.ImageButtonConfigurationProtocol, galleryTypeButton: BanubaUtilities.TextButtonConfiguration, galleryTypeUnderlineColor: UIKit.UIColor, isPhotoSequenceAnimationEnabled: Swift.Bool, importItemsLabelConfiguration: BanubaUtilities.TextConfiguration, bottomViewConfiguration: BanubaUtilities.BackgroundConfiguration, isCloseButtonHidden: Swift.Bool, visibleTabsInGallery: [BanubaUtilities.GalleryMediaType] = [.video, .photo], backgroundColor: UIKit.UIColor, maximumSelectedCountFromGallery: Swift.Int, preferredStatusBarStyle: UIKit.UIStatusBarStyle, alertConfiguration: BanubaUtilities.AlertViewConfiguration, autoCutGalleryConfiguration: BanubaUtilities.AutoCutGalleryConfiguration? = nil)
   @objc deinit
 }
 extension Foundation.NSNotification.Name {
@@ -1107,6 +1112,22 @@ extension Foundation.URL : BanubaUtilities.Resource {
 }
 extension Swift.String {
   public func lookUpForImage(in bundle: Foundation.Bundle) -> UIKit.UIImage?
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ActivityIndicatorView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var spinCircleLayer: QuartzCore.CAShapeLayer
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var bounds: CoreFoundation.CGRect {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) public var configuration: BanubaUtilities.SmallActivityIndicatorConfiguration? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public func startAnimating()
+  @_Concurrency.MainActor(unsafe) public func stopAnimating()
+  @objc deinit
 }
 public struct ImageProgressive {
   public enum UpdatingStrategy {
@@ -2212,6 +2233,26 @@ extension BanubaUtilities.SmallActivityIndicatorConfiguration.GradientType {
   @objc public static func color(_ color: BanubaUtilities.SmallActivityIndicatorConfiguration.GradientColorConfiguration) -> BanubaUtilities.SmallActivityIndicatorConfiguration.GradientType
   @objc public static func image(_ image: any BanubaUtilities.ImageConfigurationProtocol) -> BanubaUtilities.SmallActivityIndicatorConfiguration.GradientType
 }
+public struct AutoCutGalleryConfiguration {
+  public let normalApplyAutoCutButtonConfiguration: BanubaUtilities.ApplyAutoCutButtonConfiguration
+  public let disabledApplyAutoCutButtonConfiguration: BanubaUtilities.ApplyAutoCutButtonConfiguration
+  public let normalNextButtonConfiguration: BanubaUtilities.GalleryNextButtonConfiguration
+  public let disabledNextButtonConfiguration: BanubaUtilities.GalleryNextButtonConfiguration
+  public init(normalApplyAutoCutButtonConfiguration: BanubaUtilities.ApplyAutoCutButtonConfiguration, disabledApplyAutoCutButtonConfiguration: BanubaUtilities.ApplyAutoCutButtonConfiguration, normalNextButtonConfiguration: BanubaUtilities.GalleryNextButtonConfiguration, disabledNextButtonConfiguration: BanubaUtilities.GalleryNextButtonConfiguration)
+  public static var `default`: BanubaUtilities.AutoCutGalleryConfiguration {
+    get
+  }
+}
+public struct ApplyAutoCutButtonConfiguration {
+  public let borderColor: UIKit.UIColor
+  public let textAndIconColor: UIKit.UIColor
+  public init(borderColor: UIKit.UIColor, textAndIconColor: UIKit.UIColor)
+}
+public struct GalleryNextButtonConfiguration {
+  public let textColor: UIKit.UIColor
+  public let backgroundColor: UIKit.UIColor
+  public init(textColor: UIKit.UIColor, backgroundColor: UIKit.UIColor)
+}
 public enum VideoResolution : Swift.String {
   case uhd3840x2160
   case qhd2560x1440
@@ -2338,6 +2379,9 @@ public class PreviewExtractor {
   public init(asset: AVFoundation.AVAsset, thumbnailHeight: CoreFoundation.CGFloat)
   @objc deinit
   public func extractPreview(at time: CoreMedia.CMTime) -> UIKit.UIImage?
+  #if compiler(>=5.3) && $AsyncAwait
+  public func extractPreview(at time: CoreMedia.CMTime) async -> UIKit.UIImage?
+  #endif
 }
 extension UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public func roundCorners(corners: UIKit.UIRectCorner, radius: CoreFoundation.CGFloat)

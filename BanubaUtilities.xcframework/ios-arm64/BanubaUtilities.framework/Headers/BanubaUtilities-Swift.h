@@ -288,6 +288,15 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #if defined(__OBJC__)
 
+@class NSCoder;
+
+SWIFT_CLASS("_TtC15BanubaUtilities21ActivityIndicatorView")
+@interface ActivityIndicatorView : UIView
+@property (nonatomic) CGRect bounds;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class NSString;
 @class UIImage;
 @class PHAssetCollection;
@@ -321,7 +330,6 @@ SWIFT_CLASS("_TtC15BanubaUtilities19AlbumsConfiguration")
 @end
 
 @class NSBundle;
-@class NSCoder;
 
 SWIFT_CLASS("_TtC15BanubaUtilities20AlbumsViewController")
 @interface AlbumsViewController : UIViewController
@@ -338,7 +346,6 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities28AlbumsViewControllerDelegate_")
 - (void)albumsViewControllerDidClose:(AlbumsViewController * _Nonnull)controller;
 @end
 
-@class UIView;
 
 SWIFT_CLASS("_TtC15BanubaUtilities19AlertViewController")
 @interface AlertViewController : UIViewController
@@ -784,6 +791,13 @@ SWIFT_CLASS("_TtC15BanubaUtilities34VideoTimeLineCollectionViewHandler")
 @end
 
 
+
+@interface VideoTimeLineCollectionViewHandler (SWIFT_EXTENSION(BanubaUtilities)) <TimeLineDataSourceDelegate>
+- (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didPreloadPreview:(UIImage * _Nonnull)preview;
+- (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didLoadImage:(UIImage * _Nonnull)image at:(NSInteger)index;
+- (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
+@end
+
 @class UICollectionView;
 @class UICollectionViewLayout;
 @class NSIndexPath;
@@ -792,13 +806,6 @@ SWIFT_CLASS("_TtC15BanubaUtilities34VideoTimeLineCollectionViewHandler")
 - (CGSize)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (CGFloat)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (CGFloat)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-@interface VideoTimeLineCollectionViewHandler (SWIFT_EXTENSION(BanubaUtilities)) <TimeLineDataSourceDelegate>
-- (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didPreloadPreview:(UIImage * _Nonnull)preview;
-- (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didLoadImage:(UIImage * _Nonnull)image at:(NSInteger)index;
-- (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
 @end
 
 @class UICollectionViewCell;
