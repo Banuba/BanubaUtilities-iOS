@@ -2238,7 +2238,8 @@ public struct AutoCutGalleryConfiguration {
   public let disabledApplyAutoCutButtonConfiguration: BanubaUtilities.ApplyAutoCutButtonConfiguration
   public let normalNextButtonConfiguration: BanubaUtilities.GalleryNextButtonConfiguration
   public let disabledNextButtonConfiguration: BanubaUtilities.GalleryNextButtonConfiguration
-  public init(normalApplyAutoCutButtonConfiguration: BanubaUtilities.ApplyAutoCutButtonConfiguration, disabledApplyAutoCutButtonConfiguration: BanubaUtilities.ApplyAutoCutButtonConfiguration, normalNextButtonConfiguration: BanubaUtilities.GalleryNextButtonConfiguration, disabledNextButtonConfiguration: BanubaUtilities.GalleryNextButtonConfiguration)
+  public let maximumDurationOfAutoCutSourceVideos: Foundation.TimeInterval
+  public init(normalApplyAutoCutButtonConfiguration: BanubaUtilities.ApplyAutoCutButtonConfiguration, disabledApplyAutoCutButtonConfiguration: BanubaUtilities.ApplyAutoCutButtonConfiguration, normalNextButtonConfiguration: BanubaUtilities.GalleryNextButtonConfiguration, disabledNextButtonConfiguration: BanubaUtilities.GalleryNextButtonConfiguration, maximumDurationOfAutoCutSourceVideos: Foundation.TimeInterval)
   public static var `default`: BanubaUtilities.AutoCutGalleryConfiguration {
     get
   }
