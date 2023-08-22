@@ -32,15 +32,6 @@ public struct BanubaImageButtonConfiguration : BanubaUtilities.ImageButtonConfig
   public var selectedImageConfiguration: (any BanubaUtilities.ImageConfigurationProtocol)?
   public init(imageConfiguration: any BanubaUtilities.ImageConfigurationProtocol, selectedImageConfiguration: (any BanubaUtilities.ImageConfigurationProtocol)? = nil)
 }
-public enum AlertViewStyle {
-  case `default`
-  case system
-  public static func == (a: BanubaUtilities.AlertViewStyle, b: BanubaUtilities.AlertViewStyle) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class AlertViewController : UIKit.UIViewController, BanubaUtilities.NibLoadable {
   @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak public var contextView: UIKit.UIView!
   @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak public var backgroundView: UIKit.UIView!
@@ -345,7 +336,7 @@ extension UIKit.UIButton {
   @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.RoundedButtonConfiguration, with title: Swift.String)
   @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.SaveButtonConfiguration)
   @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.TextButtonConfiguration, with title: Swift.String)
-  @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.TextConfiguration?, with title: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: BanubaUtilities.TextConfiguration, with title: Swift.String)
   @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: (any BanubaUtilities.ImageConfigurationProtocol)?, forState controlState: UIKit.UIControl.State)
 }
 public protocol Placeholder {
@@ -707,7 +698,6 @@ extension Swift.Double {
   public var galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration
   public var closeButtonConfiguration: any BanubaUtilities.ImageButtonConfigurationProtocol
   public var albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration
-  public var albumArrowIconConfiguration: any BanubaUtilities.ImageConfigurationProtocol
   public var collectionInfoHeaderConfiguration: BanubaUtilities.CollectionInfoHeaderConfiguration
   public var galleryItemPreviewViewConfiguration: BanubaUtilities.GalleryItemPreviewViewConfiguration
   public var nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration
@@ -727,7 +717,7 @@ extension Swift.Double {
   public var preferredStatusBarStyle: UIKit.UIStatusBarStyle
   public var alertConfiguration: BanubaUtilities.AlertViewConfiguration
   public var autoCutGalleryConfiguration: BanubaUtilities.AutoCutGalleryConfiguration?
-  public init(videoResolution: BanubaUtilities.VideoResolution, galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration, closeButtonConfiguration: any BanubaUtilities.ImageButtonConfigurationProtocol, albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration, albumArrowIconConfiguration: any BanubaUtilities.ImageConfigurationProtocol, collectionInfoHeaderConfiguration: BanubaUtilities.CollectionInfoHeaderConfiguration, galleryItemPreviewViewConfiguration: BanubaUtilities.GalleryItemPreviewViewConfiguration, nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, noItemsLabelConfiguration: BanubaUtilities.TextConfiguration, layoutConfiguration: BanubaUtilities.GalleryLayoutConfiguration, topBarBlurColor: UIKit.UIColor, clearSelectionButtonConfiguration: any BanubaUtilities.ImageButtonConfigurationProtocol, galleryTypeButton: BanubaUtilities.TextButtonConfiguration, galleryTypeUnderlineColor: UIKit.UIColor, isPhotoSequenceAnimationEnabled: Swift.Bool, importItemsLabelConfiguration: BanubaUtilities.TextConfiguration, bottomViewConfiguration: BanubaUtilities.BackgroundConfiguration, isCloseButtonHidden: Swift.Bool, visibleTabsInGallery: [BanubaUtilities.GalleryMediaType] = [.video, .photo], backgroundColor: UIKit.UIColor, maximumSelectedCountFromGallery: Swift.Int, preferredStatusBarStyle: UIKit.UIStatusBarStyle, alertConfiguration: BanubaUtilities.AlertViewConfiguration, autoCutGalleryConfiguration: BanubaUtilities.AutoCutGalleryConfiguration? = nil)
+  public init(videoResolution: BanubaUtilities.VideoResolution, galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration, closeButtonConfiguration: any BanubaUtilities.ImageButtonConfigurationProtocol, albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration, collectionInfoHeaderConfiguration: BanubaUtilities.CollectionInfoHeaderConfiguration, galleryItemPreviewViewConfiguration: BanubaUtilities.GalleryItemPreviewViewConfiguration, nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, noItemsLabelConfiguration: BanubaUtilities.TextConfiguration, layoutConfiguration: BanubaUtilities.GalleryLayoutConfiguration, topBarBlurColor: UIKit.UIColor, clearSelectionButtonConfiguration: any BanubaUtilities.ImageButtonConfigurationProtocol, galleryTypeButton: BanubaUtilities.TextButtonConfiguration, galleryTypeUnderlineColor: UIKit.UIColor, isPhotoSequenceAnimationEnabled: Swift.Bool, importItemsLabelConfiguration: BanubaUtilities.TextConfiguration, bottomViewConfiguration: BanubaUtilities.BackgroundConfiguration, isCloseButtonHidden: Swift.Bool, visibleTabsInGallery: [BanubaUtilities.GalleryMediaType] = [.video, .photo], backgroundColor: UIKit.UIColor, maximumSelectedCountFromGallery: Swift.Int, preferredStatusBarStyle: UIKit.UIStatusBarStyle, alertConfiguration: BanubaUtilities.AlertViewConfiguration, autoCutGalleryConfiguration: BanubaUtilities.AutoCutGalleryConfiguration? = nil)
   @objc deinit
 }
 extension Foundation.NSNotification.Name {
@@ -1401,18 +1391,8 @@ extension BanubaUtilities.KingfisherWrapper where Base : UIKit.NSTextAttachment 
 }
 @objc public class AlbumsConfiguration : ObjectiveC.NSObject {
   public var textButton: BanubaUtilities.TextButtonConfiguration
-  public var arrowIconConfiguration: any BanubaUtilities.ImageConfigurationProtocol
   public var backButton: BanubaUtilities.BackButtonConfiguration
-  public var albumItemConfiguration: BanubaUtilities.AlbumItemConfiguration
-  public var backgroundColor: UIKit.UIColor
-  public init(textButton: BanubaUtilities.TextButtonConfiguration, arrowIconConfiguration: any BanubaUtilities.ImageConfigurationProtocol, backButton: BanubaUtilities.BackButtonConfiguration, albumItemConfiguration: BanubaUtilities.AlbumItemConfiguration, backgroundColor: UIKit.UIColor)
-  @objc deinit
-}
-@objc public class AlbumItemConfiguration : ObjectiveC.NSObject {
-  public var titleConfiguration: BanubaUtilities.TextConfiguration
-  public var numberOfAlbumItemsConfiguration: BanubaUtilities.TextConfiguration
-  public var coverCornerRadius: CoreFoundation.CGFloat
-  public init(titleConfiguration: BanubaUtilities.TextConfiguration, numberOfAlbumItemsConfiguration: BanubaUtilities.TextConfiguration, coverCornerRadius: CoreFoundation.CGFloat)
+  public init(textButton: BanubaUtilities.TextButtonConfiguration, backButton: BanubaUtilities.BackButtonConfiguration)
   @objc deinit
 }
 public struct PlayerControlConfiguration {
@@ -1432,9 +1412,24 @@ public struct PlayerControlConfiguration {
   open class func logDefault(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "")
   @objc deinit
 }
+public protocol AudioEditorServiceAdoptable : AnyObject {
+  func play()
+  func pause()
+  func seek(to: Foundation.TimeInterval)
+  func load(track: any BanubaUtilities.AudioTrackAdoptable) throws
+  func changeVolume(volume: Swift.Float)
+  var player: AVFAudio.AVAudioPlayer? { get set }
+  func autoRepeat(repeat: Swift.Bool)
+  func seekToStart(isEnabled: Swift.Bool)
+  func createAudioDirectory()
+  func unload()
+  var delegate: (any BanubaUtilities.AudioPlayerDelegate)? { get set }
+}
+public protocol AudioPlayerDelegate : AnyObject {
+  func playerPlaysFrameAtTime(_ time: Foundation.TimeInterval)
+  func didEndPlaying()
+}
 public struct AlertViewConfiguration {
-  public var style: BanubaUtilities.AlertViewStyle
-  public var backgroundColor: UIKit.UIColor
   public var cornerRadius: CoreFoundation.CGFloat
   public var refuseButtonRadius: CoreFoundation.CGFloat
   public var agreeButtonRadius: CoreFoundation.CGFloat
@@ -1452,9 +1447,9 @@ public struct AlertViewConfiguration {
   public var refuseButtonTextConfig: BanubaUtilities.TextButtonConfiguration
   public var agreeButtonTextConfig: BanubaUtilities.TextButtonConfiguration
   public var titleTextConfig: BanubaUtilities.TextConfiguration
-  public var messageTextConfig: BanubaUtilities.TextConfiguration
+  public var messageTextCongig: BanubaUtilities.TextConfiguration?
   public var preferredStatusBarStyle: UIKit.UIStatusBarStyle
-  public init(style: BanubaUtilities.AlertViewStyle, backgroundColor: UIKit.UIColor, cornerRadius: CoreFoundation.CGFloat, refuseButtonRadius: CoreFoundation.CGFloat, agreeButtonRadius: CoreFoundation.CGFloat, additionalButtonRadius: CoreFoundation.CGFloat, refuseButtonBackgroundColor: UIKit.UIColor, agreeButtonBackgroundColor: UIKit.UIColor, additionalButtonBackgroundColor: UIKit.UIColor, refuseButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration, agreeButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration, additionalButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration, resetButtonTextConfig: BanubaUtilities.TextButtonConfiguration, resetCancelButtonBackgroundColor: UIKit.UIColor, resetCancelTextConfig: BanubaUtilities.TextButtonConfiguration, refuseButtonTextConfig: BanubaUtilities.TextButtonConfiguration, agreeButtonTextConfig: BanubaUtilities.TextButtonConfiguration, additionalButtonTextConfig: BanubaUtilities.TextButtonConfiguration, titleTextConfig: BanubaUtilities.TextConfiguration, messageTextConfig: BanubaUtilities.TextConfiguration, preferredStatusBarStyle: UIKit.UIStatusBarStyle)
+  public init(cornerRadius: CoreFoundation.CGFloat, refuseButtonRadius: CoreFoundation.CGFloat, agreeButtonRadius: CoreFoundation.CGFloat, additionalButtonRadius: CoreFoundation.CGFloat, refuseButtonBackgroundColor: UIKit.UIColor, agreeButtonBackgroundColor: UIKit.UIColor, additionalButtonBackgroundColor: UIKit.UIColor, refuseButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration, agreeButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration, additionalButtonBorderConfiguration: BanubaUtilities.BorderButtonConfiguration, resetButtonTextConfig: BanubaUtilities.TextButtonConfiguration, resetCancelButtonBackgroundColor: UIKit.UIColor, resetCancelTextConfig: BanubaUtilities.TextButtonConfiguration, refuseButtonTextConfig: BanubaUtilities.TextButtonConfiguration, agreeButtonTextConfig: BanubaUtilities.TextButtonConfiguration, additionalButtonTextConfig: BanubaUtilities.TextButtonConfiguration, titleTextConfig: BanubaUtilities.TextConfiguration, messageTextCongig: BanubaUtilities.TextConfiguration? = nil, preferredStatusBarStyle: UIKit.UIStatusBarStyle)
 }
 public typealias ExecutionQueue = BanubaUtilities.CallbackQueue
 public enum CallbackQueue {
@@ -1466,27 +1461,15 @@ public enum CallbackQueue {
 }
 public struct GalleryItemConfiguration {
   public var orderNumberBackgroudColor: UIKit.UIColor
-  public var orderNumberSelectedBackgroudColor: UIKit.UIColor
   public var orderNumberTitleColor: UIKit.UIColor
   public var orderNumberTitleFont: UIKit.UIFont
-  public var orderNumberBorderWidth: CoreFoundation.CGFloat
-  public var orderNumberSelectedBorderWidth: CoreFoundation.CGFloat
-  public var orderNumberBorderColor: UIKit.UIColor
+  public var backgroundSelectionIndicatorImageName: Swift.String
+  public var hideSelectionIndicatorBySelection: Swift.Bool
   public var durationLabelConfiguration: BanubaUtilities.TextConfiguration
-  public var durationLabelBackgroundConfiguration: BanubaUtilities.BackgroundConfiguration
-  public var durationLabelAlignment: BanubaUtilities.GalleryItemConfiguration.DurationLabelAlignment
+  public var durationLabelBackgroundColor: UIKit.UIColor
   public var activityIndicatorConfiguration: BanubaUtilities.SmallActivityIndicatorConfiguration
   public var cornerRadius: CoreFoundation.CGFloat
-  public init(orderNumberBackgroudColor: UIKit.UIColor, orderNumberSelectedBackgroudColor: UIKit.UIColor, orderNumberTitleColor: UIKit.UIColor, orderNumberTitleFont: UIKit.UIFont, orderNumberBorderWidth: CoreFoundation.CGFloat, orderNumberSelectedBorderWidth: CoreFoundation.CGFloat, orderNumberBorderColor: UIKit.UIColor, durationLabelConfiguration: BanubaUtilities.TextConfiguration, durationLabelBackgroundConfiguration: BanubaUtilities.BackgroundConfiguration, durationLabelAlignment: BanubaUtilities.GalleryItemConfiguration.DurationLabelAlignment, activityIndicatorConfiguration: BanubaUtilities.SmallActivityIndicatorConfiguration, cornerRadius: CoreFoundation.CGFloat)
-  public enum DurationLabelAlignment {
-    case left
-    case right
-    public static func == (a: BanubaUtilities.GalleryItemConfiguration.DurationLabelAlignment, b: BanubaUtilities.GalleryItemConfiguration.DurationLabelAlignment) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
+  public init(orderNumberBackgroudColor: UIKit.UIColor, orderNumberTitleColor: UIKit.UIColor, orderNumberTitleFont: UIKit.UIFont, backgroundSelectionIndicatorImageName: Swift.String, hideSelectionIndicatorBySelection: Swift.Bool, durationLabelConfiguration: BanubaUtilities.TextConfiguration, durationLabelBackgroundColor: UIKit.UIColor, activityIndicatorConfiguration: BanubaUtilities.SmallActivityIndicatorConfiguration, cornerRadius: CoreFoundation.CGFloat)
 }
 public enum KF {
   public static func source(_ source: BanubaUtilities.Source?) -> BanubaUtilities.KF.Builder
@@ -1914,12 +1897,7 @@ public struct ToastConfiguration {
   public var cornerRadius: CoreFoundation.CGFloat
   public var textColor: UIKit.UIColor
   public var backgroundColor: UIKit.UIColor
-  public var borderWidth: CoreFoundation.CGFloat
-  public var borderColor: UIKit.UIColor
-  public var contentInsets: UIKit.UIEdgeInsets
-  public var insets: UIKit.UIEdgeInsets
-  public var icon: (any BanubaUtilities.ImageConfigurationProtocol)?
-  public init(kern: Swift.Double, font: UIKit.UIFont, cornerRadius: CoreFoundation.CGFloat, textColor: UIKit.UIColor = .white, backgroundColor: UIKit.UIColor = .black, borderWidth: CoreFoundation.CGFloat = .zero, borderColor: UIKit.UIColor = .clear, contentInsets: UIKit.UIEdgeInsets = UIEdgeInsets(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0), insets: UIKit.UIEdgeInsets = UIEdgeInsets(top: 70.0, left: 15.0, bottom: .zero, right: 15.0), icon: (any BanubaUtilities.ImageConfigurationProtocol)? = nil)
+  public init(kern: Swift.Double, font: UIKit.UIFont, cornerRadius: CoreFoundation.CGFloat, textColor: UIKit.UIColor = .white, backgroundColor: UIKit.UIColor = .black)
 }
 extension BanubaUtilities.ToastConfiguration {
   public static var `default`: BanubaUtilities.ToastConfiguration {
@@ -2048,10 +2026,6 @@ public class AudioServiceItem : BanubaUtilities.AudioItem {
   public init(uuid: Foundation.UUID, url: Foundation.URL, coverURL: Foundation.URL?, title: Swift.String?, additionalTitle: Swift.String?, isEditable: Swift.Bool, timeRange: CoreMedia.CMTimeRange? = nil)
   @objc deinit
 }
-public protocol AudioPlayerDelegate : AnyObject {
-  func playerPlaysFrameAtTime(_ time: Foundation.TimeInterval)
-  func didEndPlaying()
-}
 public protocol AudioServicing {
   var player: AVFAudio.AVAudioPlayer? { get set }
   var delegate: (any BanubaUtilities.AudioPlayerDelegate)? { get set }
@@ -2060,9 +2034,9 @@ public protocol AudioServicing {
   var duration: Foundation.TimeInterval? { get }
   func autoRepeat(repeat: Swift.Bool, delay: Swift.Double)
   func seekToStart()
-  func seekToStart(isEnabled: Swift.Bool)
   func seek(to: Foundation.TimeInterval)
   func load(item: BanubaUtilities.AudioServiceItem) throws
+  func load(track: any BanubaUtilities.AudioTrackAdoptable) throws
   func unload()
   func toggle()
   func play()
@@ -2070,9 +2044,8 @@ public protocol AudioServicing {
   func setRate(_ rate: Swift.Float)
   func setDelegate(_ delegate: any BanubaUtilities.AudioPlayerDelegate)
   func changeVolume(volume: Swift.Float)
-  func createAudioDirectory()
 }
-@objc @_inheritsConvenienceInitializers public class AudioService : ObjectiveC.NSObject, BanubaUtilities.AudioServicing {
+@objc @_inheritsConvenienceInitializers public class AudioService : ObjectiveC.NSObject, BanubaUtilities.AudioServicing, BanubaUtilities.AudioEditorServiceAdoptable {
   weak public var delegate: (any BanubaUtilities.AudioPlayerDelegate)?
   public var currentAudio: BanubaUtilities.AudioServiceItem?
   public var player: AVFAudio.AVAudioPlayer?
@@ -2087,6 +2060,7 @@ public protocol AudioServicing {
   public func autoRepeat(repeat: Swift.Bool)
   public func autoRepeat(repeat: Swift.Bool, delay: Swift.Double = .zero)
   public func seekToStart(isEnabled: Swift.Bool)
+  public func load(track: any BanubaUtilities.AudioTrackAdoptable) throws
   public func createAudioDirectory()
   public func setRate(_ rate: Swift.Float)
   public func changeVolume(volume: Swift.Float)
@@ -2269,17 +2243,19 @@ public struct AutoCutGalleryConfiguration {
   public let disabledNextButtonConfiguration: BanubaUtilities.GalleryNextButtonConfiguration
   public let maximumDurationOfAutoCutSourceVideos: Foundation.TimeInterval
   public init(normalApplyAutoCutButtonConfiguration: BanubaUtilities.ApplyAutoCutButtonConfiguration, disabledApplyAutoCutButtonConfiguration: BanubaUtilities.ApplyAutoCutButtonConfiguration, normalNextButtonConfiguration: BanubaUtilities.GalleryNextButtonConfiguration, disabledNextButtonConfiguration: BanubaUtilities.GalleryNextButtonConfiguration, maximumDurationOfAutoCutSourceVideos: Foundation.TimeInterval)
+  public static var `default`: BanubaUtilities.AutoCutGalleryConfiguration {
+    get
+  }
 }
 public struct ApplyAutoCutButtonConfiguration {
   public let borderColor: UIKit.UIColor
-  public let iconConfiguration: any BanubaUtilities.ImageConfigurationProtocol
-  public let textConfiguration: BanubaUtilities.TextConfiguration
-  public init(borderColor: UIKit.UIColor, iconConfiguration: any BanubaUtilities.ImageConfigurationProtocol, textConfiguration: BanubaUtilities.TextConfiguration)
+  public let textAndIconColor: UIKit.UIColor
+  public init(borderColor: UIKit.UIColor, textAndIconColor: UIKit.UIColor)
 }
 public struct GalleryNextButtonConfiguration {
-  public let textConfiguration: BanubaUtilities.TextConfiguration
+  public let textColor: UIKit.UIColor
   public let backgroundColor: UIKit.UIColor
-  public init(textConfiguration: BanubaUtilities.TextConfiguration, backgroundColor: UIKit.UIColor)
+  public init(textColor: UIKit.UIColor, backgroundColor: UIKit.UIColor)
 }
 public enum VideoResolution : Swift.String {
   case uhd3840x2160
@@ -2477,6 +2453,52 @@ public struct OverlayPopoverActionConfiguration {
 extension BanubaUtilities.PopoverAlertViewController : UIKit.UIGestureRecognizerDelegate {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldReceive touch: UIKit.UITouch) -> Swift.Bool
 }
+public protocol AudioTrackAdoptable : AnyObject {
+  var position: BanubaUtilities.AudioTrackLinePosition { get set }
+  var compositionTrack: AVFoundation.AVMutableCompositionTrack? { get set }
+  var compositionStart: CoreMedia.CMTime { get set }
+  var avAssetTrack: AVFoundation.AVAssetTrack? { get set }
+  var avURLAsset: AVFoundation.AVURLAsset { get set }
+  var timeRange: CoreMedia.CMTimeRange { get set }
+  var trimmedTimeRange: CoreMedia.CMTimeRange { get set }
+  var url: Foundation.URL { get set }
+  var coverURL: Foundation.URL? { get set }
+  var originalURL: Foundation.URL { get set }
+  var title: Swift.String? { get set }
+  var additionalTitle: Swift.String? { get set }
+  var id: Swift.Int32? { get set }
+  var uuid: Foundation.UUID { get }
+  var isAudioRecord: Swift.Bool { get set }
+  var appliedFilterId: Swift.Int? { get set }
+  var isEditable: Swift.Bool { get set }
+  var isCameraTrack: Swift.Bool { get }
+  init(url: Foundation.URL, coverURL: Foundation.URL?, originalURL: Foundation.URL, uuid: Foundation.UUID, id: Swift.Int32?, timeRange: CoreMedia.CMTimeRange, trimTimeRange: CoreMedia.CMTimeRange, compositionStart: CoreMedia.CMTime, avURLAsset: AVFoundation.AVURLAsset, isAudioRecord: Swift.Bool, isEditable: Swift.Bool, isCameraTrack: Swift.Bool, title: Swift.String?, additionalTitle: Swift.String?, appliedFilterId: Swift.Int?)
+}
+public enum AudioTrackLinePosition : Swift.Int, Swift.CaseIterable {
+  case first
+  case second
+  case third
+  case fourth
+  public func getRelevantMovement(movement: BanubaUtilities.AudioTrackLineViewMovement?) -> BanubaUtilities.AudioTrackLinePosition?
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [BanubaUtilities.AudioTrackLinePosition]
+  public typealias RawValue = Swift.Int
+  public static var allCases: [BanubaUtilities.AudioTrackLinePosition] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum AudioTrackLineViewMovement {
+  case top
+  case bottom
+  public static func == (a: BanubaUtilities.AudioTrackLineViewMovement, b: BanubaUtilities.AudioTrackLineViewMovement) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 public class ToastPresenter {
   public init(configuration: BanubaUtilities.ToastConfiguration, toastLifeTime: Foundation.TimeInterval? = nil)
   public func showToast(message: Swift.String)
@@ -2577,8 +2599,6 @@ public struct TextShadowConfiguration {
   public init(shadowColor: UIKit.UIColor = UIColor.black.withAlphaComponent(0.4), shadowOffset: CoreFoundation.CGSize = CGSize(width: 0, height: 1), shadowBlurRadius: CoreFoundation.CGFloat = 2.0)
   public func shadow() -> UIKit.NSShadow
 }
-extension BanubaUtilities.AlertViewStyle : Swift.Equatable {}
-extension BanubaUtilities.AlertViewStyle : Swift.Hashable {}
 extension BanubaUtilities.AlertViewController.ButtonType : Swift.Equatable {}
 extension BanubaUtilities.AlertViewController.ButtonType : Swift.Hashable {}
 extension BanubaUtilities.AspectRatio : Swift.Equatable {}
@@ -2596,8 +2616,6 @@ extension BanubaUtilities.DeviceModel : Swift.RawRepresentable {}
 extension BanubaUtilities.TransitionType : Swift.Equatable {}
 extension BanubaUtilities.TransitionType : Swift.Hashable {}
 extension BanubaUtilities.TransitionType : Swift.RawRepresentable {}
-extension BanubaUtilities.GalleryItemConfiguration.DurationLabelAlignment : Swift.Equatable {}
-extension BanubaUtilities.GalleryItemConfiguration.DurationLabelAlignment : Swift.Hashable {}
 extension BanubaUtilities.GalleryMediaType : Swift.Equatable {}
 extension BanubaUtilities.GalleryMediaType : Swift.Hashable {}
 extension BanubaUtilities.GalleryMediaType : Swift.RawRepresentable {}
@@ -2621,5 +2639,10 @@ extension BanubaUtilities.VideoResolution : Swift.Hashable {}
 extension BanubaUtilities.VideoResolution : Swift.RawRepresentable {}
 extension BanubaUtilities.CameraVideoResolution : Swift.Equatable {}
 extension BanubaUtilities.CameraVideoResolution : Swift.Hashable {}
+extension BanubaUtilities.AudioTrackLinePosition : Swift.Equatable {}
+extension BanubaUtilities.AudioTrackLinePosition : Swift.Hashable {}
+extension BanubaUtilities.AudioTrackLinePosition : Swift.RawRepresentable {}
+extension BanubaUtilities.AudioTrackLineViewMovement : Swift.Equatable {}
+extension BanubaUtilities.AudioTrackLineViewMovement : Swift.Hashable {}
 extension BanubaUtilities.ImageFormat : Swift.Equatable {}
 extension BanubaUtilities.ImageFormat : Swift.Hashable {}

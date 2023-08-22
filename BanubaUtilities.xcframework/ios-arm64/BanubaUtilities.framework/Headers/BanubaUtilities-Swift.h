@@ -297,13 +297,6 @@ SWIFT_CLASS("_TtC15BanubaUtilities21ActivityIndicatorView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-SWIFT_CLASS("_TtC15BanubaUtilities22AlbumItemConfiguration")
-@interface AlbumItemConfiguration : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
 @class NSString;
 @class UIImage;
 @class PHAssetCollection;
@@ -798,6 +791,13 @@ SWIFT_CLASS("_TtC15BanubaUtilities34VideoTimeLineCollectionViewHandler")
 @end
 
 
+
+@interface VideoTimeLineCollectionViewHandler (SWIFT_EXTENSION(BanubaUtilities)) <TimeLineDataSourceDelegate>
+- (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didPreloadPreview:(UIImage * _Nonnull)preview;
+- (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didLoadImage:(UIImage * _Nonnull)image at:(NSInteger)index;
+- (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
+@end
+
 @class UICollectionView;
 @class UICollectionViewLayout;
 @class NSIndexPath;
@@ -806,13 +806,6 @@ SWIFT_CLASS("_TtC15BanubaUtilities34VideoTimeLineCollectionViewHandler")
 - (CGSize)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (CGFloat)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (CGFloat)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-@interface VideoTimeLineCollectionViewHandler (SWIFT_EXTENSION(BanubaUtilities)) <TimeLineDataSourceDelegate>
-- (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didPreloadPreview:(UIImage * _Nonnull)preview;
-- (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didLoadImage:(UIImage * _Nonnull)image at:(NSInteger)index;
-- (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
 @end
 
 @class UICollectionViewCell;
