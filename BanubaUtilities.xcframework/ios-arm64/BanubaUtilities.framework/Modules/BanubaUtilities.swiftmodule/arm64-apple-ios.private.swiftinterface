@@ -43,8 +43,6 @@ public struct BanubaImageButtonConfiguration : BanubaUtilities.ImageButtonConfig
     case selection(_: Swift.String?, _: Swift.String?)
     case reset(_: Swift.String?, _: Swift.String?, _: Swift.String?)
     case missedPermission
-    case discard
-    case later
   }
   public enum ButtonType {
     case agreeButton
@@ -314,8 +312,6 @@ public enum SharedLocalizedStrings {
   public enum Alert {
     public static let settings: Swift.String
     public static let refuseSettings: Swift.String
-    public static let later: Swift.String
-    public static let discard: Swift.String
   }
   public enum Gallery {
     public static let damagedFile: Swift.String
@@ -2174,6 +2170,10 @@ public struct AudioPartSelectionViewConfiguration {
   @_Concurrency.MainActor(unsafe) @objc final public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
   @_Concurrency.MainActor(unsafe) @objc final public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
   @_Concurrency.MainActor(unsafe) @objc final public func scrollViewDidEndDragging(_ scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc final public func scrollViewWillBeginDragging(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) @objc final public func scrollViewWillBeginDecelerating(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) final public func setPlayedRangeOverlayViewHidden(_ isHidden: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) final public func updatePlayedRangeOverlayViewLayer(completion: (() -> Swift.Void)? = nil)
   @objc deinit
 }
 extension Swift.Array where Element : Swift.Hashable {

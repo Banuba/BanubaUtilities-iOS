@@ -405,6 +405,8 @@ SWIFT_CLASS("_TtC15BanubaUtilities22AudioPartSelectionView")
 - (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
 - (void)scrollViewDidEndDecelerating:(UIScrollView * _Nonnull)scrollView;
 - (void)scrollViewDidEndDragging:(UIScrollView * _Nonnull)scrollView willDecelerate:(BOOL)decelerate;
+- (void)scrollViewWillBeginDragging:(UIScrollView * _Nonnull)scrollView;
+- (void)scrollViewWillBeginDecelerating:(UIScrollView * _Nonnull)scrollView;
 @end
 
 
