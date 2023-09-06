@@ -613,6 +613,14 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26ImageConfigurationProtocol_")
 @end
 
 
+SWIFT_CLASS("_TtC15BanubaUtilities19KeyboardLayoutGuide")
+@interface KeyboardLayoutGuide : UILayoutGuide
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 
 
 SWIFT_CLASS("_TtC15BanubaUtilities7NibView")
@@ -765,6 +773,8 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26TimeLineDataSourceDelegate_")
 /// timelineDataSource did finish fetching all thumbs
 - (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
 @end
+
+
 
 
 
@@ -1454,6 +1464,14 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26ImageConfigurationProtocol_")
 @end
 
 
+SWIFT_CLASS("_TtC15BanubaUtilities19KeyboardLayoutGuide")
+@interface KeyboardLayoutGuide : UILayoutGuide
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 
 
 SWIFT_CLASS("_TtC15BanubaUtilities7NibView")
@@ -1606,6 +1624,8 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26TimeLineDataSourceDelegate_")
 /// timelineDataSource did finish fetching all thumbs
 - (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
 @end
+
+
 
 
 

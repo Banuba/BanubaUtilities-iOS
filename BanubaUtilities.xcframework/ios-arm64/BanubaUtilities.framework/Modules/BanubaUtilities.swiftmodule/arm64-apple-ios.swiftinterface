@@ -2385,6 +2385,9 @@ extension Swift.Error {
   public var isCancelled: Swift.Bool {
     get
   }
+  public var isNetworkUnavailable: Swift.Bool {
+    get
+  }
 }
 extension Foundation.NSError {
   public static func makeCancelledError(domain: Swift.String) -> Foundation.NSError
@@ -2411,6 +2414,24 @@ extension UIKit.UIView {
 extension CoreMedia.CMTime : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var keyboardLayoutGuide: UIKit.UILayoutGuide {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var keyboardLayoutGuideNoSafeArea: UIKit.UILayoutGuide {
+    get
+  }
+}
+@objc @_Concurrency.MainActor(unsafe) open class KeyboardLayoutGuide : UIKit.UILayoutGuide {
+  @_Concurrency.MainActor(unsafe) public var usesSafeArea: Swift.Bool {
+    get
+    set
+  }
+  @available(*, unavailable)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public init(notificationCenter: Foundation.NotificationCenter = NotificationCenter.default)
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VideoEditorActivityIndicator : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public var configuration: BanubaUtilities.SmallActivityIndicatorConfiguration? {
@@ -2471,8 +2492,8 @@ extension BanubaUtilities.PopoverAlertViewController : UIKit.UIGestureRecognizer
 }
 public class ToastPresenter {
   public init(configuration: BanubaUtilities.ToastConfiguration, toastLifeTime: Foundation.TimeInterval? = nil)
-  public func showToast(message: Swift.String)
   @objc deinit
+  public func showToast(message: Swift.String)
 }
 extension Foundation.NSNotification.Name {
   public static let videoEditorPlayerCurrentTimeChanged: Foundation.Notification.Name
