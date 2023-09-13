@@ -7,11 +7,13 @@ import AVKit
 import Accelerate
 @_exported import BanubaUtilities
 import CloudKit
+import Combine
 import CommonCrypto
 import CoreGraphics
 import CoreImage
 import CoreMedia
 import Foundation
+import Foundation/*.NSRecursiveLock*/
 import ImageIO
 import MobileCoreServices
 import Photos
@@ -158,6 +160,23 @@ public struct AudioContext {
   public static func averagePowers(audioFileURL: Foundation.URL, forChannel channelNumber: Swift.Int, compositionStart: Foundation.TimeInterval, compositionEnd: Foundation.TimeInterval?, duration: Foundation.TimeInterval, numberOfPeaks: Swift.Int, completionHandler: @escaping (_ success: [Swift.Float]) -> ())
   public static func amplitudeSamples(audioFileURL: Foundation.URL, numberOfSamples: Swift.Int) -> [Swift.Float]
   public static func amplitudeSamples(audioFileURL: Foundation.URL, numberOfSamples: Swift.Int, completionHandler: @escaping (_ success: [Swift.Float]) -> ())
+}
+@available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension Combine.Publisher {
+  public func withLatestFrom<Other, Result>(_ other: Other, resultSelector: @escaping (Self.Output, Other.Output) -> Result) -> Combine.Publishers.WithLatestFrom<Self, Other, Result> where Other : Combine.Publisher, Self.Failure == Other.Failure
+  public func withLatestFrom<Other, Other1, Result>(_ other: Other, _ other1: Other1, resultSelector: @escaping (Self.Output, (Other.Output, Other1.Output)) -> Result) -> Combine.Publishers.WithLatestFrom<Self, Combine.AnyPublisher<(Other.Output, Other1.Output), Self.Failure>, Result> where Other : Combine.Publisher, Other1 : Combine.Publisher, Self.Failure == Other.Failure, Other.Failure == Other1.Failure
+  public func withLatestFrom<Other, Other1, Other2, Result>(_ other: Other, _ other1: Other1, _ other2: Other2, resultSelector: @escaping (Self.Output, (Other.Output, Other1.Output, Other2.Output)) -> Result) -> Combine.Publishers.WithLatestFrom<Self, Combine.AnyPublisher<(Other.Output, Other1.Output, Other2.Output), Self.Failure>, Result> where Other : Combine.Publisher, Other1 : Combine.Publisher, Other2 : Combine.Publisher, Self.Failure == Other.Failure, Other.Failure == Other1.Failure, Other1.Failure == Other2.Failure
+  public func withLatestFrom<Other>(_ other: Other) -> Combine.Publishers.WithLatestFrom<Self, Other, Other.Output> where Other : Combine.Publisher, Self.Failure == Other.Failure
+  public func withLatestFrom<Other, Other1>(_ other: Other, _ other1: Other1) -> Combine.Publishers.WithLatestFrom<Self, Combine.AnyPublisher<(Other.Output, Other1.Output), Self.Failure>, (Other.Output, Other1.Output)> where Other : Combine.Publisher, Other1 : Combine.Publisher, Self.Failure == Other.Failure, Other.Failure == Other1.Failure
+  public func withLatestFrom<Other, Other1, Other2>(_ other: Other, _ other1: Other1, _ other2: Other2) -> Combine.Publishers.WithLatestFrom<Self, Combine.AnyPublisher<(Other.Output, Other1.Output, Other2.Output), Self.Failure>, (Other.Output, Other1.Output, Other2.Output)> where Other : Combine.Publisher, Other1 : Combine.Publisher, Other2 : Combine.Publisher, Self.Failure == Other.Failure, Other.Failure == Other1.Failure, Other1.Failure == Other2.Failure
+}
+@available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension Combine.Publishers {
+  public struct WithLatestFrom<Upstream, Other, Output> : Combine.Publisher where Upstream : Combine.Publisher, Other : Combine.Publisher, Upstream.Failure == Other.Failure {
+    public typealias Failure = Upstream.Failure
+    public typealias ResultSelector = (Upstream.Output, Other.Output) -> Output
+    public func receive<S>(subscriber: S) where Output == S.Input, S : Combine.Subscriber, Other.Failure == S.Failure
+  }
 }
 @objc public class TextButtonConfiguration : ObjectiveC.NSObject {
   public var style: BanubaUtilities.TextConfiguration
@@ -318,6 +337,19 @@ public enum SharedLocalizedStrings {
     public static let exportVideoFailed: Swift.String
   }
   public enum AutoCut {
+  }
+}
+extension Combine.Publisher {
+  public func map<T>(to value: T) -> Combine.Publishers.Map<Self, T>
+  public func convertToResult() -> Combine.AnyPublisher<Swift.Result<Self.Output, Self.Failure>, Swift.Never>
+  public func mapSuccess<T, U, E>(_ transform: @escaping (T) -> Swift.Result<U, any Swift.Error>) -> Combine.Publishers.Map<Self, Swift.Result<U, any Swift.Error>> where E : Swift.Error, Self.Failure == Swift.Never, Self.Output == Swift.Result<T, E>
+}
+extension Combine.AnyPublisher {
+  public static func just(_ output: Output) -> Combine.AnyPublisher<Output, Failure>
+}
+extension Dispatch.DispatchQueue.SchedulerTimeType.Stride {
+  public static var searchFieldDebouncingTime: Dispatch.DispatchQueue.SchedulerTimeType.Stride {
+    get
   }
 }
 @_hasMissingDesignatedInitializers public class VideoDurationFormatter {
