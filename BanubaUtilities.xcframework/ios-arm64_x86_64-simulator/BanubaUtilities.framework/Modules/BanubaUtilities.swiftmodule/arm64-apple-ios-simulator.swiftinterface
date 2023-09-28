@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
-// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BanubaUtilities
+// swift-module-flags: -target arm64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BanubaUtilities
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
 import AVKit
@@ -323,6 +323,9 @@ extension BanubaUtilities.AlertPresentable where Self : UIKit.UIViewController {
   public func presentPopoverAlert(position: BanubaUtilities.OverlayPopoverActionsPosition, actions: [BanubaUtilities.PopoverAlertViewController.ActionType], animated: Swift.Bool, completion: @escaping ((BanubaUtilities.PopoverAlertViewController.ActionType) -> Swift.Void))
 }
 public enum SharedLocalizedStrings {
+  public enum Errors {
+    public static let noInternetConnection: Swift.String
+  }
   public enum Common {
     public static let ok: Swift.String
     public static let yes: Swift.String
@@ -2195,10 +2198,11 @@ public struct AudioPartSelectionViewConfiguration {
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class AudioPartSelectionView : UIKit.UIView, UIKit.UIScrollViewDelegate {
   @_Concurrency.MainActor(unsafe) final public var didScrollHandler: ((CoreMedia.CMTimeRange) -> Swift.Void)?
   @_Concurrency.MainActor(unsafe) @objc override final public func layoutSubviews()
-  @_Concurrency.MainActor(unsafe) final public func set(audioDuration: Foundation.TimeInterval, videoDuration: Foundation.TimeInterval)
+  @_Concurrency.MainActor(unsafe) final public func set(audioStartOffset: Foundation.TimeInterval = .zero, audioDuration: Foundation.TimeInterval, videoDuration: Foundation.TimeInterval)
   @_Concurrency.MainActor(unsafe) final public func set(playbackProgress: Swift.Double)
   @_Concurrency.MainActor(unsafe) final public func showAudioAmplitude(samples: [Swift.Float])
   @_Concurrency.MainActor(unsafe) final public func apply(configuration: BanubaUtilities.AudioPartSelectionViewConfiguration)
+  @_Concurrency.MainActor(unsafe) final public func stopSelectionAnimationIfNeeded()
   @_Concurrency.MainActor(unsafe) @objc final public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
   @_Concurrency.MainActor(unsafe) @objc final public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
   @_Concurrency.MainActor(unsafe) @objc final public func scrollViewDidEndDragging(_ scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
