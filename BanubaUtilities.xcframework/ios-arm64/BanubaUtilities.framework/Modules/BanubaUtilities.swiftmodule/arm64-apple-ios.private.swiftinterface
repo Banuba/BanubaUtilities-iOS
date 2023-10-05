@@ -2434,7 +2434,7 @@ extension CoreFoundation.CGSize {
 public class PreviewExtractor {
   final public let asset: AVFoundation.AVAsset
   final public let thumbnailHeight: CoreFoundation.CGFloat
-  public var imageGenerator: AVFoundation.AVAssetImageGenerator
+  final public let imageGenerator: AVFoundation.AVAssetImageGenerator
   public init(asset: AVFoundation.AVAsset, thumbnailHeight: CoreFoundation.CGFloat)
   @objc deinit
   public func extractPreview(at time: CoreMedia.CMTime) -> UIKit.UIImage?
