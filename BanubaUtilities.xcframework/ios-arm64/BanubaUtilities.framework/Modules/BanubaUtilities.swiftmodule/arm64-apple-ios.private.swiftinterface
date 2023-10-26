@@ -2449,6 +2449,9 @@ extension UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public func roundCorners(cornerMask: QuartzCore.CACornerMask, radius: CoreFoundation.CGFloat)
   @_Concurrency.MainActor(unsafe) public func roundCorners(radius: CoreFoundation.CGFloat)
 }
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public class func loadFromNib() -> Self
+}
 extension CoreMedia.CMTime : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
