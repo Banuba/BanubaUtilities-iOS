@@ -2190,10 +2190,13 @@ public struct AnyRedirectHandler : BanubaUtilities.ImageDownloadRedirectHandler 
   public init(handle: @escaping (BanubaUtilities.SessionDataTask, Foundation.HTTPURLResponse, Foundation.URLRequest, @escaping (Foundation.URLRequest?) -> Swift.Void) -> Swift.Void)
 }
 public struct AudioPartSelectionViewConfiguration {
-  public static var dark: BanubaUtilities.AudioPartSelectionViewConfiguration {
+  public static var musicLibraryDark: BanubaUtilities.AudioPartSelectionViewConfiguration {
     get
   }
-  public static var light: BanubaUtilities.AudioPartSelectionViewConfiguration {
+  public static var musicLibraryLight: BanubaUtilities.AudioPartSelectionViewConfiguration {
+    get
+  }
+  public static var soundstripe: BanubaUtilities.AudioPartSelectionViewConfiguration {
     get
   }
 }
