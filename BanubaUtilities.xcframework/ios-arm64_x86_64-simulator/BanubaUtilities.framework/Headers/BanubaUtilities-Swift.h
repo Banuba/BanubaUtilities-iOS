@@ -811,7 +811,6 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26TimeLineDataSourceDelegate_")
 
 
 
-
 SWIFT_CLASS("_TtC15BanubaUtilities28VideoEditorActivityIndicator")
 @interface VideoEditorActivityIndicator : UIView
 @property (nonatomic) CGRect bounds;
@@ -1659,7 +1658,6 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26TimeLineDataSourceDelegate_")
 /// timelineDataSource did finish fetching all thumbs
 - (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
 @end
-
 
 
 
