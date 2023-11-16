@@ -811,6 +811,7 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26TimeLineDataSourceDelegate_")
 
 
 
+
 SWIFT_CLASS("_TtC15BanubaUtilities28VideoEditorActivityIndicator")
 @interface VideoEditorActivityIndicator : UIView
 @property (nonatomic) CGRect bounds;
