@@ -722,6 +722,7 @@ public struct Filter {
 extension BanubaUtilities.KingfisherWrapper where Base : UIKit.UIImage {
   public func apply(_ filter: BanubaUtilities.Filter) -> BanubaUtilities.KFCrossPlatformImage
 }
+public func BNBLocalizedString(_ key: Swift.String) -> Swift.String
 extension Swift.Double {
   public func formatted(isMiliSecondsEnabled: Swift.Bool = true) -> Swift.String
   public func stringFromTimeInterval() -> Swift.String
