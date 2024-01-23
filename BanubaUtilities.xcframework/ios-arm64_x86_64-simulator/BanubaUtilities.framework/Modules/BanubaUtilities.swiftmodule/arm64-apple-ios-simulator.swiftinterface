@@ -2558,6 +2558,7 @@ public protocol VideoEditorPlayable : AnyObject {
   func pause()
   func seek(to time: CoreMedia.CMTime)
   func smoothlySeek(to time: CoreMedia.CMTime)
+  func seek(to time: CoreMedia.CMTime, completion: @escaping (_ isFinished: Swift.Bool) -> Swift.Void)
   func reloadPreview(shouldAutoStart: Swift.Bool)
 }
 public protocol VideoEditorPlayerDelegate : AnyObject {
