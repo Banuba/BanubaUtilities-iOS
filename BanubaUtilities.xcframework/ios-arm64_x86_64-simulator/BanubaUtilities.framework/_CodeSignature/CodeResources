@@ -30,7 +30,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		qsckW9zJROBIPYStBWBjX6sU2GM=
+		QO4xWhBht2u7dct4outKz6vAPqQ=
 		</data>
 		<key>LICENSE</key>
 		<data>
@@ -87,6 +87,10 @@
 		<key>PopoverOverlayAlertActionCell.nib</key>
 		<data>
 		nyPd7Zp2M/K06AGg2VMyueQFiUw=
+		</data>
+		<key>PrivacyInfo.xcprivacy</key>
+		<data>
+		hGVuuzmjt5sKGjVNh+ZspIKBF7c=
 		</data>
 		<key>VideoTimeLineCollectionViewCell.nib</key>
 		<data>
@@ -237,6 +241,13 @@
 			<key>hash2</key>
 			<data>
 			BrtW2eDxmJ93MpW9GJWv8eET60Y2aCet/9gK9BuikRo=
+			</data>
+		</dict>
+		<key>PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yFi3Q8Y5579kQ1TeQdEowO5K8T00j1zU5gSSpLKH2/k=
 			</data>
 		</dict>
 		<key>VideoTimeLineCollectionViewCell.nib</key>
