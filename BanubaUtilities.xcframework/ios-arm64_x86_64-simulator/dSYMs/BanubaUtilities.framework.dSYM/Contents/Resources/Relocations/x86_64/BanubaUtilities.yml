@@ -3,7 +3,7 @@ triple:          'x86_64-apple-darwin'
 binary-path:     '/Users/user/Library/Developer/Xcode/DerivedData/VideoEditorSDKSandbox-apczolamkvzvcugwxnswrghnwlmi/Build/Intermediates.noindex/ArchiveIntermediates/BanubaUtilities/InstallationBuildProductsLocation/Library/Frameworks/BanubaUtilities.framework/BanubaUtilities'
 relocations:
   - { offsetInCU: 0x34, offset: 0xD164F, size: 0x8, addend: 0x0, symName: _BanubaUtilitiesVersionString, symObjAddr: 0x0, symBinAddr: 0x110B70, symSize: 0x0 }
-  - { offsetInCU: 0x69, offset: 0xD1684, size: 0x8, addend: 0x0, symName: _BanubaUtilitiesVersionNumber, symObjAddr: 0x48, symBinAddr: 0x110BB8, symSize: 0x0 }
+  - { offsetInCU: 0x69, offset: 0xD1684, size: 0x8, addend: 0x0, symName: _BanubaUtilitiesVersionNumber, symObjAddr: 0x40, symBinAddr: 0x110BB0, symSize: 0x0 }
   - { offsetInCU: 0x26, offset: 0xD16C0, size: 0x8, addend: 0x0, symName: _mz_path_combine, symObjAddr: 0x0, symBinAddr: 0x46F0, symSize: 0x7A }
   - { offsetInCU: 0x8E, offset: 0xD1728, size: 0x8, addend: 0x0, symName: _mz_path_combine, symObjAddr: 0x0, symBinAddr: 0x46F0, symSize: 0x7A }
   - { offsetInCU: 0x10D, offset: 0xD17A7, size: 0x8, addend: 0x0, symName: _mz_path_append_slash, symObjAddr: 0x7A, symBinAddr: 0x476A, symSize: 0x77 }
