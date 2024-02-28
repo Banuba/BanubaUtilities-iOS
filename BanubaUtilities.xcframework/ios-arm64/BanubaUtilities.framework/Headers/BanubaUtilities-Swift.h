@@ -763,7 +763,7 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities18TimeLineDataSource_")
 @property (nonatomic, readonly) CMTime duration;
 /// Loaded thumbnails
 @property (nonatomic, readonly, copy) NSArray<UIImage *> * _Nonnull thumbnails;
-/// Is fetching thumbnails finised
+/// Is fetching thumbnails finished
 @property (nonatomic, readonly) BOOL isAllThumbnailsFetched;
 /// Thumbnails count to fetch
 @property (nonatomic, readonly) NSInteger thumbnailsCount;
