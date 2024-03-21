@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/BanubaUtilities-Swift.h</key>
 		<data>
-		dMT4HRFCS0RO3he1dP4jdwr2/ME=
+		fURjcskdR+a6R1s6mSdzMpbi69U=
 		</data>
 		<key>Headers/BanubaUtilities.h</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ho5X0YvTNJRkVtquxAHELjU8Hmw=
+		YD7aa5n+c5Svf1x02FSAAKoJ3kU=
 		</data>
 		<key>LICENSE</key>
 		<data>
@@ -38,23 +38,23 @@
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		SAHIlq1MQDXMndGnJxfW1On/6JQ=
+		sxv2HBvePv+lYTPQxB3ELbh2ZlE=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		LKnpnaAzbIrTqv60B7PxDiauyos=
+		vCEMBFqhQZpaQngis3RjbYot2K0=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		qP+cqndK5WsKxNG80zpNUkvYk3o=
+		A+LjLYRJ3GuTFDzcWSezu7MJD7w=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		LKnpnaAzbIrTqv60B7PxDiauyos=
+		vCEMBFqhQZpaQngis3RjbYot2K0=
 		</data>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		ZiddH9idsHbea0sCKi2zeJ0XLQ8=
+		CI9JVC8YmrKCnQFp8sQFKaCpRJI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>PopoverAlertViewController.nib</key>
 		<data>
-		XTIGZOr6TcI+N/sx9e23B1poMjg=
+		zihvYk10K1/dYo0XPHQ/pyrvGco=
 		</data>
 		<key>PopoverOverlayAlertActionCell.nib</key>
 		<data>
@@ -101,7 +101,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Eo1iAiEbPtlBHMQIciF43OMyV+yMJmls48XFgCvsiBU=
+			/D1KoFDpPHYuSWqhPILeECZbz5fzlbao4krcRUlW/hk=
 			</data>
 		</dict>
 		<key>Headers/BanubaUtilities.h</key>
@@ -136,35 +136,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			12QbHBKOqF/CJ2S41DVfurewEUhaWThUBTpnme8oSs4=
+			zLUR445D2zpIt2NftwKMqsFnnXCQnEQVU//Fx7IS1Uk=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uYE1GfDhQwuOKvZiKWtYz+WhS4t/vGXXDtq8v1WMESo=
+			9Gbh6b/rE4Q0xq8b1nJOYjLEhQdSnzTt6DODr/m8rz0=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			h7bnQMc52meZti0hBlfujHmFovOwlxaPKAAw8EmvJsU=
+			0QCaqEfkCCHt1sRaiMX8NWp62gwQxjdTv8VJK6RE6zc=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uYE1GfDhQwuOKvZiKWtYz+WhS4t/vGXXDtq8v1WMESo=
+			9Gbh6b/rE4Q0xq8b1nJOYjLEhQdSnzTt6DODr/m8rz0=
 			</data>
 		</dict>
 		<key>Modules/BanubaUtilities.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Fb+8fvOAU62KvCsrZLH754M/IYnB36vzomxfDTEHULQ=
+			zsOXi5uDtTPSwvue1ebiO3C639qQEwkCkW42Z0AZtUw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -178,7 +178,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KPN8vfhsDbnztMV1QyuYICAofrbixbuUgkXitrnCG4Y=
+			vETBcq2QdaDgZGD6p3EICgX0yfqpP6odlfgkzYTSf1Q=
 			</data>
 		</dict>
 		<key>PopoverOverlayAlertActionCell.nib</key>

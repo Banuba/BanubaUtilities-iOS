@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
-// swift-module-flags: -target arm64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BanubaUtilities
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BanubaUtilities
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
 import AVKit
@@ -650,6 +650,9 @@ extension AVFoundation.AVAssetTrack {
   }
 }
 extension UIKit.UIColor {
+  public var colorComponents: (red: CoreFoundation.CGFloat, green: CoreFoundation.CGFloat, blue: CoreFoundation.CGFloat, alpha: CoreFoundation.CGFloat)? {
+    get
+  }
   convenience public init(red: Swift.Int, green: Swift.Int, blue: Swift.Int, a: CoreFoundation.CGFloat = 1.0)
   convenience public init(rgb: Swift.Int, a: CoreFoundation.CGFloat = 1.0)
 }
@@ -724,7 +727,7 @@ extension BanubaUtilities.KingfisherWrapper where Base : UIKit.UIImage {
 }
 public func BNBLocalizedString(_ key: Swift.String) -> Swift.String
 extension Swift.Double {
-  public func formatted(isMiliSecondsEnabled: Swift.Bool = true) -> Swift.String
+  public func formatted(isMiliSecondsEnabled: Swift.Bool = true, isMinutesInFullFormat: Swift.Bool = false) -> Swift.String
   public func stringFromTimeInterval() -> Swift.String
 }
 @objc public class GalleryConfiguration : ObjectiveC.NSObject {
@@ -1896,7 +1899,7 @@ public protocol ImageTextButtonConfigurationProtocol {
   var style: BanubaUtilities.TextConfiguration? { get set }
 }
 extension UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) public func embed(toView view: UIKit.UIView, offset: CoreFoundation.CGFloat = .zero, forceLayoutPass: Swift.Bool = true)
+  @_Concurrency.MainActor(unsafe) public func embed(toView view: UIKit.UIView, topOffset: CoreFoundation.CGFloat = .zero, leftOffset: CoreFoundation.CGFloat = .zero, rightOffset: CoreFoundation.CGFloat = .zero, bottomOffset: CoreFoundation.CGFloat = .zero, forceLayoutPass: Swift.Bool = true)
   @_Concurrency.MainActor(unsafe) public func unembed()
 }
 extension BanubaUtilities.KingfisherWrapper where Base : UIKit.UIImage {
