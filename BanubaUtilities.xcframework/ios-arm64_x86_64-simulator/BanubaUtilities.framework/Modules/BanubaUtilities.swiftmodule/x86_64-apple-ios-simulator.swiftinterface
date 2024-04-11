@@ -1452,12 +1452,17 @@ public struct PlayerControlConfiguration {
   public init(playButtonImageName: Swift.String, pauseButtonImageName: Swift.String, tintColor: UIKit.UIColor? = nil)
   public init(playImage: UIKit.UIImage?, pauseImage: UIKit.UIImage?)
 }
+public protocol ExternalLogListener {
+  func log(message: Swift.String)
+  func log(error: Swift.String)
+}
 @_hasMissingDesignatedInitializers open class Logger {
-  open class func logError(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "")
-  open class func logDegug(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "")
-  open class func logInfo(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "")
-  open class func logFault(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "")
-  open class func logDefault(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "")
+  public static var externalListener: (any BanubaUtilities.ExternalLogListener)?
+  open class func logError(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "", file: Swift.String = #fileID, line: Swift.Int = #line)
+  open class func logDegug(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "", file: Swift.String = #fileID, line: Swift.Int = #line)
+  open class func logInfo(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "", file: Swift.String = #fileID, line: Swift.Int = #line)
+  open class func logFault(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "", file: Swift.String = #fileID, line: Swift.Int = #line)
+  open class func logDefault(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "", file: Swift.String = #fileID, line: Swift.Int = #line)
   @objc deinit
 }
 public struct AlertViewConfiguration {
