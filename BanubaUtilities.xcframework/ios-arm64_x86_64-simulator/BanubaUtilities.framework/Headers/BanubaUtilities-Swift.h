@@ -416,14 +416,14 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities24AppStateObserverDelegate_")
 
 SWIFT_CLASS("_TtC15BanubaUtilities22AudioPartSelectionView")
 @interface AudioPartSelectionView : UIView <UIScrollViewDelegate>
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)layoutSubviews;
 - (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
 - (void)scrollViewDidEndDecelerating:(UIScrollView * _Nonnull)scrollView;
 - (void)scrollViewDidEndDragging:(UIScrollView * _Nonnull)scrollView willDecelerate:(BOOL)decelerate;
 - (void)scrollViewWillBeginDragging:(UIScrollView * _Nonnull)scrollView;
 - (void)scrollViewWillBeginDecelerating:(UIScrollView * _Nonnull)scrollView;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -559,8 +559,9 @@ SWIFT_CLASS("_TtC15BanubaUtilities14GalleryManager")
 
 
 typedef SWIFT_ENUM(NSInteger, GalleryMediaType, open) {
-  GalleryMediaTypeVideo = 0,
-  GalleryMediaTypePhoto = 1,
+  GalleryMediaTypeAll = 0,
+  GalleryMediaTypeVideo = 1,
+  GalleryMediaTypePhoto = 2,
 };
 
 
@@ -596,6 +597,7 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities29GalleryViewControllerDelegate_")
 /// Tells delegate object that he should present message.
 /// In BanubaVideoEditorSDK it presents popup message.
 - (void)galleryViewController:(GalleryViewController * _Nonnull)controller presentMessage:(NSString * _Nonnull)message;
+- (void)galleryViewControllerDidRequestCamera:(GalleryViewController * _Nonnull)controller;
 @end
 
 
@@ -759,6 +761,8 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities18TimeLineDataSource_")
 @property (nonatomic, strong) id <TimeLineDataSourceDelegate> _Nullable delegate;
 /// timeline preview
 @property (nonatomic, strong) UIImage * _Nullable preview;
+/// preview loading handler
+@property (nonatomic, copy) void (^ _Nullable previewLoadingHandler)(UIImage * _Nonnull);
 /// Asset duration
 @property (nonatomic, readonly) CMTime duration;
 /// Loaded thumbnails
@@ -775,6 +779,8 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities18TimeLineDataSource_")
 - (UIImage * _Nullable)getImageAt:(NSInteger)index SWIFT_WARN_UNUSED_RESULT;
 /// Load thumbnails with completion
 - (void)loadTimelineThumbsWithCompletion:(void (^ _Nullable)(void))completion;
+/// Cancels thumbnails generation
+- (void)cancel;
 @end
 
 
@@ -828,6 +834,12 @@ SWIFT_CLASS("_TtC15BanubaUtilities34VideoTimeLineCollectionViewHandler")
 @end
 
 
+@interface VideoTimeLineCollectionViewHandler (SWIFT_EXTENSION(BanubaUtilities)) <TimeLineDataSourceDelegate>
+- (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didPreloadPreview:(UIImage * _Nonnull)preview;
+- (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didLoadImage:(UIImage * _Nonnull)image at:(NSInteger)index;
+- (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
+@end
+
 @class UICollectionView;
 @class UICollectionViewLayout;
 @class NSIndexPath;
@@ -838,13 +850,6 @@ SWIFT_CLASS("_TtC15BanubaUtilities34VideoTimeLineCollectionViewHandler")
 - (CGFloat)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 @end
 
-
-@interface VideoTimeLineCollectionViewHandler (SWIFT_EXTENSION(BanubaUtilities)) <TimeLineDataSourceDelegate>
-- (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didPreloadPreview:(UIImage * _Nonnull)preview;
-- (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didLoadImage:(UIImage * _Nonnull)image at:(NSInteger)index;
-- (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
-@end
-
 @class UICollectionViewCell;
 
 @interface VideoTimeLineCollectionViewHandler (SWIFT_EXTENSION(BanubaUtilities)) <UICollectionViewDataSource, UICollectionViewDelegate>
@@ -852,6 +857,7 @@ SWIFT_CLASS("_TtC15BanubaUtilities34VideoTimeLineCollectionViewHandler")
 - (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (void)collectionView:(UICollectionView * _Nonnull)collectionView willDisplayCell:(UICollectionViewCell * _Nonnull)cell forItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 @end
+
 
 
 SWIFT_CLASS("_TtC15BanubaUtilities10ZipArchive")
@@ -1285,14 +1291,14 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities24AppStateObserverDelegate_")
 
 SWIFT_CLASS("_TtC15BanubaUtilities22AudioPartSelectionView")
 @interface AudioPartSelectionView : UIView <UIScrollViewDelegate>
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)layoutSubviews;
 - (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
 - (void)scrollViewDidEndDecelerating:(UIScrollView * _Nonnull)scrollView;
 - (void)scrollViewDidEndDragging:(UIScrollView * _Nonnull)scrollView willDecelerate:(BOOL)decelerate;
 - (void)scrollViewWillBeginDragging:(UIScrollView * _Nonnull)scrollView;
 - (void)scrollViewWillBeginDecelerating:(UIScrollView * _Nonnull)scrollView;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -1428,8 +1434,9 @@ SWIFT_CLASS("_TtC15BanubaUtilities14GalleryManager")
 
 
 typedef SWIFT_ENUM(NSInteger, GalleryMediaType, open) {
-  GalleryMediaTypeVideo = 0,
-  GalleryMediaTypePhoto = 1,
+  GalleryMediaTypeAll = 0,
+  GalleryMediaTypeVideo = 1,
+  GalleryMediaTypePhoto = 2,
 };
 
 
@@ -1465,6 +1472,7 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities29GalleryViewControllerDelegate_")
 /// Tells delegate object that he should present message.
 /// In BanubaVideoEditorSDK it presents popup message.
 - (void)galleryViewController:(GalleryViewController * _Nonnull)controller presentMessage:(NSString * _Nonnull)message;
+- (void)galleryViewControllerDidRequestCamera:(GalleryViewController * _Nonnull)controller;
 @end
 
 
@@ -1628,6 +1636,8 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities18TimeLineDataSource_")
 @property (nonatomic, strong) id <TimeLineDataSourceDelegate> _Nullable delegate;
 /// timeline preview
 @property (nonatomic, strong) UIImage * _Nullable preview;
+/// preview loading handler
+@property (nonatomic, copy) void (^ _Nullable previewLoadingHandler)(UIImage * _Nonnull);
 /// Asset duration
 @property (nonatomic, readonly) CMTime duration;
 /// Loaded thumbnails
@@ -1644,6 +1654,8 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities18TimeLineDataSource_")
 - (UIImage * _Nullable)getImageAt:(NSInteger)index SWIFT_WARN_UNUSED_RESULT;
 /// Load thumbnails with completion
 - (void)loadTimelineThumbsWithCompletion:(void (^ _Nullable)(void))completion;
+/// Cancels thumbnails generation
+- (void)cancel;
 @end
 
 
@@ -1697,6 +1709,12 @@ SWIFT_CLASS("_TtC15BanubaUtilities34VideoTimeLineCollectionViewHandler")
 @end
 
 
+@interface VideoTimeLineCollectionViewHandler (SWIFT_EXTENSION(BanubaUtilities)) <TimeLineDataSourceDelegate>
+- (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didPreloadPreview:(UIImage * _Nonnull)preview;
+- (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didLoadImage:(UIImage * _Nonnull)image at:(NSInteger)index;
+- (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
+@end
+
 @class UICollectionView;
 @class UICollectionViewLayout;
 @class NSIndexPath;
@@ -1707,13 +1725,6 @@ SWIFT_CLASS("_TtC15BanubaUtilities34VideoTimeLineCollectionViewHandler")
 - (CGFloat)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 @end
 
-
-@interface VideoTimeLineCollectionViewHandler (SWIFT_EXTENSION(BanubaUtilities)) <TimeLineDataSourceDelegate>
-- (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didPreloadPreview:(UIImage * _Nonnull)preview;
-- (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didLoadImage:(UIImage * _Nonnull)image at:(NSInteger)index;
-- (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
-@end
-
 @class UICollectionViewCell;
 
 @interface VideoTimeLineCollectionViewHandler (SWIFT_EXTENSION(BanubaUtilities)) <UICollectionViewDataSource, UICollectionViewDelegate>
@@ -1721,6 +1732,7 @@ SWIFT_CLASS("_TtC15BanubaUtilities34VideoTimeLineCollectionViewHandler")
 - (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (void)collectionView:(UICollectionView * _Nonnull)collectionView willDisplayCell:(UICollectionViewCell * _Nonnull)cell forItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 @end
+
 
 
 SWIFT_CLASS("_TtC15BanubaUtilities10ZipArchive")

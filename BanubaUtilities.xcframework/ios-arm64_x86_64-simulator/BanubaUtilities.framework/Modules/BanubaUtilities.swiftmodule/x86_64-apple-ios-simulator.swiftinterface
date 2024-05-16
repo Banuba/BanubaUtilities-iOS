@@ -741,21 +741,20 @@ extension Swift.Double {
   public var nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration
   public var noItemsLabelConfiguration: BanubaUtilities.TextConfiguration
   public var layoutConfiguration: BanubaUtilities.GalleryLayoutConfiguration
-  public var topBarBlurColor: UIKit.UIColor
-  public var clearSelectionButtonConfiguration: any BanubaUtilities.ImageButtonConfigurationProtocol
   public var galleryTypeButton: BanubaUtilities.TextButtonConfiguration
-  public var galleryTypeUnderlineColor: UIKit.UIColor
+  public var selectedGalleryTypeButtonBackgroundConfiguration: BanubaUtilities.BackgroundConfiguration
+  public var galleryTypesSegmentedControlBackgroundConfiguration: BanubaUtilities.BackgroundConfiguration
+  public var galleryTypesSegmentedControlPadding: CoreFoundation.CGSize
   public var isPhotoSequenceAnimationEnabled: Swift.Bool
   public var importItemsLabelConfiguration: BanubaUtilities.TextConfiguration
   public var bottomViewConfiguration: BanubaUtilities.BackgroundConfiguration
   public var visibleTabsInGallery: [BanubaUtilities.GalleryMediaType]
-  public var isCloseButtonHidden: Swift.Bool
   public var backgroundColor: UIKit.UIColor
   public var maximumSelectedCountFromGallery: Swift.Int
   public var preferredStatusBarStyle: UIKit.UIStatusBarStyle
   public var alertConfiguration: BanubaUtilities.AlertViewConfiguration
   public var autoCutGalleryConfiguration: BanubaUtilities.AutoCutGalleryConfiguration?
-  public init(videoResolution: BanubaUtilities.VideoResolution, galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration, closeButtonConfiguration: any BanubaUtilities.ImageButtonConfigurationProtocol, albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration, albumArrowIconConfiguration: any BanubaUtilities.ImageConfigurationProtocol, collectionInfoHeaderConfiguration: BanubaUtilities.CollectionInfoHeaderConfiguration, galleryItemPreviewViewConfiguration: BanubaUtilities.GalleryItemPreviewViewConfiguration, nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, noItemsLabelConfiguration: BanubaUtilities.TextConfiguration, layoutConfiguration: BanubaUtilities.GalleryLayoutConfiguration, topBarBlurColor: UIKit.UIColor, clearSelectionButtonConfiguration: any BanubaUtilities.ImageButtonConfigurationProtocol, galleryTypeButton: BanubaUtilities.TextButtonConfiguration, galleryTypeUnderlineColor: UIKit.UIColor, isPhotoSequenceAnimationEnabled: Swift.Bool, importItemsLabelConfiguration: BanubaUtilities.TextConfiguration, bottomViewConfiguration: BanubaUtilities.BackgroundConfiguration, isCloseButtonHidden: Swift.Bool, visibleTabsInGallery: [BanubaUtilities.GalleryMediaType] = [.video, .photo], backgroundColor: UIKit.UIColor, maximumSelectedCountFromGallery: Swift.Int, preferredStatusBarStyle: UIKit.UIStatusBarStyle, alertConfiguration: BanubaUtilities.AlertViewConfiguration, autoCutGalleryConfiguration: BanubaUtilities.AutoCutGalleryConfiguration? = nil)
+  public init(videoResolution: BanubaUtilities.VideoResolution, galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration, closeButtonConfiguration: any BanubaUtilities.ImageButtonConfigurationProtocol, albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration, albumArrowIconConfiguration: any BanubaUtilities.ImageConfigurationProtocol, collectionInfoHeaderConfiguration: BanubaUtilities.CollectionInfoHeaderConfiguration, galleryItemPreviewViewConfiguration: BanubaUtilities.GalleryItemPreviewViewConfiguration, nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, noItemsLabelConfiguration: BanubaUtilities.TextConfiguration, layoutConfiguration: BanubaUtilities.GalleryLayoutConfiguration, galleryTypeButton: BanubaUtilities.TextButtonConfiguration, selectedGalleryTypeButtonBackgroundConfiguration: BanubaUtilities.BackgroundConfiguration, galleryTypesSegmentedControlBackgroundConfiguration: BanubaUtilities.BackgroundConfiguration, galleryTypesSegmentedControlPadding: CoreFoundation.CGSize, isPhotoSequenceAnimationEnabled: Swift.Bool, importItemsLabelConfiguration: BanubaUtilities.TextConfiguration, bottomViewConfiguration: BanubaUtilities.BackgroundConfiguration, visibleTabsInGallery: [BanubaUtilities.GalleryMediaType] = [.video, .photo], backgroundColor: UIKit.UIColor, maximumSelectedCountFromGallery: Swift.Int, preferredStatusBarStyle: UIKit.UIStatusBarStyle, alertConfiguration: BanubaUtilities.AlertViewConfiguration, autoCutGalleryConfiguration: BanubaUtilities.AutoCutGalleryConfiguration? = nil)
   @objc deinit
 }
 extension Foundation.NSNotification.Name {
@@ -852,6 +851,7 @@ extension BanubaUtilities.KingfisherWrapper where Base : UIKit.UIApplication {
 @objc public protocol TimeLineDataSource {
   @objc var delegate: (any BanubaUtilities.TimeLineDataSourceDelegate)? { get set }
   @objc var preview: UIKit.UIImage? { get set }
+  @objc var previewLoadingHandler: ((_ preview: UIKit.UIImage) -> ())? { get set }
   @objc var duration: CoreMedia.CMTime { get }
   @objc var thumbnails: [UIKit.UIImage] { get }
   @objc var isAllThumbnailsFetched: Swift.Bool { get }
@@ -860,6 +860,7 @@ extension BanubaUtilities.KingfisherWrapper where Base : UIKit.UIApplication {
   @objc func loadPreview(completion: @escaping (UIKit.UIImage?) -> Swift.Void, at second: Swift.Double)
   @objc func getImage(at index: Swift.Int) -> UIKit.UIImage?
   @objc func loadTimelineThumbs(completion: (() -> Swift.Void)?)
+  @objc func cancel()
 }
 public enum DiskStorage {
   @_hasMissingDesignatedInitializers public class Backend<T> where T : BanubaUtilities.DataTransformable {
@@ -1190,13 +1191,14 @@ public protocol EffectSelectionViewController : UIKit.UIViewController {
   final public let collectionView: UIKit.UICollectionView
   final public let timeLineDataSource: any BanubaUtilities.TimeLineDataSource
   final public let cornerRadius: CoreFoundation.CGFloat
-  public init(collectionView: UIKit.UICollectionView, timeLineDataSource: any BanubaUtilities.TimeLineDataSource, cornerRadius: CoreFoundation.CGFloat)
+  public init(collectionView: UIKit.UICollectionView, timeLineDataSource: any BanubaUtilities.TimeLineDataSource, cornerRadius: CoreFoundation.CGFloat, isScrollEnabled: Swift.Bool = false)
   @objc deinit
 }
 extension BanubaUtilities.VideoTimeLineCollectionViewHandler {
-  public func applyContentInset(appliedWidth: CoreFoundation.CGFloat, cursorOffset: CoreFoundation.CGFloat? = nil)
+  public func applyContentInset(appliedWidth: CoreFoundation.CGFloat, shouldMirrorHorizontalInset: Swift.Bool = false, cursorOffset: CoreFoundation.CGFloat? = nil)
   public func applyContentOffset(_ offset: CoreFoundation.CGPoint)
   public func cellSize() -> CoreFoundation.CGSize
+  public func getImage(at seconds: Foundation.TimeInterval) -> UIKit.UIImage?
 }
 extension BanubaUtilities.VideoTimeLineCollectionViewHandler : BanubaUtilities.TimeLineDataSourceDelegate {
   @objc dynamic public func timelineDataSource(_ timelineDataSource: any BanubaUtilities.TimeLineDataSource, didPreloadPreview preview: UIKit.UIImage)
@@ -1395,6 +1397,27 @@ public enum TransitionType : Swift.String, Swift.Codable, Swift.CaseIterable {
   case scrollLeft
   case spinRight
   case fade
+  case blink
+  case stretching2
+  case infinityPlus
+  case infinityMinus
+  case retractionPlus
+  case retractionMinus
+  case stretchLeft
+  case stretchRight
+  case rotationPlus
+  case rotationMinus
+  case scrollMirroredDown
+  case scrollMirroredUp
+  case scrollMirroredRight
+  case scrollMirroredLeft
+  public static func withId(_ id: Swift.Int) -> BanubaUtilities.TransitionType?
+  public var id: Swift.Int {
+    get
+  }
+  public var displayName: Swift.String {
+    get
+  }
   public init?(rawValue: Swift.String)
   public typealias AllCases = [BanubaUtilities.TransitionType]
   public typealias RawValue = Swift.String
@@ -1602,6 +1625,7 @@ public protocol GalleryAdapter : AnyObject {
   func checkAccessStatus(completion: @escaping (Swift.Bool) -> ())
   func getPreviewImageForGallery(completion: @escaping (UIKit.UIImage?) -> ())
   func fetchMediaAsset(from album: Photos.PHAssetCollection?, type: Photos.PHAssetMediaType, limit: Swift.Int?) -> [any BanubaUtilities.GalleryItem]
+  func fetchMediaAsset(from album: Photos.PHAssetCollection?, limit: Swift.Int?) -> [any BanubaUtilities.GalleryItem]
   func fetchSmartAlbums() -> [BanubaUtilities.ItemCollectionModel]
   func register()
 }
@@ -1631,6 +1655,7 @@ extension BanubaUtilities.GalleryManager {
   final public func fetchSmartAlbums() -> [BanubaUtilities.ItemCollectionModel]
   final public func fetchPhotoAndVideoAssets() -> [BanubaUtilities.BanubaGalleryItem]
   final public func fetchMediaAsset(from album: Photos.PHAssetCollection? = nil, type: Photos.PHAssetMediaType, limit: Swift.Int?) -> [any BanubaUtilities.GalleryItem]
+  final public func fetchMediaAsset(from album: Photos.PHAssetCollection?, limit: Swift.Int?) -> [any BanubaUtilities.GalleryItem]
   final public func checkAccessStatus(completion: @escaping (Swift.Bool) -> ())
 }
 extension BanubaUtilities.GalleryManager {
@@ -1655,8 +1680,10 @@ public struct ImageCreatingOptions {
   @objc func galleryViewControllerDone(_ controller: BanubaUtilities.GalleryViewController, withGalleryItems items: [any BanubaUtilities.GalleryItem])
   @objc func galleryViewControllerDoneForAutoCut(_ controller: BanubaUtilities.GalleryViewController, withGalleryItems items: [any BanubaUtilities.GalleryItem])
   @objc func galleryViewController(_ controller: BanubaUtilities.GalleryViewController, presentMessage message: Swift.String)
+  @objc func galleryViewControllerDidRequestCamera(_ controller: BanubaUtilities.GalleryViewController)
 }
 @objc public enum GalleryMediaType : Swift.Int, Swift.CaseIterable {
+  case all = 0
   case video
   case photo
   public init?(rawValue: Swift.Int)
@@ -1676,7 +1703,8 @@ public struct ImageCreatingOptions {
   final public let minimumGalleryVideoDuration: Foundation.TimeInterval
   final public let allowedMediaTypes: [BanubaUtilities.GalleryMediaType]
   final public let slideshowDuration: Foundation.TimeInterval
-  public init(maximumSelectedCount: Swift.Int, selectedItemsCount: Swift.Int? = nil, isMultiselectModeEnabled: Swift.Bool, minimumGalleryVideoDuration: Foundation.TimeInterval, allowedMediaTypes: [BanubaUtilities.GalleryMediaType], slideshowDuration: Foundation.TimeInterval)
+  final public let isCameraCellEnabled: Swift.Bool
+  public init(maximumSelectedCount: Swift.Int, selectedItemsCount: Swift.Int? = nil, isMultiselectModeEnabled: Swift.Bool, minimumGalleryVideoDuration: Foundation.TimeInterval, allowedMediaTypes: [BanubaUtilities.GalleryMediaType], slideshowDuration: Foundation.TimeInterval, isCameraCellEnabled: Swift.Bool = false)
   public var isAdditionalItemsRequired: Swift.Bool {
     get
   }
@@ -1717,7 +1745,8 @@ public struct CollectionInfoHeaderConfiguration {
   public var height: CoreFoundation.CGFloat
   public var backgroundColor: UIKit.UIColor
   public var underlinedTextColor: UIKit.UIColor
-  public init(textConfiguration: BanubaUtilities.TextConfiguration, hideButtonConfiguration: any BanubaUtilities.ImageButtonConfigurationProtocol, height: CoreFoundation.CGFloat, backgroundColor: UIKit.UIColor, underlinedTextColor: UIKit.UIColor)
+  public var underlinedTextFont: UIKit.UIFont
+  public init(textConfiguration: BanubaUtilities.TextConfiguration, hideButtonConfiguration: any BanubaUtilities.ImageButtonConfigurationProtocol, height: CoreFoundation.CGFloat, backgroundColor: UIKit.UIColor, underlinedTextColor: UIKit.UIColor, underlinedTextFont: UIKit.UIFont = .systemFont(ofSize: 13.0))
 }
 extension Swift.CaseIterable where Self : Swift.Equatable {
   public var next: Self {
@@ -1731,8 +1760,10 @@ public struct GalleryItemPreviewViewConfiguration {
   public var selectionButtonDeselectText: BanubaUtilities.TextConfiguration
   public var selectionButtonSelectImageName: Swift.String
   public var selectionButtonDeselectImageName: Swift.String
+  public var selectionButtonImageLeftInset: CoreFoundation.CGFloat
+  public var selectionButtonImageRightInset: CoreFoundation.CGFloat
   public var previewContainerView: BanubaUtilities.BackgroundConfiguration
-  public init(backgroundViewBlurStyle: UIKit.UIBlurEffect.Style, selectionButtonView: BanubaUtilities.BackgroundConfiguration, selectionButtonSelectText: BanubaUtilities.TextConfiguration, selectionButtonDeselectText: BanubaUtilities.TextConfiguration, selectionButtonSelectImageName: Swift.String, selectionButtonDeselectImageName: Swift.String, previewContainerView: BanubaUtilities.BackgroundConfiguration)
+  public init(backgroundViewBlurStyle: UIKit.UIBlurEffect.Style, selectionButtonView: BanubaUtilities.BackgroundConfiguration, selectionButtonSelectText: BanubaUtilities.TextConfiguration, selectionButtonDeselectText: BanubaUtilities.TextConfiguration, selectionButtonSelectImageName: Swift.String, selectionButtonDeselectImageName: Swift.String, selectionButtonImageLeftInset: CoreFoundation.CGFloat = 20.0, selectionButtonImageRightInset: CoreFoundation.CGFloat = 4.0, previewContainerView: BanubaUtilities.BackgroundConfiguration)
 }
 public enum FileExtension {
   public enum Video : Swift.String {
@@ -2097,7 +2128,7 @@ public protocol AudioServicing {
   func seekToStart(isEnabled: Swift.Bool)
   func seek(to: Foundation.TimeInterval)
   func load(item: BanubaUtilities.AudioServiceItem) throws
-  func unload()
+  func unload(shouldRemoveAudioFile: Swift.Bool)
   func toggle()
   func play()
   func pause()
@@ -2105,6 +2136,9 @@ public protocol AudioServicing {
   func setDelegate(_ delegate: any BanubaUtilities.AudioPlayerDelegate)
   func changeVolume(volume: Swift.Float)
   func createAudioDirectory()
+}
+extension BanubaUtilities.AudioServicing {
+  public func unload()
 }
 @objc @_inheritsConvenienceInitializers public class AudioService : ObjectiveC.NSObject, BanubaUtilities.AudioServicing {
   weak public var delegate: (any BanubaUtilities.AudioPlayerDelegate)?
@@ -2126,7 +2160,7 @@ public protocol AudioServicing {
   public func changeVolume(volume: Swift.Float)
   public func load(item: BanubaUtilities.AudioServiceItem) throws
   public func load(trackUrl: Foundation.URL) throws
-  public func unload()
+  public func unload(shouldRemoveAudioFile: Swift.Bool = true)
   public func toggle()
   public func play()
   public func pause()
@@ -2208,8 +2242,11 @@ public struct AudioPartSelectionViewConfiguration {
   public static var soundstripe: BanubaUtilities.AudioPartSelectionViewConfiguration {
     get
   }
+  public static var audioAdjust: BanubaUtilities.AudioPartSelectionViewConfiguration {
+    get
+  }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class AudioPartSelectionView : UIKit.UIView, UIKit.UIScrollViewDelegate {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class AudioPartSelectionView : UIKit.UIView, UIKit.UIScrollViewDelegate {
   @_Concurrency.MainActor(unsafe) final public var didScrollHandler: ((CoreMedia.CMTimeRange) -> Swift.Void)?
   @_Concurrency.MainActor(unsafe) @objc override final public func layoutSubviews()
   @_Concurrency.MainActor(unsafe) final public func set(audioStartOffset: Foundation.TimeInterval = .zero, audioDuration: Foundation.TimeInterval, videoDuration: Foundation.TimeInterval)
@@ -2224,6 +2261,8 @@ public struct AudioPartSelectionViewConfiguration {
   @_Concurrency.MainActor(unsafe) @objc final public func scrollViewWillBeginDecelerating(_ scrollView: UIKit.UIScrollView)
   @_Concurrency.MainActor(unsafe) final public func setPlayedRangeOverlayViewHidden(_ isHidden: Swift.Bool)
   @_Concurrency.MainActor(unsafe) final public func updatePlayedRangeOverlayViewLayer(completion: (() -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 extension Swift.Array where Element : Swift.Hashable {
@@ -2314,9 +2353,11 @@ public struct AutoCutGalleryConfiguration {
 }
 public struct ApplyAutoCutButtonConfiguration {
   public let borderColor: UIKit.UIColor
+  public let borderWidth: CoreFoundation.CGFloat
+  public let backgroundColor: UIKit.UIColor
   public let iconConfiguration: any BanubaUtilities.ImageConfigurationProtocol
   public let textConfiguration: BanubaUtilities.TextConfiguration
-  public init(borderColor: UIKit.UIColor, iconConfiguration: any BanubaUtilities.ImageConfigurationProtocol, textConfiguration: BanubaUtilities.TextConfiguration)
+  public init(borderColor: UIKit.UIColor, borderWidth: CoreFoundation.CGFloat = 1.0, backgroundColor: UIKit.UIColor = .clear, iconConfiguration: any BanubaUtilities.ImageConfigurationProtocol, textConfiguration: BanubaUtilities.TextConfiguration)
 }
 public struct GalleryNextButtonConfiguration {
   public let textConfiguration: BanubaUtilities.TextConfiguration
