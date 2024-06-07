@@ -913,7 +913,7 @@ extension BanubaUtilities.KingfisherWrapper where Base == CoreFoundation.CGSize 
   public func filling(_ size: CoreFoundation.CGSize) -> CoreFoundation.CGSize
   public func constrainedRect(for size: CoreFoundation.CGSize, anchor: CoreFoundation.CGPoint) -> CoreFoundation.CGRect
 }
-public enum DeviceModel : Swift.String {
+public enum DeviceModel : Swift.String, Swift.Codable {
   case iPodTouch5
   case iPodTouch6
   case iPodTouch7
@@ -1411,6 +1411,9 @@ public enum TransitionType : Swift.String, Swift.Codable, Swift.CaseIterable {
   case scrollMirroredUp
   case scrollMirroredRight
   case scrollMirroredLeft
+  case fadingFromWhite
+  case fromDark
+  case intoDark
   public static func withId(_ id: Swift.Int) -> BanubaUtilities.TransitionType?
   public var id: Swift.Int {
     get
@@ -2364,7 +2367,7 @@ public struct GalleryNextButtonConfiguration {
   public let backgroundColor: UIKit.UIColor
   public init(textConfiguration: BanubaUtilities.TextConfiguration, backgroundColor: UIKit.UIColor)
 }
-public enum VideoResolution : Swift.String {
+public enum VideoResolution : Swift.String, Swift.Codable {
   case uhd3840x2160
   case qhd2560x1440
   case hd1920x1080
@@ -2389,7 +2392,7 @@ public enum VideoResolution : Swift.String {
     get
   }
 }
-public enum CameraVideoResolution {
+public enum CameraVideoResolution : Swift.String, Swift.Codable {
   case auto
   case vga854x480
   case hd1280x720
@@ -2400,13 +2403,13 @@ public enum CameraVideoResolution {
   public var size: CoreFoundation.CGSize? {
     get
   }
-  public static func == (a: BanubaUtilities.CameraVideoResolution, b: BanubaUtilities.CameraVideoResolution) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
     get
   }
 }
-public struct VideoResolutionConfiguration {
+public struct VideoResolutionConfiguration : Swift.Codable {
   public var `default`: BanubaUtilities.VideoResolution
   public var cameraVideoResolution: BanubaUtilities.CameraVideoResolution
   public let resolutions: [BanubaUtilities.DeviceModel : BanubaUtilities.VideoResolution]
@@ -2419,6 +2422,8 @@ public struct VideoResolutionConfiguration {
     get
   }
   public init(default: BanubaUtilities.VideoResolution, cameraVideoResolution: BanubaUtilities.CameraVideoResolution = .auto, resolutions: [BanubaUtilities.DeviceModel : BanubaUtilities.VideoResolution], thumbnailHeights: [BanubaUtilities.DeviceModel : CoreFoundation.CGFloat], defaultThumbnailHeight: CoreFoundation.CGFloat)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 extension AVFoundation.AVCaptureSession.Preset {
   public mutating func downgrade()
@@ -2598,7 +2603,7 @@ public protocol VideoEditorPlayable : AnyObject {
   var avPlayer: AVFoundation.AVPlayer { get }
   var currentTime: CoreMedia.CMTime { get }
   var videoDuration: CoreMedia.CMTime { get }
-  var playingRange: CoreMedia.CMTimeRange { get }
+  var playingRange: CoreMedia.CMTimeRange { get set }
   var isMuted: Swift.Bool { get set }
   var audioMix: AVFoundation.AVAudioMix? { get set }
   var playerDelegate: (any BanubaUtilities.VideoEditorPlayerDelegate)? { get set }
@@ -2727,5 +2732,6 @@ extension BanubaUtilities.VideoResolution : Swift.Hashable {}
 extension BanubaUtilities.VideoResolution : Swift.RawRepresentable {}
 extension BanubaUtilities.CameraVideoResolution : Swift.Equatable {}
 extension BanubaUtilities.CameraVideoResolution : Swift.Hashable {}
+extension BanubaUtilities.CameraVideoResolution : Swift.RawRepresentable {}
 extension BanubaUtilities.ImageFormat : Swift.Equatable {}
 extension BanubaUtilities.ImageFormat : Swift.Hashable {}
