@@ -2236,6 +2236,17 @@ public struct AnyRedirectHandler : BanubaUtilities.ImageDownloadRedirectHandler 
   public init(handle: @escaping (BanubaUtilities.SessionDataTask, Foundation.HTTPURLResponse, Foundation.URLRequest, @escaping (Foundation.URLRequest?) -> Swift.Void) -> Swift.Void)
 }
 public struct AudioPartSelectionViewConfiguration {
+  public var titleText: Swift.String
+  public var backgroundColor: UIKit.UIColor
+  public var textColor: UIKit.UIColor
+  public var audioWaveColor: UIKit.UIColor
+  public var playingAudioWaveColor: UIKit.UIColor
+  public var maximumAudioRangeBackgroundColor: UIKit.UIColor
+  public var maximumAudioRangeBackgroundBorderColor: UIKit.UIColor
+  public var maximumAudioRangeBackgroundBorderWidth: CoreFoundation.CGFloat
+  public var amplitudeBarWidth: CoreFoundation.CGFloat
+  public var amplitudeBarsSpacing: CoreFoundation.CGFloat
+  public var isTimeRangeLabelCentered: Swift.Bool
   public static var musicLibraryDark: BanubaUtilities.AudioPartSelectionViewConfiguration {
     get
   }
