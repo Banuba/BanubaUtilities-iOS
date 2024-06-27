@@ -1485,7 +1485,7 @@ public protocol ExternalLogListener {
 @_hasMissingDesignatedInitializers open class Logger {
   public static var externalListener: (any BanubaUtilities.ExternalLogListener)?
   open class func logError(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "", file: Swift.String = #fileID, line: Swift.Int = #line)
-  open class func logDegug(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "", file: Swift.String = #fileID, line: Swift.Int = #line)
+  open class func logDebug(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "", file: Swift.String = #fileID, line: Swift.Int = #line)
   open class func logInfo(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "", file: Swift.String = #fileID, line: Swift.Int = #line)
   open class func logFault(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "", file: Swift.String = #fileID, line: Swift.Int = #line)
   open class func logDefault(_ message: Swift.String, subsystem: Swift.String = "com.banuba", category: Swift.String = "", file: Swift.String = #fileID, line: Swift.Int = #line)
