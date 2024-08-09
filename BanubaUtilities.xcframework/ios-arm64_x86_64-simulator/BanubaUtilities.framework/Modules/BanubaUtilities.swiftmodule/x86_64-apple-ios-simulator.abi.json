@@ -70694,7 +70694,8 @@
               "HasInitialValue",
               "HasStorage",
               "SetterAccess",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -71583,6 +71584,13 @@
         "kind": "Import",
         "name": "ImageIO",
         "printedName": "ImageIO",
+        "declKind": "Import",
+        "moduleName": "BanubaUtilities"
+      },
+      {
+        "kind": "Import",
+        "name": "UniformTypeIdentifiers",
+        "printedName": "UniformTypeIdentifiers",
         "declKind": "Import",
         "moduleName": "BanubaUtilities"
       },
@@ -103380,2058 +103388,2058 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/AlertViewController\/AlertViewController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/AlertViewController\/AlertViewController.swift",
       "kind": "StringLiteral",
       "offset": 2199,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/AlertViewController\/AlertViewController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/AlertViewController\/AlertViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 2236,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/AlertViewController\/AlertViewController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/AlertViewController\/AlertViewController.swift",
       "kind": "FloatLiteral",
       "offset": 2732,
       "length": 4,
       "value": "48.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherError.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherError.swift",
       "kind": "StringLiteral",
       "offset": 15808,
       "length": 30,
       "value": "\"com.onevcat.Kingfisher.Error\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/AudioPartSelectionView\/AudioContext.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/AudioPartSelectionView\/AudioContext.swift",
       "kind": "FloatLiteral",
       "offset": 259,
       "length": 4,
       "value": "55.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/TextButtonConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/TextButtonConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 178,
       "length": 23,
       "value": "\"BanubaUtilities.TextButtonConfiguration\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 215,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 235,
       "length": 10,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 264,
       "length": 10,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 292,
       "length": 9,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 319,
       "length": 9,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 215,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 235,
       "length": 10,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 264,
       "length": 10,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 292,
       "length": 9,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 319,
       "length": 9,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 215,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 235,
       "length": 10,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 264,
       "length": 10,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 292,
       "length": 9,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/AspectRatio.swift",
       "kind": "IntegerLiteral",
       "offset": 319,
       "length": 9,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationManager.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationManager.swift",
       "kind": "BooleanLiteral",
       "offset": 1322,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationManager.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationManager.swift",
       "kind": "FloatLiteral",
       "offset": 1368,
       "length": 3,
       "value": "0.3"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationManager.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationManager.swift",
       "kind": "FloatLiteral",
       "offset": 2205,
       "length": 3,
       "value": "0.3"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherManager.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherManager.swift",
       "kind": "Array",
       "offset": 33434,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "StringLiteral",
       "offset": 1686,
       "length": 33,
       "value": "\"ReachabilityChangedNotification\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "StringLiteral",
       "offset": 1805,
       "length": 21,
       "value": "\"reachabilityChanged\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "BooleanLiteral",
       "offset": 3100,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "BooleanLiteral",
       "offset": 4552,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "BooleanLiteral",
       "offset": 4640,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "StringLiteral",
       "offset": 4771,
       "length": 32,
       "value": "\"uk.co.ashleymills.reachability\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIViewController+AlertPresentable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIViewController+AlertPresentable.swift",
       "kind": "BooleanLiteral",
       "offset": 2743,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIViewController+AlertPresentable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIViewController+AlertPresentable.swift",
       "kind": "BooleanLiteral",
       "offset": 3174,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 217,
       "length": 68,
       "value": "\"You don't seem to be connected to the internet. \nPlease try again\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 363,
       "length": 61,
       "value": "\"com.banuba.overlayEditor.captions.noInternetConnectionToast\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 493,
       "length": 45,
       "value": "\"Cannot download media file from your iCloud\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 594,
       "length": 21,
       "value": "\"errors.lowDiskSpace\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 679,
       "length": 34,
       "value": "\"errors.photosLibraryNetworkError\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 791,
       "length": 4,
       "value": "\"OK\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 849,
       "length": 5,
       "value": "\"Yes\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 907,
       "length": 4,
       "value": "\"No\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 994,
       "length": 10,
       "value": "\"Settings\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1069,
       "length": 16,
       "value": "\"Settings.Close\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1151,
       "length": 48,
       "value": "\"banuba.alert.camera.no.headphones.button.title\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1260,
       "length": 44,
       "value": "\"com.banuba.recorder.requireMaskButtonTitle\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1392,
       "length": 39,
       "value": "\"BanubaVideoEditor.Gallery.DamagedFile\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1499,
       "length": 45,
       "value": "\"BanubaVideoEditor.Gallery.ExportVideoFailed\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/LocalizedStrings.swift",
       "kind": "StringLiteral",
       "offset": 1632,
       "length": 31,
       "value": "\"com.banuba.autocut.choosePart\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationAnimator.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationAnimator.swift",
       "kind": "StringLiteral",
       "offset": 132,
       "length": 27,
       "value": "\"BanubaUtilities.SlideInPresentationAnimator\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
       "kind": "BooleanLiteral",
       "offset": 6665,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
       "kind": "BooleanLiteral",
       "offset": 7300,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
       "kind": "BooleanLiteral",
       "offset": 7666,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
       "kind": "BooleanLiteral",
       "offset": 8080,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
       "kind": "BooleanLiteral",
       "offset": 8631,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
       "kind": "BooleanLiteral",
       "offset": 9265,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
       "kind": "BooleanLiteral",
       "offset": 11374,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
       "kind": "BooleanLiteral",
       "offset": 12921,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
       "kind": "IntegerLiteral",
       "offset": 15800,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
       "kind": "BooleanLiteral",
       "offset": 17278,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
       "kind": "FloatLiteral",
       "offset": 25203,
       "length": 3,
       "value": "0.5"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
       "kind": "FloatLiteral",
       "offset": 26462,
       "length": 3,
       "value": "0.5"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KFOptionsSetter.swift",
       "kind": "FloatLiteral",
       "offset": 26470,
       "length": 3,
       "value": "0.5"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/ImagePrefetcher.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/ImagePrefetcher.swift",
       "kind": "IntegerLiteral",
       "offset": 4357,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/ImagePrefetcher.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/ImagePrefetcher.swift",
       "kind": "BooleanLiteral",
       "offset": 5011,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/ImagePrefetcher.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/ImagePrefetcher.swift",
       "kind": "StringLiteral",
       "offset": 5199,
       "length": 52,
       "value": "\"com.onevcat.Kingfisher.ImagePrefetcher.pretchQueue\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/ImagePrefetcher.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/ImagePrefetcher.swift",
       "kind": "StringLiteral",
       "offset": 5315,
       "length": 56,
       "value": "\"com.onevcat.Kingfisher.ImagePrefetcher.requestingQueue\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/BackgroundConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/BackgroundConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 170,
       "length": 23,
       "value": "\"BanubaUtilities.BackgroundConfiguration\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "StringLiteral",
       "offset": 5886,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "IntegerLiteral",
       "offset": 7097,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "IntegerLiteral",
       "offset": 7102,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "IntegerLiteral",
       "offset": 7205,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "IntegerLiteral",
       "offset": 7210,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "IntegerLiteral",
       "offset": 7317,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "IntegerLiteral",
       "offset": 7322,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "IntegerLiteral",
       "offset": 7431,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "IntegerLiteral",
       "offset": 7436,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "FloatLiteral",
       "offset": 9019,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "IntegerLiteral",
       "offset": 20535,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "IntegerLiteral",
       "offset": 20570,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "FloatLiteral",
       "offset": 27329,
       "length": 3,
       "value": "0.5"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "StringLiteral",
       "offset": 32164,
       "length": 44,
       "value": "\"com.onevcat.Kingfisher.BlackWhiteProcessor\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "FloatLiteral",
       "offset": 34870,
       "length": 3,
       "value": "0.5"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "FloatLiteral",
       "offset": 34878,
       "length": 3,
       "value": "0.5"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryErrors.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryErrors.swift",
       "kind": "StringLiteral",
       "offset": 445,
       "length": 20,
       "value": "\"com.banuba.gallery\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIColor.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIColor.swift",
       "kind": "FloatLiteral",
       "offset": 580,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIColor.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIColor.swift",
       "kind": "FloatLiteral",
       "offset": 777,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/ZipArchive\/ZipArchive.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/ZipArchive\/ZipArchive.swift",
       "kind": "StringLiteral",
       "offset": 227,
       "length": 44,
       "value": "\"ZipArchive: Nil error, but false isSuccess\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/Filter.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/Filter.swift",
       "kind": "StringLiteral",
       "offset": 2940,
       "length": 26,
       "value": "\"CIConstantColorGenerator\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/Filter.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/Filter.swift",
       "kind": "StringLiteral",
       "offset": 3104,
       "length": 25,
       "value": "\"CISourceOverCompositing\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/Filter.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/Filter.swift",
       "kind": "StringLiteral",
       "offset": 4128,
       "length": 17,
       "value": "\"CIColorControls\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/Filter.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/Filter.swift",
       "kind": "StringLiteral",
       "offset": 4278,
       "length": 18,
       "value": "\"CIExposureAdjust\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/TimeInterval+Formatted.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/TimeInterval+Formatted.swift",
       "kind": "BooleanLiteral",
       "offset": 850,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/TimeInterval+Formatted.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/TimeInterval+Formatted.swift",
       "kind": "BooleanLiteral",
       "offset": 890,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/Gallery\/GalleryConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/Gallery\/GalleryConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 170,
       "length": 20,
       "value": "\"BanubaUtilities.GalleryConfiguration\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
       "kind": "StringLiteral",
       "offset": 2028,
       "length": 52,
       "value": "\"com.onevcat.Kingfisher.KingfisherDidCleanDiskCache\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
       "kind": "StringLiteral",
       "offset": 2228,
       "length": 36,
       "value": "\"com.onevcat.Kingfisher.cleanedHash\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
       "kind": "StringLiteral",
       "offset": 5735,
       "length": 9,
       "value": "\"default\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
       "kind": "BooleanLiteral",
       "offset": 12436,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
       "kind": "StringLiteral",
       "offset": 16228,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
       "kind": "BooleanLiteral",
       "offset": 16369,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
       "kind": "StringLiteral",
       "offset": 17265,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
       "kind": "StringLiteral",
       "offset": 17886,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
       "kind": "Array",
       "offset": 18029,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
       "kind": "StringLiteral",
       "offset": 20115,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
       "kind": "BooleanLiteral",
       "offset": 20164,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/ImageCache.swift",
       "kind": "BooleanLiteral",
       "offset": 20213,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/DiskStorage.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/DiskStorage.swift",
       "kind": "StringLiteral",
       "offset": 2418,
       "length": 49,
       "value": "\"com.onevcat.Kingfisher.maybeCachedCheckingQueue\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/DiskStorage.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/DiskStorage.swift",
       "kind": "BooleanLiteral",
       "offset": 2667,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/DiskStorage.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/DiskStorage.swift",
       "kind": "Array",
       "offset": 5880,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/DiskStorage.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/DiskStorage.swift",
       "kind": "IntegerLiteral",
       "offset": 18702,
       "length": 1,
       "value": "7"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/DiskStorage.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/DiskStorage.swift",
       "kind": "BooleanLiteral",
       "offset": 19085,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/DiskStorage.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/DiskStorage.swift",
       "kind": "BooleanLiteral",
       "offset": 19339,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/DiskStorage.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/DiskStorage.swift",
       "kind": "BooleanLiteral",
       "offset": 19718,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/AlbumViewModel.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/AlbumViewModel.swift",
       "kind": "FloatLiteral",
       "offset": 116,
       "length": 5,
       "value": "400.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/AlbumViewModel.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/AlbumViewModel.swift",
       "kind": "FloatLiteral",
       "offset": 131,
       "length": 5,
       "value": "400.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/AlbumViewModel.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/AlbumViewModel.swift",
       "kind": "BooleanLiteral",
       "offset": 718,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/AlbumViewModel.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/AlbumViewModel.swift",
       "kind": "StringLiteral",
       "offset": 391,
       "length": 14,
       "value": "\"BanubaUtilities.AlbumViewModel\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIDevice+Models.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIDevice+Models.swift",
       "kind": "StringLiteral",
       "offset": 15513,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIDevice+Models.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIDevice+Models.swift",
       "kind": "IntegerLiteral",
       "offset": 15599,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Utility\/String+MD5.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Utility\/String+MD5.swift",
       "kind": "IntegerLiteral",
       "offset": 4627,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Utility\/String+MD5.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Utility\/String+MD5.swift",
       "kind": "Array",
       "offset": 5395,
       "length": 344,
       "value": "[7, 12, 17, 22, 7, 12, 17, 22, 7, 12, 17, 22, 7, 12, 17, 22, 5, 9, 14, 20, 5, 9, 14, 20, 5, 9, 14, 20, 5, 9, 14, 20, 4, 11, 16, 23, 4, 11, 16, 23, 4, 11, 16, 23, 4, 11, 16, 23, 6, 10, 15, 21, 6, 10, 15, 21, 6, 10, 15, 21, 6, 10, 15, 21]"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Utility\/String+MD5.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Utility\/String+MD5.swift",
       "kind": "Array",
       "offset": 5837,
       "length": 1292,
       "value": "[0xd76aa478, 0xe8c7b756, 0x242070db, 0xc1bdceee, 0xf57c0faf, 0x4787c62a, 0xa8304613, 0xfd469501, 0x698098d8, 0x8b44f7af, 0xffff5bb1, 0x895cd7be, 0x6b901122, 0xfd987193, 0xa679438e, 0x49b40821, 0xf61e2562, 0xc040b340, 0x265e5a51, 0xe9b6c7aa, 0xd62f105d, 0x02441453, 0xd8a1e681, 0xe7d3fbc8, 0x21e1cde6, 0xc33707d6, 0xf4d50d87, 0x455a14ed, 0xa9e3e905, 0xfcefa3f8, 0x676f02d9, 0x8d2a4c8a, 0xfffa3942, 0x8771f681, 0x6d9d6122, 0xfde5380c, 0xa4beea44, 0x4bdecfa9, 0xf6bb4b60, 0xbebfbc70, 0x289b7ec6, 0xeaa127fa, 0xd4ef3085, 0x4881d05, 0xd9d4d039, 0xe6db99e5, 0x1fa27cf8, 0xc4ac5665, 0xf4292244, 0x432aff97, 0xab9423a7, 0xfc93a039, 0x655b59c3, 0x8f0ccc92, 0xffeff47d, 0x85845dd1, 0x6fa87e4f, 0xfe2ce6e0, 0xa3014314, 0x4e0811a1, 0xf7537e82, 0xbd3af235, 0x2ad7d2bb, 0xeb86d391]"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Utility\/String+MD5.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Utility\/String+MD5.swift",
       "kind": "Array",
       "offset": 7166,
       "length": 48,
       "value": "[0x67452301, 0xefcdab89, 0x98badcfe, 0x10325476]"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/ImageSource\/Source.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/ImageSource\/Source.swift",
       "kind": "IntegerLiteral",
       "offset": 2056,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
       "kind": "Array",
       "offset": 1595,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
       "kind": "BooleanLiteral",
       "offset": 17051,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
       "kind": "BooleanLiteral",
       "offset": 17099,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
       "kind": "BooleanLiteral",
       "offset": 17138,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
       "kind": "BooleanLiteral",
       "offset": 17177,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
       "kind": "BooleanLiteral",
       "offset": 17213,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
       "kind": "BooleanLiteral",
       "offset": 17250,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
       "kind": "BooleanLiteral",
       "offset": 17290,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
       "kind": "BooleanLiteral",
       "offset": 17337,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
       "kind": "FloatLiteral",
       "offset": 17447,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
       "kind": "BooleanLiteral",
       "offset": 17843,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
       "kind": "BooleanLiteral",
       "offset": 17885,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
       "kind": "BooleanLiteral",
       "offset": 17927,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
       "kind": "BooleanLiteral",
       "offset": 18042,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
       "kind": "BooleanLiteral",
       "offset": 18091,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
       "kind": "Array",
       "offset": 18157,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KingfisherOptionsInfo.swift",
       "kind": "BooleanLiteral",
       "offset": 22232,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/ImageSource\/Resource.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/ImageSource\/Resource.swift",
       "kind": "StringLiteral",
       "offset": 3671,
       "length": 27,
       "value": "\"kingfisher.local.cacheKey\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/ActivityIndicatorView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/ActivityIndicatorView.swift",
       "kind": "FloatLiteral",
       "offset": 409,
       "length": 3,
       "value": "1.1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProgressive.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProgressive.swift",
       "kind": "StringLiteral",
       "offset": 1369,
       "length": 48,
       "value": "\"com.onevcat.Kingfisher.ImageDownloader.Process\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProgressive.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProgressive.swift",
       "kind": "BooleanLiteral",
       "offset": 2549,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProgressive.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProgressive.swift",
       "kind": "BooleanLiteral",
       "offset": 2578,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProgressive.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProgressive.swift",
       "kind": "IntegerLiteral",
       "offset": 2606,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProgressive.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProgressive.swift",
       "kind": "BooleanLiteral",
       "offset": 4172,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProgressive.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProgressive.swift",
       "kind": "IntegerLiteral",
       "offset": 6570,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProgressive.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProgressive.swift",
       "kind": "IntegerLiteral",
       "offset": 6608,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProgressive.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProgressive.swift",
       "kind": "Array",
       "offset": 11047,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/CombineExt\/Sink.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/CombineExt\/Sink.swift",
       "kind": "BooleanLiteral",
       "offset": 833,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
       "kind": "IntegerLiteral",
       "offset": 204,
       "length": 1,
       "value": "9"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
       "kind": "IntegerLiteral",
       "offset": 215,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
       "kind": "FloatLiteral",
       "offset": 256,
       "length": 3,
       "value": "3.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
       "kind": "BooleanLiteral",
       "offset": 1187,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
       "kind": "StringLiteral",
       "offset": 361,
       "length": 34,
       "value": "\"BanubaUtilities.VideoTimeLineCollectionViewHandler\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
       "kind": "BooleanLiteral",
       "offset": 2024,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/ImageDownloader.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/ImageDownloader.swift",
       "kind": "StringLiteral",
       "offset": 4112,
       "length": 9,
       "value": "\"default\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/ImageDownloader.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/ImageDownloader.swift",
       "kind": "FloatLiteral",
       "offset": 4279,
       "length": 4,
       "value": "15.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/ImageDownloader.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/ImageDownloader.swift",
       "kind": "BooleanLiteral",
       "offset": 5823,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/Storage.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/Storage.swift",
       "kind": "IntegerLiteral",
       "offset": 1337,
       "length": 6,
       "value": "86400"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/SessionDataTask.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/SessionDataTask.swift",
       "kind": "IntegerLiteral",
       "offset": 2555,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/SessionDataTask.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/SessionDataTask.swift",
       "kind": "BooleanLiteral",
       "offset": 2788,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Operations\/BanubaAsyncOperation.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Operations\/BanubaAsyncOperation.swift",
       "kind": "IntegerLiteral",
       "offset": 321,
       "length": 9,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Operations\/BanubaAsyncOperation.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Operations\/BanubaAsyncOperation.swift",
       "kind": "IntegerLiteral",
       "offset": 340,
       "length": 8,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Operations\/BanubaAsyncOperation.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Operations\/BanubaAsyncOperation.swift",
       "kind": "IntegerLiteral",
       "offset": 321,
       "length": 9,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Operations\/BanubaAsyncOperation.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Operations\/BanubaAsyncOperation.swift",
       "kind": "IntegerLiteral",
       "offset": 340,
       "length": 8,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Operations\/BanubaAsyncOperation.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Operations\/BanubaAsyncOperation.swift",
       "kind": "StringLiteral",
       "offset": 496,
       "length": 11,
       "value": "\".rw.state\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationController.swift",
       "kind": "BooleanLiteral",
       "offset": 789,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationController.swift",
       "kind": "StringLiteral",
       "offset": 425,
       "length": 29,
       "value": "\"BanubaUtilities.SlideInPresentationController\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/AlbumsConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/AlbumsConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 160,
       "length": 19,
       "value": "\"BanubaUtilities.AlbumsConfiguration\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/AlbumsConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/AlbumsConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 1470,
       "length": 22,
       "value": "\"BanubaUtilities.AlbumItemConfiguration\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 376,
       "length": 12,
       "value": "\"com.banuba\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 413,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 811,
       "length": 12,
       "value": "\"com.banuba\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 848,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1247,
       "length": 12,
       "value": "\"com.banuba\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1284,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1682,
       "length": 12,
       "value": "\"com.banuba\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 1719,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 2117,
       "length": 12,
       "value": "\"com.banuba\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Logger.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Logger.swift",
       "kind": "StringLiteral",
       "offset": 2154,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/ImageDataProcessor.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/ImageDataProcessor.swift",
       "kind": "StringLiteral",
       "offset": 1340,
       "length": 48,
       "value": "\"com.onevcat.Kingfisher.ImageDownloader.Process\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KF.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KF.swift",
       "kind": "BooleanLiteral",
       "offset": 14719,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KF.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KF.swift",
       "kind": "BooleanLiteral",
       "offset": 15392,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KF.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KF.swift",
       "kind": "BooleanLiteral",
       "offset": 16927,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/SessionDelegate.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/SessionDelegate.swift",
       "kind": "Dictionary",
       "offset": 1935,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/GalleryManager.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/GalleryManager.swift",
       "kind": "StringLiteral",
       "offset": 1417,
       "length": 37,
       "value": "\"com.videoEditor.galleryManagerQueue\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/GalleryManager.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/GalleryManager.swift",
       "kind": "BooleanLiteral",
       "offset": 1494,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/GalleryManager.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/GalleryManager.swift",
       "kind": "BooleanLiteral",
       "offset": 1526,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/GalleryManager.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/GalleryManager.swift",
       "kind": "StringLiteral",
       "offset": 902,
       "length": 14,
       "value": "\"BanubaUtilities.GalleryManager\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/GIFAnimatedImage.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/GIFAnimatedImage.swift",
       "kind": "FloatLiteral",
       "offset": 2770,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/GIFAnimatedImage.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/GIFAnimatedImage.swift",
       "kind": "FloatLiteral",
       "offset": 2808,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/GIFAnimatedImage.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/GIFAnimatedImage.swift",
       "kind": "BooleanLiteral",
       "offset": 2840,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/GIFAnimatedImage.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/GIFAnimatedImage.swift",
       "kind": "BooleanLiteral",
       "offset": 2878,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryInterfaces.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryInterfaces.swift",
       "kind": "IntegerLiteral",
       "offset": 1694,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryInterfaces.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryInterfaces.swift",
       "kind": "IntegerLiteral",
       "offset": 1703,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryInterfaces.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryInterfaces.swift",
       "kind": "IntegerLiteral",
       "offset": 1716,
       "length": 5,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryInterfaces.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryInterfaces.swift",
       "kind": "IntegerLiteral",
       "offset": 1694,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryInterfaces.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryInterfaces.swift",
       "kind": "IntegerLiteral",
       "offset": 1703,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryInterfaces.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryInterfaces.swift",
       "kind": "IntegerLiteral",
       "offset": 1716,
       "length": 5,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryInterfaces.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryInterfaces.swift",
       "kind": "BooleanLiteral",
       "offset": 3579,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryInterfaces.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryInterfaces.swift",
       "kind": "StringLiteral",
       "offset": 1783,
       "length": 25,
       "value": "\"BanubaUtilities.GallerySelectionBehaviour\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/CollectionInfoHeaderConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/CollectionInfoHeaderConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1590,
       "length": 4,
       "value": "13.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/Gallery\/GalleryItemPreviewViewConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/Gallery\/GalleryItemPreviewViewConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 2268,
       "length": 4,
       "value": "20.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/Gallery\/GalleryItemPreviewViewConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/Gallery\/GalleryItemPreviewViewConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 2320,
       "length": 3,
       "value": "4.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/SlideInPresentationManager\/AbsoluteFrameCalculator.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/SlideInPresentationManager\/AbsoluteFrameCalculator.swift",
       "kind": "IntegerLiteral",
       "offset": 248,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/CMTimeScale+Default.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/CMTimeScale+Default.swift",
       "kind": "IntegerLiteral",
       "offset": 275,
       "length": 6,
       "value": "10000"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/CacheSerializer.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/CacheSerializer.swift",
       "kind": "FloatLiteral",
       "offset": 3595,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/CacheSerializer.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/CacheSerializer.swift",
       "kind": "BooleanLiteral",
       "offset": 3913,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/CircularProgressView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/CircularProgressView.swift",
       "kind": "IntegerLiteral",
       "offset": 428,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/CircularProgressView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/CircularProgressView.swift",
       "kind": "FloatLiteral",
       "offset": 438,
       "length": 4,
       "value": "0.25"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/CircularProgressView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/CircularProgressView.swift",
       "kind": "BooleanLiteral",
       "offset": 740,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/CircularProgressView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/CircularProgressView.swift",
       "kind": "FloatLiteral",
       "offset": 799,
       "length": 3,
       "value": "2.5"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/CircularProgressView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/CircularProgressView.swift",
       "kind": "FloatLiteral",
       "offset": 845,
       "length": 3,
       "value": "2.5"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Views\/Indicator.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Views\/Indicator.swift",
       "kind": "IntegerLiteral",
       "offset": 3804,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/AppStateObserver.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/AppStateObserver.swift",
       "kind": "BooleanLiteral",
-      "offset": 873,
+      "offset": 895,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIView+Utils.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIView+Utils.swift",
       "kind": "BooleanLiteral",
       "offset": 389,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/Image.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/Image.swift",
       "kind": "FloatLiteral",
-      "offset": 7415,
+      "offset": 7445,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/ToastConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/ToastConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1494,
       "length": 4,
       "value": "15.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/ToastConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/ToastConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1512,
       "length": 4,
       "value": "15.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/ToastConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/ToastConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1532,
       "length": 4,
       "value": "15.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/ToastConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/ToastConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1551,
       "length": 4,
       "value": "15.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/ToastConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/ToastConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1615,
       "length": 4,
       "value": "70.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/ToastConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/ToastConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1633,
       "length": 4,
       "value": "16.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/ToastConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/ToastConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1673,
       "length": 4,
       "value": "16.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/MemoryStorage.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/MemoryStorage.swift",
       "kind": "IntegerLiteral",
       "offset": 8734,
       "length": 3,
       "value": "300"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/MemoryStorage.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/MemoryStorage.swift",
       "kind": "BooleanLiteral",
       "offset": 9614,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/MemoryStorage.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/MemoryStorage.swift",
       "kind": "IntegerLiteral",
       "offset": 10209,
       "length": 3,
       "value": "120"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/MemoryStorage.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/MemoryStorage.swift",
       "kind": "BooleanLiteral",
       "offset": 10472,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/BackButtonConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/BackButtonConfiguration.swift",
       "kind": "Array",
       "offset": 881,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/BlurFigure.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/BlurFigure.swift",
       "kind": "StringLiteral",
       "offset": 251,
       "length": 8,
       "value": "\"Circle\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/BlurFigure.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/BlurFigure.swift",
       "kind": "StringLiteral",
       "offset": 293,
       "length": 8,
       "value": "\"Square\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/BlurFigure.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/BlurFigure.swift",
       "kind": "StringLiteral",
       "offset": 251,
       "length": 8,
       "value": "\"Circle\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/BlurFigure.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/BlurFigure.swift",
       "kind": "StringLiteral",
       "offset": 293,
       "length": 8,
       "value": "\"Square\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageDrawing.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageDrawing.swift",
       "kind": "FloatLiteral",
       "offset": 2023,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageDrawing.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageDrawing.swift",
       "kind": "IntegerLiteral",
       "offset": 7687,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Music\/AudioService.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Music\/AudioService.swift",
       "kind": "BooleanLiteral",
       "offset": 5157,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Music\/AudioService.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Music\/AudioService.swift",
       "kind": "BooleanLiteral",
       "offset": 5211,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Music\/AudioService.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Music\/AudioService.swift",
       "kind": "BooleanLiteral",
       "offset": 8650,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryItem.swift",
       "kind": "FloatLiteral",
       "offset": 184,
       "length": 3,
       "value": "0.1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryItem.swift",
       "kind": "IntegerLiteral",
       "offset": 252,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryItem.swift",
       "kind": "IntegerLiteral",
       "offset": 265,
       "length": 7,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryItem.swift",
       "kind": "IntegerLiteral",
       "offset": 252,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryItem.swift",
       "kind": "IntegerLiteral",
       "offset": 265,
       "length": 7,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryItem.swift",
       "kind": "FloatLiteral",
       "offset": 1405,
       "length": 5,
       "value": "400.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryItem.swift",
       "kind": "FloatLiteral",
       "offset": 1420,
       "length": 5,
       "value": "400.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryItem.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Gallery\/GalleryItem.swift",
       "kind": "StringLiteral",
       "offset": 1299,
       "length": 17,
       "value": "\"BanubaUtilities.BanubaGalleryItem\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/AudioPartSelectionView\/AudioPartSelectionView.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/AudioPartSelectionView\/AudioPartSelectionView.swift",
       "kind": "Array",
       "offset": 3852,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/RetryStrategy.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/RetryStrategy.swift",
       "kind": "IntegerLiteral",
       "offset": 5372,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/FormatIndicatedCacheSerializer.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/FormatIndicatedCacheSerializer.swift",
       "kind": "FloatLiteral",
       "offset": 3289,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIView+Shadow.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIView+Shadow.swift",
       "kind": "IntegerLiteral",
       "offset": 278,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIView+Shadow.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIView+Shadow.swift",
       "kind": "IntegerLiteral",
       "offset": 289,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIView+Shadow.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIView+Shadow.swift",
       "kind": "IntegerLiteral",
       "offset": 309,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIView+Shadow.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Extensions\/UIView+Shadow.swift",
       "kind": "IntegerLiteral",
       "offset": 329,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/SmallActivityIndicatorConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/SmallActivityIndicatorConfiguration.swift",
       "kind": "IntegerLiteral",
       "offset": 336,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/SmallActivityIndicatorConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/SmallActivityIndicatorConfiguration.swift",
       "kind": "IntegerLiteral",
       "offset": 336,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/SmallActivityIndicatorConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/SmallActivityIndicatorConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 393,
       "length": 12,
       "value": "\"BanubaUtilities.GradientType\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/SmallActivityIndicatorConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/SmallActivityIndicatorConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 1061,
       "length": 26,
       "value": "\"BanubaUtilities.GradientColorConfiguration\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/SmallActivityIndicatorConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/SmallActivityIndicatorConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 189,
       "length": 35,
       "value": "\"BanubaUtilities.SmallActivityIndicatorConfiguration\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/Gallery\/AutoCutGalleryConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/Gallery\/AutoCutGalleryConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 3059,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/VideoResolutionConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/VideoResolutionConfiguration.swift",
       "kind": "IntegerLiteral",
       "offset": 285,
       "length": 2,
       "value": "80"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/RoundedButtonConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/RoundedButtonConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1087,
       "length": 4,
       "value": "70.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/RoundedButtonConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/RoundedButtonConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1115,
       "length": 4,
       "value": "30.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/RoundedButtonConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/RoundedButtonConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1150,
       "length": 3,
       "value": "2.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/OverlayPopoverAlertView\/OverlayPopoverTableViewHandler.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/OverlayPopoverAlertView\/OverlayPopoverTableViewHandler.swift",
       "kind": "Array",
       "offset": 553,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/OverlayPopoverAlertView\/OverlayPopoverTableViewHandler.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/OverlayPopoverAlertView\/OverlayPopoverTableViewHandler.swift",
       "kind": "StringLiteral",
       "offset": 264,
       "length": 30,
       "value": "\"BanubaUtilities.OverlayPopoverTableViewHandler\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/PreviewExtractor.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/PreviewExtractor.swift",
       "kind": "IntegerLiteral",
       "offset": 265,
       "length": 5,
       "value": "10000"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/KeyboardLayoutGuide\/KeyboardLayoutGuide.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/KeyboardLayoutGuide\/KeyboardLayoutGuide.swift",
       "kind": "IntegerLiteral",
       "offset": 341,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/KeyboardLayoutGuide\/KeyboardLayoutGuide.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/KeyboardLayoutGuide\/KeyboardLayoutGuide.swift",
       "kind": "StringLiteral",
       "offset": 425,
       "length": 34,
       "value": "\"KeyboardLayoutGuideUsingSafeArea\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/KeyboardLayoutGuide\/KeyboardLayoutGuide.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/KeyboardLayoutGuide\/KeyboardLayoutGuide.swift",
       "kind": "StringLiteral",
       "offset": 494,
       "length": 21,
       "value": "\"KeyboardLayoutGuide\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/KeyboardLayoutGuide\/KeyboardLayoutGuide.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/KeyboardLayoutGuide\/KeyboardLayoutGuide.swift",
       "kind": "BooleanLiteral",
       "offset": 1676,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/KeyboardLayoutGuide\/KeyboardLayoutGuide.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/KeyboardLayoutGuide\/KeyboardLayoutGuide.swift",
       "kind": "StringLiteral",
       "offset": 1611,
       "length": 19,
       "value": "\"BanubaUtilities.KeyboardLayoutGuide\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/VideoEditorActivityIndicator.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/VideoEditorActivityIndicator.swift",
       "kind": "FloatLiteral",
       "offset": 495,
       "length": 3,
       "value": "1.1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
       "kind": "FloatLiteral",
       "offset": 2196,
       "length": 3,
       "value": "0.3"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
       "kind": "FloatLiteral",
       "offset": 2244,
       "length": 3,
       "value": "0.3"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
       "kind": "FloatLiteral",
       "offset": 2286,
       "length": 5,
       "value": "176.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
       "kind": "FloatLiteral",
       "offset": 2331,
       "length": 4,
       "value": "20.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/OverlayPopoverAlertView\/PopoverAlertViewController.swift",
       "kind": "Array",
       "offset": 2898,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/ToastPresenter.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/ToastPresenter.swift",
       "kind": "FloatLiteral",
       "offset": 172,
       "length": 3,
       "value": "3.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/ToastPresenter.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/ToastPresenter.swift",
       "kind": "BooleanLiteral",
       "offset": 2915,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/ToastPresenter.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/ToastPresenter.swift",
       "kind": "FloatLiteral",
       "offset": 3315,
       "length": 3,
       "value": "8.0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Protocols\/Playable.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Protocols\/Playable.swift",
       "kind": "StringLiteral",
       "offset": 215,
       "length": 37,
       "value": "\"videoEditorPlayerCurrentTimeChanged\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageFormat.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageFormat.swift",
       "kind": "Array",
       "offset": 1724,
       "length": 48,
       "value": "[0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A]"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageFormat.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageFormat.swift",
       "kind": "Array",
       "offset": 1812,
       "length": 12,
       "value": "[0xFF, 0xD8]"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageFormat.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageFormat.swift",
       "kind": "Array",
       "offset": 1863,
       "length": 6,
       "value": "[0xFF]"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageFormat.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageFormat.swift",
       "kind": "Array",
       "offset": 1904,
       "length": 18,
       "value": "[0x47, 0x49, 0x46]"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/TextConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/TextConfiguration.swift",
       "kind": "IntegerLiteral",
       "offset": 821,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/TextConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/TextConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 156,
       "length": 17,
       "value": "\"BanubaUtilities.TextConfiguration\""
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/TextConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/TextConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1910,
       "length": 3,
       "value": "0.4"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/TextConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/TextConfiguration.swift",
       "kind": "IntegerLiteral",
       "offset": 1957,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/TextConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/TextConfiguration.swift",
       "kind": "IntegerLiteral",
       "offset": 1968,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/andreysak\/Developer\/ve_sdk_ios_2023\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/TextConfiguration.swift",
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/TextConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 2004,
       "length": 3,
