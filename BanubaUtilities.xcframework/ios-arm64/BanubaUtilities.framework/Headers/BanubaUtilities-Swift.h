@@ -391,14 +391,13 @@ SWIFT_CLASS("_TtC15BanubaUtilities16AppStateObserver")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSNotification;
 
 @interface AppStateObserver (SWIFT_EXTENSION(BanubaUtilities))
-- (void)handleApplicationWillResignActiveNotification:(NSNotification * _Nonnull)notification;
-- (void)handleApplicationDidBecomeActiveNotification:(NSNotification * _Nonnull)notification;
-- (void)handleWillEnterForegroundNotification:(NSNotification * _Nonnull)notification;
-- (void)handleWillTerminateNotification:(NSNotification * _Nonnull)notification;
-- (void)handleDidEnterBackgroundNotification:(NSNotification * _Nonnull)notification;
+- (void)handleApplicationWillResignActiveNotification;
+- (void)handleApplicationDidBecomeActiveNotification;
+- (void)handleWillEnterForegroundNotification;
+- (void)handleWillTerminateNotification;
+- (void)handleDidEnterBackgroundNotification;
 @end
 
 
@@ -514,7 +513,6 @@ SWIFT_CLASS("_TtC15BanubaUtilities32BaseTrackSelectionViewController")
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
-
 
 @class CALayer;
 
@@ -833,13 +831,6 @@ SWIFT_CLASS("_TtC15BanubaUtilities34VideoTimeLineCollectionViewHandler")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-
-@interface VideoTimeLineCollectionViewHandler (SWIFT_EXTENSION(BanubaUtilities)) <TimeLineDataSourceDelegate>
-- (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didPreloadPreview:(UIImage * _Nonnull)preview;
-- (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didLoadImage:(UIImage * _Nonnull)image at:(NSInteger)index;
-- (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
-@end
-
 @class UICollectionView;
 @class UICollectionViewLayout;
 @class NSIndexPath;
@@ -848,6 +839,13 @@ SWIFT_CLASS("_TtC15BanubaUtilities34VideoTimeLineCollectionViewHandler")
 - (CGSize)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (CGFloat)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (CGFloat)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+@interface VideoTimeLineCollectionViewHandler (SWIFT_EXTENSION(BanubaUtilities)) <TimeLineDataSourceDelegate>
+- (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didPreloadPreview:(UIImage * _Nonnull)preview;
+- (void)timelineDataSource:(id <TimeLineDataSource> _Nonnull)timelineDataSource didLoadImage:(UIImage * _Nonnull)image at:(NSInteger)index;
+- (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
 @end
 
 @class UICollectionViewCell;

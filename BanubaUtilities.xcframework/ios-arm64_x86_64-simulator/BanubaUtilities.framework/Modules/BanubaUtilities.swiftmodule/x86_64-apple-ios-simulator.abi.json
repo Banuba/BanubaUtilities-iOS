@@ -33918,9 +33918,120 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "shadowConfiguration",
+            "printedName": "shadowConfiguration",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "BanubaUtilities.ShadowConfiguration?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ShadowConfiguration",
+                    "printedName": "BanubaUtilities.ShadowConfiguration",
+                    "usr": "s:15BanubaUtilities19ShadowConfigurationV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities23SaveButtonConfigurationV06shadowE0AA06ShadowE0VSgvp",
+            "mangledName": "$s15BanubaUtilities23SaveButtonConfigurationV06shadowE0AA06ShadowE0VSgvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "BanubaUtilities.ShadowConfiguration?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ShadowConfiguration",
+                        "printedName": "BanubaUtilities.ShadowConfiguration",
+                        "usr": "s:15BanubaUtilities19ShadowConfigurationV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities23SaveButtonConfigurationV06shadowE0AA06ShadowE0VSgvg",
+                "mangledName": "$s15BanubaUtilities23SaveButtonConfigurationV06shadowE0AA06ShadowE0VSgvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "BanubaUtilities.ShadowConfiguration?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ShadowConfiguration",
+                        "printedName": "BanubaUtilities.ShadowConfiguration",
+                        "usr": "s:15BanubaUtilities19ShadowConfigurationV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities23SaveButtonConfigurationV06shadowE0AA06ShadowE0VSgvs",
+                "mangledName": "$s15BanubaUtilities23SaveButtonConfigurationV06shadowE0AA06ShadowE0VSgvs",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities23SaveButtonConfigurationV06shadowE0AA06ShadowE0VSgvM",
+                "mangledName": "$s15BanubaUtilities23SaveButtonConfigurationV06shadowE0AA06ShadowE0VSgvM",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(textConfiguration:inactiveTextConfiguration:text:width:height:cornerRadius:backgroundColor:inactiveBackgroundColor:)",
+            "printedName": "init(textConfiguration:inactiveTextConfiguration:text:width:height:cornerRadius:backgroundColor:inactiveBackgroundColor:shadowConfiguration:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -33975,11 +34086,25 @@
                 "name": "UIColor",
                 "printedName": "UIKit.UIColor",
                 "usr": "c:objc(cs)UIColor"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "BanubaUtilities.ShadowConfiguration?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ShadowConfiguration",
+                    "printedName": "BanubaUtilities.ShadowConfiguration",
+                    "usr": "s:15BanubaUtilities19ShadowConfigurationV"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities23SaveButtonConfigurationV04textE0012inactiveTextE00F05width6height12cornerRadius15backgroundColor0g10BackgroundN0AcA0hE0C_AMSS14CoreFoundation7CGFloatVA2PSo7UIColorCARtcfc",
-            "mangledName": "$s15BanubaUtilities23SaveButtonConfigurationV04textE0012inactiveTextE00F05width6height12cornerRadius15backgroundColor0g10BackgroundN0AcA0hE0C_AMSS12CoreGraphics7CGFloatVA2PSo7UIColorCARtcfc",
+            "usr": "s:15BanubaUtilities23SaveButtonConfigurationV04textE0012inactiveTextE00F05width6height12cornerRadius15backgroundColor0g10BackgroundN006shadowE0AcA0hE0C_ANSS14CoreFoundation7CGFloatVA2QSo7UIColorCAsA06ShadowE0VSgtcfc",
+            "mangledName": "$s15BanubaUtilities23SaveButtonConfigurationV04textE0012inactiveTextE00F05width6height12cornerRadius15backgroundColor0g10BackgroundN006shadowE0AcA0hE0C_ANSS12CoreGraphics7CGFloatVA2QSo7UIColorCAsA06ShadowE0VSgtcfc",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "AccessControl",
@@ -40517,16 +40642,6 @@
             "usr": "s:15BanubaUtilities8ResourceP",
             "mangledName": "$s15BanubaUtilities8ResourceP"
           }
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "BanubaUtilities",
-        "declAttributes": [
-          "RawDocComment"
         ]
       },
       {
@@ -70829,23 +70944,17 @@
           {
             "kind": "Function",
             "name": "handleApplicationWillResignActiveNotification",
-            "printedName": "handleApplicationWillResignActiveNotification(_:)",
+            "printedName": "handleApplicationWillResignActiveNotification()",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Notification",
-                "printedName": "Foundation.Notification",
-                "usr": "s:10Foundation12NotificationV"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@CM@BanubaUtilities@objc(cs)AppStateObserver(im)handleApplicationWillResignActiveNotification:",
-            "mangledName": "$s15BanubaUtilities16AppStateObserverC45handleApplicationWillResignActiveNotificationyy10Foundation0K0VF",
+            "usr": "c:@CM@BanubaUtilities@objc(cs)AppStateObserver(im)handleApplicationWillResignActiveNotification",
+            "mangledName": "$s15BanubaUtilities16AppStateObserverC45handleApplicationWillResignActiveNotificationyyF",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "Dynamic",
@@ -70858,23 +70967,17 @@
           {
             "kind": "Function",
             "name": "handleApplicationDidBecomeActiveNotification",
-            "printedName": "handleApplicationDidBecomeActiveNotification(_:)",
+            "printedName": "handleApplicationDidBecomeActiveNotification()",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Notification",
-                "printedName": "Foundation.Notification",
-                "usr": "s:10Foundation12NotificationV"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@CM@BanubaUtilities@objc(cs)AppStateObserver(im)handleApplicationDidBecomeActiveNotification:",
-            "mangledName": "$s15BanubaUtilities16AppStateObserverC44handleApplicationDidBecomeActiveNotificationyy10Foundation0K0VF",
+            "usr": "c:@CM@BanubaUtilities@objc(cs)AppStateObserver(im)handleApplicationDidBecomeActiveNotification",
+            "mangledName": "$s15BanubaUtilities16AppStateObserverC44handleApplicationDidBecomeActiveNotificationyyF",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "Dynamic",
@@ -70887,23 +70990,17 @@
           {
             "kind": "Function",
             "name": "handleWillEnterForegroundNotification",
-            "printedName": "handleWillEnterForegroundNotification(_:)",
+            "printedName": "handleWillEnterForegroundNotification()",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Notification",
-                "printedName": "Foundation.Notification",
-                "usr": "s:10Foundation12NotificationV"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@CM@BanubaUtilities@objc(cs)AppStateObserver(im)handleWillEnterForegroundNotification:",
-            "mangledName": "$s15BanubaUtilities16AppStateObserverC37handleWillEnterForegroundNotificationyy10Foundation0J0VF",
+            "usr": "c:@CM@BanubaUtilities@objc(cs)AppStateObserver(im)handleWillEnterForegroundNotification",
+            "mangledName": "$s15BanubaUtilities16AppStateObserverC37handleWillEnterForegroundNotificationyyF",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "Dynamic",
@@ -70916,23 +71013,17 @@
           {
             "kind": "Function",
             "name": "handleWillTerminateNotification",
-            "printedName": "handleWillTerminateNotification(_:)",
+            "printedName": "handleWillTerminateNotification()",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Notification",
-                "printedName": "Foundation.Notification",
-                "usr": "s:10Foundation12NotificationV"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@CM@BanubaUtilities@objc(cs)AppStateObserver(im)handleWillTerminateNotification:",
-            "mangledName": "$s15BanubaUtilities16AppStateObserverC31handleWillTerminateNotificationyy10Foundation0I0VF",
+            "usr": "c:@CM@BanubaUtilities@objc(cs)AppStateObserver(im)handleWillTerminateNotification",
+            "mangledName": "$s15BanubaUtilities16AppStateObserverC31handleWillTerminateNotificationyyF",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "Dynamic",
@@ -70945,23 +71036,17 @@
           {
             "kind": "Function",
             "name": "handleDidEnterBackgroundNotification",
-            "printedName": "handleDidEnterBackgroundNotification(_:)",
+            "printedName": "handleDidEnterBackgroundNotification()",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Notification",
-                "printedName": "Foundation.Notification",
-                "usr": "s:10Foundation12NotificationV"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@CM@BanubaUtilities@objc(cs)AppStateObserver(im)handleDidEnterBackgroundNotification:",
-            "mangledName": "$s15BanubaUtilities16AppStateObserverC36handleDidEnterBackgroundNotificationyy10Foundation0J0VF",
+            "usr": "c:@CM@BanubaUtilities@objc(cs)AppStateObserver(im)handleDidEnterBackgroundNotification",
+            "mangledName": "$s15BanubaUtilities16AppStateObserverC36handleDidEnterBackgroundNotificationyyF",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "Dynamic",
@@ -87890,7 +87975,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(textConfiguration:cornerRadius:backgroundColor:borderWidth:borderColor:width:height:titleSpacing:)",
+            "printedName": "init(textConfiguration:cornerRadius:backgroundColor:borderWidth:borderColor:width:height:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -87967,26 +88052,11 @@
                 "printedName": "CoreGraphics.CGFloat",
                 "hasDefaultArg": true,
                 "usr": "s:14CoreFoundation7CGFloatV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "CoreGraphics.CGFloat?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "CGFloat",
-                    "printedName": "CoreGraphics.CGFloat",
-                    "usr": "s:14CoreFoundation7CGFloatV"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities26RoundedButtonConfigurationV04textE012cornerRadius15backgroundColor11borderWidth0kJ05width6height12titleSpacingAcA04TextE0CSg_14CoreFoundation7CGFloatVSo7UIColorCAQSgSo10CGColorRefaSgA2qTtcfc",
-            "mangledName": "$s15BanubaUtilities26RoundedButtonConfigurationV04textE012cornerRadius15backgroundColor11borderWidth0kJ05width6height12titleSpacingAcA04TextE0CSg_12CoreGraphics7CGFloatVSo7UIColorCAQSgSo10CGColorRefaSgA2qTtcfc",
+            "usr": "s:15BanubaUtilities26RoundedButtonConfigurationV04textE012cornerRadius15backgroundColor11borderWidth0kJ05width6heightAcA04TextE0CSg_14CoreFoundation7CGFloatVSo7UIColorCAPSgSo10CGColorRefaSgA2Ptcfc",
+            "mangledName": "$s15BanubaUtilities26RoundedButtonConfigurationV04textE012cornerRadius15backgroundColor11borderWidth0kJ05width6heightAcA04TextE0CSg_12CoreGraphics7CGFloatVSo7UIColorCAPSgSo10CGColorRefaSgA2Ptcfc",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "AccessControl",
@@ -94334,6 +94404,452 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "ShadowConfiguration",
+        "printedName": "ShadowConfiguration",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "color",
+            "printedName": "color",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities19ShadowConfigurationV5colorSo7UIColorCvp",
+            "mangledName": "$s15BanubaUtilities19ShadowConfigurationV5colorSo7UIColorCvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities19ShadowConfigurationV5colorSo7UIColorCvg",
+                "mangledName": "$s15BanubaUtilities19ShadowConfigurationV5colorSo7UIColorCvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities19ShadowConfigurationV5colorSo7UIColorCvs",
+                "mangledName": "$s15BanubaUtilities19ShadowConfigurationV5colorSo7UIColorCvs",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities19ShadowConfigurationV5colorSo7UIColorCvM",
+                "mangledName": "$s15BanubaUtilities19ShadowConfigurationV5colorSo7UIColorCvM",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "offset",
+            "printedName": "offset",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGSize",
+                "printedName": "CoreFoundation.CGSize",
+                "usr": "c:@S@CGSize"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities19ShadowConfigurationV6offsetSo6CGSizeVvp",
+            "mangledName": "$s15BanubaUtilities19ShadowConfigurationV6offsetSo6CGSizeVvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGSize",
+                    "printedName": "CoreFoundation.CGSize",
+                    "usr": "c:@S@CGSize"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities19ShadowConfigurationV6offsetSo6CGSizeVvg",
+                "mangledName": "$s15BanubaUtilities19ShadowConfigurationV6offsetSo6CGSizeVvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGSize",
+                    "printedName": "CoreFoundation.CGSize",
+                    "usr": "c:@S@CGSize"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities19ShadowConfigurationV6offsetSo6CGSizeVvs",
+                "mangledName": "$s15BanubaUtilities19ShadowConfigurationV6offsetSo6CGSizeVvs",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities19ShadowConfigurationV6offsetSo6CGSizeVvM",
+                "mangledName": "$s15BanubaUtilities19ShadowConfigurationV6offsetSo6CGSizeVvM",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "blurRadius",
+            "printedName": "blurRadius",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGFloat",
+                "printedName": "CoreGraphics.CGFloat",
+                "usr": "s:14CoreFoundation7CGFloatV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities19ShadowConfigurationV10blurRadius14CoreFoundation7CGFloatVvp",
+            "mangledName": "$s15BanubaUtilities19ShadowConfigurationV10blurRadius12CoreGraphics7CGFloatVvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities19ShadowConfigurationV10blurRadius14CoreFoundation7CGFloatVvg",
+                "mangledName": "$s15BanubaUtilities19ShadowConfigurationV10blurRadius12CoreGraphics7CGFloatVvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities19ShadowConfigurationV10blurRadius14CoreFoundation7CGFloatVvs",
+                "mangledName": "$s15BanubaUtilities19ShadowConfigurationV10blurRadius12CoreGraphics7CGFloatVvs",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities19ShadowConfigurationV10blurRadius14CoreFoundation7CGFloatVvM",
+                "mangledName": "$s15BanubaUtilities19ShadowConfigurationV10blurRadius12CoreGraphics7CGFloatVvM",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "opacity",
+            "printedName": "opacity",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities19ShadowConfigurationV7opacitySfvp",
+            "mangledName": "$s15BanubaUtilities19ShadowConfigurationV7opacitySfvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Float",
+                    "printedName": "Swift.Float",
+                    "usr": "s:Sf"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities19ShadowConfigurationV7opacitySfvg",
+                "mangledName": "$s15BanubaUtilities19ShadowConfigurationV7opacitySfvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Float",
+                    "printedName": "Swift.Float",
+                    "usr": "s:Sf"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities19ShadowConfigurationV7opacitySfvs",
+                "mangledName": "$s15BanubaUtilities19ShadowConfigurationV7opacitySfvs",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities19ShadowConfigurationV7opacitySfvM",
+                "mangledName": "$s15BanubaUtilities19ShadowConfigurationV7opacitySfvM",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(color:offset:blurRadius:opacity:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ShadowConfiguration",
+                "printedName": "BanubaUtilities.ShadowConfiguration",
+                "usr": "s:15BanubaUtilities19ShadowConfigurationV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGSize",
+                "printedName": "CoreFoundation.CGSize",
+                "usr": "c:@S@CGSize"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGFloat",
+                "printedName": "CoreGraphics.CGFloat",
+                "usr": "s:14CoreFoundation7CGFloatV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15BanubaUtilities19ShadowConfigurationV5color6offset10blurRadius7opacityACSo7UIColorC_So6CGSizeV14CoreFoundation7CGFloatVSftcfc",
+            "mangledName": "$s15BanubaUtilities19ShadowConfigurationV5color6offset10blurRadius7opacityACSo7UIColorC_So6CGSizeV12CoreGraphics7CGFloatVSftcfc",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "shadow",
+            "printedName": "shadow",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "NSShadow",
+                "printedName": "UIKit.NSShadow",
+                "usr": "c:objc(cs)NSShadow"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities19ShadowConfigurationV6shadowSo8NSShadowCvp",
+            "mangledName": "$s15BanubaUtilities19ShadowConfigurationV6shadowSo8NSShadowCvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSShadow",
+                    "printedName": "UIKit.NSShadow",
+                    "usr": "c:objc(cs)NSShadow"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities19ShadowConfigurationV6shadowSo8NSShadowCvg",
+                "mangledName": "$s15BanubaUtilities19ShadowConfigurationV6shadowSo8NSShadowCvg",
+                "moduleName": "BanubaUtilities",
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:15BanubaUtilities19ShadowConfigurationV",
+        "mangledName": "$s15BanubaUtilities19ShadowConfigurationV",
+        "moduleName": "BanubaUtilities",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "CGFloat",
         "printedName": "CGFloat",
         "children": [
@@ -99082,42 +99598,6 @@
         "children": [
           {
             "kind": "Function",
-            "name": "lookUpForImage",
-            "printedName": "lookUpForImage(in:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "UIKit.UIImage?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "UIImage",
-                    "printedName": "UIKit.UIImage",
-                    "usr": "c:objc(cs)UIImage"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bundle",
-                "printedName": "Foundation.Bundle",
-                "usr": "c:objc(cs)NSBundle"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:SS15BanubaUtilitiesE14lookUpForImage2inSo7UIImageCSgSo8NSBundleC_tF",
-            "mangledName": "$sSS15BanubaUtilitiesE14lookUpForImage2inSo7UIImageCSgSo8NSBundleC_tF",
-            "moduleName": "BanubaUtilities",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "height",
             "printedName": "height(forFont:)",
             "children": [
@@ -102482,6 +102962,33 @@
           },
           {
             "kind": "Function",
+            "name": "dropShadow",
+            "printedName": "dropShadow(configuration:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ShadowConfiguration",
+                "printedName": "BanubaUtilities.ShadowConfiguration",
+                "usr": "s:15BanubaUtilities19ShadowConfigurationV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So6UIViewC15BanubaUtilitiesE10dropShadow13configurationyAC0E13ConfigurationV_tF",
+            "mangledName": "$sSo6UIViewC15BanubaUtilitiesE10dropShadow13configurationyAC0E13ConfigurationV_tF",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "Custom"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "roundCorners",
             "printedName": "roundCorners(corners:radius:)",
             "children": [
@@ -103565,42 +104072,42 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "StringLiteral",
-      "offset": 1686,
+      "offset": 1710,
       "length": 33,
       "value": "\"ReachabilityChangedNotification\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "StringLiteral",
-      "offset": 1805,
+      "offset": 1829,
       "length": 21,
       "value": "\"reachabilityChanged\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "BooleanLiteral",
-      "offset": 3100,
+      "offset": 3124,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "BooleanLiteral",
-      "offset": 4552,
+      "offset": 4576,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "BooleanLiteral",
-      "offset": 4640,
+      "offset": 4664,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/NetworkReachability\/Reachability.swift",
       "kind": "StringLiteral",
-      "offset": 4771,
+      "offset": 4795,
       "length": 32,
       "value": "\"uk.co.ashleymills.reachability\""
     },
@@ -103859,112 +104366,112 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 5886,
+      "offset": 5910,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "IntegerLiteral",
-      "offset": 7097,
+      "offset": 7121,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "IntegerLiteral",
-      "offset": 7102,
+      "offset": 7126,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "IntegerLiteral",
-      "offset": 7205,
+      "offset": 7229,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "IntegerLiteral",
-      "offset": 7210,
+      "offset": 7234,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "IntegerLiteral",
-      "offset": 7317,
+      "offset": 7341,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "IntegerLiteral",
-      "offset": 7322,
+      "offset": 7346,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "IntegerLiteral",
-      "offset": 7431,
+      "offset": 7455,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "IntegerLiteral",
-      "offset": 7436,
+      "offset": 7460,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "FloatLiteral",
-      "offset": 9019,
+      "offset": 9043,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "IntegerLiteral",
-      "offset": 20535,
+      "offset": 20559,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "IntegerLiteral",
-      "offset": 20570,
+      "offset": 20594,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "FloatLiteral",
-      "offset": 27329,
+      "offset": 27353,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 32164,
+      "offset": 32188,
       "length": 44,
       "value": "\"com.onevcat.Kingfisher.BlackWhiteProcessor\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "FloatLiteral",
-      "offset": 34870,
+      "offset": 34894,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageProcessor.swift",
       "kind": "FloatLiteral",
-      "offset": 34878,
+      "offset": 34902,
       "length": 3,
       "value": "0.5"
     },
@@ -104496,21 +105003,21 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/ImageDownloader.swift",
       "kind": "StringLiteral",
-      "offset": 4112,
+      "offset": 4136,
       "length": 9,
       "value": "\"default\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/ImageDownloader.swift",
       "kind": "FloatLiteral",
-      "offset": 4279,
+      "offset": 4303,
       "length": 4,
       "value": "15.0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Networking\/ImageDownloader.swift",
       "kind": "BooleanLiteral",
-      "offset": 5823,
+      "offset": 5847,
       "length": 5,
       "value": "false"
     },
@@ -104573,14 +105080,14 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 789,
+      "offset": 770,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/SlideInPresentationManager\/SlideInPresentationController.swift",
       "kind": "StringLiteral",
-      "offset": 425,
+      "offset": 373,
       "length": 29,
       "value": "\"BanubaUtilities.SlideInPresentationController\""
     },
@@ -104678,21 +105185,21 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KF.swift",
       "kind": "BooleanLiteral",
-      "offset": 14719,
+      "offset": 14743,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KF.swift",
       "kind": "BooleanLiteral",
-      "offset": 15392,
+      "offset": 15416,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/General\/KF.swift",
       "kind": "BooleanLiteral",
-      "offset": 16927,
+      "offset": 16951,
       "length": 4,
       "value": "true"
     },
@@ -104923,7 +105430,7 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/Image.swift",
       "kind": "FloatLiteral",
-      "offset": 7445,
+      "offset": 7469,
       "length": 3,
       "value": "1.0"
     },
@@ -104979,28 +105486,28 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/MemoryStorage.swift",
       "kind": "IntegerLiteral",
-      "offset": 8734,
+      "offset": 8758,
       "length": 3,
       "value": "300"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/MemoryStorage.swift",
       "kind": "BooleanLiteral",
-      "offset": 9614,
+      "offset": 9638,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/MemoryStorage.swift",
       "kind": "IntegerLiteral",
-      "offset": 10209,
+      "offset": 10233,
       "length": 3,
       "value": "120"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Cache\/MemoryStorage.swift",
       "kind": "BooleanLiteral",
-      "offset": 10472,
+      "offset": 10496,
       "length": 4,
       "value": "true"
     },
@@ -105042,35 +105549,35 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageDrawing.swift",
       "kind": "FloatLiteral",
-      "offset": 2023,
+      "offset": 2047,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/Kingfisher\/Image\/ImageDrawing.swift",
       "kind": "IntegerLiteral",
-      "offset": 7687,
+      "offset": 7711,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Music\/AudioService.swift",
       "kind": "BooleanLiteral",
-      "offset": 5157,
+      "offset": 4687,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Music\/AudioService.swift",
       "kind": "BooleanLiteral",
-      "offset": 5211,
+      "offset": 4741,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/Music\/AudioService.swift",
       "kind": "BooleanLiteral",
-      "offset": 8650,
+      "offset": 8180,
       "length": 4,
       "value": "true"
     },
@@ -105222,13 +105729,6 @@
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/VideoResolutionConfiguration.swift",
-      "kind": "IntegerLiteral",
-      "offset": 285,
-      "length": 2,
-      "value": "80"
-    },
-    {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/RoundedButtonConfiguration.swift",
       "kind": "FloatLiteral",
       "offset": 1087,
@@ -105243,16 +105743,9 @@
       "value": "30.0"
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Configurations\/RoundedButtonConfiguration.swift",
-      "kind": "FloatLiteral",
-      "offset": 1150,
-      "length": 3,
-      "value": "2.0"
-    },
-    {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/OverlayPopoverAlertView\/OverlayPopoverTableViewHandler.swift",
       "kind": "Array",
-      "offset": 553,
+      "offset": 516,
       "length": 2,
       "value": "[]"
     },
@@ -105264,44 +105757,37 @@
       "value": "\"BanubaUtilities.OverlayPopoverTableViewHandler\""
     },
     {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/PreviewExtractor.swift",
-      "kind": "IntegerLiteral",
-      "offset": 265,
-      "length": 5,
-      "value": "10000"
-    },
-    {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/KeyboardLayoutGuide\/KeyboardLayoutGuide.swift",
       "kind": "IntegerLiteral",
-      "offset": 341,
+      "offset": 365,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/KeyboardLayoutGuide\/KeyboardLayoutGuide.swift",
       "kind": "StringLiteral",
-      "offset": 425,
+      "offset": 449,
       "length": 34,
       "value": "\"KeyboardLayoutGuideUsingSafeArea\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/KeyboardLayoutGuide\/KeyboardLayoutGuide.swift",
       "kind": "StringLiteral",
-      "offset": 494,
+      "offset": 518,
       "length": 21,
       "value": "\"KeyboardLayoutGuide\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/KeyboardLayoutGuide\/KeyboardLayoutGuide.swift",
       "kind": "BooleanLiteral",
-      "offset": 1676,
+      "offset": 1700,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Services\/KeyboardLayoutGuide\/KeyboardLayoutGuide.swift",
       "kind": "StringLiteral",
-      "offset": 1611,
+      "offset": 1635,
       "length": 19,
       "value": "\"BanubaUtilities.KeyboardLayoutGuide\""
     },
@@ -105357,14 +105843,14 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/ToastPresenter.swift",
       "kind": "BooleanLiteral",
-      "offset": 2915,
+      "offset": 2890,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/ToastPresenter.swift",
       "kind": "FloatLiteral",
-      "offset": 3315,
+      "offset": 3290,
       "length": 3,
       "value": "8.0"
     },

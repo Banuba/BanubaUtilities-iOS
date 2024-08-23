@@ -1007,7 +1007,8 @@ public struct SaveButtonConfiguration {
   public var cornerRadius: CoreFoundation.CGFloat
   public var backgroundColor: UIKit.UIColor
   public var inactiveBackgroundColor: UIKit.UIColor
-  public init(textConfiguration: BanubaUtilities.TextConfiguration, inactiveTextConfiguration: BanubaUtilities.TextConfiguration, text: Swift.String, width: CoreFoundation.CGFloat, height: CoreFoundation.CGFloat, cornerRadius: CoreFoundation.CGFloat, backgroundColor: UIKit.UIColor, inactiveBackgroundColor: UIKit.UIColor)
+  public var shadowConfiguration: BanubaUtilities.ShadowConfiguration?
+  public init(textConfiguration: BanubaUtilities.TextConfiguration, inactiveTextConfiguration: BanubaUtilities.TextConfiguration, text: Swift.String, width: CoreFoundation.CGFloat, height: CoreFoundation.CGFloat, cornerRadius: CoreFoundation.CGFloat, backgroundColor: UIKit.UIColor, inactiveBackgroundColor: UIKit.UIColor, shadowConfiguration: BanubaUtilities.ShadowConfiguration?)
 }
 extension Swift.String : BanubaUtilities.KingfisherCompatibleValue {
 }
@@ -1149,9 +1150,6 @@ extension Foundation.URL : BanubaUtilities.Resource {
   public var downloadURL: Foundation.URL {
     get
   }
-}
-extension Swift.String {
-  public func lookUpForImage(in bundle: Foundation.Bundle) -> UIKit.UIImage?
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ActivityIndicatorView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public var spinCircleLayer: QuartzCore.CAShapeLayer
@@ -1924,11 +1922,11 @@ public protocol ProgressAnimatableView : UIKit.UIView {
 extension BanubaUtilities.AppStateObserver {
   public func subscribeToNotifications()
   public func unsubscribeFromNotifications()
-  @objc dynamic public func handleApplicationWillResignActiveNotification(_ notification: Foundation.Notification)
-  @objc dynamic public func handleApplicationDidBecomeActiveNotification(_ notification: Foundation.Notification)
-  @objc dynamic public func handleWillEnterForegroundNotification(_ notification: Foundation.Notification)
-  @objc dynamic public func handleWillTerminateNotification(_ notification: Foundation.Notification)
-  @objc dynamic public func handleDidEnterBackgroundNotification(_ notification: Foundation.Notification)
+  @objc dynamic public func handleApplicationWillResignActiveNotification()
+  @objc dynamic public func handleApplicationDidBecomeActiveNotification()
+  @objc dynamic public func handleWillEnterForegroundNotification()
+  @objc dynamic public func handleWillTerminateNotification()
+  @objc dynamic public func handleDidEnterBackgroundNotification()
 }
 public protocol PlayerStateStorable {
   var playerState: Swift.Bool { get set }
@@ -2325,6 +2323,7 @@ public struct FormatIndicatedCacheSerializer : BanubaUtilities.CacheSerializer {
 }
 extension UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public func dropShadow(_ offset: CoreFoundation.CGSize = CGSize(width: 0, height: 1), blur: CoreFoundation.CGFloat = 1, opacity: Swift.Float = 1)
+  @_Concurrency.MainActor(unsafe) public func dropShadow(configuration: BanubaUtilities.ShadowConfiguration)
 }
 @objc public class SmallActivityIndicatorConfiguration : ObjectiveC.NSObject {
   @objc public enum GradientTypeAdapter : Swift.Int {
@@ -2484,7 +2483,7 @@ public struct RoundedButtonConfiguration {
   public var width: CoreFoundation.CGFloat
   public var height: CoreFoundation.CGFloat
   public var titleSpacing: CoreFoundation.CGFloat?
-  public init(textConfiguration: BanubaUtilities.TextConfiguration?, cornerRadius: CoreFoundation.CGFloat, backgroundColor: UIKit.UIColor, borderWidth: CoreFoundation.CGFloat? = nil, borderColor: CoreGraphics.CGColor? = nil, width: CoreFoundation.CGFloat = 70.0, height: CoreFoundation.CGFloat = 30.0, titleSpacing: CoreFoundation.CGFloat? = 2.0)
+  public init(textConfiguration: BanubaUtilities.TextConfiguration?, cornerRadius: CoreFoundation.CGFloat, backgroundColor: UIKit.UIColor, borderWidth: CoreFoundation.CGFloat? = nil, borderColor: CoreGraphics.CGColor? = nil, width: CoreFoundation.CGFloat = 70.0, height: CoreFoundation.CGFloat = 30.0)
 }
 extension UIKit.UIImageView {
   @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ imageConfiguration: (any BanubaUtilities.ImageConfigurationProtocol)?)
@@ -2701,6 +2700,16 @@ public struct TextShadowConfiguration {
   public var shadowBlurRadius: CoreFoundation.CGFloat
   public init(shadowColor: UIKit.UIColor = UIColor.black.withAlphaComponent(0.4), shadowOffset: CoreFoundation.CGSize = CGSize(width: 0, height: 1), shadowBlurRadius: CoreFoundation.CGFloat = 2.0)
   public func shadow() -> UIKit.NSShadow
+}
+public struct ShadowConfiguration {
+  public var color: UIKit.UIColor
+  public var offset: CoreFoundation.CGSize
+  public var blurRadius: CoreFoundation.CGFloat
+  public var opacity: Swift.Float
+  public init(color: UIKit.UIColor, offset: CoreFoundation.CGSize, blurRadius: CoreFoundation.CGFloat, opacity: Swift.Float)
+  public var shadow: UIKit.NSShadow {
+    get
+  }
 }
 extension BanubaUtilities.AlertViewController.ButtonType : Swift.Equatable {}
 extension BanubaUtilities.AlertViewController.ButtonType : Swift.Hashable {}
