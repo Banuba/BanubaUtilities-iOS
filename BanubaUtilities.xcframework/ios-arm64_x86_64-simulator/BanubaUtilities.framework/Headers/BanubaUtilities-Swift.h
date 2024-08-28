@@ -514,6 +514,7 @@ SWIFT_CLASS("_TtC15BanubaUtilities32BaseTrackSelectionViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
 @class CALayer;
 
 /// Simple circular progress view
@@ -640,6 +641,7 @@ SWIFT_CLASS("_TtC15BanubaUtilities19KeyboardLayoutGuide")
 
 
 
+
 SWIFT_CLASS("_TtC15BanubaUtilities7NibView")
 @interface NibView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
@@ -735,6 +737,26 @@ SWIFT_CLASS("_TtCC15BanubaUtilities35SmallActivityIndicatorConfiguration26Gradie
 @end
 
 
+SWIFT_CLASS("_TtC15BanubaUtilities18TTSegmentedControl")
+@interface TTSegmentedControl : UIView
+- (void)layoutSubviews;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+
+@class UIEvent;
+
+@interface TTSegmentedControl (SWIFT_EXTENSION(BanubaUtilities))
+- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesEnded:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+@end
+
+
+
+
 /// The button configuration with text styling and text.
 SWIFT_CLASS("_TtC15BanubaUtilities23TextButtonConfiguration")
 @interface TextButtonConfiguration : NSObject
@@ -794,6 +816,9 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26TimeLineDataSourceDelegate_")
 /// timelineDataSource did finish fetching all thumbs
 - (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
 @end
+
+
+
 
 
 
@@ -1387,6 +1412,7 @@ SWIFT_CLASS("_TtC15BanubaUtilities32BaseTrackSelectionViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
 @class CALayer;
 
 /// Simple circular progress view
@@ -1513,6 +1539,7 @@ SWIFT_CLASS("_TtC15BanubaUtilities19KeyboardLayoutGuide")
 
 
 
+
 SWIFT_CLASS("_TtC15BanubaUtilities7NibView")
 @interface NibView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
@@ -1608,6 +1635,26 @@ SWIFT_CLASS("_TtCC15BanubaUtilities35SmallActivityIndicatorConfiguration26Gradie
 @end
 
 
+SWIFT_CLASS("_TtC15BanubaUtilities18TTSegmentedControl")
+@interface TTSegmentedControl : UIView
+- (void)layoutSubviews;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+
+@class UIEvent;
+
+@interface TTSegmentedControl (SWIFT_EXTENSION(BanubaUtilities))
+- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesEnded:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+@end
+
+
+
+
 /// The button configuration with text styling and text.
 SWIFT_CLASS("_TtC15BanubaUtilities23TextButtonConfiguration")
 @interface TextButtonConfiguration : NSObject
@@ -1667,6 +1714,9 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26TimeLineDataSourceDelegate_")
 /// timelineDataSource did finish fetching all thumbs
 - (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
 @end
+
+
+
 
 
 
