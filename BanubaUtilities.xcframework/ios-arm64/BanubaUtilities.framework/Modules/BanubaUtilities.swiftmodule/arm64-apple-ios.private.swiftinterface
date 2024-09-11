@@ -2759,10 +2759,10 @@ extension CoreMedia.CMTime : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 extension UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) public var keyboardLayoutGuide: UIKit.UILayoutGuide {
+  @_Concurrency.MainActor(unsafe) public var keyboardLayoutAnchor: UIKit.UILayoutGuide {
     get
   }
-  @_Concurrency.MainActor(unsafe) public var keyboardLayoutGuideNoSafeArea: UIKit.UILayoutGuide {
+  @_Concurrency.MainActor(unsafe) public var keyboardLayoutAnchorNoSafeArea: UIKit.UILayoutGuide {
     get
   }
 }
@@ -2925,6 +2925,9 @@ extension BanubaUtilities.AuthenticationChallengeResponsible {
   public var lineBreakMode: UIKit.NSLineBreakMode
   public init(kern: Swift.Double = 0, font: UIKit.UIFont, color: UIKit.UIColor, alignment: UIKit.NSTextAlignment = .center, text: Swift.String? = nil, shadow: BanubaUtilities.TextShadowConfiguration? = nil, lineBreakMode: UIKit.NSLineBreakMode = .byWordWrapping)
   @objc override dynamic public func copy() -> Any
+  public var attributes: [Foundation.NSAttributedString.Key : Any] {
+    get
+  }
   @objc deinit
 }
 public struct TextShadowConfiguration {
