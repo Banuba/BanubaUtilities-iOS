@@ -35,18 +35,20 @@ public struct BanubaImageButtonConfiguration : BanubaUtilities.ImageButtonConfig
   public var selectedImageConfiguration: (any BanubaUtilities.ImageConfigurationProtocol)?
   public init(imageConfiguration: any BanubaUtilities.ImageConfigurationProtocol, selectedImageConfiguration: (any BanubaUtilities.ImageConfigurationProtocol)? = nil)
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class AlertViewController : UIKit.UIViewController, BanubaUtilities.NibLoadable {
-  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak public var contextView: UIKit.UIView!
-  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak public var backgroundView: UIKit.UIView!
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class AlertViewController : UIKit.UIViewController, BanubaUtilities.NibLoadable {
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak final public var contextView: UIKit.UIView!
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak final public var backgroundView: UIKit.UIView!
+  @_Concurrency.MainActor(unsafe) @objc override final public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
     @objc get
   }
   public enum AlertType {
     case info
     case selection(_: Swift.String?, _: Swift.String?)
     case reset(_: Swift.String?, _: Swift.String?, _: Swift.String?)
+    case startOver(_: Swift.String, _: Swift.String, _: Swift.String)
     case missedPermission
     case recordingWithoutMask
+    case destructive(_: Swift.String, _: Swift.String)
   }
   public enum ButtonType {
     case agreeButton
@@ -58,21 +60,21 @@ public struct BanubaImageButtonConfiguration : BanubaUtilities.ImageButtonConfig
       get
     }
   }
-  @_Concurrency.MainActor(unsafe) public var titleText: Swift.String? {
+  @_Concurrency.MainActor(unsafe) final public var titleText: Swift.String? {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var messageText: Swift.String? {
+  @_Concurrency.MainActor(unsafe) final public var messageText: Swift.String? {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var alertType: BanubaUtilities.AlertViewController.AlertType? {
+  @_Concurrency.MainActor(unsafe) final public var alertType: BanubaUtilities.AlertViewController.AlertType? {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var configuration: BanubaUtilities.AlertViewConfiguration?
-  @_Concurrency.MainActor(unsafe) public var actionHandler: ((Swift.Bool, BanubaUtilities.AlertViewController.ButtonType) -> Swift.Void)?
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) final public var configuration: BanubaUtilities.AlertViewConfiguration?
+  @_Concurrency.MainActor(unsafe) final public var actionHandler: ((Swift.Bool, BanubaUtilities.AlertViewController.ButtonType) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewWillAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
@@ -482,7 +484,8 @@ public typealias PrefetcherSourceCompletionHandler = ((_ skippedSources: [Banuba
 @objc public class BackgroundConfiguration : ObjectiveC.NSObject {
   public var cornerRadius: CoreFoundation.CGFloat
   public var color: UIKit.UIColor
-  public init(cornerRadius: CoreFoundation.CGFloat, color: UIKit.UIColor)
+  public var mode: BanubaUtilities.BackgroundMode
+  public init(cornerRadius: CoreFoundation.CGFloat, color: UIKit.UIColor, mode: BanubaUtilities.BackgroundMode = .color)
   @objc deinit
 }
 public enum ImageProcessItem {
@@ -879,7 +882,9 @@ extension Swift.Double {
   public var preferredStatusBarStyle: UIKit.UIStatusBarStyle
   public var alertConfiguration: BanubaUtilities.AlertViewConfiguration
   public var autoCutGalleryConfiguration: BanubaUtilities.AutoCutGalleryConfiguration?
-  public init(videoResolution: BanubaUtilities.VideoResolution, galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration, closeButtonConfiguration: any BanubaUtilities.ImageButtonConfigurationProtocol, albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration, albumArrowIconConfiguration: any BanubaUtilities.ImageConfigurationProtocol, albumTitleImageSpacing: CoreFoundation.CGFloat, collectionInfoHeaderConfiguration: BanubaUtilities.CollectionInfoHeaderConfiguration, galleryItemPreviewViewConfiguration: BanubaUtilities.GalleryItemPreviewViewConfiguration, nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, noItemsLabelConfiguration: BanubaUtilities.TextConfiguration, layoutConfiguration: BanubaUtilities.GalleryLayoutConfiguration, galleryTypeButton: BanubaUtilities.TextButtonConfiguration, selectedGalleryTypeButtonBackgroundConfiguration: BanubaUtilities.BackgroundConfiguration, galleryTypesSegmentedControlBackgroundConfiguration: BanubaUtilities.BackgroundConfiguration, galleryTypesSegmentedControlPadding: CoreFoundation.CGSize, isPhotoSequenceAnimationEnabled: Swift.Bool, importItemsLabelConfiguration: BanubaUtilities.TextConfiguration, bottomViewConfiguration: BanubaUtilities.BackgroundConfiguration, visibleTabsInGallery: [BanubaUtilities.GalleryMediaType] = [.video, .photo], backgroundColor: UIKit.UIColor, maximumSelectedCountFromGallery: Swift.Int, preferredStatusBarStyle: UIKit.UIStatusBarStyle, alertConfiguration: BanubaUtilities.AlertViewConfiguration, autoCutGalleryConfiguration: BanubaUtilities.AutoCutGalleryConfiguration? = nil)
+  public var selectedItemConfiguration: BanubaUtilities.SelectedGalleryItemConfiguration
+  public var shouldHideSelectedItemsBottomViewIfNotItemsSelected: Swift.Bool
+  public init(videoResolution: BanubaUtilities.VideoResolution, galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration, closeButtonConfiguration: any BanubaUtilities.ImageButtonConfigurationProtocol, albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration, albumArrowIconConfiguration: any BanubaUtilities.ImageConfigurationProtocol, albumTitleImageSpacing: CoreFoundation.CGFloat, collectionInfoHeaderConfiguration: BanubaUtilities.CollectionInfoHeaderConfiguration, galleryItemPreviewViewConfiguration: BanubaUtilities.GalleryItemPreviewViewConfiguration, nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, noItemsLabelConfiguration: BanubaUtilities.TextConfiguration, layoutConfiguration: BanubaUtilities.GalleryLayoutConfiguration, galleryTypeButton: BanubaUtilities.TextButtonConfiguration, selectedGalleryTypeButtonBackgroundConfiguration: BanubaUtilities.BackgroundConfiguration, galleryTypesSegmentedControlBackgroundConfiguration: BanubaUtilities.BackgroundConfiguration, galleryTypesSegmentedControlPadding: CoreFoundation.CGSize, isPhotoSequenceAnimationEnabled: Swift.Bool, importItemsLabelConfiguration: BanubaUtilities.TextConfiguration, bottomViewConfiguration: BanubaUtilities.BackgroundConfiguration, visibleTabsInGallery: [BanubaUtilities.GalleryMediaType] = [.video, .photo], backgroundColor: UIKit.UIColor, maximumSelectedCountFromGallery: Swift.Int, preferredStatusBarStyle: UIKit.UIStatusBarStyle, alertConfiguration: BanubaUtilities.AlertViewConfiguration, selectedItemConfiguration: BanubaUtilities.SelectedGalleryItemConfiguration, shouldHideSelectedItemsBottomViewIfNotItemsSelected: Swift.Bool, autoCutGalleryConfiguration: BanubaUtilities.AutoCutGalleryConfiguration? = nil)
   public func makeCopy() -> BanubaUtilities.GalleryConfiguration
   @objc deinit
 }
@@ -1483,7 +1488,7 @@ public class MediaTrack : Swift.Codable {
   final public let task: Foundation.URLSessionDataTask
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers open class BanubaAsyncOperation : Foundation.Operation {
+@objc @_inheritsConvenienceInitializers open class BanubaAsyncOperation : Foundation.Operation, @unchecked Swift.Sendable {
   @objc override dynamic open var isReady: Swift.Bool {
     @objc get
   }
@@ -1557,6 +1562,10 @@ public enum TransitionType : Swift.String, Swift.Codable, Swift.CaseIterable {
 }
 extension Dispatch.DispatchQueue {
   public static func checkAndPerformOnMainThreadAsync(_ block: @escaping () -> Swift.Void)
+}
+public struct SelectedGalleryItemConfiguration {
+  public var cornerRadius: CoreFoundation.CGFloat
+  public init(cornerRadius: CoreFoundation.CGFloat)
 }
 extension Swift.String {
   public func height(forFont font: UIKit.UIFont) -> CoreFoundation.CGFloat
@@ -1666,7 +1675,8 @@ public struct AlertViewConfiguration {
   public var spacingBetweenTitleAndMessageLabels: CoreFoundation.CGFloat
   public var titleAndMessageInsets: UIKit.UIEdgeInsets
   public var preferredStatusBarStyle: UIKit.UIStatusBarStyle
-  public init(backgroundColor: UIKit.UIColor, alertBackgroundConfiguration: BanubaUtilities.BackgroundConfiguration, resetButtonTextConfig: BanubaUtilities.TextButtonConfiguration, resetCancelTextConfig: BanubaUtilities.TextButtonConfiguration, refuseButtonTextConfig: BanubaUtilities.TextButtonConfiguration, agreeButtonTextConfig: BanubaUtilities.TextButtonConfiguration, additionalButtonTextConfig: BanubaUtilities.TextButtonConfiguration, titleTextConfig: BanubaUtilities.TextConfiguration, messageTextConfig: BanubaUtilities.TextConfiguration, spacingBetweenTitleAndMessageLabels: CoreFoundation.CGFloat, titleAndMessageInsets: UIKit.UIEdgeInsets, preferredStatusBarStyle: UIKit.UIStatusBarStyle)
+  public var width: CoreFoundation.CGFloat
+  public init(backgroundColor: UIKit.UIColor, alertBackgroundConfiguration: BanubaUtilities.BackgroundConfiguration, resetButtonTextConfig: BanubaUtilities.TextButtonConfiguration, resetCancelTextConfig: BanubaUtilities.TextButtonConfiguration, refuseButtonTextConfig: BanubaUtilities.TextButtonConfiguration, agreeButtonTextConfig: BanubaUtilities.TextButtonConfiguration, additionalButtonTextConfig: BanubaUtilities.TextButtonConfiguration, titleTextConfig: BanubaUtilities.TextConfiguration, messageTextConfig: BanubaUtilities.TextConfiguration, spacingBetweenTitleAndMessageLabels: CoreFoundation.CGFloat, titleAndMessageInsets: UIKit.UIEdgeInsets, preferredStatusBarStyle: UIKit.UIStatusBarStyle, width: CoreFoundation.CGFloat = 312)
 }
 public typealias ExecutionQueue = BanubaUtilities.CallbackQueue
 public enum CallbackQueue {
@@ -1688,10 +1698,6 @@ public struct GalleryItemConfiguration {
   public var durationLabelConfiguration: BanubaUtilities.TextConfiguration
   public var durationLabelBackgroundConfiguration: BanubaUtilities.BackgroundConfiguration
   public var durationLabelBackgroundMode: BanubaUtilities.BackgroundMode
-  public var durationLabelAlignment: BanubaUtilities.GalleryItemConfiguration.DurationLabelAlignment
-  public var activityIndicatorConfiguration: BanubaUtilities.SmallActivityIndicatorConfiguration
-  public var cornerRadius: CoreFoundation.CGFloat
-  public init(orderNumberBackgroudColor: UIKit.UIColor, orderNumberSelectedBackgroudColor: UIKit.UIColor, orderNumberTitleColor: UIKit.UIColor, orderNumberTitleFont: UIKit.UIFont, orderNumberBorderWidth: CoreFoundation.CGFloat, orderNumberSelectedBorderWidth: CoreFoundation.CGFloat, orderNumberBorderColor: UIKit.UIColor, orderNumberHeight: CoreFoundation.CGFloat, durationLabelConfiguration: BanubaUtilities.TextConfiguration, durationLabelBackgroundConfiguration: BanubaUtilities.BackgroundConfiguration, durationLabelBackgroundMode: BanubaUtilities.BackgroundMode, durationLabelAlignment: BanubaUtilities.GalleryItemConfiguration.DurationLabelAlignment, activityIndicatorConfiguration: BanubaUtilities.SmallActivityIndicatorConfiguration, cornerRadius: CoreFoundation.CGFloat)
   public enum DurationLabelAlignment {
     case left
     case right
@@ -1701,15 +1707,19 @@ public struct GalleryItemConfiguration {
       get
     }
   }
+  public var durationLabelAlignment: BanubaUtilities.GalleryItemConfiguration.DurationLabelAlignment
+  public var activityIndicatorConfiguration: BanubaUtilities.SmallActivityIndicatorConfiguration
+  public var cornerRadius: CoreFoundation.CGFloat
+  @frozen public enum SelectedOverlay {
+    case none
+    case color(UIKit.UIColor)
+  }
+  public var selectedOverlay: BanubaUtilities.GalleryItemConfiguration.SelectedOverlay
+  public init(orderNumberBackgroudColor: UIKit.UIColor, orderNumberSelectedBackgroudColor: UIKit.UIColor, orderNumberTitleColor: UIKit.UIColor, orderNumberTitleFont: UIKit.UIFont, orderNumberBorderWidth: CoreFoundation.CGFloat, orderNumberSelectedBorderWidth: CoreFoundation.CGFloat, orderNumberBorderColor: UIKit.UIColor, orderNumberHeight: CoreFoundation.CGFloat, durationLabelConfiguration: BanubaUtilities.TextConfiguration, durationLabelBackgroundConfiguration: BanubaUtilities.BackgroundConfiguration, durationLabelBackgroundMode: BanubaUtilities.BackgroundMode, durationLabelAlignment: BanubaUtilities.GalleryItemConfiguration.DurationLabelAlignment, activityIndicatorConfiguration: BanubaUtilities.SmallActivityIndicatorConfiguration, cornerRadius: CoreFoundation.CGFloat, selectedOverlay: BanubaUtilities.GalleryItemConfiguration.SelectedOverlay)
 }
 @frozen public enum BackgroundMode {
   case color
-  case blur
-  public static func == (a: BanubaUtilities.BackgroundMode, b: BanubaUtilities.BackgroundMode) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
+  case blur(UIKit.UIVisualEffect)
 }
 public struct TTSegmentedControlBounceOptions {
   public let springDamping: CoreFoundation.CGFloat
@@ -2970,8 +2980,7 @@ extension BanubaUtilities.TransitionType : Swift.Hashable {}
 extension BanubaUtilities.TransitionType : Swift.RawRepresentable {}
 extension BanubaUtilities.GalleryItemConfiguration.DurationLabelAlignment : Swift.Equatable {}
 extension BanubaUtilities.GalleryItemConfiguration.DurationLabelAlignment : Swift.Hashable {}
-extension BanubaUtilities.BackgroundMode : Swift.Equatable {}
-extension BanubaUtilities.BackgroundMode : Swift.Hashable {}
+extension BanubaUtilities.GalleryItemConfiguration.SelectedOverlay : Swift.Sendable {}
 extension BanubaUtilities.BackgroundMode : Swift.Sendable {}
 extension BanubaUtilities.TTSegmentedControlTitle.ImagePosition : Swift.Equatable {}
 extension BanubaUtilities.TTSegmentedControlTitle.ImagePosition : Swift.Hashable {}
