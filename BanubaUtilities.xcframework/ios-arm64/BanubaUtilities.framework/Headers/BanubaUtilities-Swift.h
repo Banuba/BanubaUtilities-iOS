@@ -415,14 +415,14 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities24AppStateObserverDelegate_")
 
 SWIFT_CLASS("_TtC15BanubaUtilities22AudioPartSelectionView")
 @interface AudioPartSelectionView : UIView <UIScrollViewDelegate>
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (void)layoutSubviews;
 - (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
 - (void)scrollViewDidEndDecelerating:(UIScrollView * _Nonnull)scrollView;
 - (void)scrollViewDidEndDragging:(UIScrollView * _Nonnull)scrollView willDecelerate:(BOOL)decelerate;
 - (void)scrollViewWillBeginDragging:(UIScrollView * _Nonnull)scrollView;
 - (void)scrollViewWillBeginDecelerating:(UIScrollView * _Nonnull)scrollView;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -675,17 +675,6 @@ SWIFT_CLASS("_TtC15BanubaUtilities15ProgressHandler")
 @end
 
 
-/// UICollectionView not always work correctly
-/// For example at aspects and transitions the thransitions will be flipped but not aspects. This workaround helps resolve that issue
-/// To find all classes used this flow layout use search
-SWIFT_CLASS("_TtC15BanubaUtilities27RTLCollectionViewFlowLayout")
-@interface RTLCollectionViewFlowLayout : UICollectionViewFlowLayout
-@property (nonatomic, readonly) BOOL flipsHorizontallyInOppositeLayoutDirection;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
 SWIFT_CLASS_NAMED("SessionDelegate")
 @interface KFSessionDelegate : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -827,6 +816,7 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26TimeLineDataSourceDelegate_")
 /// timelineDataSource did finish fetching all thumbs
 - (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
 @end
+
 
 
 

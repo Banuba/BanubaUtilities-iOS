@@ -359,6 +359,10 @@ extension Dispatch.DispatchQueue.SchedulerTimeType.Stride {
     get
   }
 }
+@_hasMissingDesignatedInitializers public class VideoDurationFormatter {
+  public static func format(_ timeInterval: Foundation.TimeInterval) -> Swift.String
+  @objc deinit
+}
 extension UIKit.UIButton {
   @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: any BanubaUtilities.ImageTextButtonConfigurationProtocol)
   @_Concurrency.MainActor(unsafe) public func applyConfiguration(_ configuration: any BanubaUtilities.ImageButtonConfigurationProtocol)
@@ -849,6 +853,10 @@ extension BanubaUtilities.KingfisherWrapper where Base : UIKit.UIImage {
   public func apply(_ filter: BanubaUtilities.Filter) -> BanubaUtilities.KFCrossPlatformImage
 }
 public func BNBLocalizedString(_ key: Swift.String) -> Swift.String
+extension Swift.Double {
+  public func formatted(isMiliSecondsEnabled: Swift.Bool = true, isMinutesInFullFormat: Swift.Bool = false) -> Swift.String
+  public func stringFromTimeInterval() -> Swift.String
+}
 @objc public class GalleryConfiguration : ObjectiveC.NSObject {
   public var videoResolution: BanubaUtilities.VideoResolution
   public var galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration
@@ -1765,14 +1773,6 @@ extension BanubaUtilities.TTSegmentedControlTitle {
     }
   }
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class RTLCollectionViewFlowLayout : UIKit.UICollectionViewFlowLayout {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var flipsHorizontallyInOppositeLayoutDirection: Swift.Bool {
-    @objc get
-  }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init()
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
-}
 public struct TTSegmentedControlGradient {
   public let locations: [Foundation.NSNumber]?
   public let startPoint: CoreFoundation.CGPoint
@@ -1832,6 +1832,9 @@ extension BanubaUtilities.KF {
 extension UIKit.UIStackView {
   @_Concurrency.MainActor(unsafe) public func addArrangedSubviews(_ subviews: [UIKit.UIView])
   @_Concurrency.MainActor(unsafe) public func removeAllArrangedSubviews()
+}
+extension UIKit.UIStackView {
+  @_Concurrency.MainActor(unsafe) public func addBackground(color: UIKit.UIColor, cornerRadius: CoreFoundation.CGFloat)
 }
 public protocol AudioItem {
   var uuid: Foundation.UUID { get }
@@ -1902,11 +1905,6 @@ extension BanubaUtilities.GalleryManager {
 }
 extension BanubaUtilities.GalleryManager {
   public static func requestAccessIfNeeded(completion: @escaping (Swift.Bool) -> ())
-}
-@_hasMissingDesignatedInitializers final public class DurationFormatter {
-  public static let shared: BanubaUtilities.DurationFormatter
-  final public func format(_ time: Foundation.TimeInterval, isHoursInFullFormat: Swift.Bool = false, isMinutesInFullFormat: Swift.Bool = false, isMillisecondsEnabled: Swift.Bool = true) -> Swift.String
-  @objc deinit
 }
 public struct ImageCreatingOptions {
   public let scale: CoreFoundation.CGFloat
@@ -2183,7 +2181,6 @@ public protocol ImageTextButtonConfigurationProtocol {
 }
 extension UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public func embed(toView view: UIKit.UIView, topOffset: CoreFoundation.CGFloat = .zero, leftOffset: CoreFoundation.CGFloat = .zero, rightOffset: CoreFoundation.CGFloat = .zero, bottomOffset: CoreFoundation.CGFloat = .zero, forceLayoutPass: Swift.Bool = true)
-  @_Concurrency.MainActor(unsafe) public func embedUnspecifiedSemanticContent(toView view: UIKit.UIView, topOffset: CoreFoundation.CGFloat = .zero, leadingOffset: CoreFoundation.CGFloat = .zero, trailingOffset: CoreFoundation.CGFloat = .zero, bottomOffset: CoreFoundation.CGFloat = .zero, forceLayoutPass: Swift.Bool = true)
   @_Concurrency.MainActor(unsafe) public func unembed()
 }
 extension BanubaUtilities.KingfisherWrapper where Base : UIKit.UIImage {
@@ -2507,8 +2504,6 @@ public struct AudioPartSelectionViewConfiguration {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class AudioPartSelectionView : UIKit.UIView, UIKit.UIScrollViewDelegate {
   @_Concurrency.MainActor(unsafe) final public var didScrollHandler: ((CoreMedia.CMTimeRange) -> Swift.Void)?
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @_Concurrency.MainActor(unsafe) @objc override final public func layoutSubviews()
   @_Concurrency.MainActor(unsafe) final public func set(audioStartOffset: Foundation.TimeInterval = .zero, audioDuration: Foundation.TimeInterval, videoDuration: Foundation.TimeInterval)
   @_Concurrency.MainActor(unsafe) final public func set(playbackProgress: Swift.Double)
@@ -2522,6 +2517,8 @@ public struct AudioPartSelectionViewConfiguration {
   @_Concurrency.MainActor(unsafe) @objc final public func scrollViewWillBeginDecelerating(_ scrollView: UIKit.UIScrollView)
   @_Concurrency.MainActor(unsafe) final public func setPlayedRangeOverlayViewHidden(_ isHidden: Swift.Bool)
   @_Concurrency.MainActor(unsafe) final public func updatePlayedRangeOverlayViewLayer(completion: (() -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 extension Swift.Array where Element : Swift.Hashable {
