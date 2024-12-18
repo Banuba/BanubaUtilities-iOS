@@ -2822,12 +2822,9 @@ extension BanubaUtilities.AudioServicing {
   @objc var duration: Foundation.TimeInterval { get }
   @objc var type: BanubaUtilities.GalleryItemType { get }
   @objc func requestPreview(size: CoreFoundation.CGSize, synchronously: Swift.Bool, handler: @escaping (UIKit.UIImage?) -> Swift.Void)
-  @objc func requestPreview(size: CoreFoundation.CGSize) async throws -> UIKit.UIImage
   @objc func requestPhoto(size: CoreFoundation.CGSize, progressHandler: ((Swift.Double) -> (Swift.Bool))?, handler: @escaping (UIKit.UIImage?, (any Swift.Error)?) -> Swift.Void)
   @objc func requestAVURLAsset(progressHandler: ((Swift.Double) -> (Swift.Bool))?, handler: @escaping (AVFoundation.AVURLAsset?, (any Swift.Error)?) -> Swift.Void)
   @objc func requestAVPlayerItem(progressHandler: ((Swift.Double) -> (Swift.Bool))?, handler: @escaping (AVFoundation.AVPlayerItem?, (any Swift.Error)?) -> Swift.Void)
-}
-public struct ImageIsNilError : Swift.Error {
 }
 @objc open class BanubaGalleryItem : ObjectiveC.NSObject, BanubaUtilities.GalleryItem {
   public static let defaultPreviewSize: CoreFoundation.CGSize
@@ -2847,7 +2844,6 @@ public struct ImageIsNilError : Swift.Error {
   @objc open func requestAVURLAsset(progressHandler: ((Swift.Double) -> (Swift.Bool))?, handler: @escaping (AVFoundation.AVURLAsset?, (any Swift.Error)?) -> Swift.Void)
   @objc open func requestAVPlayerItem(progressHandler: ((Swift.Double) -> (Swift.Bool))?, handler: @escaping (AVFoundation.AVPlayerItem?, (any Swift.Error)?) -> Swift.Void)
   @objc open func requestPreview(size: CoreFoundation.CGSize = BanubaGalleryItem.defaultPreviewSize, synchronously: Swift.Bool, handler: @escaping (UIKit.UIImage?) -> Swift.Void)
-  @objc open func requestPreview(size: CoreFoundation.CGSize) async throws -> UIKit.UIImage
   @objc open func requestPhoto(size: CoreFoundation.CGSize, progressHandler: ((Swift.Double) -> (Swift.Bool))?, handler: @escaping (UIKit.UIImage?, (any Swift.Error)?) -> Swift.Void)
   @objc deinit
 }
@@ -3112,7 +3108,6 @@ extension UIKit.UIView {
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @_Concurrency.MainActor @preconcurrency public func startAnimating()
   @_Concurrency.MainActor @preconcurrency public func stopAnimating()
-  @_Concurrency.MainActor @preconcurrency public func setIsAnimating(_ isAnimating: Swift.Bool)
   @objc deinit
 }
 public enum OverlayPopoverActionsPosition {
