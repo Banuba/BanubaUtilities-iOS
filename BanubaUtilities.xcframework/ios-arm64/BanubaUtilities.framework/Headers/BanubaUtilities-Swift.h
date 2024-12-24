@@ -562,6 +562,7 @@ SWIFT_CLASS("_TtC15BanubaUtilities20CircularProgressView")
 
 
 
+
 /// The Gallery configuration
 SWIFT_CLASS("_TtC15BanubaUtilities20GalleryConfiguration")
 @interface GalleryConfiguration : NSObject

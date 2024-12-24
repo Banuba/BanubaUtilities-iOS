@@ -2120,6 +2120,9 @@ public class MediaTrack : Swift.Codable {
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
 }
+extension Foundation.FileManager {
+  public func replaceWithCopyOfFile(at: Foundation.URL, with: Foundation.URL)
+}
 @objc @_inheritsConvenienceInitializers open class BanubaAsyncOperation : Foundation.Operation, @unchecked Swift.Sendable {
   @objc override dynamic open var isReady: Swift.Bool {
     @objc get
