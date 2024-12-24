@@ -511,6 +511,7 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities11GalleryItem_")
 @property (nonatomic, readonly) enum GalleryItemType type;
 /// Requests preview for displaying in gallery list
 - (void)requestPreviewWithSize:(CGSize)size synchronously:(BOOL)synchronously handler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
+- (void)requestPreviewWithSize:(CGSize)size completionHandler:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))completionHandler;
 /// Requests photo with desired size
 - (void)requestPhotoWithSize:(CGSize)size progressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))handler;
 /// Requests video url asset
@@ -529,6 +530,7 @@ SWIFT_CLASS("_TtC15BanubaUtilities17BanubaGalleryItem")
 - (void)requestAVURLAssetWithProgressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(AVURLAsset * _Nullable, NSError * _Nullable))handler;
 - (void)requestAVPlayerItemWithProgressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(AVPlayerItem * _Nullable, NSError * _Nullable))handler;
 - (void)requestPreviewWithSize:(CGSize)size synchronously:(BOOL)synchronously handler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
+- (void)requestPreviewWithSize:(CGSize)size completionHandler:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))completionHandler;
 - (void)requestPhotoWithSize:(CGSize)size progressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))handler;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -559,7 +561,6 @@ SWIFT_CLASS("_TtC15BanubaUtilities20CircularProgressView")
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
-
 
 
 
@@ -1461,6 +1462,7 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities11GalleryItem_")
 @property (nonatomic, readonly) enum GalleryItemType type;
 /// Requests preview for displaying in gallery list
 - (void)requestPreviewWithSize:(CGSize)size synchronously:(BOOL)synchronously handler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
+- (void)requestPreviewWithSize:(CGSize)size completionHandler:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))completionHandler;
 /// Requests photo with desired size
 - (void)requestPhotoWithSize:(CGSize)size progressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))handler;
 /// Requests video url asset
@@ -1479,6 +1481,7 @@ SWIFT_CLASS("_TtC15BanubaUtilities17BanubaGalleryItem")
 - (void)requestAVURLAssetWithProgressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(AVURLAsset * _Nullable, NSError * _Nullable))handler;
 - (void)requestAVPlayerItemWithProgressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(AVPlayerItem * _Nullable, NSError * _Nullable))handler;
 - (void)requestPreviewWithSize:(CGSize)size synchronously:(BOOL)synchronously handler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
+- (void)requestPreviewWithSize:(CGSize)size completionHandler:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))completionHandler;
 - (void)requestPhotoWithSize:(CGSize)size progressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))handler;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -1509,7 +1512,6 @@ SWIFT_CLASS("_TtC15BanubaUtilities20CircularProgressView")
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
-
 
 
 
