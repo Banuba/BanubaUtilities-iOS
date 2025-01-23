@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
-// swift-module-flags: -target arm64-apple-ios17.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name BanubaUtilities
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name BanubaUtilities
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import AVFoundation
 import AVKit
@@ -51,6 +51,7 @@ public struct BanubaImageButtonConfiguration : BanubaUtilities.ImageButtonConfig
     case reset(_: Swift.String?, _: Swift.String?, _: Swift.String?)
     case startOver(_: Swift.String, _: Swift.String, _: Swift.String)
     case missedPermission
+    case recordingWithoutMask
     case destructive(_: Swift.String, _: Swift.String)
   }
   public enum ButtonType {
@@ -126,18 +127,7 @@ public enum AspectRatio : Swift.UInt8, Swift.Codable {
   }
 }
 extension CoreFoundation.CGRect {
-  public var center: CoreFoundation.CGPoint {
-    get
-    set
-  }
-  public var centerX: CoreFoundation.CGFloat {
-    get
-    set
-  }
-  public var centerY: CoreFoundation.CGFloat {
-    get
-    set
-  }
+  public func getCenter() -> CoreFoundation.CGPoint
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class SlideInPresentationManager : ObjectiveC.NSObject, UIKit.UIViewControllerTransitioningDelegate {
   @_Concurrency.MainActor @preconcurrency public var backgroundViewInteractionHandler: (() -> Swift.Void)? {
@@ -260,16 +250,10 @@ extension UIKit.UIButton {
   @objc deinit
 }
 public struct BlurCoordinateParams : Swift.Codable {
-  public var center: CoreFoundation.CGPoint
-  public var width: CoreFoundation.CGFloat
-  public var height: CoreFoundation.CGFloat
-  public var radius: CoreFoundation.CGFloat
-  public var absoluteCenter: CoreFoundation.CGPoint
-  public var absoluteRadius: CoreFoundation.CGFloat
-  public static var zero: BanubaUtilities.BlurCoordinateParams {
-    get
-  }
-  public init(center: CoreFoundation.CGPoint, width: CoreFoundation.CGFloat, height: CoreFoundation.CGFloat, radius: CoreFoundation.CGFloat)
+  public var blurRect: CoreFoundation.CGRect
+  public var videoSize: CoreFoundation.CGSize
+  public init(blurRect: CoreFoundation.CGRect, videoSize: CoreFoundation.CGSize)
+  public init(overlayFrame: CoreFoundation.CGRect, overlayContainerSize: CoreFoundation.CGSize, videoSize: CoreFoundation.CGSize)
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -1298,6 +1282,9 @@ extension BanubaUtilities.KingfisherWrapper where Base == CoreFoundation.CGSize 
   public func filling(_ size: CoreFoundation.CGSize) -> CoreFoundation.CGSize
   public func constrainedRect(for size: CoreFoundation.CGSize, anchor: CoreFoundation.CGPoint) -> CoreFoundation.CGRect
 }
+extension Swift.Comparable {
+  public func clamped(to limits: Swift.ClosedRange<Self>) -> Self
+}
 public typealias KingfisherOptionsInfo = [BanubaUtilities.KingfisherOptionsInfoItem]
 public enum KingfisherOptionsInfoItem : Swift.Sendable {
   case targetCache(BanubaUtilities.ImageCache)
@@ -2130,6 +2117,9 @@ public class MediaTrack : Swift.Codable {
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
 }
+extension Foundation.FileManager {
+  public func replaceWithCopyOfFile(at: Foundation.URL, with: Foundation.URL)
+}
 @objc @_inheritsConvenienceInitializers open class BanubaAsyncOperation : Foundation.Operation, @unchecked Swift.Sendable {
   @objc override dynamic open var isReady: Swift.Bool {
     @objc get
@@ -2628,11 +2618,11 @@ public protocol ProgressAnimatableView : UIKit.UIView {
   var progress: Swift.Float { get set }
 }
 @objc public protocol AppStateObserverDelegate {
-  @objc @_Concurrency.MainActor func applicationWillResignActive(_ appStateObserver: BanubaUtilities.AppStateObserver)
-  @objc @_Concurrency.MainActor func applicationDidBecomeActive(_ appStateObserver: BanubaUtilities.AppStateObserver)
-  @_Concurrency.MainActor @objc optional func applicationWillEnterForeground(_ appStateObserver: BanubaUtilities.AppStateObserver)
-  @_Concurrency.MainActor @objc optional func applicationWillTerminateNotification(_ appStateObserver: BanubaUtilities.AppStateObserver)
-  @_Concurrency.MainActor @objc optional func applicationDidEnterBackgroundNotification(_ appStateObserver: BanubaUtilities.AppStateObserver)
+  @objc func applicationWillResignActive(_ appStateObserver: BanubaUtilities.AppStateObserver)
+  @objc func applicationDidBecomeActive(_ appStateObserver: BanubaUtilities.AppStateObserver)
+  @objc optional func applicationWillEnterForeground(_ appStateObserver: BanubaUtilities.AppStateObserver)
+  @objc optional func applicationWillTerminateNotification(_ appStateObserver: BanubaUtilities.AppStateObserver)
+  @objc optional func applicationDidEnterBackgroundNotification(_ appStateObserver: BanubaUtilities.AppStateObserver)
 }
 @_inheritsConvenienceInitializers @objc public class AppStateObserver : ObjectiveC.NSObject {
   weak public var delegate: (any BanubaUtilities.AppStateObserverDelegate)?
@@ -2646,11 +2636,11 @@ public protocol ProgressAnimatableView : UIKit.UIView {
 extension BanubaUtilities.AppStateObserver {
   public func subscribeToNotifications()
   public func unsubscribeFromNotifications()
-  @_Concurrency.MainActor @objc dynamic public func handleApplicationWillResignActiveNotification()
-  @_Concurrency.MainActor @objc dynamic public func handleApplicationDidBecomeActiveNotification()
-  @_Concurrency.MainActor @objc dynamic public func handleWillEnterForegroundNotification()
-  @_Concurrency.MainActor @objc dynamic public func handleWillTerminateNotification()
-  @_Concurrency.MainActor @objc dynamic public func handleDidEnterBackgroundNotification()
+  @objc dynamic public func handleApplicationWillResignActiveNotification()
+  @objc dynamic public func handleApplicationDidBecomeActiveNotification()
+  @objc dynamic public func handleWillEnterForegroundNotification()
+  @objc dynamic public func handleWillTerminateNotification()
+  @objc dynamic public func handleDidEnterBackgroundNotification()
 }
 extension UIKit.UIView {
   @_Concurrency.MainActor @preconcurrency public func applyConfiguration(_ configuration: BanubaUtilities.BackgroundConfiguration)
@@ -2752,8 +2742,8 @@ public class AudioServiceItem : BanubaUtilities.AudioItem {
   @objc deinit
 }
 public protocol AudioPlayerDelegate : AnyObject {
-  @_Concurrency.MainActor func playerPlaysFrameAtTime(_ time: Foundation.TimeInterval)
-  @_Concurrency.MainActor func didEndPlaying()
+  func playerPlaysFrameAtTime(_ time: Foundation.TimeInterval)
+  func didEndPlaying()
 }
 public protocol AudioServicing {
   var player: AVFAudio.AVAudioPlayer? { get set }
@@ -2832,12 +2822,9 @@ extension BanubaUtilities.AudioServicing {
   @objc var duration: Foundation.TimeInterval { get }
   @objc var type: BanubaUtilities.GalleryItemType { get }
   @objc func requestPreview(size: CoreFoundation.CGSize, synchronously: Swift.Bool, handler: @escaping (UIKit.UIImage?) -> Swift.Void)
-  @objc func requestPreview(size: CoreFoundation.CGSize) async throws -> UIKit.UIImage
   @objc func requestPhoto(size: CoreFoundation.CGSize, progressHandler: ((Swift.Double) -> (Swift.Bool))?, handler: @escaping (UIKit.UIImage?, (any Swift.Error)?) -> Swift.Void)
   @objc func requestAVURLAsset(progressHandler: ((Swift.Double) -> (Swift.Bool))?, handler: @escaping (AVFoundation.AVURLAsset?, (any Swift.Error)?) -> Swift.Void)
   @objc func requestAVPlayerItem(progressHandler: ((Swift.Double) -> (Swift.Bool))?, handler: @escaping (AVFoundation.AVPlayerItem?, (any Swift.Error)?) -> Swift.Void)
-}
-public struct ImageIsNilError : Swift.Error {
 }
 @objc open class BanubaGalleryItem : ObjectiveC.NSObject, BanubaUtilities.GalleryItem {
   public static let defaultPreviewSize: CoreFoundation.CGSize
@@ -2857,7 +2844,6 @@ public struct ImageIsNilError : Swift.Error {
   @objc open func requestAVURLAsset(progressHandler: ((Swift.Double) -> (Swift.Bool))?, handler: @escaping (AVFoundation.AVURLAsset?, (any Swift.Error)?) -> Swift.Void)
   @objc open func requestAVPlayerItem(progressHandler: ((Swift.Double) -> (Swift.Bool))?, handler: @escaping (AVFoundation.AVPlayerItem?, (any Swift.Error)?) -> Swift.Void)
   @objc open func requestPreview(size: CoreFoundation.CGSize = BanubaGalleryItem.defaultPreviewSize, synchronously: Swift.Bool, handler: @escaping (UIKit.UIImage?) -> Swift.Void)
-  @objc open func requestPreview(size: CoreFoundation.CGSize) async throws -> UIKit.UIImage
   @objc open func requestPhoto(size: CoreFoundation.CGSize, progressHandler: ((Swift.Double) -> (Swift.Bool))?, handler: @escaping (UIKit.UIImage?, (any Swift.Error)?) -> Swift.Void)
   @objc deinit
 }
@@ -3122,7 +3108,6 @@ extension UIKit.UIView {
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @_Concurrency.MainActor @preconcurrency public func startAnimating()
   @_Concurrency.MainActor @preconcurrency public func stopAnimating()
-  @_Concurrency.MainActor @preconcurrency public func setIsAnimating(_ isAnimating: Swift.Bool)
   @objc deinit
 }
 public enum OverlayPopoverActionsPosition {
