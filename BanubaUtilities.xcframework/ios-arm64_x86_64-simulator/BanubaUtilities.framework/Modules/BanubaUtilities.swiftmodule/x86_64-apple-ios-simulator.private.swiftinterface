@@ -216,6 +216,7 @@ public enum SharedLocalizedStrings {
     public static let exportVideoFailed: Swift.String
   }
   public enum AutoCut {
+    public static let choosePartForVideo: Swift.String
   }
 }
 extension Combine.Publisher {
@@ -1883,10 +1884,10 @@ public func BNBLocalizedString(_ key: Swift.String) -> Swift.String
   public var maximumSelectedCountFromGallery: Swift.Int
   public var preferredStatusBarStyle: UIKit.UIStatusBarStyle
   public var alertConfiguration: BanubaUtilities.AlertViewConfiguration
-  public var autoCutGalleryConfiguration: BanubaUtilities.AutoCutGalleryConfiguration?
+  public var aiClippingGalleryConfiguration: BanubaUtilities.AIClippingGalleryConfiguration?
   public var selectedItemConfiguration: BanubaUtilities.SelectedGalleryItemConfiguration
   public var shouldHideSelectedItemsBottomViewIfNotItemsSelected: Swift.Bool
-  public init(videoResolution: BanubaUtilities.VideoResolution, galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration, closeButtonConfiguration: any BanubaUtilities.ImageButtonConfigurationProtocol, albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration, albumArrowIconConfiguration: any BanubaUtilities.ImageConfigurationProtocol, albumTitleImageSpacing: CoreFoundation.CGFloat, collectionInfoHeaderConfiguration: BanubaUtilities.CollectionInfoHeaderConfiguration, galleryItemPreviewViewConfiguration: BanubaUtilities.GalleryItemPreviewViewConfiguration, nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, noItemsLabelConfiguration: BanubaUtilities.TextConfiguration, layoutConfiguration: BanubaUtilities.GalleryLayoutConfiguration, galleryTypeButton: BanubaUtilities.TextButtonConfiguration, selectedGalleryTypeButtonBackgroundConfiguration: BanubaUtilities.BackgroundConfiguration, galleryTypesSegmentedControlBackgroundConfiguration: BanubaUtilities.BackgroundConfiguration, galleryTypesSegmentedControlPadding: CoreFoundation.CGSize, isPhotoSequenceAnimationEnabled: Swift.Bool, importItemsLabelConfiguration: BanubaUtilities.TextConfiguration, bottomViewConfiguration: BanubaUtilities.BackgroundConfiguration, visibleTabsInGallery: [BanubaUtilities.GalleryMediaType] = [.video, .photo], backgroundColor: UIKit.UIColor, maximumSelectedCountFromGallery: Swift.Int, preferredStatusBarStyle: UIKit.UIStatusBarStyle, alertConfiguration: BanubaUtilities.AlertViewConfiguration, selectedItemConfiguration: BanubaUtilities.SelectedGalleryItemConfiguration, shouldHideSelectedItemsBottomViewIfNotItemsSelected: Swift.Bool, autoCutGalleryConfiguration: BanubaUtilities.AutoCutGalleryConfiguration? = nil)
+  public init(videoResolution: BanubaUtilities.VideoResolution, galleryItemConfiguration: BanubaUtilities.GalleryItemConfiguration, closeButtonConfiguration: any BanubaUtilities.ImageButtonConfigurationProtocol, albumButtonConfiguration: BanubaUtilities.TextButtonConfiguration, albumArrowIconConfiguration: any BanubaUtilities.ImageConfigurationProtocol, albumTitleImageSpacing: CoreFoundation.CGFloat, collectionInfoHeaderConfiguration: BanubaUtilities.CollectionInfoHeaderConfiguration, galleryItemPreviewViewConfiguration: BanubaUtilities.GalleryItemPreviewViewConfiguration, nextButtonConfiguration: BanubaUtilities.SaveButtonConfiguration, noItemsLabelConfiguration: BanubaUtilities.TextConfiguration, layoutConfiguration: BanubaUtilities.GalleryLayoutConfiguration, galleryTypeButton: BanubaUtilities.TextButtonConfiguration, selectedGalleryTypeButtonBackgroundConfiguration: BanubaUtilities.BackgroundConfiguration, galleryTypesSegmentedControlBackgroundConfiguration: BanubaUtilities.BackgroundConfiguration, galleryTypesSegmentedControlPadding: CoreFoundation.CGSize, isPhotoSequenceAnimationEnabled: Swift.Bool, importItemsLabelConfiguration: BanubaUtilities.TextConfiguration, bottomViewConfiguration: BanubaUtilities.BackgroundConfiguration, visibleTabsInGallery: [BanubaUtilities.GalleryMediaType] = [.video, .photo], backgroundColor: UIKit.UIColor, maximumSelectedCountFromGallery: Swift.Int, preferredStatusBarStyle: UIKit.UIStatusBarStyle, alertConfiguration: BanubaUtilities.AlertViewConfiguration, selectedItemConfiguration: BanubaUtilities.SelectedGalleryItemConfiguration, shouldHideSelectedItemsBottomViewIfNotItemsSelected: Swift.Bool, aiClippingGalleryConfiguration: BanubaUtilities.AIClippingGalleryConfiguration? = nil)
   public func makeCopy() -> BanubaUtilities.GalleryConfiguration
   @objc deinit
 }
@@ -2877,6 +2878,7 @@ public struct AudioPartSelectionViewConfiguration {
   public static var audioAdjust: BanubaUtilities.AudioPartSelectionViewConfiguration {
     get
   }
+  public init(titleText: Swift.String, backgroundColor: UIKit.UIColor, textColor: UIKit.UIColor, audioWaveColor: UIKit.UIColor, playingAudioWaveColor: UIKit.UIColor, maximumAudioRangeBackgroundColor: UIKit.UIColor, maximumAudioRangeBackgroundBorderColor: UIKit.UIColor, maximumAudioRangeBackgroundBorderWidth: CoreFoundation.CGFloat, amplitudeBarWidth: CoreFoundation.CGFloat, amplitudeBarsSpacing: CoreFoundation.CGFloat, isTimeRangeLabelCentered: Swift.Bool)
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency final public class AudioPartSelectionView : UIKit.UIView, UIKit.UIScrollViewDelegate {
   @_Concurrency.MainActor @preconcurrency final public var didScrollHandler: ((CoreMedia.CMTimeRange) -> Swift.Void)?
@@ -2941,7 +2943,7 @@ extension BanubaUtilities.SmallActivityIndicatorConfiguration.GradientType {
   @objc public static func color(_ color: BanubaUtilities.SmallActivityIndicatorConfiguration.GradientColorConfiguration) -> BanubaUtilities.SmallActivityIndicatorConfiguration.GradientType
   @objc public static func image(_ image: any BanubaUtilities.ImageConfigurationProtocol) -> BanubaUtilities.SmallActivityIndicatorConfiguration.GradientType
 }
-public struct AutoCutGalleryConfiguration {
+public struct AIClippingGalleryConfiguration {
   public let normalApplyAutoCutButtonConfiguration: BanubaUtilities.ApplyAutoCutButtonConfiguration
   public let disabledApplyAutoCutButtonConfiguration: BanubaUtilities.ApplyAutoCutButtonConfiguration
   public let normalNextButtonConfiguration: BanubaUtilities.GalleryNextButtonConfiguration
