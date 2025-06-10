@@ -3194,6 +3194,7 @@ public protocol VideoEditorPlayable : AnyObject {
   var videoDuration: CoreMedia.CMTime { get }
   var playingRange: CoreMedia.CMTimeRange { get set }
   var isMuted: Swift.Bool { get set }
+  var postingCurrentTimeChangedNotificationEnabled: Swift.Bool { get set }
   var audioMix: AVFoundation.AVAudioMix? { get set }
   var playerDelegate: (any BanubaUtilities.VideoEditorPlayerDelegate)? { get set }
   func play(loop: Swift.Bool, fixedSpeed: Swift.Bool)
