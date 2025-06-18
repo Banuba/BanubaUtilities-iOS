@@ -2214,6 +2214,7 @@ public struct SelectedGalleryItemConfiguration {
 }
 extension Swift.String {
   public func height(forFont font: UIKit.UIFont) -> CoreFoundation.CGFloat
+  public func height(width: CoreFoundation.CGFloat, forFont font: UIKit.UIFont) -> CoreFoundation.CGFloat
   public func width(forFont font: UIKit.UIFont) -> CoreFoundation.CGFloat
 }
 extension Swift.Double {
