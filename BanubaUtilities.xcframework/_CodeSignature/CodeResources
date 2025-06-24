@@ -10,7 +10,7 @@
 		</data>
 		<key>ios-arm64/BanubaUtilities.framework/BanubaUtilities</key>
 		<data>
-		0Hg3MHvOgsVfTkWyRbxNPM7qYmE=
+		5wRXyUJPrRs89tExR+Jplqgcq4k=
 		</data>
 		<key>ios-arm64/BanubaUtilities.framework/Headers/BanubaUtilities-Swift.h</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>ios-arm64/BanubaUtilities.framework/Info.plist</key>
 		<data>
-		TUdYQJyDGg5EqU10z+gAps0Gbm0=
+		yazbZPqozEKN9HTNyKv/XtHCPaE=
 		</data>
 		<key>ios-arm64/BanubaUtilities.framework/LICENSE</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>ios-arm64/BanubaUtilities.framework/_CodeSignature/CodeResources</key>
 		<data>
-		qkYojy+DFN4bNzmmZvp5oMCguAY=
+		IkkprD8yR9x+y8ufNAq0YckpbJQ=
 		</data>
 		<key>ios-arm64/BanubaUtilities.framework/version.txt</key>
 		<data>
@@ -82,15 +82,15 @@
 		</data>
 		<key>ios-arm64/dSYMs/BanubaUtilities.framework.dSYM/Contents/Info.plist</key>
 		<data>
-		xERm9VEL1rcw1TpOw+96z2xyvJg=
+		V/DtFtH4Ki3abEili7ZNxJgL4n4=
 		</data>
 		<key>ios-arm64/dSYMs/BanubaUtilities.framework.dSYM/Contents/Resources/DWARF/BanubaUtilities</key>
 		<data>
-		QWo9Obb5u7mZNLruUZoGMtr/l4g=
+		XdHJVQSlQzpKtxKrN01qMnBO48o=
 		</data>
 		<key>ios-arm64/dSYMs/BanubaUtilities.framework.dSYM/Contents/Resources/Relocations/aarch64/BanubaUtilities.yml</key>
 		<data>
-		njjdjysNgML4wHfZCz+m8jshWIs=
+		lpRM64tqK0ITx1iz8+ogaYNwHXI=
 		</data>
 		<key>ios-arm64_x86_64-simulator/BanubaUtilities.framework/AlertViewController.nib</key>
 		<data>
@@ -98,7 +98,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/BanubaUtilities.framework/BanubaUtilities</key>
 		<data>
-		kfRx0XIt3Qx+i3f8rC2H9mN+jCI=
+		2/2rBa+H2ekxYsErbwyaJYHgVeY=
 		</data>
 		<key>ios-arm64_x86_64-simulator/BanubaUtilities.framework/Headers/BanubaUtilities-Swift.h</key>
 		<data>
@@ -118,7 +118,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/BanubaUtilities.framework/Info.plist</key>
 		<data>
-		dvFfYTY453g6mX7/iwPCtCGONSg=
+		sdsI/Z1yEjEzz26osYamxo1ERqI=
 		</data>
 		<key>ios-arm64_x86_64-simulator/BanubaUtilities.framework/LICENSE</key>
 		<data>
@@ -178,7 +178,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/BanubaUtilities.framework/_CodeSignature/CodeResources</key>
 		<data>
-		Y2xauWl0FJpWDMorQCBMIJbVurc=
+		22MnhdsArqiqcyt5K/yeHzETtXU=
 		</data>
 		<key>ios-arm64_x86_64-simulator/BanubaUtilities.framework/version.txt</key>
 		<data>
@@ -186,19 +186,19 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/dSYMs/BanubaUtilities.framework.dSYM/Contents/Info.plist</key>
 		<data>
-		xERm9VEL1rcw1TpOw+96z2xyvJg=
+		V/DtFtH4Ki3abEili7ZNxJgL4n4=
 		</data>
 		<key>ios-arm64_x86_64-simulator/dSYMs/BanubaUtilities.framework.dSYM/Contents/Resources/DWARF/BanubaUtilities</key>
 		<data>
-		8fJ8/aVjKUSTkr8xavlQgwLBq4E=
+		Nr/QyB5VEZfweNBb128LnqWEM1o=
 		</data>
 		<key>ios-arm64_x86_64-simulator/dSYMs/BanubaUtilities.framework.dSYM/Contents/Resources/Relocations/aarch64/BanubaUtilities.yml</key>
 		<data>
-		3b1ZSXRjydUlcv6wIAcGHKFPbDA=
+		0BVa5RR3ffelabM7vgzfnaNJjpY=
 		</data>
 		<key>ios-arm64_x86_64-simulator/dSYMs/BanubaUtilities.framework.dSYM/Contents/Resources/Relocations/x86_64/BanubaUtilities.yml</key>
 		<data>
-		2N7R543pIx0DQE3bB3ZnYpOsJ2k=
+		HR7B9eXgDGTvKrmuLe3tlXFxWlY=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -218,11 +218,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0Hg3MHvOgsVfTkWyRbxNPM7qYmE=
+			5wRXyUJPrRs89tExR+Jplqgcq4k=
 			</data>
 			<key>hash2</key>
 			<data>
-			JIYx7LWnZglO+TAoofKKeIT8FdNsCd2qeo+1qo9LAaQ=
+			hufWMFFbo08pTv1d3ZlTTP80EbbPguVbW/5F/phiVWE=
 			</data>
 		</dict>
 		<key>ios-arm64/BanubaUtilities.framework/Headers/BanubaUtilities-Swift.h</key>
@@ -273,11 +273,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			TUdYQJyDGg5EqU10z+gAps0Gbm0=
+			yazbZPqozEKN9HTNyKv/XtHCPaE=
 			</data>
 			<key>hash2</key>
 			<data>
-			d+XgYC4enMv4yV/IXJZflmGM+mgwrlqLVZPkQWY+5Tk=
+			hE6ssM1Z2hkoSaGR+HPPrxf8Q+Fv2CfI2lvGv1TBVko=
 			</data>
 		</dict>
 		<key>ios-arm64/BanubaUtilities.framework/LICENSE</key>
@@ -394,11 +394,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			qkYojy+DFN4bNzmmZvp5oMCguAY=
+			IkkprD8yR9x+y8ufNAq0YckpbJQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			8YrYqSElQ9pYjuWf9VQxHyvkJvuH1SXlDlcY7FOETLY=
+			j28k7BDNnFOpJjpbVEyAaplyN/8vO587d4M7ZBpngis=
 			</data>
 		</dict>
 		<key>ios-arm64/BanubaUtilities.framework/version.txt</key>
@@ -416,33 +416,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xERm9VEL1rcw1TpOw+96z2xyvJg=
+			V/DtFtH4Ki3abEili7ZNxJgL4n4=
 			</data>
 			<key>hash2</key>
 			<data>
-			ONOSPMm4CUusMo0v+nQcTZoOslou5eNXFVkp83chYag=
+			tmR5IdVSO2GxsJcOezkyhx/xXiPdRAQK7rUzHjR6jGQ=
 			</data>
 		</dict>
 		<key>ios-arm64/dSYMs/BanubaUtilities.framework.dSYM/Contents/Resources/DWARF/BanubaUtilities</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			QWo9Obb5u7mZNLruUZoGMtr/l4g=
+			XdHJVQSlQzpKtxKrN01qMnBO48o=
 			</data>
 			<key>hash2</key>
 			<data>
-			ptfWgdGfQjE3cODnqO+GrBIqNBFMEEjwxSaCZNA2yAg=
+			4AjmY6acHwA6hjkN5IlAeuclPRPCt86NVeIj3d2WzqA=
 			</data>
 		</dict>
 		<key>ios-arm64/dSYMs/BanubaUtilities.framework.dSYM/Contents/Resources/Relocations/aarch64/BanubaUtilities.yml</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			njjdjysNgML4wHfZCz+m8jshWIs=
+			lpRM64tqK0ITx1iz8+ogaYNwHXI=
 			</data>
 			<key>hash2</key>
 			<data>
-			AYFvAtyerBrxE9Q/Tp4VahGn6UlS0rkk8hLfvJHW8Yc=
+			d94nF3C93TPkFj2M04Y4ApmMEdB4QSB2TXhEp9KexZ8=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/BanubaUtilities.framework/AlertViewController.nib</key>
@@ -460,11 +460,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			kfRx0XIt3Qx+i3f8rC2H9mN+jCI=
+			2/2rBa+H2ekxYsErbwyaJYHgVeY=
 			</data>
 			<key>hash2</key>
 			<data>
-			EtbpImjnIHNME+A3vi1AbZ8Xzp1Y3h2s3EDycvq8uFM=
+			LvqodKDJh8L5YArl3J6iGoIjnIZrmRJwyH26iLbCeus=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/BanubaUtilities.framework/Headers/BanubaUtilities-Swift.h</key>
@@ -515,11 +515,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			dvFfYTY453g6mX7/iwPCtCGONSg=
+			sdsI/Z1yEjEzz26osYamxo1ERqI=
 			</data>
 			<key>hash2</key>
 			<data>
-			oNZy7yapi42UnDuwHlXdxkoWdhDo8E05Lucy1l42xuw=
+			rfYqTZAkJUDkhIMOOUqwH+TIxPA5QoeZBDcRu26S1Hg=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/BanubaUtilities.framework/LICENSE</key>
@@ -680,11 +680,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Y2xauWl0FJpWDMorQCBMIJbVurc=
+			22MnhdsArqiqcyt5K/yeHzETtXU=
 			</data>
 			<key>hash2</key>
 			<data>
-			kjvugna3HIEAQ5Q//bQU/JA2rXmzW/Udru7SBHqkIE0=
+			iAy0AjKpVmW6v1IQ/5k8KOCv3HhxjTScLsXf/97AK+w=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/BanubaUtilities.framework/version.txt</key>
@@ -702,44 +702,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xERm9VEL1rcw1TpOw+96z2xyvJg=
+			V/DtFtH4Ki3abEili7ZNxJgL4n4=
 			</data>
 			<key>hash2</key>
 			<data>
-			ONOSPMm4CUusMo0v+nQcTZoOslou5eNXFVkp83chYag=
+			tmR5IdVSO2GxsJcOezkyhx/xXiPdRAQK7rUzHjR6jGQ=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/dSYMs/BanubaUtilities.framework.dSYM/Contents/Resources/DWARF/BanubaUtilities</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8fJ8/aVjKUSTkr8xavlQgwLBq4E=
+			Nr/QyB5VEZfweNBb128LnqWEM1o=
 			</data>
 			<key>hash2</key>
 			<data>
-			6g8OWIxG8yvv4mSF5VjqwDjP7+/lUTS62WF0mOcp9SQ=
+			fE15/ngkOfJ1MlluzA3tyVqhFPrDZkid0PRDYbU9eK0=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/dSYMs/BanubaUtilities.framework.dSYM/Contents/Resources/Relocations/aarch64/BanubaUtilities.yml</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			3b1ZSXRjydUlcv6wIAcGHKFPbDA=
+			0BVa5RR3ffelabM7vgzfnaNJjpY=
 			</data>
 			<key>hash2</key>
 			<data>
-			oXtWM6KuV3+c3Wr2OuTCuVwoTCBPQQP2sZ6At8fVbIY=
+			dKCNYsUMlywz7v+13WYt+TrwM2070ciNV0JWFR73mo8=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/dSYMs/BanubaUtilities.framework.dSYM/Contents/Resources/Relocations/x86_64/BanubaUtilities.yml</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2N7R543pIx0DQE3bB3ZnYpOsJ2k=
+			HR7B9eXgDGTvKrmuLe3tlXFxWlY=
 			</data>
 			<key>hash2</key>
 			<data>
-			oEwd9RfRNzdxJc+EOTNHGwlv6mU/ORwdxN7FkQdjBjw=
+			N92xYvne7khK9k5YHf+izseozAApkeG9YsElNRlsScI=
 			</data>
 		</dict>
 	</dict>
