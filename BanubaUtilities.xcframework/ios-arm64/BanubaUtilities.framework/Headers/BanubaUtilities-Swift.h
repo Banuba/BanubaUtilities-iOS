@@ -576,6 +576,7 @@ typedef SWIFT_ENUM(NSInteger, GalleryItemDestination, open) {
   GalleryItemDestinationEditor = 0,
   GalleryItemDestinationTemplates = 1,
   GalleryItemDestinationAiClipping = 2,
+  GalleryItemDestinationPicker = 3,
 };
 
 typedef SWIFT_ENUM(NSInteger, GalleryItemType, open) {

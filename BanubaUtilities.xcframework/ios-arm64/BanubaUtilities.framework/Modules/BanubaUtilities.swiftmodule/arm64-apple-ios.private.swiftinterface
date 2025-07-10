@@ -127,7 +127,35 @@ public enum AspectRatio : Swift.UInt8, Swift.Codable {
   }
 }
 extension CoreFoundation.CGRect {
-  public func getCenter() -> CoreFoundation.CGPoint
+  public enum ScalingAnchor : Swift.CaseIterable {
+    case center
+    case topLeft
+    case topRight
+    case bottomLeft
+    case bottomRight
+    public static func == (a: CoreFoundation.CGRect.ScalingAnchor, b: CoreFoundation.CGRect.ScalingAnchor) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public typealias AllCases = [CoreFoundation.CGRect.ScalingAnchor]
+    nonisolated public static var allCases: [CoreFoundation.CGRect.ScalingAnchor] {
+      get
+    }
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public var center: CoreFoundation.CGPoint {
+    get
+    set
+  }
+  public var centerX: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  public var centerY: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  public func scaled(by factor: CoreFoundation.CGFloat, anchor: CoreFoundation.CGRect.ScalingAnchor = .center) -> CoreFoundation.CGRect
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class SlideInPresentationManager : ObjectiveC.NSObject, UIKit.UIViewControllerTransitioningDelegate {
   @_Concurrency.MainActor @preconcurrency public var backgroundViewInteractionHandler: (() -> Swift.Void)? {
@@ -2316,6 +2344,7 @@ public struct AlertViewConfiguration {
   case editor
   case templates
   case aiClipping
+  case picker
   public var isAiClipping: Swift.Bool {
     get
   }
@@ -3258,6 +3287,8 @@ extension BanubaUtilities.AlertViewController.ButtonType : Swift.Hashable {}
 extension BanubaUtilities.AspectRatio : Swift.Equatable {}
 extension BanubaUtilities.AspectRatio : Swift.Hashable {}
 extension BanubaUtilities.AspectRatio : Swift.RawRepresentable {}
+extension CoreFoundation.CGRect.ScalingAnchor : Swift.Equatable {}
+extension CoreFoundation.CGRect.ScalingAnchor : Swift.Hashable {}
 extension BanubaUtilities.SlideInPresentationManager : Swift.Sendable {}
 extension BanubaUtilities.Connection : Swift.Equatable {}
 extension BanubaUtilities.Connection : Swift.Hashable {}
