@@ -814,6 +814,7 @@ SWIFT_CLASS("_TtC15BanubaUtilities18TTSegmentedControl")
 /// The button configuration with text styling and text.
 SWIFT_CLASS("_TtC15BanubaUtilities23TextButtonConfiguration")
 @interface TextButtonConfiguration : NSObject
+- (id _Nonnull)copy SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1777,6 +1778,7 @@ SWIFT_CLASS("_TtC15BanubaUtilities18TTSegmentedControl")
 /// The button configuration with text styling and text.
 SWIFT_CLASS("_TtC15BanubaUtilities23TextButtonConfiguration")
 @interface TextButtonConfiguration : NSObject
+- (id _Nonnull)copy SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

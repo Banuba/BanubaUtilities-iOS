@@ -110,6 +110,7 @@ extension Combine.Publishers {
   public var style: BanubaUtilities.TextConfiguration
   public var text: Swift.String?
   public init(style: BanubaUtilities.TextConfiguration, text: Swift.String? = nil)
+  @objc override dynamic public func copy() -> Any
   @objc deinit
 }
 public enum AspectRatio : Swift.UInt8, Swift.Codable {
@@ -2411,6 +2412,9 @@ public struct TTSegmentedControlShadow {
   public let opacity: Swift.Float
   public let radius: CoreFoundation.CGFloat
   public init(color: UIKit.UIColor = .black, offset: CoreFoundation.CGSize = .init(width: 0, height: 1), innerOffset: CoreFoundation.CGSize = .init(width: -1, height: -1), opacity: Swift.Float = 0.6, radius: CoreFoundation.CGFloat = 3.0)
+}
+extension _Concurrency.AsyncSequence where Self.Element : Swift.Equatable {
+  public func removeDuplicates() -> _Concurrency.AsyncStream<Self.Element>
 }
 public struct TTSegmentedControlTitle {
   public let text: Swift.String?
