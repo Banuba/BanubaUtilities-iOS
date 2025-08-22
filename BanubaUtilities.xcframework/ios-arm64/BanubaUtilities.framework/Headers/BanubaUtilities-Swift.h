@@ -535,7 +535,6 @@ SWIFT_CLASS("_TtC15BanubaUtilities17BanubaGalleryItem")
 @end
 
 
-
 @interface BanubaGalleryItem (SWIFT_EXTENSION(BanubaUtilities))
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 @end

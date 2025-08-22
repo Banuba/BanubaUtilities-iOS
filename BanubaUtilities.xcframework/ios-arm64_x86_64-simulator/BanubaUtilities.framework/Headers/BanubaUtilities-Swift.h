@@ -535,7 +535,6 @@ SWIFT_CLASS("_TtC15BanubaUtilities17BanubaGalleryItem")
 @end
 
 
-
 @interface BanubaGalleryItem (SWIFT_EXTENSION(BanubaUtilities))
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 @end
@@ -1497,7 +1496,6 @@ SWIFT_CLASS("_TtC15BanubaUtilities17BanubaGalleryItem")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
 
 
 @interface BanubaGalleryItem (SWIFT_EXTENSION(BanubaUtilities))
