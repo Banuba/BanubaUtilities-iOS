@@ -1590,6 +1590,11 @@ public struct DefaultCacheSerializer : BanubaUtilities.CacheSerializer {
   public func data(with image: BanubaUtilities.KFCrossPlatformImage, original: Foundation.Data?) -> Foundation.Data?
   public func image(with data: Foundation.Data, options: BanubaUtilities.KingfisherParsedOptionsInfo) -> BanubaUtilities.KFCrossPlatformImage?
 }
+public class CancellationHandler {
+  public init(cancellationHandler: @escaping () -> Swift.Void)
+  public func cancel()
+  @objc deinit
+}
 @_Concurrency.MainActor extension BanubaUtilities.KingfisherWrapper where Base : UIKit.NSTextAttachment {
   @discardableResult
   @_Concurrency.MainActor public func setImage(with source: BanubaUtilities.Source?, attributedView: @autoclosure @escaping @Sendable () -> BanubaUtilities.KFCrossPlatformView, placeholder: BanubaUtilities.KFCrossPlatformImage? = nil, options: BanubaUtilities.KingfisherOptionsInfo? = nil, progressBlock: BanubaUtilities.DownloadProgressBlock? = nil, completionHandler: (@_Concurrency.MainActor @Sendable (Swift.Result<BanubaUtilities.RetrieveImageResult, BanubaUtilities.KingfisherError>) -> Swift.Void)? = nil) -> BanubaUtilities.DownloadTask?
@@ -1882,6 +1887,38 @@ public protocol ImageDownloadRedirectHandler : Swift.Sendable {
 public struct AnyRedirectHandler : BanubaUtilities.ImageDownloadRedirectHandler {
   public func handleHTTPRedirection(for task: BanubaUtilities.SessionDataTask, response: Foundation.HTTPURLResponse, newRequest: Foundation.URLRequest) async -> Foundation.URLRequest?
   public init(handle: @escaping @Sendable (BanubaUtilities.SessionDataTask, Foundation.HTTPURLResponse, Foundation.URLRequest, @escaping (Foundation.URLRequest?) -> Swift.Void) -> Swift.Void)
+}
+public struct BanubaMusicResponse : Swift.Codable {
+  public let popularTracks: [Swift.Int]
+  public let genres: [BanubaUtilities.BanubaMusicSection]
+  public let moods: [BanubaUtilities.BanubaMusicSection]
+  public let styles: [BanubaUtilities.BanubaMusicSection]
+  public let artists: [BanubaUtilities.BanubaMusicSection]
+  public let tracks: [BanubaUtilities.BanubaMusicSong]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct BanubaMusicSong : Swift.Codable {
+  public let id: Swift.Int
+  public let artistId: Swift.Int?
+  public let title: Swift.String
+  public let subtitle: Swift.String
+  public let downloadUrl: Swift.String
+  public let imageUrl: Swift.String?
+  public let duration: Foundation.TimeInterval
+  public let genres: [Swift.Int]
+  public let moods: [Swift.Int]
+  public let styles: [Swift.Int]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct BanubaMusicSection : Swift.Codable {
+  public let id: Swift.Int
+  public let name: Swift.String
+  public let isOthers: Swift.Bool
+  public let imageUrl: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public class BanubaCancelHandler {
   public init(handler: @escaping () -> Swift.Void)
@@ -3130,6 +3167,23 @@ extension UIKit.UIView {
   @_Concurrency.MainActor @preconcurrency public func roundCorners(cornerMask: QuartzCore.CACornerMask, radius: CoreFoundation.CGFloat)
   @_Concurrency.MainActor @preconcurrency public func roundCorners(radius: CoreFoundation.CGFloat)
 }
+public enum BanubaMusicAPIError : Swift.Error {
+  case badURL
+  case badResponse
+  case failedToSaveAudio
+  case networkError
+  public static func == (a: BanubaUtilities.BanubaMusicAPIError, b: BanubaUtilities.BanubaMusicAPIError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public class BanubaMusicAPI {
+  public init(token: Swift.String, storageDirectory: Foundation.URL = FileManager.default.temporaryDirectory)
+  public func load() async -> Swift.Result<BanubaUtilities.BanubaMusicResponse, any Swift.Error>
+  public func download(musicUrl: Foundation.URL, fileName: Swift.String, downloadProgress: @escaping (Swift.Double) -> Swift.Void, completion: @escaping (Swift.Result<Foundation.URL, any Swift.Error>) -> Swift.Void) -> BanubaUtilities.CancellationHandler?
+  @objc deinit
+}
 extension UIKit.UIViewController {
   @_Concurrency.MainActor @preconcurrency public class func loadFromNib() -> Self
 }
@@ -3347,3 +3401,5 @@ extension BanubaUtilities.VideoResolution : Swift.RawRepresentable {}
 extension BanubaUtilities.CameraVideoResolution : Swift.Equatable {}
 extension BanubaUtilities.CameraVideoResolution : Swift.Hashable {}
 extension BanubaUtilities.CameraVideoResolution : Swift.RawRepresentable {}
+extension BanubaUtilities.BanubaMusicAPIError : Swift.Equatable {}
+extension BanubaUtilities.BanubaMusicAPIError : Swift.Hashable {}
