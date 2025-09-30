@@ -502,7 +502,7 @@ enum GalleryItemType : NSInteger;
 SWIFT_PROTOCOL("_TtP15BanubaUtilities11GalleryItem_")
 @protocol GalleryItem <NSObject>
 /// Video representation url asset
-@property (nonatomic, readonly, strong) AVURLAsset * _Nullable urlAsset;
+@property (nonatomic, strong) AVURLAsset * _Nullable urlAsset;
 /// Preview for gallery item
 @property (nonatomic, strong) UIImage * _Nullable preview;
 /// GalleryItem duration
@@ -510,14 +510,13 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities11GalleryItem_")
 /// Type can be video, photo or unknown
 @property (nonatomic, readonly) enum GalleryItemType type;
 /// Requests preview for displaying in gallery list
-- (void)requestPreviewWithSize:(CGSize)size synchronously:(BOOL)synchronously handler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
-- (void)requestPreviewWithSize:(CGSize)size completionHandler:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))completionHandler;
+- (void)requestPreviewWithSize:(CGSize)size synchronously:(BOOL)synchronously completion:(void (^ _Nonnull)(UIImage * _Nullable))completion;
 /// Requests photo with desired size
-- (void)requestPhotoWithSize:(CGSize)size progressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))handler;
+- (void)requestPhotoWithSize:(CGSize)size progressHandler:(BOOL (^ _Nullable)(double))progressHandler completion:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))completion;
 /// Requests video url asset
-- (void)requestAVURLAssetWithProgressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(AVURLAsset * _Nullable, NSError * _Nullable))handler;
+- (void)requestAVURLAssetWithProgressHandler:(BOOL (^ _Nullable)(double))progressHandler completion:(void (^ _Nonnull)(AVURLAsset * _Nullable, NSError * _Nullable))completion;
 /// Requests video player item
-- (void)requestAVPlayerItemWithProgressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(AVPlayerItem * _Nullable, NSError * _Nullable))handler;
+- (void)requestAVPlayerItemWithProgressHandler:(BOOL (^ _Nullable)(double))progressHandler completion:(void (^ _Nonnull)(AVPlayerItem * _Nullable, NSError * _Nullable))completion;
 @end
 
 
@@ -525,13 +524,12 @@ SWIFT_CLASS("_TtC15BanubaUtilities17BanubaGalleryItem")
 @interface BanubaGalleryItem : NSObject <GalleryItem>
 @property (nonatomic, strong) UIImage * _Nullable preview;
 @property (nonatomic, readonly) NSTimeInterval duration;
-@property (nonatomic, readonly, strong) AVURLAsset * _Nullable urlAsset;
+@property (nonatomic, strong) AVURLAsset * _Nullable urlAsset;
 @property (nonatomic, readonly) enum GalleryItemType type;
-- (void)requestAVURLAssetWithProgressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(AVURLAsset * _Nullable, NSError * _Nullable))handler;
-- (void)requestAVPlayerItemWithProgressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(AVPlayerItem * _Nullable, NSError * _Nullable))handler;
-- (void)requestPreviewWithSize:(CGSize)size synchronously:(BOOL)synchronously handler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
-- (void)requestPreviewWithSize:(CGSize)size completionHandler:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))completionHandler;
-- (void)requestPhotoWithSize:(CGSize)size progressHandler:(BOOL (^ _Nullable)(double))progressHandler handler:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))handler;
+- (void)requestAVURLAssetWithProgressHandler:(BOOL (^ _Nullable)(double))progressHandler completion:(void (^ _Nonnull)(AVURLAsset * _Nullable, NSError * _Nullable))completion;
+- (void)requestAVPlayerItemWithProgressHandler:(BOOL (^ _Nullable)(double))progressHandler completion:(void (^ _Nonnull)(AVPlayerItem * _Nullable, NSError * _Nullable))completion;
+- (void)requestPreviewWithSize:(CGSize)size synchronously:(BOOL)synchronously completion:(void (^ _Nonnull)(UIImage * _Nullable))completion;
+- (void)requestPhotoWithSize:(CGSize)size progressHandler:(BOOL (^ _Nullable)(double))progressHandler completion:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))completion;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -564,6 +562,7 @@ SWIFT_CLASS("_TtC15BanubaUtilities20CircularProgressView")
 
 
 
+
 /// The Gallery configuration
 SWIFT_CLASS("_TtC15BanubaUtilities20GalleryConfiguration")
 @interface GalleryConfiguration : NSObject
@@ -571,6 +570,13 @@ SWIFT_CLASS("_TtC15BanubaUtilities20GalleryConfiguration")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+typedef SWIFT_ENUM(NSInteger, GalleryItemDestination, open) {
+  GalleryItemDestinationEditor = 0,
+  GalleryItemDestinationTemplates = 1,
+  GalleryItemDestinationAiClipping = 2,
+  GalleryItemDestinationPicker = 3,
+};
 
 typedef SWIFT_ENUM(NSInteger, GalleryItemType, open) {
   GalleryItemTypePhoto = 0,
@@ -626,7 +632,7 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities29GalleryViewControllerDelegate_")
 /// Tells delegate object about the closing gallery.
 - (void)galleryViewControllerDidClose:(GalleryViewController * _Nonnull)controller;
 /// Tells delegate object about completion picking gallery items.
-- (void)galleryViewControllerDone:(GalleryViewController * _Nonnull)controller withGalleryItems:(NSArray<id <GalleryItem>> * _Nonnull)items;
+- (void)galleryViewControllerDone:(GalleryViewController * _Nonnull)controller destination:(enum GalleryItemDestination)destination withGalleryItems:(NSArray<id <GalleryItem>> * _Nonnull)items;
 /// Tells delegate object that he should present message.
 /// In BanubaVideoEditorSDK it presents popup message.
 - (void)galleryViewController:(GalleryViewController * _Nonnull)controller presentMessage:(NSString * _Nonnull)message;
@@ -807,6 +813,7 @@ SWIFT_CLASS("_TtC15BanubaUtilities18TTSegmentedControl")
 /// The button configuration with text styling and text.
 SWIFT_CLASS("_TtC15BanubaUtilities23TextButtonConfiguration")
 @interface TextButtonConfiguration : NSObject
+- (id _Nonnull)copy SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -905,6 +912,13 @@ SWIFT_CLASS("_TtC15BanubaUtilities34VideoTimeLineCollectionViewHandler")
 @interface VideoTimeLineCollectionViewHandler : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface VideoTimeLineCollectionViewHandler (SWIFT_EXTENSION(BanubaUtilities))
+- (void)scrollViewWillBeginDragging:(UIScrollView * _Nonnull)scrollView;
+- (void)scrollViewDidEndDragging:(UIScrollView * _Nonnull)scrollView willDecelerate:(BOOL)decelerate;
+- (void)scrollViewDidEndDecelerating:(UIScrollView * _Nonnull)scrollView;
 @end
 
 
