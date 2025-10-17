@@ -183,12 +183,12 @@ extension CoreFoundation.CGRect {
   @objc deinit
 }
 public protocol TrackSelectionViewControllerDelegate : AnyObject {
-  func trackSelectionViewController(viewController: any BanubaUtilities.TrackSelectionViewController, didSelectFile url: Foundation.URL, coverURL: Foundation.URL?, timeRange: CoreMedia.CMTimeRange?, isEditable: Swift.Bool, title: Swift.String, additionalTitle: Swift.String?, uuid: Foundation.UUID)
+  func trackSelectionViewController(viewController: any BanubaUtilities.TrackSelectionViewController, didSelectFile url: Foundation.URL, remoteURL: Foundation.URL?, coverURL: Foundation.URL?, timeRange: CoreMedia.CMTimeRange?, isEditable: Swift.Bool, title: Swift.String, additionalTitle: Swift.String?, uuid: Foundation.UUID)
   func trackSelectionViewControllerDidCancel(viewController: any BanubaUtilities.TrackSelectionViewController)
   func trackSelectionViewControllerDiscardCurrentTrack(viewController: any BanubaUtilities.TrackSelectionViewController)
 }
 extension BanubaUtilities.TrackSelectionViewControllerDelegate {
-  public func trackSelectionViewController(viewController: any BanubaUtilities.TrackSelectionViewController, didSelectFile url: Foundation.URL, coverURL: Foundation.URL? = nil, timeRange: CoreMedia.CMTimeRange? = nil, isEditable: Swift.Bool, title: Swift.String, additionalTitle: Swift.String?, uuid: Foundation.UUID)
+  public func trackSelectionViewController(viewController: any BanubaUtilities.TrackSelectionViewController, didSelectFile url: Foundation.URL, remoteURL: Foundation.URL?, coverURL: Foundation.URL? = nil, timeRange: CoreMedia.CMTimeRange? = nil, isEditable: Swift.Bool, title: Swift.String, additionalTitle: Swift.String?, uuid: Foundation.UUID)
 }
 extension BanubaUtilities.TrackSelectionViewControllerDelegate {
   public func trackSelectionViewControllerDiscardCurrentTrack(viewController: any BanubaUtilities.TrackSelectionViewController)
@@ -2116,7 +2116,7 @@ extension CoreFoundation.CGPoint {
   @objc deinit
 }
 public protocol EffectSelectionViewControllerDelegate : AnyObject {
-  func effectSelectionViewController(viewController: any BanubaUtilities.EffectSelectionViewController, didSelectFile url: Foundation.URL, isEditable: Swift.Bool, title: Swift.String, additionalTitle: Swift.String?, uuid: Foundation.UUID)
+  func effectSelectionViewController(viewController: any BanubaUtilities.EffectSelectionViewController, didSelectFile url: Foundation.URL, remoteURL: Foundation.URL?, isEditable: Swift.Bool, title: Swift.String, additionalTitle: Swift.String?, uuid: Foundation.UUID)
   func effectSelectionViewControllerDidCancel(viewController: any BanubaUtilities.EffectSelectionViewController)
 }
 public protocol EffectSelectionViewController : UIKit.UIViewController {
@@ -2181,12 +2181,13 @@ public class MediaTrack : Swift.Codable {
   final public let uuid: Foundation.UUID
   final public let url: Foundation.URL
   final public let coverURL: Foundation.URL?
+  final public let remoteURL: Foundation.URL?
   public var timeRange: BanubaUtilities.MediaTrackTimeRange
   final public let title: Swift.String?
   final public let additionalTitle: Swift.String?
   final public let isEditable: Swift.Bool
   public var id: CoreMedia.CMPersistentTrackID?
-  public init(uuid: Foundation.UUID, id: CoreMedia.CMPersistentTrackID?, url: Foundation.URL, coverURL: Foundation.URL?, timeRange: BanubaUtilities.MediaTrackTimeRange, isEditable: Swift.Bool, title: Swift.String? = nil, additionalTitle: Swift.String? = nil)
+  public init(uuid: Foundation.UUID, id: CoreMedia.CMPersistentTrackID?, url: Foundation.URL, remoteURL: Foundation.URL?, coverURL: Foundation.URL?, timeRange: BanubaUtilities.MediaTrackTimeRange, isEditable: Swift.Bool, title: Swift.String? = nil, additionalTitle: Swift.String? = nil)
   required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -2830,12 +2831,13 @@ public enum DrawableFigure : Swift.String, Swift.Codable {
 public class AudioServiceItem : BanubaUtilities.AudioItem {
   final public let uuid: Foundation.UUID
   final public let url: Foundation.URL
+  final public let remoteURL: Foundation.URL?
   final public let coverURL: Foundation.URL?
   public var title: Swift.String?
   public var additionalTitle: Swift.String?
   public var isEditable: Swift.Bool
   public var timeRange: CoreMedia.CMTimeRange?
-  public init(uuid: Foundation.UUID, url: Foundation.URL, coverURL: Foundation.URL?, title: Swift.String?, additionalTitle: Swift.String?, isEditable: Swift.Bool, timeRange: CoreMedia.CMTimeRange? = nil)
+  public init(uuid: Foundation.UUID, url: Foundation.URL, remoteURL: Foundation.URL?, coverURL: Foundation.URL?, title: Swift.String?, additionalTitle: Swift.String?, isEditable: Swift.Bool, timeRange: CoreMedia.CMTimeRange? = nil)
   @objc deinit
 }
 public protocol AudioPlayerDelegate : AnyObject {
