@@ -561,6 +561,16 @@ SWIFT_CLASS("_TtC15BanubaUtilities20CircularProgressView")
 @end
 
 
+SWIFT_CLASS("_TtC15BanubaUtilities16CurvedCornerView")
+@interface CurvedCornerView : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layerClass;)
++ (Class _Nonnull)layerClass SWIFT_WARN_UNUSED_RESULT;
+- (void)layoutSubviews;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
 
 
 /// The Gallery configuration
@@ -870,6 +880,7 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26TimeLineDataSourceDelegate_")
 /// timelineDataSource did finish fetching all thumbs
 - (void)timelineDataSourceDidFinishThumbnailFetch:(id <TimeLineDataSource> _Nonnull)timelineDataSource;
 @end
+
 
 
 

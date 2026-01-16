@@ -443,6 +443,30 @@ extension UIKit.UIColor {
   @objc override dynamic public init()
   @objc deinit
 }
+public enum CurvedCornerType {
+  case topLeft
+  case topRight
+  case bottomLeft
+  case bottomRight
+  public static func == (a: BanubaUtilities.CurvedCornerType, b: BanubaUtilities.CurvedCornerType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class CurvedCornerView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public var cornerType: BanubaUtilities.CurvedCornerType
+  @_Concurrency.MainActor @preconcurrency public var color: UIKit.UIColor {
+    get
+    set
+  }
+  @_Concurrency.MainActor @preconcurrency required public init(cornerType: BanubaUtilities.CurvedCornerType, color: UIKit.UIColor)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public class var layerClass: Swift.AnyClass {
+    @objc get
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
 public protocol ImageDownloaderDelegate : AnyObject {
   func imageDownloader(_ downloader: BanubaUtilities.ImageDownloader, willDownloadImageForURL url: Foundation.URL, with request: Foundation.URLRequest?)
   func imageDownloader(_ downloader: BanubaUtilities.ImageDownloader, didFinishDownloadingImageForURL url: Foundation.URL, with response: Foundation.URLResponse?, error: (any Swift.Error)?)
@@ -1203,6 +1227,9 @@ extension BanubaUtilities.Indicator {
     get
   }
   @_Concurrency.MainActor public func sizeStrategy(in imageView: BanubaUtilities.KFCrossPlatformImageView) -> BanubaUtilities.IndicatorSizeStrategy
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public static func getEdgeInsets(of view: UIKit.UIView, to scrollView: UIKit.UIScrollView) -> UIKit.UIEdgeInsets
 }
 public protocol AsyncImageDownloadRequestModifier : Swift.Sendable {
   func modified(for request: Foundation.URLRequest) async -> Foundation.URLRequest?
@@ -2122,6 +2149,36 @@ public protocol EffectSelectionViewControllerDelegate : AnyObject {
 public protocol EffectSelectionViewController : UIKit.UIViewController {
   var effectSelectionDelegate: (any BanubaUtilities.EffectSelectionViewControllerDelegate)? { get set }
 }
+public protocol CropGridViewDelegate : AnyObject {
+  func cropGridViewDidPanEnd(_ frame: CoreFoundation.CGRect)
+  func cropGridViewDidUpdateFrame(_ frame: CoreFoundation.CGRect)
+  func cropGridViewDidChangeAspect()
+}
+@_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class CropGridView<AspectRatio> : UIKit.UIView where AspectRatio : BanubaUtilities.CropAspectRatioProtocol {
+  @_Concurrency.MainActor @preconcurrency public var topLeftCorner: BanubaUtilities.CurvedCornerView
+  @_Concurrency.MainActor @preconcurrency public var topRightCorner: BanubaUtilities.CurvedCornerView
+  @_Concurrency.MainActor @preconcurrency public var bottomLeftCorner: BanubaUtilities.CurvedCornerView
+  @_Concurrency.MainActor @preconcurrency public var bottomRightCorner: BanubaUtilities.CurvedCornerView
+  @_Concurrency.MainActor @preconcurrency public var aspectRatio: AspectRatio {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency weak public var delegate: (any BanubaUtilities.CropGridViewDelegate)?
+  @_Concurrency.MainActor @preconcurrency public var initialFrame: CoreFoundation.CGRect
+  @_Concurrency.MainActor @preconcurrency public var insets: UIKit.UIEdgeInsets
+  @_Concurrency.MainActor @preconcurrency public init(frame: CoreFoundation.CGRect, aspectRatio: AspectRatio, configuration: BanubaUtilities.CropGridViewConfiguration = .default)
+  @_Concurrency.MainActor @preconcurrency public func setCropAspectRatio(_ aspectRatio: AspectRatio)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func draw(_ rect: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func hitTest(_ point: CoreFoundation.CGPoint, with event: UIKit.UIEvent?) -> UIKit.UIView?
+  @objc deinit
+}
+public struct CropGridViewConfiguration {
+  public let gridColor: UIKit.UIColor
+  public let cornerColor: UIKit.UIColor
+  public init(gridColor: UIKit.UIColor, cornerColor: UIKit.UIColor)
+  public static var `default`: BanubaUtilities.CropGridViewConfiguration {
+    get
+  }
+}
 @objc public class VideoTimeLineCollectionViewHandler : ObjectiveC.NSObject {
   final public let collectionView: UIKit.UICollectionView
   final public let timeLineDataSource: any BanubaUtilities.TimeLineDataSource
@@ -2214,6 +2271,10 @@ extension Foundation.FileManager {
   final public func finish()
   @objc override dynamic public init()
   @objc deinit
+}
+public protocol CropAspectRatioProtocol {
+  var value: CoreFoundation.CGFloat { get }
+  var isCustom: Swift.Bool { get }
 }
 public enum BackgroundViewStyle : Swift.Equatable {
   case blur(style: UIKit.UIBlurEffect.Style)
@@ -3017,6 +3078,9 @@ extension UIKit.UIView {
   @_Concurrency.MainActor @preconcurrency public func dropShadow(_ offset: CoreFoundation.CGSize = CGSize(width: 0, height: 1), blur: CoreFoundation.CGFloat = 1, opacity: Swift.Float = 1)
   @_Concurrency.MainActor @preconcurrency public func dropShadow(configuration: BanubaUtilities.ShadowConfiguration)
 }
+public struct CropDimmingViewHelper {
+  public static func updateDimmingView(_ dimmingView: UIKit.UIView, with frame: CoreFoundation.CGRect, from previewContainer: UIKit.UIView, animated: Swift.Bool)
+}
 @objc public class SmallActivityIndicatorConfiguration : ObjectiveC.NSObject {
   @objc public enum GradientTypeAdapter : Swift.Int {
     case color
@@ -3320,6 +3384,15 @@ extension BanubaUtilities.NibLoadable {
 extension BanubaUtilities.NibLoadable where Self : UIKit.UIView {
   public static func loadFromNib() -> Self
 }
+public struct CropFrameCalculator {
+  public struct CropFrameData {
+    public let gridFrame: CoreFoundation.CGRect
+    public let scrollViewInsets: UIKit.UIEdgeInsets
+    public let aspectRatio: CoreFoundation.CGFloat
+    public init(gridFrame: CoreFoundation.CGRect, scrollViewInsets: UIKit.UIEdgeInsets, aspectRatio: CoreFoundation.CGFloat)
+  }
+  public static func calculateCropFrame<AspectRatio>(for crop: AspectRatio, containerSize: CoreFoundation.CGSize, mediaSize: CoreFoundation.CGSize, selectedCropFrame: CoreFoundation.CGRect?, currentGridFrame: CoreFoundation.CGRect?, isFirstApply: Swift.Bool) -> BanubaUtilities.CropFrameCalculator.CropFrameData where AspectRatio : BanubaUtilities.CropAspectRatioProtocol
+}
 @objc public class TextConfiguration : ObjectiveC.NSObject {
   public var kern: Swift.Double
   public var font: UIKit.UIFont
@@ -3366,6 +3439,8 @@ extension BanubaUtilities.TTSegmentedControl.TitleDistribution : Swift.Equatable
 extension BanubaUtilities.TTSegmentedControl.TitleDistribution : Swift.Hashable {}
 extension BanubaUtilities.TTSegmentedControl.SelectionViewFillType : Swift.Equatable {}
 extension BanubaUtilities.TTSegmentedControl.SelectionViewFillType : Swift.Hashable {}
+extension BanubaUtilities.CurvedCornerType : Swift.Equatable {}
+extension BanubaUtilities.CurvedCornerType : Swift.Hashable {}
 extension BanubaUtilities.CacheType : Swift.Equatable {}
 extension BanubaUtilities.CacheType : Swift.Hashable {}
 extension BanubaUtilities.ContentMode : Swift.Equatable {}
