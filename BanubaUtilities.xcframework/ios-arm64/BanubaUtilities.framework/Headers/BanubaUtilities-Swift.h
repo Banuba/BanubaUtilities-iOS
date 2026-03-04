@@ -655,6 +655,13 @@ SWIFT_PROTOCOL("_TtP15BanubaUtilities26ImageConfigurationProtocol_")
 @property (nonatomic, readonly, strong) UIColor * _Nullable tintColor;
 @end
 
+SWIFT_CLASS("_TtC15BanubaUtilities8InfoView")
+@interface InfoView : UIView
+- (void)awakeFromNib;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 SWIFT_CLASS("_TtC15BanubaUtilities19KeyboardLayoutGuide")
 @interface KeyboardLayoutGuide : UILayoutGuide
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
@@ -697,6 +704,19 @@ SWIFT_CLASS("_TtC15BanubaUtilities27RTLCollectionViewFlowLayout")
 @property (nonatomic, readonly) BOOL flipsHorizontallyInOppositeLayoutDirection;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+/// Router that performs push/pop/present/dismiss on a UINavigationController.
+/// Executes back closures when a view controller is popped or dismissed.
+/// MainActor-isolated so Drawable (UIViewController) conformance is used on the main thread.
+SWIFT_CLASS("_TtC15BanubaUtilities6Router")
+@interface Router : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@interface Router (SWIFT_EXTENSION(BanubaUtilities)) <UINavigationControllerDelegate>
+- (void)navigationController:(UINavigationController * _Nonnull)navigationController didShowViewController:(UIViewController * _Nonnull)viewController animated:(BOOL)animated;
 @end
 
 /// Represents the delegate object of the downloader session.

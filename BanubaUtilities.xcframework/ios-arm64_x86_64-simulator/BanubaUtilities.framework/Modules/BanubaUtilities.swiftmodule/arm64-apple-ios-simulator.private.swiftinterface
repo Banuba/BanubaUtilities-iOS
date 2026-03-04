@@ -44,6 +44,16 @@ public struct BanubaImageButtonConfiguration : BanubaUtilities.ImageButtonConfig
   public init(imageConfiguration: any BanubaUtilities.ImageConfigurationProtocol, selectedImageConfiguration: (any BanubaUtilities.ImageConfigurationProtocol)? = nil)
   #endif
 }
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency final public class InfoView : UIKit.UIView, BanubaUtilities.NibLoadable, BanubaUtilities.ReusableView {
+  @_Concurrency.MainActor @preconcurrency final public var didTapRetryButtonHandler: (() -> Swift.Void)?
+  @_Concurrency.MainActor @preconcurrency @objc override final public func awakeFromNib()
+  @_Concurrency.MainActor @preconcurrency final public func setup(title: Swift.String, message: Swift.String, retryButtonTitle: Swift.String)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency final public class AlertViewController : UIKit.UIViewController, BanubaUtilities.NibLoadable {
   @objc @IBOutlet @_Concurrency.MainActor @preconcurrency weak final public var contextView: UIKit.UIView!
   @objc @IBOutlet @_Concurrency.MainActor @preconcurrency weak final public var backgroundView: UIKit.UIView!
@@ -58,6 +68,7 @@ public struct BanubaImageButtonConfiguration : BanubaUtilities.ImageButtonConfig
     case missedPermission
     case recordingWithoutMask
     case destructive(_: Swift.String, _: Swift.String)
+    case tryAgainOrCancel(_: Swift.String, _: Swift.String)
   }
   public enum ButtonType {
     case agreeButton
@@ -332,6 +343,7 @@ extension BanubaUtilities.GalleryItemPreviewView : BanubaUtilities.AppStateObser
 }
 public enum SharedLocalizedStrings {
   public enum Errors {
+    public static let noInternet: Swift.String
     public static let noInternetConnection: Swift.String
   }
   public enum Common {
@@ -342,6 +354,8 @@ public enum SharedLocalizedStrings {
   public enum Alert {
     public static let settings: Swift.String
     public static let refuseSettings: Swift.String
+    public static let tryAgain: Swift.String
+    public static let cancel: Swift.String
   }
   public enum Gallery {
     public static let damagedFile: Swift.String
@@ -1080,6 +1094,68 @@ extension BanubaUtilities.KF {
     public let newRequest: Foundation.URLRequest
     public let completionHandler: (Foundation.URLRequest?) -> Swift.Void
   }
+}
+public typealias NavigationBackClosure = () -> Swift.Void
+@_Concurrency.MainActor public protocol RouterProtocol : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor func push(_ drawable: any BanubaUtilities.Drawable, animated: Swift.Bool, onNavigateBack: BanubaUtilities.NavigationBackClosure?)
+  #endif
+  @_Concurrency.MainActor func pop(animated: Swift.Bool)
+  @_Concurrency.MainActor func popToRoot(animated: Swift.Bool)
+  @_Concurrency.MainActor func setViewControllers(_ viewControllers: [UIKit.UIViewController], animated: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor func present(_ drawable: any BanubaUtilities.Drawable, onNavigateDismiss: BanubaUtilities.NavigationBackClosure?, animated: Swift.Bool, completion: (() -> Swift.Void)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor func dismiss(animated: Swift.Bool, completion: (() -> Swift.Void)?)
+  #endif
+}
+@objc @_Concurrency.MainActor final public class Router : ObjectiveC.NSObject, BanubaUtilities.RouterProtocol, @_Concurrency.MainActor BanubaUtilities.Drawable {
+  @_Concurrency.MainActor final public let navigationController: UIKit.UINavigationController
+  @_Concurrency.MainActor public init(navigationController: UIKit.UINavigationController)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor final public func push(_ drawable: any BanubaUtilities.Drawable, animated: Swift.Bool, onNavigateBack closure: BanubaUtilities.NavigationBackClosure? = nil)
+  #endif
+  @_Concurrency.MainActor final public func setViewControllers(_ viewControllers: [UIKit.UIViewController], animated: Swift.Bool)
+  @_Concurrency.MainActor final public func pop(animated: Swift.Bool)
+  @_Concurrency.MainActor final public func popToRoot(animated: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor final public func present(_ drawable: any BanubaUtilities.Drawable, onNavigateDismiss closure: BanubaUtilities.NavigationBackClosure?, animated: Swift.Bool, completion: (() -> Swift.Void)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor final public func dismiss(animated: Swift.Bool, completion: (() -> Swift.Void)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor final public var viewController: UIKit.UIViewController? {
+    get
+  }
+  #endif
+  @objc deinit
+}
+extension BanubaUtilities.Router : UIKit.UINavigationControllerDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc final public func navigationController(_ navigationController: UIKit.UINavigationController, didShow viewController: UIKit.UIViewController, animated: Swift.Bool)
+}
+public protocol Drawable : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
+  var viewController: UIKit.UIViewController? { get }
+  #endif
+}
+extension UIKit.UIViewController : BanubaUtilities.Drawable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public var viewController: UIKit.UIViewController? {
+    get
+  }
+  #endif
+}
+public protocol Coordinator : AnyObject {
+  var children: [any BanubaUtilities.Coordinator] { get set }
+  func start()
+}
+extension BanubaUtilities.Coordinator {
+  public func addChild(_ childCoordinator: any BanubaUtilities.Coordinator)
+  public func removeChild(_ childCoordinator: any BanubaUtilities.Coordinator)
+  public func removeChild(_ childCoordinatorType: any BanubaUtilities.Coordinator.Type)
+  public func hasChild(_ childCoordinatorType: any BanubaUtilities.Coordinator.Type) -> Swift.Bool
 }
 @_Concurrency.MainActor public protocol KFOptionSetter {
   @_Concurrency.MainActor var options: BanubaUtilities.KingfisherParsedOptionsInfo { get nonmutating set }
@@ -2574,6 +2650,19 @@ public enum DeviceModel : Swift.String, Swift.Codable {
   case iPhone14Plus
   case iPhone14Pro
   case iPhone14ProMax
+  case iPhone15
+  case iPhone15Plus
+  case iPhone15Pro
+  case iPhone15ProMax
+  case iPhone16
+  case iPhone16Plus
+  case iPhone16Pro
+  case iPhone16ProMax
+  case iPhone16e
+  case iPhone17
+  case iPhone17Pro
+  case iPhone17ProMax
+  case iPhoneAir
   case iPad2
   case iPad3
   case iPad4
@@ -2586,14 +2675,20 @@ public enum DeviceModel : Swift.String, Swift.Codable {
   case iPad8
   case iPad9
   case iPad10
+  case iPadA16
   case iPadAir4
   case iPadAir5
+  case iPadAir11M2
+  case iPadAir13M2
+  case iPadAir11M3
+  case iPadAir13M3
   case iPadMini
   case iPadMini2
   case iPadMini3
   case iPadMini4
   case iPadMini5
   case iPadMini6
+  case iPadMiniA17Pro
   case iPadPro9Inch
   case iPadPro12Inch
   case iPadPro12Inch2
@@ -2606,6 +2701,11 @@ public enum DeviceModel : Swift.String, Swift.Codable {
   case iPadPro12Inch5
   case iPadPro11Inch4
   case iPadPro12Inch6
+  case iPadPro11M4
+  case iPadPro13M4
+  case iPadPro11M5
+  case iPadPro13M5
+  case homePod
   case simulator
   case unknown
   public static var current: BanubaUtilities.DeviceModel {
@@ -2948,7 +3048,7 @@ public class BannerPresenter {
   public init()
   @objc deinit
   #if compiler(>=5.3) && $NonescapableTypes
-  public func showBanner(state: BanubaUtilities.BannerState, in containerView: UIKit.UIView, below anchor: UIKit.NSLayoutYAxisAnchor? = nil, constant: CoreFoundation.CGFloat = 8)
+  public func showBanner(state: BanubaUtilities.BannerState, in containerView: UIKit.UIView, below anchor: UIKit.NSLayoutYAxisAnchor? = nil, insetPadding: CoreFoundation.CGFloat = 8)
   #endif
   public func updateState(_ state: BanubaUtilities.BannerState)
   public func dismiss()
@@ -3249,12 +3349,6 @@ public protocol VoiceRecorderDelegate : AnyObject {
   func voiceRecorderDidFinishRecordingByDurationExceed()
   func voiceRecorderDidStartRecording()
   func voiceRecorderDidRecordFrame(with power: Swift.Float)
-  func voiceRecorderDidFinishRecordingTooShort(recordedDuration: Foundation.TimeInterval)
-  func voiceRecorderDidReachMinDuration()
-}
-extension BanubaUtilities.VoiceRecorderDelegate {
-  public func voiceRecorderDidFinishRecordingTooShort(recordedDuration: Foundation.TimeInterval)
-  public func voiceRecorderDidReachMinDuration()
 }
 @objc final public class VoiceRecorder : ObjectiveC.NSObject {
   public enum State {
@@ -3271,9 +3365,9 @@ extension BanubaUtilities.VoiceRecorderDelegate {
   weak final public var delegate: (any BanubaUtilities.VoiceRecorderDelegate)?
   final public var fileUrl: Foundation.URL
   final public var state: BanubaUtilities.VoiceRecorder.State
-  final public let minRecordingDuration: Swift.Double
+  final public let minRecordingDuration: Foundation.TimeInterval
   #if compiler(>=5.3) && $NonescapableTypes
-  public init(file url: Foundation.URL?)
+  public init(file url: Foundation.URL?, minRecordingDuration: Foundation.TimeInterval = 0.3)
   #endif
   @objc deinit
   final public func replaceUrl(_ url: Foundation.URL)
@@ -4074,6 +4168,7 @@ extension UIKit.UIView {
   #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   #endif
+  @_Concurrency.MainActor @preconcurrency public func setupSpinLayer(strokeColor: UIKit.UIColor, lineCap: QuartzCore.CAShapeLayerLineCap)
   @_Concurrency.MainActor @preconcurrency public func startAnimating()
   @_Concurrency.MainActor @preconcurrency public func stopAnimating()
   @objc deinit
@@ -4242,6 +4337,7 @@ extension BanubaUtilities.CurvedCornerType : Swift.Equatable {}
 extension BanubaUtilities.CurvedCornerType : Swift.Hashable {}
 extension BanubaUtilities.CacheType : Swift.Equatable {}
 extension BanubaUtilities.CacheType : Swift.Hashable {}
+extension BanubaUtilities.Router : Swift.Sendable {}
 extension BanubaUtilities.ContentMode : Swift.Equatable {}
 extension BanubaUtilities.ContentMode : Swift.Hashable {}
 extension BanubaUtilities.ImageFormat : Swift.Equatable {}
