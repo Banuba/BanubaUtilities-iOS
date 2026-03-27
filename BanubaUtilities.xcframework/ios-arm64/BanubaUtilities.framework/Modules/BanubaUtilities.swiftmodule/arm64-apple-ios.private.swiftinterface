@@ -193,6 +193,12 @@ extension CoreFoundation.CGRect {
     set
   }
   #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public var onInteractiveDismissalCompleted: (() -> Swift.Void)? {
+    get
+    set
+  }
+  #endif
   @_Concurrency.MainActor @preconcurrency public init(coverPercentage: CoreFoundation.CGFloat, panToDismiss: Swift.Bool, backgroundViewStyle: BanubaUtilities.BackgroundViewStyle, dismissOnTapByBackgroundView: Swift.Bool = false, transitionDuration: Foundation.TimeInterval = 0.3)
   @_Concurrency.MainActor @preconcurrency public init(coverHeight: CoreFoundation.CGFloat, panToDismiss: Swift.Bool, backgroundViewStyle: BanubaUtilities.BackgroundViewStyle, dismissOnTapByBackgroundView: Swift.Bool, transitionDuration: Foundation.TimeInterval = 0.3)
   @_Concurrency.MainActor @preconcurrency @objc convenience override dynamic public init()
@@ -2234,6 +2240,10 @@ extension BanubaUtilities.AnimatedImageView {
     @objc deinit
   }
 }
+public enum SliderTintColorConfigurator {
+  public static let defaultMaximumTrackAlpha: CoreFoundation.CGFloat
+  public static func applyTrackTint(on slider: UIKit.UISlider, tintColor: UIKit.UIColor, maximumTrackAlpha: CoreFoundation.CGFloat = defaultMaximumTrackAlpha)
+}
 public enum MemoryStorage {
   public class Backend<T> : @unchecked Swift.Sendable where T : BanubaUtilities.CacheCostCalculable {
     public var config: BanubaUtilities.MemoryStorage.Config {
@@ -2524,6 +2534,11 @@ public class BanubaCancelHandler {
   public init(handler: @escaping () -> Swift.Void)
   public func cancel()
   @objc deinit
+}
+public enum BNBLocalization {
+  public static func registerLocalizationBundle(_ bundle: Foundation.Bundle)
+  public static func unregisterLocalizationBundle(_ bundle: Foundation.Bundle)
+  public static func removeAllRegisteredLocalizationBundles()
 }
 public func BNBLocalizedString(_ key: Swift.String) -> Swift.String
 @objc public class GalleryConfiguration : ObjectiveC.NSObject {
