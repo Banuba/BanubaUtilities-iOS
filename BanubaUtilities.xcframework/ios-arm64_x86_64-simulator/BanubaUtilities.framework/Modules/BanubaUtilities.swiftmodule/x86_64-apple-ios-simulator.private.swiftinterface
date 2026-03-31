@@ -305,6 +305,11 @@ extension BanubaUtilities.AlertPresentable where Self : UIKit.UIViewController {
   #endif
   public func presentPopoverAlert(position: BanubaUtilities.OverlayPopoverActionsPosition, actions: [BanubaUtilities.PopoverAlertViewController.ActionType], animated: Swift.Bool, completion: @escaping (BanubaUtilities.PopoverAlertViewController.ActionType) -> Swift.Void)
 }
+public enum ActivityShareWindowHelper {
+  @discardableResult
+  public static func prepareTemporaryWindow(_ activityWindow: UIKit.UIWindow, sourceViewController: UIKit.UIViewController) -> Swift.Bool
+  public static func finishUsingTemporaryWindow(_ activityWindow: UIKit.UIWindow)
+}
 public class GalleryItemPreviewItem {
   final public let galleryItem: any BanubaUtilities.GalleryItem
   final public let isSelected: Swift.Bool
