@@ -18,7 +18,7 @@
 		</data>
 		<key>ios-arm64/BanubaUtilities.framework/BanubaUtilities</key>
 		<data>
-		J2oN6YcD/IDPXoFXTTt1qezELwg=
+		bUoDHcZeHNi6UgCZxCxJ0r9Pe1Y=
 		</data>
 		<key>ios-arm64/BanubaUtilities.framework/GalleryHeaderCollectionReusableView.nib</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>ios-arm64/BanubaUtilities.framework/Info.plist</key>
 		<data>
-		y26riYsNEpjMBBq2EPw+q/XCvMc=
+		GYhy1se7mzMToya9VRAEKl67Yco=
 		</data>
 		<key>ios-arm64/BanubaUtilities.framework/InfoView.nib</key>
 		<data>
@@ -106,15 +106,15 @@
 		</data>
 		<key>ios-arm64/dSYMs/BanubaUtilities.framework.dSYM/Contents/Info.plist</key>
 		<data>
-		LYmY6MUzEU0fbSfey4ldkQp0fgA=
+		9qrsvoRUrUVoPcYwnv61onAnTuY=
 		</data>
 		<key>ios-arm64/dSYMs/BanubaUtilities.framework.dSYM/Contents/Resources/DWARF/BanubaUtilities</key>
 		<data>
-		CZfIUITQSTw0rYNCWlV93k7nmZY=
+		Bf5b7J0OT3y/RCOPb1uMUGBxvLs=
 		</data>
 		<key>ios-arm64/dSYMs/BanubaUtilities.framework.dSYM/Contents/Resources/Relocations/aarch64/BanubaUtilities.yml</key>
 		<data>
-		WckDVduYc3CBwRyANki6d+GzeRE=
+		Lwp7u2M+RJeCZInPflrXatN11Gk=
 		</data>
 		<key>ios-arm64_x86_64-simulator/BanubaUtilities.framework/AlertViewController.nib</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/BanubaUtilities.framework/BanubaUtilities</key>
 		<data>
-		2XxyQIJplAnEqtUztu9qcC72/p0=
+		fIYa4qUTXOwt8ohNR33qFs2hyik=
 		</data>
 		<key>ios-arm64_x86_64-simulator/BanubaUtilities.framework/GalleryHeaderCollectionReusableView.nib</key>
 		<data>
@@ -166,7 +166,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/BanubaUtilities.framework/Info.plist</key>
 		<data>
-		3fHYZkqHkizb/kbWtaedIcWfOOM=
+		p26gtX/HOMlhmr6VH32VKvcHP3k=
 		</data>
 		<key>ios-arm64_x86_64-simulator/BanubaUtilities.framework/InfoView.nib</key>
 		<data>
@@ -230,7 +230,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/BanubaUtilities.framework/_CodeSignature/CodeResources</key>
 		<data>
-		pfElcnI439D3PgfBJ7lmm7z5CQo=
+		l82ILfrtqMoSaqP4yyOhABfXWP4=
 		</data>
 		<key>ios-arm64_x86_64-simulator/BanubaUtilities.framework/version.txt</key>
 		<data>
@@ -238,19 +238,19 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/dSYMs/BanubaUtilities.framework.dSYM/Contents/Info.plist</key>
 		<data>
-		LYmY6MUzEU0fbSfey4ldkQp0fgA=
+		9qrsvoRUrUVoPcYwnv61onAnTuY=
 		</data>
 		<key>ios-arm64_x86_64-simulator/dSYMs/BanubaUtilities.framework.dSYM/Contents/Resources/DWARF/BanubaUtilities</key>
 		<data>
-		eRIoQVUxx/fR4O3X7pBDkYNqw6k=
+		ru/zqQQZrn5ftVOm79Fc4MCiJ84=
 		</data>
 		<key>ios-arm64_x86_64-simulator/dSYMs/BanubaUtilities.framework.dSYM/Contents/Resources/Relocations/aarch64/BanubaUtilities.yml</key>
 		<data>
-		PZsVtzZbN+UkK1ORLOA4Q4B7zYA=
+		vG4i5OlLiqHTQGjm7MOaSo+npwM=
 		</data>
 		<key>ios-arm64_x86_64-simulator/dSYMs/BanubaUtilities.framework.dSYM/Contents/Resources/Relocations/x86_64/BanubaUtilities.yml</key>
 		<data>
-		M2//nf8LRVNsMSwd70cwiDz0k9I=
+		scMuGv/Gcijod4p3k2fFFQt8qDQ=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -280,7 +280,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2751PoNs13FvYk3dgMZfw3Vblkn5clt11uOCNKAuoQo=
+			P5e8twfz3x/OxJV8XcslhVn5/B/hvtRin8psVLbbINI=
 			</data>
 		</dict>
 		<key>ios-arm64/BanubaUtilities.framework/GalleryHeaderCollectionReusableView.nib</key>
@@ -343,7 +343,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TYXmnyNCDDj33ZF8jiFoHdcnJYpQB5VPCt0dlESqkRw=
+			Rsk5A74tTrnZgn4BDh/3MdTCLVes3jvw7sK/pP3zaa4=
 			</data>
 		</dict>
 		<key>ios-arm64/BanubaUtilities.framework/InfoView.nib</key>
@@ -434,21 +434,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oZhR2tK/z5CJIkqHE2PyVQYDGFZxIe2F/4BY4VA04f0=
+			rpr13xVCaMHm+imfSxB6JEI6J4jquNU3D0XU3sO+qz8=
 			</data>
 		</dict>
 		<key>ios-arm64/dSYMs/BanubaUtilities.framework.dSYM/Contents/Resources/DWARF/BanubaUtilities</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			m//DtsV9WHabjeswR+8S2tJ8ANimB7E/y202xgwFOe0=
+			2LE3lL/nF6lgpNp+G3EsgejMtshFYZLDuOUZSdFSTwo=
 			</data>
 		</dict>
 		<key>ios-arm64/dSYMs/BanubaUtilities.framework.dSYM/Contents/Resources/Relocations/aarch64/BanubaUtilities.yml</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			D+/Ibo5UxcbzX7t8ThN9KIWVHQYJd3qTFKZxyyZSTD0=
+			8hgxGn5cgbNQPWrm5Hh5xJ8wemX0Q8PQ6E8RYgkjZHg=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/BanubaUtilities.framework/AlertViewController.nib</key>
@@ -476,7 +476,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MqAQPvX8hJhkO7lgBThThjueRbn1gNXXZsfJGzJazAU=
+			kzjPH8Q8gm1//T9N9o56LseRbW/yIR6rg7nQivhMMVU=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/BanubaUtilities.framework/GalleryHeaderCollectionReusableView.nib</key>
@@ -539,7 +539,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3y08NBtOyjeBcI6BcpCEuMDfKAgig4RA6pb9JzImIzc=
+			li9uDDnz3f7ueTIajdJAjPZRhav5S4vaba2tfrT02T4=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/BanubaUtilities.framework/InfoView.nib</key>
@@ -651,7 +651,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0kS5VzMeYyscAucUh2pdaoPKJUhGq1GcVmT8KhkXXew=
+			qM7uS2WLoyh6wwWBGK+2q3Z3BGJbYzkEtvCsDOdYh2o=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/BanubaUtilities.framework/version.txt</key>
@@ -665,28 +665,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oZhR2tK/z5CJIkqHE2PyVQYDGFZxIe2F/4BY4VA04f0=
+			rpr13xVCaMHm+imfSxB6JEI6J4jquNU3D0XU3sO+qz8=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/dSYMs/BanubaUtilities.framework.dSYM/Contents/Resources/DWARF/BanubaUtilities</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lwj5TqbDqf3swgVErwgELThfR6B+mLcgkNtRypmha6A=
+			t93eiX9bJSLnrf9R8f/DxqY3Sxck5gzNKU84MutRNf0=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/dSYMs/BanubaUtilities.framework.dSYM/Contents/Resources/Relocations/aarch64/BanubaUtilities.yml</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zq7TcXgcDVYKPJB+9UM6Zn2qGZv6l01Voq1FoAze4UI=
+			W7w2LeU7or67062O6AK8NQna/5YOW7ZfWPDwPwKjv28=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/dSYMs/BanubaUtilities.framework.dSYM/Contents/Resources/Relocations/x86_64/BanubaUtilities.yml</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OnpuclVdj5SLHLa5TmNm/jtnbe0/2sNRlGmcaYT5hIE=
+			BT+pKwkBhpTQvZiW//AkDTVb6I5Oc/x1YV4311qam+I=
 			</data>
 		</dict>
 	</dict>
