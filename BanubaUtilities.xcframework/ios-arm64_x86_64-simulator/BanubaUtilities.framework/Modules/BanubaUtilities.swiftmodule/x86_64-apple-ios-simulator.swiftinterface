@@ -109,6 +109,8 @@ public struct AudioContext {
   public static func averagePowers(audioFileURL: Foundation.URL, forChannel channelNumber: Swift.Int, compositionStart: Foundation.TimeInterval, compositionEnd: Foundation.TimeInterval?, duration: Foundation.TimeInterval, numberOfPeaks: Swift.Int, completionHandler: @escaping (_ success: [Swift.Float]) -> ())
   #endif
   public static func amplitudeSamples(audioFileURL: Foundation.URL, numberOfSamples: Swift.Int) -> [Swift.Float]
+  public typealias TimedAmplitude = (time: Foundation.TimeInterval, amplitude: Swift.Float)
+  public static func amplitudeSamples(audioFileURL: Foundation.URL) -> [BanubaUtilities.AudioContext.TimedAmplitude]
   public static func amplitudeSamples(audioFileURL: Foundation.URL, numberOfSamples: Swift.Int, completionHandler: @escaping (_ success: [Swift.Float]) -> ())
 }
 @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
@@ -127,6 +129,30 @@ extension Combine.Publishers {
     public typealias ResultSelector = (Upstream.Output, Other.Output) -> Output
     public func receive<S>(subscriber: S) where Output == S.Input, S : Combine.Subscriber, Other.Failure == S.Failure
   }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class AudioTrimView : UIKit.UIView, UIKit.UIScrollViewDelegate {
+  @_Concurrency.MainActor @preconcurrency final public var onStartDragging: (() -> Swift.Void)?
+  @_Concurrency.MainActor @preconcurrency final public var onEndDragging: (() -> Swift.Void)?
+  @_Concurrency.MainActor @preconcurrency final public var didChangeTimeRange: ((CoreMedia.CMTimeRange) -> Swift.Void)?
+  @_Concurrency.MainActor @preconcurrency final public var amplitudeSamples: [Swift.Float] {
+    get
+    set
+  }
+  @_Concurrency.MainActor @preconcurrency final public var audioTrimRange: CoreMedia.CMTimeRange {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency final public func setupCompositionDuration(_ time: Foundation.TimeInterval, minimumDuration: Foundation.TimeInterval, maxAvailableDuration: Foundation.TimeInterval)
+  @_Concurrency.MainActor @preconcurrency final public func setCompositionDuration(_ duration: Foundation.TimeInterval)
+  @_Concurrency.MainActor @preconcurrency final public func setProgress(_ progress: CoreFoundation.CGFloat)
+  @_Concurrency.MainActor @preconcurrency @objc override final public func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency final public func stopSelectionAnimationIfNeeded()
+  @_Concurrency.MainActor @preconcurrency final public func forceFinishInteraction()
+  @_Concurrency.MainActor @preconcurrency @objc final public func scrollViewWillBeginDragging(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor @preconcurrency @objc final public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor @preconcurrency @objc final public func scrollViewDidEndDragging(_ scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency final public func reset()
+  @objc deinit
 }
 @objc public class TextButtonConfiguration : ObjectiveC.NSObject {
   public var style: BanubaUtilities.TextConfiguration
@@ -274,6 +300,9 @@ public protocol AlertViewControllerFactory : AnyObject {
   #endif
 }
 extension BanubaUtilities.AlertViewControllerFactory where Self : UIKit.UIViewController {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getAlertViewController() -> BanubaUtilities.AlertViewController?
+  #endif
   #if compiler(>=5.3) && $NonescapableTypes
   public func getPopoverAlertViewController() -> BanubaUtilities.PopoverAlertViewController?
   #endif
@@ -2785,6 +2814,21 @@ extension CoreFoundation.CGPoint {
   @_Concurrency.MainActor @preconcurrency public func stopAnimating()
   @objc deinit
 }
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class PaddedContainerView : UIKit.UIView {
+  public enum TrailingRelation {
+    case equal
+    case lessThanOrEqual
+    case greaterThanOrEqual
+    public static func == (a: BanubaUtilities.PaddedContainerView.TrailingRelation, b: BanubaUtilities.PaddedContainerView.TrailingRelation) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @_Concurrency.MainActor @preconcurrency final public let contentView: UIKit.UIView
+  @_Concurrency.MainActor @preconcurrency public init(contentView: UIKit.UIView, edgeInsets: UIKit.UIEdgeInsets = .zero, trailingRelation: BanubaUtilities.PaddedContainerView.TrailingRelation = .equal, edgePriority: UIKit.UILayoutPriority = .required)
+  @objc deinit
+}
 public protocol EffectSelectionViewControllerDelegate : AnyObject {
   #if compiler(>=5.3) && $NonescapableTypes
   func effectSelectionViewController(viewController: any BanubaUtilities.EffectSelectionViewController, didSelectFile url: Foundation.URL, remoteURL: Foundation.URL?, isEditable: Swift.Bool, title: Swift.String, additionalTitle: Swift.String?, uuid: Foundation.UUID)
@@ -3362,6 +3406,7 @@ extension BanubaUtilities.GalleryManager {
 }
 extension BanubaUtilities.GalleryManager {
   public static func requestAccessIfNeeded(completion: @escaping (Swift.Bool) -> ())
+  @_Concurrency.MainActor public static func requestAccessIfNeeded() async -> Swift.Bool
 }
 public protocol VoiceRecorderDelegate : AnyObject {
   func voiceRecorderDidFailWithError(_ error: any Swift.Error)
@@ -4365,6 +4410,8 @@ extension BanubaUtilities.ImageFormat : Swift.Hashable {}
 extension BanubaUtilities.DeviceModel : Swift.Equatable {}
 extension BanubaUtilities.DeviceModel : Swift.Hashable {}
 extension BanubaUtilities.DeviceModel : Swift.RawRepresentable {}
+extension BanubaUtilities.PaddedContainerView.TrailingRelation : Swift.Equatable {}
+extension BanubaUtilities.PaddedContainerView.TrailingRelation : Swift.Hashable {}
 extension BanubaUtilities.TransitionType : Swift.Equatable {}
 extension BanubaUtilities.TransitionType : Swift.Hashable {}
 extension BanubaUtilities.TransitionType : Swift.RawRepresentable {}

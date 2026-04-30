@@ -449,6 +449,16 @@ SWIFT_CLASS("_TtC15BanubaUtilities12AudioService")
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer * _Nonnull)player successfully:(BOOL)flag;
 @end
 
+SWIFT_CLASS("_TtC15BanubaUtilities13AudioTrimView")
+@interface AudioTrimView : UIView <UIScrollViewDelegate>
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
+- (void)scrollViewWillBeginDragging:(UIScrollView * _Nonnull)scrollView;
+- (void)scrollViewDidEndDecelerating:(UIScrollView * _Nonnull)scrollView;
+- (void)scrollViewDidEndDragging:(UIScrollView * _Nonnull)scrollView willDecelerate:(BOOL)decelerate;
+@end
+
 /// The background configuration.
 SWIFT_CLASS("_TtC15BanubaUtilities23BackgroundConfiguration")
 @interface BackgroundConfiguration : NSObject
@@ -673,6 +683,15 @@ SWIFT_CLASS("_TtC15BanubaUtilities7NibView")
 @interface NibView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+/// A container view that embeds a <code>contentView</code> with configurable edge insets.
+/// Useful for wrapping views inside <code>UIStackView</code> arrangedSubviews without introducing
+/// hard equality constraints that may conflict with temporary zero-size layout passes.
+SWIFT_CLASS("_TtC15BanubaUtilities19PaddedContainerView")
+@interface PaddedContainerView : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
 SWIFT_CLASS("_TtC15BanubaUtilities26PopoverAlertViewController")
@@ -1360,6 +1379,16 @@ SWIFT_CLASS("_TtC15BanubaUtilities12AudioService")
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer * _Nonnull)player successfully:(BOOL)flag;
 @end
 
+SWIFT_CLASS("_TtC15BanubaUtilities13AudioTrimView")
+@interface AudioTrimView : UIView <UIScrollViewDelegate>
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
+- (void)scrollViewWillBeginDragging:(UIScrollView * _Nonnull)scrollView;
+- (void)scrollViewDidEndDecelerating:(UIScrollView * _Nonnull)scrollView;
+- (void)scrollViewDidEndDragging:(UIScrollView * _Nonnull)scrollView willDecelerate:(BOOL)decelerate;
+@end
+
 /// The background configuration.
 SWIFT_CLASS("_TtC15BanubaUtilities23BackgroundConfiguration")
 @interface BackgroundConfiguration : NSObject
@@ -1584,6 +1613,15 @@ SWIFT_CLASS("_TtC15BanubaUtilities7NibView")
 @interface NibView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+/// A container view that embeds a <code>contentView</code> with configurable edge insets.
+/// Useful for wrapping views inside <code>UIStackView</code> arrangedSubviews without introducing
+/// hard equality constraints that may conflict with temporary zero-size layout passes.
+SWIFT_CLASS("_TtC15BanubaUtilities19PaddedContainerView")
+@interface PaddedContainerView : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
 SWIFT_CLASS("_TtC15BanubaUtilities26PopoverAlertViewController")
