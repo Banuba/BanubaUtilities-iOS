@@ -546,6 +546,14 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layer
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
+/// Analytics events listener protocol which object should implement to receive VE SDK events
+SWIFT_PROTOCOL("_TtP15BanubaUtilities34ExternalSDKAnalyticsEventsListener_")
+@protocol ExternalSDKAnalyticsEventsListener
+/// Method which will be called when event happened.
+/// Event - is JSON representation of Event object
+- (void)onSDKEvent:(NSString * _Nonnull)event;
+@end
+
 /// The Gallery configuration
 SWIFT_CLASS("_TtC15BanubaUtilities20GalleryConfiguration")
 @interface GalleryConfiguration : NSObject
