@@ -2869,7 +2869,11 @@ public protocol CropGridViewDelegate : AnyObject {
 public struct CropGridViewConfiguration {
   public let gridColor: UIKit.UIColor
   public let cornerColor: UIKit.UIColor
-  public init(gridColor: UIKit.UIColor, cornerColor: UIKit.UIColor)
+  public let borderColor: UIKit.UIColor
+  public let dimmingColor: UIKit.UIColor
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(gridColor: UIKit.UIColor, cornerColor: UIKit.UIColor, borderColor: UIKit.UIColor? = nil, dimmingColor: UIKit.UIColor = UIColor.white.withAlphaComponent(0.5))
+  #endif
   public static var `default`: BanubaUtilities.CropGridViewConfiguration {
     get
   }

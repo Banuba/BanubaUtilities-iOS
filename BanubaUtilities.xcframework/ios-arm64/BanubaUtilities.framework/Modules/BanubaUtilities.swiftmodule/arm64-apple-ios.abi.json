@@ -81014,9 +81014,97 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "borderColor",
+            "printedName": "borderColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities25CropGridViewConfigurationV11borderColorSo7UIColorCvp",
+            "mangledName": "$s15BanubaUtilities25CropGridViewConfigurationV11borderColorSo7UIColorCvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities25CropGridViewConfigurationV11borderColorSo7UIColorCvg",
+                "mangledName": "$s15BanubaUtilities25CropGridViewConfigurationV11borderColorSo7UIColorCvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "dimmingColor",
+            "printedName": "dimmingColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15BanubaUtilities25CropGridViewConfigurationV12dimmingColorSo7UIColorCvp",
+            "mangledName": "$s15BanubaUtilities25CropGridViewConfigurationV12dimmingColorSo7UIColorCvp",
+            "moduleName": "BanubaUtilities",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15BanubaUtilities25CropGridViewConfigurationV12dimmingColorSo7UIColorCvg",
+                "mangledName": "$s15BanubaUtilities25CropGridViewConfigurationV12dimmingColorSo7UIColorCvg",
+                "moduleName": "BanubaUtilities",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(gridColor:cornerColor:)",
+            "printedName": "init(gridColor:cornerColor:borderColor:dimmingColor:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -81035,11 +81123,33 @@
                 "name": "UIColor",
                 "printedName": "UIKit.UIColor",
                 "usr": "c:objc(cs)UIColor"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIColor?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "hasDefaultArg": true,
+                "usr": "c:objc(cs)UIColor"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15BanubaUtilities25CropGridViewConfigurationV9gridColor06cornerH0ACSo7UIColorC_AGtcfc",
-            "mangledName": "$s15BanubaUtilities25CropGridViewConfigurationV9gridColor06cornerH0ACSo7UIColorC_AGtcfc",
+            "usr": "s:15BanubaUtilities25CropGridViewConfigurationV9gridColor06cornerH006borderH007dimmingH0ACSo7UIColorC_A2ISgAItcfc",
+            "mangledName": "$s15BanubaUtilities25CropGridViewConfigurationV9gridColor06cornerH006borderH007dimmingH0ACSo7UIColorC_A2ISgAItcfc",
             "moduleName": "BanubaUtilities",
             "declAttributes": [
               "AccessControl"
@@ -144252,6 +144362,13 @@
       "offset": 721,
       "length": 4,
       "value": "10.0"
+    },
+    {
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/Crop\/CropGridViewConfiguration.swift",
+      "kind": "FloatLiteral",
+      "offset": 509,
+      "length": 3,
+      "value": "0.5"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaUtilities\/BanubaUtilities\/BanubaUtilities\/Entities\/UIEntities\/VideoTimelineCollectionViewHandler\/VideoTimelineCollectionViewHandler.swift",
