@@ -2,7 +2,7 @@
 
 import PackageDescription
 
-let designSystemVersionRange: Range<Version> = "1.0.0-beta.0"..<"2.0.0"
+let designSystemVersionRange: Range<Version> = "1.0.3"..<"2.0.0"
 
 let package = Package(
   name: "BanubaUtilities",
@@ -34,17 +34,10 @@ let package = Package(
       ],
       path: "BanubaUtilitiesTarget"
     ),
-    // Local development uses the path-based binaryTarget below.
-    // Release flow (fastlane patch_package_swift_for_nexus) replaces it in the GitHub distribution repo with:
-    // .binaryTarget(
-    //   name: "BanubaUtilities",
-    //   url: "https://nexus.banuba.net/repository/ios-frameworks/ios/frameworks/BanubaUtilities/{version}/BanubaUtilities-{version}.xcframework.zip",
-    //   checksum: "{computed at release}"
-    // )
     .binaryTarget(
       name: "BanubaUtilities",
-      url: "https://nexus.banuba.net/repository/ios-frameworks/ios/frameworks/BanubaUtilities/1.53.0/BanubaUtilities-1.53.0.xcframework.zip",
-      checksum: "fb7206e0c23ec8cf129371ddddc4b66ee35f65a0b1ff9685209c36fb0b24402a"
+      url: "https://nexus.banuba.net/repository/ios-frameworks/ios/frameworks/BanubaUtilities/1.53.1/BanubaUtilities-1.53.1.xcframework.zip",
+      checksum: "29aea9e15cda4631634869ed2df6240a35ca3b085b9d1ab7134d9ad47a15f1ef"
     )
   ]
 )
