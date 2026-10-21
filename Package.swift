@@ -36,8 +36,8 @@ let package = Package(
     ),
     .binaryTarget(
       name: "BanubaUtilities",
-      url: "https://nexus.banuba.net/repository/ios-frameworks/ios/frameworks/BanubaUtilities/0.54.5-beta.0/BanubaUtilities-0.54.5-beta.0.xcframework.zip",
-      checksum: "a745da3ceac1f4c9938a441508d1cc7daa7dcc48691b55cbb3d73e2a490b4fff"
+      url: "https://nexus.banuba.net/repository/ios-frameworks/ios/frameworks/BanubaUtilities/0.54.5-beta.2/BanubaUtilities-0.54.5-beta.2.xcframework.zip",
+      checksum: "c0a2e613ae5ad9569cb689b4ee4499f7c8ac903aa8e96bd414eb796a2a1ce23e"
     )
   ]
 )
